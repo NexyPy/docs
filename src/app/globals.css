@@ -7,6 +7,7 @@
 body {
   /* background-color: #040807; */
   /* background-color: #0D1713; */
+  
   background-color: color-mix(in srgb, #040807 60%, #0D1713 40%);
   color: #F6F6F6;
 } 

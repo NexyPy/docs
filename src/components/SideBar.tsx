@@ -2,9 +2,8 @@
 const SideBar = () => {
     return (
         <section className="sticky top-24 flex flex-col gap-3.5 backdrop-blur-[4px] bg-[#F9FFFD]/6 border border-[#7E8382]/12 rounded-[25px] p-1.5 pb-4 min-w-[240px] min-h-[82dvh] max-h-fit">
-            
-            <SideBarItem />
 
+            <SideBarItem />
 
         </section>
     );
@@ -40,12 +39,12 @@ const SideBarItem = () => {
         {
             label: "Reponses",
             href: "/reponses"
-        }, 
+        },
         {
             label: "Views",
             href: "/views"
         },
-        
+
 
         {
             label: "Composants",
@@ -60,7 +59,7 @@ const SideBarItem = () => {
             label: "Middlewares",
             href: "/middlewares"
         },
-        
+
 
         {
             label: "Configuration",

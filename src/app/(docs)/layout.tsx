@@ -20,7 +20,6 @@ const DocsLayout = ({ children }: { children: React.ReactNode }) => {
             <li className="text-sm font-normal text-teal-100 opacity-50">API</li>
             <li className="text-sm font-normal text-teal-100 opacity-50">Contributing</li>
             <li className="text-sm font-normal text-teal-100 opacity-50">License</li>
-
           </ul>
         </div>
       </section>

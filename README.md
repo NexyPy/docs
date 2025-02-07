@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nexy
+
+Nexy is a modern, fast, and secure framework for building web applications with Python. It is a full-stack framework that allows you to build web applications with Python. 
+
+
+
 
 ## Getting Started
 

@@ -27,6 +27,7 @@ export async function CodeBlock({
         lang: language,
         theme: 'one-dark-pro'
       })
+      
 
   return (
     <article className="group flex flex-col gap-1 bg-[#A9FFEA]/6 border border-[#A9FFEA]/7 rounded-[20px] p-1 h-fit w-full">

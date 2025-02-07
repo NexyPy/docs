@@ -59,6 +59,7 @@ export default function DocsPage() {
           laissant peu de place à des alternatives comme <span className="font-normal text-[#37FCCB]">Flask</span> ou <span className="font-normal text-[#37FCCB]">FastAPI</span>. Est-ce uniquement une question de popularité, ou simplement parce qu’aucun autre framework n’offre une solution aussi complète
           pour le développement web moderne ?
         </Mark>
+        
 
         <p className="text-base font-light">
           <span className="font-normal text-[#37FCCB]">Django</span> possède des fonctionnalités impressionnantes, mais sa complexité et sa lourdeur peuvent devenir un obstacle,
