@@ -175,7 +175,9 @@ async def update_post(id: int, post: Post):
                 language="python"
                 code={`# components/__init__.py
 from nexy import Component
-@component()
+@component(
+  imports=[]
+)
 def Button(label: str, on_click: Callable = None):
     return {
         "label": label,
