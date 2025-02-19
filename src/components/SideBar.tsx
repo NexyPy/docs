@@ -1,3 +1,7 @@
+"use client"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 const SideBar = () => {
     return (
         <div className="sticky top-24 hidden md:flex flex-col gap-3.5 backdrop-blur-[4px] bg-[#F9FFFD]/6 border border-[#7E8382]/12 rounded-[25px] p-1.5 pb-4 min-w-[240px] min-h-[82dvh] max-h-fit">
@@ -16,11 +20,11 @@ const SideBarItem = () => {
     const data = [
         {
             label: "Introduction",
-            href: "/introduction"
+            href: "/"
         },
         {
-            label: "Installation",
-            href: "/installation"
+            label: "Créer un projet",
+            href: "/new_project"
         },
         {
             label: "Structure du projet",
@@ -67,6 +71,8 @@ const SideBarItem = () => {
 
     ]
 
+    const active = usePathname();
+
 
     return (
 
@@ -80,14 +86,9 @@ const SideBarItem = () => {
             <menu className="flex flex-col w-full">
                 {
                     data.map((item, index) => (
-                        <button className={`cursor-pointer px-3 py-1.5 text-sm text-left font-normal  rounded-[10px]  ${index === 0 ? "bg-[#A9FFEA]/2.5 border border-[#A9FFEA]/5 text-[#A9FFEA] " : "opacity-70 "}`} key={item.label}>
+                        <Link href={item.href} className={`cursor-pointer px-3 py-1.5 text-sm text-left font-normal  rounded-[10px]  ${active === item.href ? "bg-[#A9FFEA]/2.5 border border-[#A9FFEA]/5 text-[#A9FFEA] " : "opacity-70 "}`} key={item.label}>
                             {item.label}
-                        </button>
-
-
-
-
-
+                        </Link>
 
                     ))
 

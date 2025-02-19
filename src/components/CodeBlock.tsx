@@ -11,6 +11,7 @@ interface CodeBlockProps {
     code: string;
     language: BundledLanguage;
     fileName?: string;
+    copyButton?: boolean;
     // Si vous souhaitez ajouter d'autres options, comme showLineNumbers, vous pouvez les inclure ici
   }
 
@@ -18,6 +19,7 @@ export async function CodeBlock({
   code,
   language,
   fileName = "",
+  copyButton = true,
 }: CodeBlockProps) {
     const out = await codeToHtml(code, {
         lang: language,
@@ -27,7 +29,8 @@ export async function CodeBlock({
 
   return (
     <article className="group flex flex-col gap-1 bg-[#A9FFEA]/6 border border-[#A9FFEA]/7 rounded-[20px] p-1 h-fit w-full">
-      <div className="flex gap-1 justify-between p-1">
+      
+      {copyButton && <div className="flex gap-1 justify-between p-1">
         <p className="p-0.5 flex gap-2 items-center">
           <svg
 
@@ -48,7 +51,7 @@ export async function CodeBlock({
           </span>
         </p>
         <CopyButton code={code} />
-      </div>
+      </div> }
       <div className="bg-[#F9FFFD]/5 px-1.5 py-0.5 rounded-[14px] border border-[#7E8382]/20 backdrop-blur-md">
         <div
           className="overflow-x-auto p-4 [&>pre]:!bg-transparent [&>pre]:!m-0 [&_.line]:!px-0"
