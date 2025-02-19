@@ -1,11 +1,10 @@
-
 const SideBar = () => {
     return (
-        <section className="sticky top-24 flex flex-col gap-3.5 backdrop-blur-[4px] bg-[#F9FFFD]/6 border border-[#7E8382]/12 rounded-[25px] p-1.5 pb-4 min-w-[240px] min-h-[82dvh] max-h-fit">
+        <div className="sticky top-24 hidden md:flex flex-col gap-3.5 backdrop-blur-[4px] bg-[#F9FFFD]/6 border border-[#7E8382]/12 rounded-[25px] p-1.5 pb-4 min-w-[240px] min-h-[82dvh] max-h-fit">
 
             <SideBarItem />
 
-        </section>
+        </div>
     );
 
 };

@@ -14,10 +14,6 @@ interface CodeBlockProps {
     // Si vous souhaitez ajouter d'autres options, comme showLineNumbers, vous pouvez les inclure ici
   }
 
-
-
-
-
 export async function CodeBlock({
   code,
   language,

@@ -3,11 +3,16 @@
 @source "../src/**/*.{js,ts,jsx,tsx,md}";
 @source "../src/components*.{js,ts,jsx,tsx,md}";
 
+/* Ajouter des variables CSS */
+:root {
+  --primary-color: #A9FFEA;
+  --background: color-mix(in srgb, #040807 60%, #0D1713 40%);
+}
 
 body {
   /* background-color: #040807; */
   /* background-color: #0D1713; */
   
-  background-color: color-mix(in srgb, #040807 60%, #0D1713 40%);
+  background: var(--background);
   color: #F6F6F6;
 } 
