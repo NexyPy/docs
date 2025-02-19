@@ -6,7 +6,6 @@ import Link from "next/link";
 export default function DocsPage() {
     return (
         <main className="flex-1 flex flex-col gap-5 pt-5 pb-10 text-white/80">
-             {/* eslint-disable-next-line react/no-unescaped-entities */}
             <p className="mb-4"><Nexy /></p>
             <Mark>
                 Imaginez un monde où chaque ligne de code Python se transforme en une mélodie d&apos;efficacité. Un univers où la puissance de FastAPI rencontre l&apos;élégance du routing Next.js, créant une symphonie parfaite entre performance et simplicité. Cette vision n&apos;est plus un rêve. Bienvenue dans une nouvelle ère d&apos;excellence du développement web en Python, où chaque projet devient une aventure captivante et ultra-productive.

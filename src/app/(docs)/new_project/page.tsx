@@ -5,11 +5,10 @@ import Link from "next/link";
 export default function InstallationPage() {
     return (
         <main className="flex-1 flex flex-col gap-5 pt-5 pb-10 text-white/80">
-            {/* eslint-disable-next-line react/no-unescaped-entities */}
             <h1 className="text-2xl font-bold">Créer un nouveau projet</h1>
 
             <Mark>
-                Pour démarrer avec Nexy, assurez-vous d'avoir <span className="font-normal text-[#37FCCB]">Python 3.12</span> ou une version plus récente. Cette version est nécessaire pour utiliser Nexy et profiter de toutes ses fonctionnalités modernes.
+                Pour démarrer avec Nexy, assurez-vous d&apos;avoir <span className="font-normal text-[#37FCCB]">Python 3.12</span> ou une version plus récente. Cette version est nécessaire pour utiliser Nexy et profiter de toutes ses fonctionnalités modernes.
             </Mark>
 
             <h3 className="text-lg font-medium">1. Vérification de la version de Python</h3>
@@ -22,7 +21,7 @@ export default function InstallationPage() {
 # Vous devriez voir Python 3.12.x ou supérieur`}
             />
             <p className="text-base font-light">
-                Si votre version de Python n'est pas à jour, téléchargez la dernière version depuis le site officiel de Python : <a href="https://www.python.org/downloads/" className="text-[#37FCCB]">python.org/downloads</a>. Suivez les instructions d'installation pour votre système d'exploitation.
+                Si votre version de Python n&apos;est pas à jour, téléchargez la dernière version depuis le site officiel de Python : <a href="https://www.python.org/downloads/" className="text-[#37FCCB]">python.org/downloads</a>. Suivez les instructions d&apos;installation pour votre système d&apos;exploitation.
             </p>
 
             <h3 className="text-lg font-medium">2. Installation de Nexy</h3>
@@ -42,7 +41,7 @@ export default function InstallationPage() {
                 code={`nexy --version`}
             />
 
-            <h3 className="text-lg font-medium">3. Création d'un nouveau projet Nexy</h3>
+            <h3 className="text-lg font-medium">3. Création d&apos;un nouveau projet Nexy</h3>
             <p className="text-base font-light">
                 Créez et explorez votre nouveau projet avec ces commandes. Nexy va générer automatiquement une structure de projet optimisée avec tous les fichiers nécessaires pour démarrer rapidement :
             </p>
@@ -60,7 +59,7 @@ cd mon-projet`}
 
             <h4 className="text-md font-medium">Projet Fullstack</h4>
             <p className="text-base font-light">
-                La structure d'un projet fullstack gère à la fois le backend et le frontend. Cette configuration est idéale pour les applications web complètes qui nécessitent une interface utilisateur et une logique serveur intégrée. Chaque fichier a un rôle spécifique dans l'architecture :
+                La structure d&apos;un projet fullstack gère à la fois le backend et le frontend. Cette configuration est idéale pour les applications web complètes qui nécessitent une interface utilisateur et une logique serveur intégrée. Chaque fichier a un rôle spécifique dans l&apos;architecture :
             </p>
             <CodeBlock
                 copyButton={false}
@@ -68,17 +67,17 @@ cd mon-projet`}
                 code={`mon-projet/
  ├── app/
  |  | __init__.py
- |  | controller.py    # Point d'entrée principal
- |  | service.py       # Configuration de l'application
+ |  | controller.py    # Point d&apos;entrée principal
+ |  | service.py       # Configuration de l&apos;application
  |  | layout.html      # Templates HTML
  |  | views.html       # Vue principale (optionnelle)
  ├── public/           # Fichiers statiques
- └── nexy-config.py    # Configuration de l'application`}
+ └── nexy-config.py    # Configuration de l&apos;application`}
             />
 
             <h4 className="text-md font-medium">Projet Microservice</h4>
             <p className="text-base font-light">
-                La structure d'un projet de microservice est optimisée pour des services spécifiques et autonomes. Cette architecture est parfaite pour construire des systèmes distribués ou pour isoler des fonctionnalités spécifiques. La structure est volontairement allégée pour se concentrer sur l'essentiel :
+                La structure d&apos;un projet de microservice est optimisée pour des services spécifiques et autonomes. Cette architecture est parfaite pour construire des systèmes distribués ou pour isoler des fonctionnalités spécifiques. La structure est volontairement allégée pour se concentrer sur l&apos;essentiel :
             </p>
             <CodeBlock
                 copyButton={false}
@@ -86,10 +85,10 @@ cd mon-projet`}
                 code={`mon-projet/
  ├── app/
  |  | __init__.py
- |  | controller.py    # Point d'entrée principal
- |  | service.py       # Configuration de l'application
+ |  | controller.py    # Point d&apos;entrée principal
+ |  | service.py       # Configuration de l&apos;application
  ├── public/           # Fichiers statiques
- └── nexy-config.py    # Configuration de l'application`}
+ └── nexy-config.py    # Configuration de l&apos;application`}
             />
 
             <h3 className="text-lg font-medium">5. Lancement du serveur de développement</h3>
@@ -110,7 +109,7 @@ cd mon-projet`}
                     Explorez la structure du projet pour vous familiariser avec les fichiers et répertoires. Prenez le temps de comprendre comment chaque composant interagit avec les autres.
                 </li>
                 <li className="text-base font-light before:content-['②'] before:mr-2 before:text-[#37FCCB]">
-                    Créez votre première route pour ajouter des fonctionnalités à votre application. Commencez par quelque chose de simple comme une page d'accueil ou une API basique.
+                    Créez votre première route pour ajouter des fonctionnalités à votre application. Commencez par quelque chose de simple comme une page d&apos;accueil ou une API basique.
                 </li>
                 <li className="text-base font-light before:content-['③'] before:mr-2 before:text-[#37FCCB]">
                     Expérimentez avec les composants Nexy pour créer des interfaces utilisateur réutilisables et maintenables.
