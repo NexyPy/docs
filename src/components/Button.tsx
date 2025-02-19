@@ -1,4 +1,5 @@
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
+
 type ButtonProps = {
     children: React.ReactNode;
     className?: string;
@@ -9,16 +10,14 @@ type ButtonProps = {
     size?: "md" | "sm";
 }
 
-const Button = ({ ...props }: ButtonProps) => {
+export default function Button({ children, className = "", ...props }: ButtonProps) {
     return (
         <motion.button 
-            className={`bg-[#A9FFEA]/8 border border-[#A9FFEA]/10 rounded-full p-1 pr-10 ${props.className}`}
+            className={`bg-[#A9FFEA]/8 border border-[#A9FFEA]/10 rounded-full p-1 pr-10 ${className}`}
             {...props}
         >
-            {props.children}
+            {children}
             {props.loading && <span className="ml-2">Chargement...</span>}
         </motion.button>
     );
 }
-
-export default Button;
