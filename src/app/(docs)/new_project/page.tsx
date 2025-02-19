@@ -5,6 +5,7 @@ import Link from "next/link";
 export default function InstallationPage() {
     return (
         <main className="flex-1 flex flex-col gap-5 pt-5 pb-10 text-white/80">
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
             <h1 className="text-2xl font-bold">Créer un nouveau projet</h1>
 
             <Mark>

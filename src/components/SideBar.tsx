@@ -85,7 +85,7 @@ const SideBarItem = () => {
             </div>
             <menu className="flex flex-col w-full">
                 {
-                    data.map((item, index) => (
+                    data.map(( item ) => (
                         <Link href={item.href} className={`cursor-pointer px-3 py-1.5 text-sm text-left font-normal  rounded-[10px]  ${active === item.href ? "bg-[#A9FFEA]/2.5 border border-[#A9FFEA]/5 text-[#A9FFEA] " : "opacity-70 "}`} key={item.label}>
                             {item.label}
                         </Link>
