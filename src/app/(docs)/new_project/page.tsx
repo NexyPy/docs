@@ -64,15 +64,15 @@ cd mon-projet`}
             <CodeBlock
                 copyButton={false}
                 language="shell"
-                code={`mon-projet/
- ├── app/
- |  | __init__.py
- |  | controller.py    # Point d&apos;entrée principal
- |  | service.py       # Configuration de l&apos;application
- |  | layout.html      # Templates HTML
- |  | views.html       # Vue principale (optionnelle)
- ├── public/           # Fichiers statiques
- └── nexy-config.py    # Configuration de l&apos;application`}
+                code={`📁mon-projet/
+ ├── 📁 app/
+ |  ├── 📄 __init__.py
+ |  ├── 📄 controller.py    # Point d'entrée principal
+ |  ├── 📄 service.py       # Services de l'application
+ |  ├── 📄 layout.html      # Templates HTML
+ |  ├── 📄 view.html        # Vue principale (optionnelle)
+ ├── 📁 public/             # Fichiers statiques
+ └── 📄 nexy-config.py      # Configuration de l'application`}
             />
 
             <h4 className="text-md font-medium">Projet Microservice</h4>
@@ -82,13 +82,13 @@ cd mon-projet`}
             <CodeBlock
                 copyButton={false}
                 language="shell"
-                code={`mon-projet/
- ├── app/
- |  | __init__.py
- |  | controller.py    # Point d&apos;entrée principal
- |  | service.py       # Configuration de l&apos;application
- ├── public/           # Fichiers statiques
- └── nexy-config.py    # Configuration de l&apos;application`}
+                code={`📁 mon-projet/
+ ├── 📁 app/
+ |  ├── 📄 __init__.py
+ |  ├── 📄 controller.py    # Point d'entrée principal
+ |  ├── 📄 service.py       # Configuration de l'application
+ ├── 📁 public/           # Fichiers statiques
+ └── 📄 nexy-config.py    # Configuration de l'application`}
             />
 
             <h3 className="text-lg font-medium">5. Lancement du serveur de développement</h3>
@@ -119,11 +119,11 @@ cd mon-projet`}
                 </li>
             </ul>
             <div className="flex  gap-5 justify-between mt-5">
-                <Link href="#" className={`cursor-pointer px-4 py-2 text-sm text-left font-normal  rounded-[12px]  bg-[#A9FFEA]/2.5 border border-[#A9FFEA]/5 text-[#A9FFEA] `}>
+                <Link href="/" className={`cursor-pointer px-4 py-2 text-sm text-left font-normal  rounded-[12px]  bg-[#A9FFEA]/2.5 border border-[#A9FFEA]/5 text-[#A9FFEA] `}>
                     Introduction 
                 </Link>
 
-                <Link href="#" className={`cursor-pointer px-4 py-2 text-sm text-left font-normal  rounded-[12px]  bg-[#A9FFEA]/20 border border-[#A9FFEA]/25 text-[#A9FFEA] `}>
+                <Link href="/structure" className={`cursor-pointer px-4 py-2 text-sm text-left font-normal  rounded-[12px]  bg-[#A9FFEA]/20 border border-[#A9FFEA]/25 text-[#A9FFEA] `}>
                     Structure du projet
                 </Link>
 

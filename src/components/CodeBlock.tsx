@@ -28,7 +28,7 @@ export async function CodeBlock({
       
 
   return (
-    <article className="group flex flex-col gap-1 bg-[#A9FFEA]/6 border border-[#A9FFEA]/7 rounded-[20px] p-1 h-fit w-full">
+    <article className="flex-1 group flex flex-col gap-1 bg-[#A9FFEA]/6 border border-[#A9FFEA]/7 rounded-[20px] p-1 h-fit ">
       
       {copyButton && <div className="flex gap-1 justify-between p-1">
         <p className="p-0.5 flex gap-2 items-center">
@@ -52,9 +52,9 @@ export async function CodeBlock({
         </p>
         <CopyButton code={code} />
       </div> }
-      <div className="bg-[#F9FFFD]/5 px-1.5 py-0.5 rounded-[14px] border border-[#7E8382]/20 backdrop-blur-md">
+      <div className=" w-full bg-[#F9FFFD]/5 px-1.5 py-0.5 rounded-[14px] border border-[#7E8382]/20 backdrop-blur-md">
         <div
-          className="overflow-x-auto p-4 [&>pre]:!bg-transparent [&>pre]:!m-0 [&_.line]:!px-0"
+          className="w-full [&>pre]:!w-full overflow-x-auto p-4 [&>pre]:!bg-transparent [&>pre]:!m-0 [&_.line]:!px-0"
           dangerouslySetInnerHTML={{ __html: out }}
         />
       </div>

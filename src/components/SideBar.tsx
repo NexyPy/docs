@@ -28,12 +28,9 @@ const SideBarItem = () => {
         },
         {
             label: "Structure du projet",
-            href: "/structure-du-projet"
+            href: "/structure"
         },
-        {
-            label: "Routage",
-            href: "/routage"
-        },
+        
         {
             label: "Controllers",
             href: "/controllers"
