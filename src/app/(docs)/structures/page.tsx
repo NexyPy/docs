@@ -18,7 +18,7 @@ export default function StructurePage() {
             <CodeBlock
                 copyButton={false}
                 language="shell"
-                code={`📁 app/         # Routeur d&apos;application
+                code={`📁 app/         # Routeur d'application
 📁 public/      # Actifs statiques à servir
 .../
 `} />
@@ -51,20 +51,20 @@ export default function StructurePage() {
                 copyButton={false}
                 language="shell"
                 code={`📁 app/
-├── 📁 dossier/         # Segment d&apos;itinéraire
-│   └── 📁 dossier/     # Segment d&apos;itinéraire imbriqué
-│       └── 📁 dossier/ # Segment d&apos;itinéraire imbriqué
-└── 📁 autre/           # Autre segment d&apos;itinéraire
-    └── 📁 dossier/     # Segment d&apos;itinéraire imbriqué`} />
+├── 📁 dossier/         # Segment d';itinéraire
+│   └── 📁 dossier/     # Segment d'itinéraire imbriqué
+│       └── 📁 dossier/ # Segment d'itinéraire imbriqué
+└── 📁 autre/           # Autre segment d'itinéraire
+    └── 📁 dossier/     # Segment d'itinéraire imbriqué`} />
 
             <h3 className="text-lg font-medium">Itinéraires dynamiques</h3>
             <CodeBlock
                 copyButton={false}
                 language="shell"
-                code={`📁 [dossier]/   # Segment d&apos;itinéraire dynamique
-📁 ![dossier]   # Segment d&apos;itinéraire dynamique facultatif
-📁 [_dossier]/  # Segment d&apos;itinéraire dynamique four tout
-📁 ![_dossier]/ # Segment d&apos;itinéraire dynamique facultatif et four tout 
+                code={`📁 [dossier]/   #itinéraire dynamique
+📁 ![dossier]   #itinéraire dynamique facultatif
+📁 [_dossier]/  #itinéraire dynamique four tout
+📁 ![_dossier]/ #itinéraire dynamique facultatif et four tout 
 `} />
 
             <h3 className="text-lg font-medium">Dossiers privés</h3>
@@ -102,9 +102,9 @@ export default function StructurePage() {
             <CodeBlock
                 copyButton={false}
                 language="shell"
-                code={`🌐 url = /       # n&apos;est pas accessible publiquement
-🌐 url = /blog   # n&apos;est pas accessible publiquement
-🌐 url = /blog/1 # n&apos;est pas accessible publiquement
+                code={`🌐 url = /       # n'est pas accessible publiquement
+🌐 url = /blog   # n'est pas accessible publiquement
+🌐 url = /blog/1 # n'est pas accessible publiquement
 `} />
 
             <p className="text-base font-light">
@@ -122,8 +122,8 @@ export default function StructurePage() {
 │   │       └── 📄 controller.py 
 │   ├── 📁 _docs/  
 │   ├── 📄 controller.py 
-│   └── 📁 [slug]/     
-│       └── 📄 controller.py 
+│       └── 📁 [slug]/     
+│           └── 📄 controller.py 
 `} />
 
             <CodeBlock
@@ -132,8 +132,8 @@ export default function StructurePage() {
                 code={`🌐 url = /        # accessible publiquement
 🌐 url = /blog    # accessible publiquement
 🌐 url = /blog/1  # accessible publiquement
-🌐 url = /docs    # n&apos;est pas accessible publiquement, _docs/ est privé
-🌐 url = /docs/1  # n&apos;est pas accessible publiquement, _docs/ est privé
+🌐 url = /docs    # n'est pas accessible , _docs/ est privé
+🌐 url = /docs/1  # n'est pas accessible, _docs/ est privé
 `} />
 
             <h3 className="text-lg font-medium">Exemple de structure de projet</h3>
