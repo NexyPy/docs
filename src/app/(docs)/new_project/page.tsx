@@ -67,12 +67,12 @@ cd mon-projet`}
                 code={`📁mon-projet/
  ├── 📁 app/
  |  ├── 📄 __init__.py
- |  ├── 📄 controller.py    # Point d'entrée principal
- |  ├── 📄 service.py       # Services de l'application
+ |  ├── 📄 controller.py    # Point d&apos;entrée principal
+ |  ├── 📄 service.py       # Services de l&apos;application
  |  ├── 📄 layout.html      # Templates HTML
  |  ├── 📄 view.html        # Vue principale (optionnelle)
  ├── 📁 public/             # Fichiers statiques
- └── 📄 nexy-config.py      # Configuration de l'application`}
+ └── 📄 nexy-config.py      # Configuration de l&apos;application`}
             />
 
             <h4 className="text-md font-medium">Projet Microservice</h4>
@@ -85,10 +85,10 @@ cd mon-projet`}
                 code={`📁 mon-projet/
  ├── 📁 app/
  |  ├── 📄 __init__.py
- |  ├── 📄 controller.py    # Point d'entrée principal
- |  ├── 📄 service.py       # Configuration de l'application
+ |  ├── 📄 controller.py    # Point d&apos;entrée principal
+ |  ├── 📄 service.py       # Configuration de l&apos;application
  ├── 📁 public/           # Fichiers statiques
- └── 📄 nexy-config.py    # Configuration de l'application`}
+ └── 📄 nexy-config.py    # Configuration de l&apos;application`}
             />
 
             <h3 className="text-lg font-medium">5. Lancement du serveur de développement</h3>

@@ -18,13 +18,13 @@ export default function StructurePage() {
             <CodeBlock
                 copyButton={false}
                 language="shell"
-                code={`📁 app/         # Routeur d'application
+                code={`📁 app/         # Routeur d&apos;application
 📁 public/      # Actifs statiques à servir
 .../
 `} />
 
             <p className="text-base font-light">
-                Les fichiers de niveau supérieur sont utilisés pour configurer votre application, gérer les dépendances, exécuter des intergiciels, intégrer des outils de surveillance et définir des variables d'environnement.
+                Les fichiers de niveau supérieur sont utilisés pour configurer votre application, gérer les dépendances, exécuter des intergiciels, intégrer des outils de surveillance et définir des variables d&apos;environnement.
             </p>
             <CodeBlock
                 copyButton={false}
@@ -32,7 +32,7 @@ export default function StructurePage() {
                 code={`📄 nexy-config.py   # Fichier de configuration pour Nexy
 📄 requirements.txt # Dépendances et scripts du projet  
 📄 middleware.py    # Intergiciel de requête Nexy
-📄 .env             # Variables d'environnement
+📄 .env             # Variables d&apos;environnement
 📄 .gitignore       # Fichiers et dossiers Git à ignorer`} />
 
             <h3 className="text-lg font-medium">Fichiers de routage</h3>
@@ -43,7 +43,7 @@ export default function StructurePage() {
 📄 layout.html     # Mise en page
 📄 view.html       # Page de routage
 📄 not-found.html  # Interface utilisateur non trouvée
-📄 error.html      # Interface utilisateur d'erreur
+📄 error.html      # Interface utilisateur d&apos;erreur
 `} />
 
             <h3 className="text-lg font-medium">Itinéraires imbriqués</h3>
@@ -51,20 +51,20 @@ export default function StructurePage() {
                 copyButton={false}
                 language="shell"
                 code={`📁 app/
-├── 📁 dossier/         # Segment d'itinéraire
-│   └── 📁 dossier/     # Segment d'itinéraire imbriqué
-│       └── 📁 dossier/ # Segment d'itinéraire imbriqué
-└── 📁 autre/           # Autre segment d'itinéraire
-    └── 📁 dossier/     # Segment d'itinéraire imbriqué`} />
+├── 📁 dossier/         # Segment d&apos;itinéraire
+│   └── 📁 dossier/     # Segment d&apos;itinéraire imbriqué
+│       └── 📁 dossier/ # Segment d&apos;itinéraire imbriqué
+└── 📁 autre/           # Autre segment d&apos;itinéraire
+    └── 📁 dossier/     # Segment d&apos;itinéraire imbriqué`} />
 
             <h3 className="text-lg font-medium">Itinéraires dynamiques</h3>
             <CodeBlock
                 copyButton={false}
                 language="shell"
-                code={`📁 [dossier]/   # Segment d'itinéraire dynamique
-📁 ![dossier]   # Segment d'itinéraire dynamique facultatif
-📁 [_dossier]/  # Segment d'itinéraire dynamique four tout
-📁 ![_dossier]/ # Segment d'itinéraire dynamique facultatif et four tout 
+                code={`📁 [dossier]/   # Segment d&apos;itinéraire dynamique
+📁 ![dossier]   # Segment d&apos;itinéraire dynamique facultatif
+📁 [_dossier]/  # Segment d&apos;itinéraire dynamique four tout
+📁 ![_dossier]/ # Segment d&apos;itinéraire dynamique facultatif et four tout 
 `} />
 
             <h3 className="text-lg font-medium">Dossiers privés</h3>
@@ -76,16 +76,16 @@ export default function StructurePage() {
 
             <h3 className="text-lg font-medium">Organiser votre projet</h3>
             <p className="text-base font-light">
-                Outre les conventions relatives aux dossiers et aux fichiers, Nexy n'a pas d'opinion sur la manière dont vous organisez et regroupez les fichiers de votre projet. Cependant, il fournit plusieurs fonctionnalités pour vous aider à organiser votre projet.
+                Outre les conventions relatives aux dossiers et aux fichiers, Nexy n&apos;a pas d&apos;opinion sur la manière dont vous organisez et regroupez les fichiers de votre projet. Cependant, il fournit plusieurs fonctionnalités pour vous aider à organiser votre projet.
             </p>
 
             <h4 className="text-base font-medium">Colocation</h4>
             <p className="text-base font-light">
-                Dans le répertoire <code className="bg-white/5 p-1 py-0.5 border border-white/10 rounded-md text-[#A9FFEA]">app</code>, des dossiers imbriqués définissent la structure de l'itinéraire. Chaque dossier représente un segment d'itinéraire mappé à un segment correspondant dans un chemin d'URL.
+                Dans le répertoire <code className="bg-white/5 p-1 py-0.5 border border-white/10 rounded-md text-[#A9FFEA]">app</code>, des dossiers imbriqués définissent la structure de l&apos;itinéraire. Chaque dossier représente un segment d&apos;itinéraire mappé à un segment correspondant dans un chemin d&apos;URL.
             </p>
 
             <p className="text-base font-light">
-                Cependant, même si la structure de l'itinéraire est définie via des dossiers, un itinéraire n'est pas accessible publiquement tant qu'un fichier <code className="bg-white/5 p-1 py-0.5 border border-white/10 rounded-md text-[#A9FFEA]">controller.py</code> n'est pas ajouté à un segment d'itinéraire.
+                Cependant, même si la structure de l&apos;itinéraire est définie via des dossiers, un itinéraire n&apos;est pas accessible publiquement tant qu&apos;un fichier <code className="bg-white/5 p-1 py-0.5 border border-white/10 rounded-md text-[#A9FFEA]">controller.py</code> n&apos;est pas ajouté à un segment d&apos;itinéraire.
             </p>
             <CodeBlock
                 copyButton={false}
@@ -102,13 +102,13 @@ export default function StructurePage() {
             <CodeBlock
                 copyButton={false}
                 language="shell"
-                code={`🌐 url = /       # n'est pas accessible publiquement
-🌐 url = /blog   # n'est pas accessible publiquement
-🌐 url = /blog/1 # n'est pas accessible publiquement
+                code={`🌐 url = /       # n&apos;est pas accessible publiquement
+🌐 url = /blog   # n&apos;est pas accessible publiquement
+🌐 url = /blog/1 # n&apos;est pas accessible publiquement
 `} />
 
             <p className="text-base font-light">
-                Et, même lorsqu'un itinéraire est rendu accessible au public, seul le contenu renvoyé par <code className="bg-white/5 p-1 py-0.5 border border-white/10 rounded-md text-[#A9FFEA]">controller.py</code> est envoyé au client.
+                Et, même lorsqu&apos;un itinéraire est rendu accessible au public, seul le contenu renvoyé par <code className="bg-white/5 p-1 py-0.5 border border-white/10 rounded-md text-[#A9FFEA]">controller.py</code> est envoyé au client.
             </p>
             <CodeBlock
                 copyButton={false}
@@ -132,13 +132,13 @@ export default function StructurePage() {
                 code={`🌐 url = /        # accessible publiquement
 🌐 url = /blog    # accessible publiquement
 🌐 url = /blog/1  # accessible publiquement
-🌐 url = /docs    # n'est pas accessible publiquement, _docs/ est privé
-🌐 url = /docs/1  # n'est pas accessible publiquement, _docs/ est privé
+🌐 url = /docs    # n&apos;est pas accessible publiquement, _docs/ est privé
+🌐 url = /docs/1  # n&apos;est pas accessible publiquement, _docs/ est privé
 `} />
 
             <h3 className="text-lg font-medium">Exemple de structure de projet</h3>
             <p className="text-base font-light">
-                L'architecture de base d'un projet Nexy est une symphonie d'organisation, orchestrée pour maximiser la clarté et l'efficacité de votre code. Voici un exemple de cette structure harmonieuse et bien pensée :
+                L&apos;architecture de base d&apos;un projet Nexy est une symphonie d&apos;organisation, orchestrée pour maximiser la clarté et l&apos;efficacité de votre code. Voici un exemple de cette structure harmonieuse et bien pensée :
             </p>
             
             <CodeBlock
@@ -174,10 +174,10 @@ export default function StructurePage() {
             
             <ul className="list-none space-y-2">
                 <li className="text-base font-light before:content-['①'] before:mr-2 before:text-[#37FCCB]">
-                    Familiarisez-vous avec la structure du projet pour bien comprendre l'organisation des fichiers et répertoires. Prenez le temps d'analyser comment chaque composant interagit avec les autres.
+                    Familiarisez-vous avec la structure du projet pour bien comprendre l&apos;organisation des fichiers et répertoires. Prenez le temps d&apos;analyser comment chaque composant interagit avec les autres.
                 </li>
                 <li className="text-base font-light before:content-['②'] before:mr-2 before:text-[#37FCCB]">
-                    Concevez votre première route pour ajouter des fonctionnalités à votre application. Commencez par une tâche simple, comme une page d'accueil ou une API basique.
+                    Concevez votre première route pour ajouter des fonctionnalités à votre application. Commencez par une tâche simple, comme une page d&apos;accueil ou une API basique.
                 </li>
                 <li className="text-base font-light before:content-['③'] before:mr-2 before:text-[#37FCCB]">
                     Expérimentez avec les composants Nexy pour créer des interfaces utilisateur réutilisables et maintenables.
