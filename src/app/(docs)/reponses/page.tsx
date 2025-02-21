@@ -8,7 +8,7 @@ export default function ResponsesPage() {
             <h1 className="text-2xl font-bold">Gestion des Réponses HTTP avec Nexy</h1>
 
             <Mark>
-                Nexy, construit sur FastAPI, offre une gestion avancée des réponses HTTP. Il permet d'utiliser toutes les réponses standard de FastAPI tout en ajoutant des fonctionnalités supplémentaires via le décorateur <code>@HTTPResponse</code>. Ce décorateur simplifie la personnalisation des réponses en encapsulant la logique de réponse dans une fonction unique.
+                Nexy, construit sur FastAPI, offre une gestion avancée des réponses HTTP. Il permet d&apos;utiliser toutes les réponses standard de FastAPI tout en ajoutant des fonctionnalités supplémentaires via le décorateur <code>@HTTPResponse</code>. Ce décorateur simplifie la personnalisation des réponses en encapsulant la logique de réponse dans une fonction unique.
             </Mark>
 
             <h2 className="text-xl font-semibold mt-4">Introduction aux Réponses HTTP</h2>
@@ -132,7 +132,7 @@ def GET():
 
             <h2 className="text-xl font-semibold mt-6">JSONResponse avec et sans Décorateur</h2>
             <Mark>
-                La réponse JSON est le format privilégié pour les API RESTful. Nexy facilite sa manipulation grâce à l'intégration native de Pydantic.
+                La réponse JSON est le format privilégié pour les API RESTful. Nexy facilite sa manipulation grâce à l&apos;intégration native de Pydantic.
             </Mark>
 
             <h3 className="text-lg font-medium mt-4">Avec Décorateur</h3>
@@ -171,8 +171,8 @@ def GET(user_id: int):
 def GET(user_id: int):
     user_data = {
         "id": user_id,
-        "name": "John Doe",
-        "email": "john@example.com"
+        "name": "Espoir Loém",
+        "email": "espoir@example.com"
     }
     return JSONResponse(
         content=user_data,
@@ -222,7 +222,7 @@ async def GET():
 
             <h2 className="text-xl font-semibold mt-6">Gestion des Erreurs</h2>
             <p className="text-base font-light">
-                Nexy fournit des réponses d'erreur standardisées :
+                Nexy fournit des réponses d&apos;erreur standardisées :
             </p>
             <CodeBlock
                 language="python"
@@ -240,13 +240,13 @@ def GET(item_id: int):
 
             <h2 className="text-xl font-semibold mt-6">Meilleures Pratiques pour les Réponses HTTP</h2>
             <p className="text-base font-light">
-                Lors de la conception de vos API avec Nexy, gardez à l'esprit les meilleures pratiques suivantes :
+                Lors de la conception de vos API avec Nexy, gardez à l&apos;esprit les meilleures pratiques suivantes :
             </p>
             <ul className="list-disc list-inside text-base font-light ml-4 space-y-2">
-                <li>Utilisez des codes de statut HTTP appropriés pour indiquer le résultat de l'opération.</li>
-                <li>Fournissez des messages d'erreur clairs et concis pour aider les développeurs à comprendre les problèmes.</li>
+                <li>Utilisez des codes de statut HTTP appropriés pour indiquer le résultat de l&apos;opération.</li>
+                <li>Fournissez des messages d&apos;erreur clairs et concis pour aider les développeurs à comprendre les problèmes.</li>
                 <li>Utilisez des en-têtes HTTP pour transmettre des métadonnées importantes.</li>
-                <li>Assurez-vous que vos réponses sont sécurisées et ne divulguent pas d'informations sensibles.</li>
+                <li>Assurez-vous que vos réponses sont sécurisées et ne divulguent pas d&apos;informations sensibles.</li>
             </ul>
 
             <div className="flex gap-5 justify-between mt-8">

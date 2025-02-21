@@ -120,11 +120,11 @@ cd mon-projet`}
             </ul>
             <div className="flex  gap-5 justify-between mt-5">
                 <Link href="/" className={`cursor-pointer px-4 py-2 text-sm text-left font-normal  rounded-[12px]  bg-[#A9FFEA]/2.5 border border-[#A9FFEA]/5 text-[#A9FFEA] `}>
-                    Introduction 
+                ← Introduction 
                 </Link>
 
                 <Link href="/structure" className={`cursor-pointer px-4 py-2 text-sm text-left font-normal  rounded-[12px]  bg-[#A9FFEA]/20 border border-[#A9FFEA]/25 text-[#A9FFEA] `}>
-                    Structure du projet
+                    Structure du projet →
                 </Link>
 
             </div>
