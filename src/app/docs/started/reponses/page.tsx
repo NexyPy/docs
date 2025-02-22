@@ -250,10 +250,10 @@ def GET(item_id: int):
             </ul>
 
             <div className="flex gap-5 justify-between mt-8">
-                <Link href="/controllers" className={`cursor-pointer px-4 py-2 text-sm text-left font-normal rounded-[12px] bg-[#A9FFEA]/2.5 border border-[#A9FFEA]/5 text-[#A9FFEA]`}>
+                <Link href="/docs/started/controllers" className={`cursor-pointer px-4 py-2 text-sm text-left font-normal rounded-[12px] bg-[#A9FFEA]/2.5 border border-[#A9FFEA]/5 text-[#A9FFEA]`}>
                     ← Controllers
                 </Link>
-                <Link href="/views" className={`cursor-pointer px-4 py-2 text-sm text-left font-normal rounded-[12px] bg-[#A9FFEA]/20 border border-[#A9FFEA]/25 text-[#A9FFEA]`}>
+                <Link href="/docs/started/views" className={`cursor-pointer px-4 py-2 text-sm text-left font-normal rounded-[12px] bg-[#A9FFEA]/20 border border-[#A9FFEA]/25 text-[#A9FFEA]`}>
                     Views →
                 </Link>
             </div>

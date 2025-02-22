@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const SideBar = () => {
     return (
@@ -13,92 +14,170 @@ const SideBar = () => {
 
 };
 
-export default SideBar;
+const StartedData = [
+    {
+        label: "Introduction",
+        href: ""
+    },
+    {
+        label: "Créer un projet",
+        href: "/new_project"
+    },
+    {
+        label: "Structure du projet",
+        href: "/structures"
+    },
+    
+    {
+        label: "Controllers",
+        href: "/controllers"
+    },
+
+    {
+        label: "Reponses",
+        href: "/reponses"
+    }, {
+        label: "Composants",
+        href: "/composants"
+    },
+    {
+        label: "Views",
+        href: "/views"
+    },
+ 
+
+    {
+        label: "Serveur actions",
+        href: "/serveur-actions"
+    },
+    {
+        label: "Middlewares",
+        href: "/middlewares"
+    },
+
+
+    {
+        label: "Configuration",
+        href: "/configuration"
+    },
+
+]
+
+const ReferenceData = [
+    {
+        label: "Reponse",
+        href: ""
+    },
+    {
+        label: "Composant",
+        href: "/composant"
+    },
+    
+]
+
+const IntegrationData = [
+    {
+        label: "React",
+        href: ""
+    },
+    {
+        label: "Next.js",
+        href: "/nextjs"
+    },
+    {
+        label: "Vue.js",
+        href: "/vue"
+    }, 
+]
+
+const CLI = [
+    {
+        label: "Installation",
+        href: ""
+    },
+    {
+        label: "Créer un projet",
+        href: "/create_projects"
+    },{
+        label:"Update",
+        href: "/update"
+    },{
+        label:"Start",
+        href: "/start"
+    },{
+        label:"Stop",
+        href: "/stop"
+    },{
+        label:"Restart",
+        href: "/restart"
+    },{
+        label:"Logs",
+        href: "/logs"
+    }
+    
+]
+
+const API = [
+    {
+        label: "Introduction",
+        href: ""
+    },
+    
+]
+
 
 const SideBarItem = () => {
+    const tabs = [
+        { label: "Commencer", href: "/docs/started", active: true, data: StartedData },
+        { label: "Réference", href: "/docs/reference", active: false, data: ReferenceData },
+        { label: "Intégration", href: "/docs/integration", active: false, data: IntegrationData },
+        { label: "CLI", href: "/docs/cli", active: false, data: CLI },
+        { label: "API", href: "/docs/api", active: false, data: API }, // New tab added
+    ];
 
-    const data = [
-        {
-            label: "Introduction",
-            href: "/"
-        },
-        {
-            label: "Créer un projet",
-            href: "/new_project"
-        },
-        {
-            label: "Structure du projet",
-            href: "/structures"
-        },
-        
-        {
-            label: "Controllers",
-            href: "/controllers"
-        },
-
-        {
-            label: "Reponses",
-            href: "/reponses"
-        },
-        {
-            label: "Views",
-            href: "/views"
-        },
-
-
-        {
-            label: "Composants",
-            href: "/composants"
-        },
-
-        {
-            label: "Serveur actions",
-            href: "/serveur-actions"
-        },
-        {
-            label: "Middlewares",
-            href: "/middlewares"
-        },
-
-
-        {
-            label: "Configuration",
-            href: "/configuration"
-        },
-
-    ]
-
-    const active = usePathname();
-
+    const activePath = usePathname();
+    const [data, setData] = useState(StartedData);
+    const [path, setPath] = useState('/docs/started');
 
     return (
-
         <>
-            <div className="flex flex-col w-full  bg-[#A9FFEA]/5 backdrop-blur-[4p] border border-[#A9FFEA]/10 rounded-[17px] p-1">
-                <button className="px-3 py-2.5 text-sm font-normal bg-[#A9FFEA]/30 border border-[#A9FFEA]/35 text-[#A9FFEA] w-full text-left rounded-[14px]">Commencer</button>
-                <button className="px-3 py-2.5 text-sm font-normal text-left rounded-[14px]">Réference</button>
-                <button className="px-3 py-2.5 text-sm font-normal text-left rounded-[14px]">Intégration</button>
-                <button className="px-3 py-2.5 text-sm font-normal text-left rounded-[14px]">CLI</button>
+            <div className="flex flex-col w-full bg-[#A9FFEA]/5 backdrop-blur-[4px] border border-[#A9FFEA]/10 rounded-[17px] p-1">
+                {tabs.map((item) => (
+                    <Link
+                        href={item.href}
+                        key={item.label}
+                        onClick={() => {
+                            setData(item.data);
+                            setPath(item.href);
+                        }}
+                        className={`px-3 py-2.5 text-sm font-normal text-left rounded-[14px] ${
+                            activePath.startsWith(item.href)
+                                ? "bg-[#A9FFEA]/30 border border-[#A9FFEA]/35 text-[#A9FFEA]"
+                                : "opacity-70"
+                        }`}
+                    >
+                        {item.label}
+                    </Link>
+                ))}
             </div>
             <menu className="flex flex-col w-full">
-                {
-                    data.map(( item ) => (
-                        <Link href={item.href} className={`cursor-pointer px-3 py-1.5 text-sm text-left font-normal  rounded-[10px]  ${active === item.href ? "bg-[#A9FFEA]/2.5 border border-[#A9FFEA]/5 text-[#A9FFEA] " : "opacity-70 "}`} key={item.label}>
-                            {item.label}
-                        </Link>
-
-                    ))
-
-                }
+                {data.map((item) => (
+                    <Link
+                        href={`${path}${item.href}`}
+                        className={`cursor-pointer px-3 py-1.5 text-sm text-left font-normal rounded-[10px] ${
+                            activePath === path + item.href
+                                ? "bg-[#A9FFEA]/2.5 border border-[#A9FFEA]/5 text-[#A9FFEA]"
+                                : "opacity-70"
+                        }`}
+                        key={item.label}
+                    >
+                        {item.label}
+                    </Link>
+                ))}
             </menu>
         </>
-
-
-
-
     );
 };
 
 
-
-
+export {SideBarItem, SideBar};

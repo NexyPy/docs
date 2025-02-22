@@ -5,8 +5,8 @@ import Link from "next/link";
 
 export default function DocsPage() {
     return (
-        <main className="flex-1 flex flex-col gap-5 pt-5 pb-10 text-white/80">
-            <p className="mb-4"><Nexy /></p>
+        <main className="flex-1 flex flex-col gap-5 md:pt-5  pb-10 text-white/80">
+            <p className="mb-4 hidden md:block"><Nexy /></p>
             <Mark>
                 Imaginez un monde où chaque ligne de code Python se transforme en une mélodie d&apos;efficacité. Un univers où la puissance de FastAPI rencontre l&apos;élégance du routing Next.js, créant une symphonie parfaite entre performance et simplicité. Cette vision n&apos;est plus un rêve. Bienvenue dans une nouvelle ère d&apos;excellence du développement web en Python, où chaque projet devient une aventure captivante et ultra-productive.
             </Mark>
@@ -220,10 +220,10 @@ def Button(label: str, on_click: Callable = None):
 
             <div className="flex  gap-5 justify-between mt-5">
                 <Link href="#" className={`cursor-pointer px-4 py-2 text-sm text-left font-normal  rounded-[12px]  bg-[#A9FFEA]/2.5 border border-[#A9FFEA]/5 text-[#A9FFEA] `}>
-                ← Contribuer à Nexy
+                    Contribuer à Nexy
                 </Link>
 
-                <Link href="/new_project" className={`cursor-pointer px-4 py-2 text-sm text-left font-normal  rounded-[12px]  bg-[#A9FFEA]/20 border border-[#A9FFEA]/25 text-[#A9FFEA] `}>
+                <Link href="/docs/started/new_project" className={`cursor-pointer px-4 py-2 text-sm text-left font-normal  rounded-[12px]  bg-[#A9FFEA]/20 border border-[#A9FFEA]/25 text-[#A9FFEA] `}>
                     Créer un nouveau projet →
                 </Link>
 

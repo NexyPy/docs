@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Nexy } from "./svg/nexy";
+import { MenuButton } from "./Button";
 const Header = () => {
     return (
         <header>
@@ -10,19 +11,19 @@ const Header = () => {
 
 const HeaderDocs = () => {
     return (
-        <header className="flex-1 flex justify-between items-center px-14 py-3.5 sticky top-0 z-10 bg-b[#040807]/50 border-b border-[#0D1713]/50 backdrop-blur-md">
+        <header className="flex-1 flex justify-between items-center md:px-14 px-5 md:py-3.5 py-5 sticky top-0 z-10 bg-b[#040807]/50 border-b border-[#0D1713]/50 backdrop-blur-md">
             <div className="flex gap-6 items-center">
-                <Link href="/"><Nexy /></Link>
-                <div className="bg-[#A9FFEA]/10 border border-[#A9FFEA]/10 backdrop-blur-md rounded-[12px] px-2 py-1 text-sm font-light text-[#A9FFEA] " >
+                <Link href="/docs/started"><Nexy /></Link>
+                <div className=" bg-[#A9FFEA]/10 border border-[#A9FFEA]/10 backdrop-blur-md rounded-[12px] px-2 py-1 text-sm font-light text-[#A9FFEA] " >
                     V0-1-canary
                 </div>
 
             </div>
 
-            <menu className="flex items-center gap-2.5">
+            <menu className="hidden md:flex items-center gap-2.5">
                 <button className="w-full flex items-center gap-1.5 bg-[#A9FFEA]/8 border border-[#A9FFEA]/10 rounded-full p-1 pr-10">
                     <svg className="size-8" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="34"  height="34" rx="17" fill="#A9FFEA" fillOpacity="0.2" />
+                        <rect width="34" height="34" rx="17" fill="#A9FFEA" fillOpacity="0.2" />
 
                         <rect x="0.25" y="0.25" width="33.5" height="33.5" rx="16.75" stroke="#A9FFEA" strokeOpacity="0.4" strokeWidth="0.5" />
                         <path d="M24 24.6152L19.9581 20.5733ZM19.9581 20.5733C21.052 19.4793 21.6666 17.9956 21.6666 16.4485C21.6666 14.9014 21.052 13.4177 19.9581 12.3238C18.8641 11.2298 17.3804 10.6152 15.8333 10.6152C14.2862 10.6152 12.8025 11.2298 11.7085 12.3238C10.6146 13.4177 10 14.9014 10 16.4485C10 17.9956 10.6146 19.4793 11.7085 20.5733C12.8025 21.6673 14.2862 22.2818 15.8333 22.2818C17.3804 22.2818 18.8641 21.6673 19.9581 20.5733Z" fill="#A9FFEA" fillOpacity="0.8" />
@@ -74,6 +75,8 @@ const HeaderDocs = () => {
 
                 </button>
             </menu>
+
+            <MenuButton />
         </header>
 
 

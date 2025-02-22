@@ -16,3 +16,7 @@ body {
   background: var(--background);
   color: #F6F6F6;
 } 
+
+@theme {
+  --color-background: var(--background);
+}
