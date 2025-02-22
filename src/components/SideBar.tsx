@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { act, useEffect, useState } from "react";
 
 const SideBar = () => {
     return (
@@ -149,7 +149,14 @@ const SideBarItem = () => {
     }
 
     useEffect(() => {
-        setPath(activePath as DataKeys);
+        const keys = Object.keys(data);
+        console.log(keys);
+        for (const key of keys) {
+            if (activePath.startsWith(key)) {
+                setPath(key as DataKeys);
+                break;
+            }
+        }
     }, [activePath]);
 
     return (
