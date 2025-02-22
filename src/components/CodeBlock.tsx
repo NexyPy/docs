@@ -52,9 +52,9 @@ export async function CodeBlock({
         </p>
         <CopyButton code={code} />
       </div> }
-      <div className=" w-full overflow-x-auto bg-[#F9FFFD]/5 px-1.5 py-0.5 rounded-[14px] border border-[#7E8382]/20 backdrop-blur-md">
+      <div className=" w-full  bg-[#F9FFFD]/5 px-1.5 py-0.5 rounded-[14px] border border-[#7E8382]/20 backdrop-blur-md">
         <div
-          className="w-[calc(100dvw_-_60px)] md:w-full [&>pre]:overflow-x-auto [&>pre]:!w-full overflow-x-auto p-4 [&>pre]:!bg-transparent [&>pre]:!m-0 [&_.line]:!px-0"
+          className="w-[calc(100dvw_-_60px)] md:w-full [&>pre]:overflow-x-auto [&>pre]:!w-full  p-4 [&>pre]:!bg-transparent [&>pre]:!m-0 [&_.line]:!px-0"
           dangerouslySetInnerHTML={{ __html: out }}
           
         >

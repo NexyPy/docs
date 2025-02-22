@@ -224,7 +224,7 @@ def Button(label: str, on_click: Callable = None):
                 </Link>
 
                 <Link href="/docs/started/new_project" className={`cursor-pointer px-4 py-2 text-sm text-left font-normal  rounded-[12px]  bg-[#A9FFEA]/20 border border-[#A9FFEA]/25 text-[#A9FFEA] `}>
-                    Créer un nouveau projet →
+                    Nouveau projet →
                 </Link>
 
             </div>

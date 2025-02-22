@@ -124,7 +124,7 @@ cd mon-projet`}
                 </Link>
 
                 <Link href="/docs/started/structures" className={`cursor-pointer px-4 py-2 text-sm text-left font-normal  rounded-[12px]  bg-[#A9FFEA]/20 border border-[#A9FFEA]/25 text-[#A9FFEA] `}>
-                    Structure du projet →
+                    Structure →
                 </Link>
 
             </div>
