@@ -14,119 +14,47 @@ const SideBar = () => {
 
 };
 
-const StartedData = [
-    {
-        label: "Introduction",
-        href: ""
-    },
-    {
-        label: "Créer un projet",
-        href: "/new_project"
-    },
-    {
-        label: "Structure du projet",
-        href: "/structures"
-    },
-    
-    {
-        label: "Controllers",
-        href: "/controllers"
-    },
-
-    {
-        label: "Reponses",
-        href: "/reponses"
-    }, {
-        label: "Composants",
-        href: "/composants"
-    },
-    {
-        label: "Views",
-        href: "/views"
-    },
- 
-
-    {
-        label: "Serveur actions",
-        href: "/serveur-actions"
-    },
-    {
-        label: "Middlewares",
-        href: "/middlewares"
-    },
-
-
-    {
-        label: "Configuration",
-        href: "/configuration"
-    },
-
-]
-
-const ReferenceData = [
-    {
-        label: "Reponse",
-        href: ""
-    },
-    {
-        label: "Composant",
-        href: "/composant"
-    },
-    
-]
-
-const IntegrationData = [
-    {
-        label: "React",
-        href: ""
-    },
-    {
-        label: "Next.js",
-        href: "/nextjs"
-    },
-    {
-        label: "Vue.js",
-        href: "/vue"
-    }, 
-]
-
-const CLI = [
-    {
-        label: "Installation",
-        href: ""
-    },
-    {
-        label: "Créer un projet",
-        href: "/create_projects"
-    },{
-        label:"Update",
-        href: "/update"
-    },{
-        label:"Start",
-        href: "/start"
-    },{
-        label:"Stop",
-        href: "/stop"
-    },{
-        label:"Restart",
-        href: "/restart"
-    },{
-        label:"Logs",
-        href: "/logs"
-    }
-    
-]
-
-const API = [
-    {
-        label: "Introduction",
-        href: ""
-    },
-    
-]
 
 
 const SideBarItem = () => {
+
+const StartedData = [
+    { label: "Introduction", href: "" },
+    { label: "nouveau projet", href: "/new_project" },
+    { label: "Structure du projet", href: "/structures" },
+    { label: "Controllers", href: "/controllers" },
+    { label: "Reponses", href: "/reponses" },
+    { label: "Composants", href: "/composants" },
+    { label: "Views", href: "/views" },
+    { label: "Serveur actions", href: "/serveur-actions" },
+    { label: "Middlewares", href: "/middlewares" },
+    { label: "Configuration", href: "/configuration" },
+];
+
+const ReferenceData = [
+    { label: "Reponse", href: "" },
+    { label: "Composant", href: "/composant" },
+];
+
+const IntegrationData = [
+    { label: "React", href: "" },
+    { label: "Next.js", href: "/nextjs" },
+    { label: "Vue.js", href: "/vue" },
+];
+
+const CLI = [
+    { label: "Installation", href: "" },
+    { label: "Créer un projet", href: "/create_projects" },
+    { label: "Update", href: "/update" },
+    { label: "Start", href: "/start" },
+    { label: "Stop", href: "/stop" },
+    { label: "Restart", href: "/restart" },
+    { label: "Logs", href: "/logs" },
+];
+
+const API = [
+    { label: "Introduction", href: "" },
+];
     const tabs = [
         { label: "Commencer", href: "/docs/started", active: true, data: StartedData },
         { label: "Réference", href: "/docs/reference", active: false, data: ReferenceData },
