@@ -1,5 +1,4 @@
 "use client"
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { SideBarItem } from './SideBar';
 import useStore from '@/store';
