@@ -1,6 +1,6 @@
 "use client"
 import { motion } from 'framer-motion';
-import { SideBarItem } from './SideBar';
+import { SideBarItem } from '@/components/SideBar';
 import useStore from '@/store';
 
 interface ModalProps {

@@ -1,7 +1,7 @@
 
 // import type { BundledLanguage } from 'shiki'
 import { codeToHtml,BundledLanguage } from 'shiki'
-import CopyButton from "./btnCopier";
+import CopyButton from "@/components/btnCopier";
 
 
 
@@ -63,3 +63,8 @@ export async function CodeBlock({
     </article>
   );
 }
+
+
+
+
+

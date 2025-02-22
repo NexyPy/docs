@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Nexy } from "./svg/nexy";
-import { MenuButton } from "./Button";
+import { Nexy } from "@/components/svg/nexy";
+import { MenuButton } from "@/components/Button";
 const Header = () => {
     return (
         <header>

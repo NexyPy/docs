@@ -1,12 +1,11 @@
 import type { MDXComponents } from 'mdx/types'
-import Button from './components/Button'
-import Input from './components/Input'
-import { CodeBlock } from './components/CodeBlock'
-import CopyButton from './components/btnCopier'
-import Badge from './components/Badge'
-import Mark from './components/Mark'
-import SideBar from './components/SideBar'
-import SideBarItem from './components/SideBar'
+import { Button } from '@/components/Button'
+import Input from '@/components/Input'
+import { CodeBlock } from '@/components/CodeBlock'
+import CopyButton from '@/components/btnCopier'
+import Badge from '@/components/Badge'
+import Mark from '@/components/Mark'
+import { SideBar , SideBarItem} from '@/components/SideBar'
 
 
 
