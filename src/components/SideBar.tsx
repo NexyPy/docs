@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const SideBar = () => {
     return (
@@ -14,47 +14,124 @@ const SideBar = () => {
 
 };
 
+const StartedData = [
+    {
+        label: "Introduction",
+        href: ""
+    },
+    {
+        label: "Créer un projet",
+        href: "/new_project"
+    },
+    {
+        label: "Structure du projet",
+        href: "/structures"
+    },
+    
+    {
+        label: "Controllers",
+        href: "/controllers"
+    },
 
+    {
+        label: "Reponses",
+        href: "/reponses"
+    }, {
+        label: "Composants",
+        href: "/composants"
+    },
+    {
+        label: "Views",
+        href: "/views"
+    },
+ 
+
+    {
+        label: "Serveur actions",
+        href: "/serveur-actions"
+    },
+    {
+        label: "Middlewares",
+        href: "/middlewares"
+    },
+
+
+    {
+        label: "Configuration",
+        href: "/configuration"
+    },
+
+]
+
+const ReferenceData = [
+    {
+        label: "Reponse",
+        href: ""
+    },
+    {
+        label: "Composant",
+        href: "/composant"
+    },
+    
+]
+
+const IntegrationData = [
+    {
+        label: "React",
+        href: ""
+    },
+    {
+        label: "Next.js",
+        href: "/nextjs"
+    },
+    {
+        label: "Vue.js",
+        href: "/vue"
+    }, 
+]
+
+const CLI = [
+    {
+        label: "Installation",
+        href: ""
+    },
+    {
+        label: "Créer un projet",
+        href: "/create_projects"
+    },{
+        label:"Update",
+        href: "/update"
+    },{
+        label:"Start",
+        href: "/start"
+    },{
+        label:"Stop",
+        href: "/stop"
+    },{
+        label:"Restart",
+        href: "/restart"
+    },{
+        label:"Logs",
+        href: "/logs"
+    }
+    
+]
+
+const API = [
+    {
+        label: "Introduction",
+        href: ""
+    },
+    
+]
+
+// Define a type for the keys of the data object
+type DataKeys = "/docs/started" | "/docs/reference" | "/docs/integration" | "/docs/cli" | "/docs/api";
 
 const SideBarItem = () => {
 
-const StartedData = [
-    { label: "Introduction", href: "" },
-    { label: "nouveau projet", href: "/new_project" },
-    { label: "Structure du projet", href: "/structures" },
-    { label: "Controllers", href: "/controllers" },
-    { label: "Reponses", href: "/reponses" },
-    { label: "Composants", href: "/composants" },
-    { label: "Views", href: "/views" },
-    { label: "Serveur actions", href: "/serveur-actions" },
-    { label: "Middlewares", href: "/middlewares" },
-    { label: "Configuration", href: "/configuration" },
-];
-
-const ReferenceData = [
-    { label: "Reponse", href: "" },
-    { label: "Composant", href: "/composant" },
-];
-
-const IntegrationData = [
-    { label: "React", href: "" },
-    { label: "Next.js", href: "/nextjs" },
-    { label: "Vue.js", href: "/vue" },
-];
-
-const CLI = [
-    { label: "Installation", href: "" },
-    { label: "Créer un projet", href: "/create_projects" },
-    { label: "Update", href: "/update" },
-    { label: "Start", href: "/start" },
-    { label: "Stop", href: "/stop" },
-    { label: "Restart", href: "/restart" },
-    { label: "Logs", href: "/logs" },
-];
-
-const API = [
-    { label: "Introduction", href: "" },
-];
+    const activePath = usePathname()
+    const [path, setPath] = useState<DataKeys>('/docs/started');
     const tabs = [
         { label: "Commencer", href: "/docs/started", active: true, data: StartedData },
         { label: "Réference", href: "/docs/reference", active: false, data: ReferenceData },
@@ -63,9 +140,17 @@ const API = [
         { label: "API", href: "/docs/api", active: false, data: API }, // New tab added
     ];
 
-    const activePath = usePathname();
-    const [data, setData] = useState(StartedData);
-    const [path, setPath] = useState('/docs/started');
+    const data = {
+        "/docs/started": StartedData,
+        "/docs/reference": ReferenceData,
+        "/docs/integration": IntegrationData,
+        "/docs/cli": CLI,
+        "/docs/api": API,
+    }
+
+    useEffect(() => {
+        setPath(activePath as DataKeys);
+    }, [activePath]);
 
     return (
         <>
@@ -74,10 +159,6 @@ const API = [
                     <Link
                         href={item.href}
                         key={item.label}
-                        onClick={() => {
-                            setData(item.data);
-                            setPath(item.href);
-                        }}
                         className={`px-3 py-2.5 text-sm font-normal text-left rounded-[14px] ${
                             activePath.startsWith(item.href)
                                 ? "bg-[#A9FFEA]/30 border border-[#A9FFEA]/35 text-[#A9FFEA]"
@@ -89,7 +170,7 @@ const API = [
                 ))}
             </div>
             <menu className="flex flex-col w-full">
-                {data.map((item) => (
+                {data[path]?.map((item: { label: string; href: string }) => (
                     <Link
                         href={`${path}${item.href}`}
                         className={`cursor-pointer px-3 py-1.5 text-sm text-left font-normal rounded-[10px] ${

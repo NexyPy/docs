@@ -35,7 +35,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
     );
 };
 
-const MenuBottomSheet = ({ }) => {
+const MenuBottomSheet = () => {
     const { menuIsOpen, setMenuIsOpen } = useStore();
     return (
         <>
