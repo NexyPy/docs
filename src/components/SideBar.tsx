@@ -38,7 +38,7 @@ const StartedData = [
         href: "/reponses"
     }, {
         label: "Composants",
-        href: "/composants"
+        href: "/components"
     },
     {
         label: "Views",
@@ -70,7 +70,7 @@ const ReferenceData = [
     },
     {
         label: "Composant",
-        href: "/composant"
+        href: "/components"
     },
     
 ]

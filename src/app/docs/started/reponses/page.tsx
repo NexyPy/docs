@@ -62,9 +62,8 @@ class CustomJSONResponse(Response):
     
     def render(self, content: Any) -> bytes:
         # Logique de rendu personnalisée
-        return json.dumps(
-            {"data": content, "timestamp": datetime.now().isoformat()}
-        ).encode("utf-8")
+        data = {\n\t\t\t"data": content, \n\t\t\t"timestamp": datetime.now().isoformat()\n\t\t}
+        return json.dumps(data).encode("utf-8")
 
 @HTTPResponse(type=CustomJSONResponse)
 def GET():
@@ -253,8 +252,8 @@ def GET(item_id: int):
                 <Link href="/docs/started/controllers" className={`cursor-pointer px-4 py-2 text-sm text-left font-normal rounded-[12px] bg-[#A9FFEA]/2.5 border border-[#A9FFEA]/5 text-[#A9FFEA]`}>
                     ← Controllers
                 </Link>
-                <Link href="/docs/started/views" className={`cursor-pointer px-4 py-2 text-sm text-left font-normal rounded-[12px] bg-[#A9FFEA]/20 border border-[#A9FFEA]/25 text-[#A9FFEA]`}>
-                    Views →
+                <Link href="/docs/started/components" className={`cursor-pointer px-4 py-2 text-sm text-left font-normal rounded-[12px] bg-[#A9FFEA]/20 border border-[#A9FFEA]/25 text-[#A9FFEA]`}>
+                    Composants →
                 </Link>
             </div>
         </main>
