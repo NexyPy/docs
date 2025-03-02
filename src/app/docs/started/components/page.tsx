@@ -11,14 +11,14 @@ export default function ComponentsPage() {
                 Les composants sont essentiels dans Nexy. Ils constituent la base de vos interfaces utilisateurs (UI), ce qui en fait un excellent point de départ pour apprendre Nexy !
             </Mark>
 
-            <h2 className="text-xl font-semibold mt-4">Les composants : les blocs de construction de l'UI</h2>
+            <h2 className="text-xl font-semibold mt-4">Les composants : les blocs de construction de l&apos;UI</h2>
             <p className="text-base font-light">
                 Sur le Web, HTML permet de créer des documents riches et structurés grâce à ses nombreuses balises comme <code>&lt;h1&gt;</code> et <code>&lt;li&gt;</code>. Nexy vous permet de combiner votre balisage avec CSS et JavaScript pour créer des composants personnalisés, réutilisables dans votre application.
             </p>
 
             <h2 className="text-xl font-semibold mt-6">Définir un composant</h2>
             <p className="text-base font-light">
-                Traditionnellement, les développeurs web écrivent le balisage de leur contenu puis ajoutent de l'interactivité avec JavaScript. Aujourd'hui, c'est une exigence de base pour de nombreux sites et applications. Nexy met l'interactivité au premier plan tout en utilisant les mêmes technologies de base : un composant Nexy est une fonction Python que vous pouvez enrichir avec du balisage.
+                Traditionnellement, les développeurs web écrivent le balisage de leur contenu puis ajoutent de l&apos;interactivité avec JavaScript. Aujourd&apos;hui, c&apos;est une exigence de base pour de nombreux sites et applications. Nexy met l&apos;interactivité au premier plan tout en utilisant les mêmes technologies de base : un composant Nexy est une fonction Python que vous pouvez enrichir avec du balisage.
             </p>
             <CodeBlock
                 language="shell"
@@ -37,7 +37,7 @@ export default function ComponentsPage() {
 
             <h3 className="text-lg font-medium mt-4">Utiliser un composant</h3>
             <p className="text-base font-light">
-                Maintenant que vous avez défini votre composant Button, vous pouvez l'imbriquer dans d'autres composants. Par exemple, vous pouvez utiliser le composant Button dans une vue :
+                Maintenant que vous avez défini votre composant Button, vous pouvez l&apos;imbriquer dans d&apos;autres composants. Par exemple, vous pouvez utiliser le composant Button dans une vue :
             </p>
             <CodeBlock
                 language="html"
@@ -46,7 +46,7 @@ export default function ComponentsPage() {
 
             <h2 className="text-xl font-semibold mt-6">Composants avec contenu enfant</h2>
             <p className="text-base font-light">
-                Le paramètre <code>caller</code> permet à un composant de recevoir et d'afficher du contenu enfant, transformant le composant en une balise de type bloc.
+                Le paramètre <code>caller</code> permet à un composant de recevoir et d&apos;afficher du contenu enfant, transformant le composant en une balise de type bloc.
             </p>
             <CodeBlock
                 language="shell"
@@ -74,7 +74,7 @@ export default function ComponentsPage() {
 
             <h2 className="text-xl font-semibold mt-6">Composition de composants</h2>
             <p className="text-base font-light">
-                Les composants peuvent être composés pour créer des interfaces complexes. L'attribut <code>imports</code> permet d'utiliser d'autres composants à l'intérieur d'un composant.
+                Les composants peuvent être composés pour créer des interfaces complexes. L&apos;attribut <code>imports</code> permet d&apos;utiliser d&apos;autres composants à l&apos;intérieur d&apos;un composant.
             </p>
             <CodeBlock
                 language="shell"
@@ -93,7 +93,7 @@ export default function ComponentsPage() {
 
             <h2 className="text-xl font-semibold mt-6">Composants conteneurs</h2>
             <p className="text-base font-light">
-                Les composants conteneurs peuvent encapsuler d'autres composants et du contenu, créant ainsi une structure hiérarchique.
+                Les composants conteneurs peuvent encapsuler d&apos;autres composants et du contenu, créant ainsi une structure hiérarchique.
             </p>
             <CodeBlock
                 language="shell"
@@ -115,7 +115,7 @@ export default function ComponentsPage() {
                 Utiliser le système de composants de Nexy présente plusieurs avantages :
             </p>
             <ul className="list-disc list-inside text-base font-light ml-4 space-y-2">
-                <li>Réutilisation du code à travers différentes parties de l'application</li>
+                <li>Réutilisation du code à travers différentes parties de l&apos;application</li>
                 <li>Séparation claire entre la logique et la présentation</li>
                 <li>Facilité de maintenance grâce à la modularité</li>
                 <li>Possibilité de créer des bibliothèques de composants pour une utilisation dans plusieurs projets</li>
