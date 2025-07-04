@@ -22,23 +22,22 @@ const GET_STARTED = [
     }
 ];
 
-
 const BASICS = [
-    // {
-    //     id: 1,
-    //     title: "Routing",
-    //     link: "/routing"
-    // },
     {
-        id: 2,
+        id: 1,
         title: "Controllers",
         link: "/controllers"
     },
-    // {
-    //     id: 3,
-    //     title: "Middleware",
-    //     link: "/middleware"
-    // },
+    {
+        id: 2,
+        title: "Request",
+        link: "/request"
+    },
+    {
+        id: 3,
+        title: "Response",
+        link: "/response"
+    },
     {
         id: 4,
         title: "Body Parser",
@@ -46,18 +45,18 @@ const BASICS = [
     },
     {
         id: 5,
-        title: "Request",
-        link: "/request"
+        title: "Validation",
+        link: "/validation"
     },
     {
         id: 6,
-        title: "Response",
-        link: "/response"
+        title: "Exception",
+        link: "/exception"
     },
     {
         id: 7,
-        title: "Validation",
-        link: "/validation"
+        title: "Middleware",
+        link: "/middleware"
     },
     {
         id: 8,
@@ -66,18 +65,13 @@ const BASICS = [
     },
     {
         id: 9,
-        title: "Session",
-        link: "/session"
-    },
-    {
-        id: 10,
         title: "Cookies",
         link: "/cookies"
     },
     {
-        id: 11,
-        title: "Exception",
-        link: "/exception"
+        id: 10,
+        title: "Session",
+        link: "/session"
     }
 ];
 
