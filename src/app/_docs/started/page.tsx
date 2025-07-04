@@ -1,6 +1,6 @@
 import { CodeBlock } from "@/components/CodeBlock";
 import Mark from "@/components/Mark";
-import { Nexy } from "@/components/svg/nexy";
+import { Nexy } from "@/components/icons/nexy";
 import Link from "next/link";
 
 export default function DocsPage() {

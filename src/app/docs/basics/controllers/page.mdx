@@ -1,0 +1,297 @@
+# Contrôleurs
+
+Les contrôleurs sont responsables du traitement des demandes entrantes et de l'envoi des réponses au client.
+
+Le rôle d'un contrôleur est de gérer des requêtes spécifiques pour l'application. Le mécanisme de routage détermine quel contrôleur traitera chaque requête. 
+
+<Mark>
+    Dans <Badge>Nexy</Badge>, un contrôleur est simplement tout fichier <Badge>controller.py</Badge> situé dans le répertoire <Badge>app</Badge> ou ses sous-répertoires. 
+</Mark>
+
+<CodeCard fileName="Structure">
+  <Structure>
+    <Folder folderName="app">
+      <Folder folderName="users">
+        <File fileName="controller.py"/>
+      </Folder>
+      <Folder folderName="articles"> 
+        <File fileName="controller.py"/>
+      </Folder>
+      <File fileName="controller.py"/>
+    </Folder>
+  </Structure>
+</CodeCard>
+
+___
+
+## Route
+
+Une route est une association entre un chemin URL et une action dans l'application. Lorsqu'un utilisateur accède à une URL spécifique, la route correspondante est identifiée et exécutée pour traiter la demande.
+ 
+Dans <Badge>Nexy</Badge>, une route est définie par la structure de répertoires dans le dossier <Badge>app</Badge>. Le répertoire <Badge>app</Badge> lui-même représente la route principale, et chaque sous-répertoire définit une route imbriquée.
+
+<CodeCard fileName="Structure">
+  <Structure>
+    <Folder folderName="app">
+      <Folder folderName="users"/>
+      <Folder folderName="articles"/> 
+    </Folder>
+  </Structure>
+</CodeCard>
+
+### Route dynamique
+
+Les routes dynamiques permettent d'identifier des ressources spécifiques en utilisant des paramètres de route. Ces paramètres sont définis dans le chemin de la route et peuvent être extraits par la fonction de traitement de la route.
+
+Dans <Badge>Nexy</Badge>, une route devient dynamique lorsque le nom du répertoire ou dossier est encadré par des crochets, comme ceci : <Badge>[dossier]</Badge>.
+
+<CodeCard fileName="Structure">
+  <Structure>
+    <Folder folderName="app">
+      <Folder folderName="users">
+        <Folder folderName="[userId]"/>
+      </Folder>
+      <Folder folderName="articles">
+        <Folder folderName="[articleId]"/>
+      </Folder>
+        <Folder folderName="[blog]"/>
+    </Folder>
+  </Structure>
+</CodeCard>
+
+<Mark>
+  Les routes dynamiques fonctionnent de la même manière pour tous les types d'endpoints.
+</Mark>
+
+___
+
+## Endpoint
+
+Un endpoint représente un point d'interface complet exposé par l'application qui permet l'interaction avec des services, des ressources ou des fonctionnalités spécifiques. Il comprend :
+
+- <span className="text-amber-50/50 text-sm">① </span> Le chemin d'accès URL qui identifie la ressource
+- <span className="text-amber-50/50 text-sm">② </span> Le protocole de communication (HTTP ou WebSocket)
+- <span className="text-amber-50/50 text-sm">③ </span> La fonction de traitement qui gère les requêtes entrantes
+
+Dans <Badge>Nexy</Badge>, le framework prend en charge deux types d'endpoints principaux :
+
+- <span className="text-amber-50/50 text-sm">① </span> Les endpoints HTTP
+- <span className="text-amber-50/50 text-sm">② </span> Les endpoints WebSocket
+
+___
+
+## Endpoints HTTP 
+
+Les endpoints HTTP suivent le modèle requête-réponse traditionnel et sont utilisés pour effectuer des opérations CRUD (Create, Read, Update, Delete) sur des ressources.
+<Mark>
+  Pour créer un endpoint HTTP dans <Badge>Nexy</Badge>, il suffit de définir une fonction ( asynchrone ou pas comme dans <MDXLink href="https://fastapi.tiangolo.com/async/#concurrent-burgers">FastAPI</MDXLink> ) dont le nom correspond à la méthode HTTP souhaitée (<Badge>GET</Badge>, <Badge>POST</Badge>, <Badge>PUT</Badge>, <Badge>DELETE</Badge>, etc.) dans un fichier <Badge>controller.py</Badge>.
+</Mark>
+
+### GET
+
+La méthode GET est la méthode fondamentale de récupération de données. Elle permet de lire des informations sans modifier l'état du serveur, 
+ce qui en fait la méthode la plus sécurisée et la plus utilisée. 
+
+Son utilisation principale concerne l'affichage des pages et la consultation des ressources comme les profils utilisateurs ou les listes de produits.
+
+
+<CodeCard fileName="app/**/controller.py">
+<Code language="python"
+theme="catppuccin-mocha"
+code = {
+`from typing import Dict
+
+def GET() -> Dict[str, str] :
+    return {"message":"Salut Espoir Loém"}
+`
+}
+/>
+
+</CodeCard>
+
+Dans une route dynamique, il est possible d'extraire les paramètres de la route en utilisant le nom de la route dynamique comme paramètre de la fonction .
+
+<CodeCard fileName="app/users/[userId]/controller.py">
+<Structure>
+    <Folder folderName="app">
+      <Folder folderName="users">
+        <Folder folderName="[userId]">
+          <File fileName="controller.py"/>
+        </Folder>
+      </Folder>
+    </Folder>
+  </Structure>
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from typing import Dict
+
+def GET(userId : int) -> Dict[str, str] :
+    users = ["Espoir Loém", "Force Espoir","LOEMBA PACKA"]
+    return {"user": users[userId]}
+`
+}
+/>
+</CodeCard>
+
+### POST
+
+Complémentaire à GET, la méthode POST est dédiée à la création de nouvelles ressources. Elle assure un transfert sécurisé des données vers le serveur, avec une validation systématique avant sauvegarde. 
+
+Cette méthode est essentielle pour toutes les opérations d'ajout, que ce soit la création de comptes utilisateurs ou la publication de nouveaux contenus.
+
+<CodeCard fileName="app/**/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from typing import Dict, List
+
+userList : List[Dict[str, str]] = None
+
+def POST() -> List[Dict[str, str]] :
+    userList.append({"name":"Espoir Loém", "nationality":"Congolese"})
+    return userList
+`
+}
+/>
+</CodeCard>
+
+Dans une route dynamique 
+
+<CodeCard fileName="app/users/[userId]/controller.py">
+<Structure>
+    <Folder folderName="app">
+      <Folder folderName="users">
+        <Folder folderName="[userId]">
+          <File fileName="controller.py"/>
+        </Folder>
+      </Folder>
+    </Folder>
+  </Structure>
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request, Depends
+from .service import AppService
+
+async def POST(
+      userId: int,
+      service: Depends(AppService),
+      request: Request,
+    ) -> Dict[str, str]:
+
+    comment_data = await request.json()
+    data = await service.add_comment(userId, comment_data)
+
+    return data
+`
+}
+/>
+</CodeCard>
+
+
+<Mark>
+  Noté que Nexy supporte les Methode HTTP suivant :
+  <MDXLink href="https://developer.mozilla.org/docs/Web/HTTP/Methods/GET"><Badge>GET</Badge></MDXLink>
+  <MDXLink href="https://developer.mozilla.org/docs/Web/HTTP/Methods/POST"><Badge>POST</Badge></MDXLink>
+  <MDXLink href="https://developer.mozilla.org/docs/Web/HTTP/Methods/PUT"><Badge>PUT</Badge></MDXLink>
+  <MDXLink href="https://developer.mozilla.org/docs/Web/HTTP/Methods/DELETE"><Badge>DELETE</Badge></MDXLink>
+  <MDXLink href="https://developer.mozilla.org/docs/Web/HTTP/Methods/OPTIONS"><Badge>OPTIONS</Badge></MDXLink>
+  <MDXLink href="https://developer.mozilla.org/docs/Web/HTTP/Methods/HEAD"><Badge>HEAD</Badge></MDXLink>
+  <MDXLink href="https://developer.mozilla.org/docs/Web/HTTP/Methods/PATCH"><Badge>PATCH</Badge></MDXLink>
+  <MDXLink href="https://developer.mozilla.org/docs/Web/HTTP/Methods/TRACE"><Badge>TRACE</Badge></MDXLink>
+
+</Mark>
+Chaque endpoint HTTP est caractérisé par :
+- <span className="text-amber-50/50 text-sm">① </span> une communication ponctuelle et sans état
+- <span className="text-amber-50/50 text-sm">② </span> l'utilisation d'une méthode HTTP spécifique
+- <span className="text-amber-50/50 text-sm">③ </span> une structure de données d'entrée et de sortie bien définie
+
+___
+
+## Endpoints WebSocket
+
+Les endpoints WebSocket établissent une connexion persistante et bidirectionnelle entre le client et le serveur, permettant des communications en temps réel.
+
+Ces endpoints sont particulièrement adaptés pour :
+- <span className="text-amber-50/50 text-sm">① </span> Les applications nécessitant des mises à jour instantanées
+- <span className="text-amber-50/50 text-sm">② </span> Les fonctionnalités de chat et de messagerie
+- <span className="text-amber-50/50 text-sm">③ </span> Les tableaux de bord en temps réel
+- <span className="text-amber-50/50 text-sm">④ </span> Les notifications push
+
+Un endpoint WebSocket dans <Badge>Nexy</Badge> maintient un état de connexion et permet l'envoi de messages dans les deux sens à tout moment, contrairement aux endpoints HTTP qui suivent un strict modèle de requête-réponse.
+
+### Comment créer un endpoint WebSocket ?
+Tout comme pour les endpoints HTTP, il suffit de créer une fonction asynchrone nommée <Badge>SOCKET</Badge>  dans un fichier <Badge>controller.py</Badge>.
+
+
+<CodeCard fileName="app/**/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import WebSocket
+
+async def SOCKET(ws: WebSocket):
+    await ws.accept()  # Accept the WebSocket connection
+    
+    try:
+        while True:
+            # Receive message from client
+            message = await ws.receive_text()
+            
+            # Echo the message back
+            await ws.send_text(f"Server received: {message}")
+            
+    except Exception:
+        await ws.close()
+`
+}
+/>
+
+
+</CodeCard>
+
+
+
+Tout comme pour les endpoints HTTP, il est possible d'extraire les paramètres de la route en utilisant le nom de la route dynamique comme paramètre de la fonction.
+
+<CodeCard fileName="app/users/[userId]/controller.py">
+<Structure>
+    <Folder folderName="app">
+      <Folder folderName="users">
+        <Folder folderName="[userId]">
+          <File fileName="controller.py"/>
+        </Folder>
+      </Folder>
+    </Folder>
+  </Structure>
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import WebSocket
+
+async def SOCKET(userId: int, ws: WebSocket):  
+    await ws.accept()
+    await ws.send_text(f"Hello user {userId}")
+    await ws.close()
+` 
+}
+/>
+</CodeCard>
+
+___
+
+## 👌 Bravo !
+Maintenant que vous avez appris à propos des contrôleurs et des endpoints, vous pouvez commencer à construire la structure API de votre application !
+Découvrons comment faire cela dans la section suivante.
+<SwitchPage
+    prev = { {
+        label: "Guidee de contruction",
+        href: "/started/"
+    }}
+    next ={ {
+        label: "Installation",
+        href: "/started/"
+    }}
+
+/>

@@ -1,22 +1,96 @@
 @import "tailwindcss";
+/* @plugin "@tailwindcss/typography"; */
 
 @source "../src/**/*.{js,ts,jsx,tsx,md}";
 @source "../src/components*.{js,ts,jsx,tsx,md}";
 
 /* Ajouter des variables CSS */
 :root {
-  --primary-color: #A9FFEA;
-  --background: color-mix(in srgb, #040807 60%, #0D1713 40%);
+
+    --primary-color: rgb(168, 255, 233);
+    --background: color-mix(in srgb, hsl(165, 33%, 2%) 60%, hsl(156, 28%, 7%) 40%);
+    --foreground : hsl(0, 0%, 96%);
+
+  @media (prefers-color-schem: light){
+    --primary-color: hsl(150, 58%, 40%);
+    --background: color-mix(in srgb, hsl(155, 20%, 84%) 60%, #EDEFF2 40%);
+    --foreground: hsl(164, 92%, 5%);
+  }
 }
 
-body {
-  /* background-color: #040807; */
-  /* background-color: #0D1713; */
-  
-  background: var(--background);
-  color: #F6F6F6;
-} 
 
+@custom-variant dark (&:where(.dark, .dark *));
 @theme {
   --color-background: var(--background);
+  --color-primary: var(--primary-color);
+  --color-foreground: var(--foreground);
+}
+
+@layer base {
+
+  * {
+    @apply outline-0;
+  }
+  body{
+    @apply bg-background text-foreground dark:bg-amber-100;
+  }
+  *:not(hr, .notscroll) {
+    scrollbar-width: thin;
+    scrollbar-color: #e6f3eaa6 transparent;
+    scrollbar-gutter: stable;
+
+    @media (prefers-color-scheme: light) {
+      scrollbar-color: #66696778 transparent;
+      
+    }
+
+  }
+
+  .mdx {
+    & h1 {
+      @apply text-4xl font-semibold mb-2;
+    }
+    & h2 {
+      @apply text-2xl font-semibold;
+    }
+    & h3{
+      @apply text-lg font-medium ;
+    }
+    & p{
+      @apply leading-[170%]  opacity-85 ;
+    }
+
+    & hr{
+      @apply border-gray-50/15 border-dotted my-5;
+    }
+    & ul:not(.folder){
+       @apply flex flex-col gap-1;
+    }
+    & li:not(.file,.line) {
+      @apply flex items-center gap-2 text-gray-50/70 text-sm;
+    }
+    
+    
+    
+
+  }
+}
+
+@layer components {
+  .active-link {
+    @apply text-yellow-300 relative flex items-center gap-2;
+
+    &::before {
+      content: '';
+      @apply border-l-2 h-5 rounded-4xl border-yellow-300/50 inline absolute -translate-x-3 left-[-1px];
+    }
+  }
+
+  .collapse {
+    /* -o-animation: ; */
+  }
+  .header {
+    /*  */
+  }
+
 }

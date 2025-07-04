@@ -1,36 +1,34 @@
-import { HeaderDocs } from "@/components/Header";
-import { SideBar } from "@/components/SideBar";
-import { MenuBottomSheet } from "@/components/Modal";
+import { SideBar } from "@/components/(home)/sideBar";
+import { dm_sans } from "@/font/google";
 
 const DocsLayout = ({ children }: { children: React.ReactNode }) => {
- 
-  return (
-    <>
-      <HeaderDocs />
-      <section className="md:flex gap-15 md:px-10 px-5 mt-8 w-full ">
-        <SideBar /> 
-        
-        <div className="flex-1 h-full ">{children}</div>
-        <div className=" sticky top-35.5 hidden md:flex flex-col gap-8 w-[190px] h-fit border-l border-teal-100/20 rounded-[1px]  p-6 pt-1 pr-0   mt-10">
-          <ul className="space-y-2 ">
-            <li className="text-sm font-normal text-teal-100">Introduction</li>
-            <li className="text-sm font-normal text-teal-100 opacity-50">Installation</li>
-            <li className="text-sm font-normal text-teal-100 opacity-50">Configuration</li>
+    return (
 
-            <li className="text-sm font-normal text-teal-100 opacity-50">Usage</li>
-            <li className="text-sm font-normal text-teal-100 opacity-50">API</li>
-            <li className="text-sm font-normal text-teal-100 opacity-50">Contributing</li>
-            <li className="text-sm font-normal text-teal-100 opacity-50">License</li>
-          </ul>
-        </div>
-      </section>
-      <MenuBottomSheet />
-    </>
+        <section className="sticky top-0  md:flex flex-row   md:mx-14 md:border-x border-dashed border-gray-50/15 ">
+            <SideBar hidden={true} />
+            <aside
+                className="relative p-3 md:p-15 md:flex-2   md:border-l border-dashed border-gray-50/15  mdx"
+            >
+                {/* <span className="  absolute left-2 -z-20 top-2 rounded-full blur-3xl  size-16 bg-white/50  "></span> */}
+                {/* <span className="  absolute -z-20  left-2 bottom-2 rounded-full blur-2xl  size-10 bg-gray-50 "></span> */}
 
-    
-  );
-};
+                {/* <span className="  absolute -z-20  right-2 top-2 rounded-full blur-2xl  size-10 bg-[#A9F5FF] "></span> */}
+                {/* <span className="  absolute -z-20  right-2 bottom-2 rounded-full blur-2xl  size-10 bg-yellow-100 "></span> */}
 
+                {children}
+            </aside>
 
+            <style>
+                {
+                    `
+                    h1,h2{
+                      font-family: ${dm_sans.style.fontFamily};
+                    }
+                    `
+                }
+            </style>
+        </section>
+    )
+}
 
 export default DocsLayout;

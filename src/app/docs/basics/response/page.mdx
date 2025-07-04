@@ -1,0 +1,489 @@
+# Response
+
+Dans Nexy, l'objet de la classe <Badge>Response</Badge> est votre outil principal pour construire et envoyer des réponses HTTP personnalisées au client. Il vous offre un contrôle total sur le contenu, les en-têtes, les cookies et le code de statut de vos réponses.
+
+### Compatibilité FastAPI
+
+Nexy utilise directement les classes de Response de FastAPI. Cela signifie que vous avez accès à toutes les classes de réponse standard comme <Badge>JSONResponse</Badge> , <Badge>HTMLResponse</Badge> , <Badge>PlainTextResponse</Badge> , <Badge>RedirectResponse</Badge> , <Badge>StreamingResponse</Badge> , et <Badge>FileResponse</Badge>.
+Vous pouvez vous référer à la documentation officielle de <MDXLink href="https://fastapi.tiangolo.com/learn/">FastAPI</MDXLink> pour explorer toutes les possibilités.
+
+<Mark>
+  Par défaut, si vous retournez un dictionnaire, une liste, ou un modèle Pydantic depuis votre fonction de contrôleur, Nexy le convertira automatiquement en une <Badge>JSONResponse</Badge> !
+</Mark>
+
+---
+
+## Réponse JSON Simple
+
+La méthode la plus courante pour retourner des données. Nexy convertit automatiquement les dictionnaires et listes en JSON.
+
+<CodeCard fileName="app/json/controller.py">
+
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from typing import Dict
+
+# Conversion automatique en JSON
+def GET() -> Dict[str, str]:
+    return {"message": "Bonjour le monde!", "status": "succès"}
+`
+}
+/>
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`# Ou explicitement avec JSONResponse
+from nexy.responses import JSONResponse
+
+def GET() -> JSONResponse:
+    content = {"message": "Données créées", "id": 123}
+    return JSONResponse(content=content, status_code=201)
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Réponse HTML
+
+Pour servir du contenu HTML directement depuis vos contrôleurs.
+
+<CodeCard fileName="app/html/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy.responses import HTMLResponse
+
+def GET() -> HTMLResponse:
+    html_content = """
+    <html>
+        <head>
+            <title>Page Nexy</title>
+        </head>
+        <body>
+            <h1>Bienvenue sur Nexy!</h1>
+            <p>Votre application fonctionne parfaitement.</p>
+        </body>
+    </html>
+    """
+    return HTMLResponse(content=html_content)
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Réponse Texte Brut
+
+Pour retourner du texte simple sans formatage HTML.
+
+<CodeCard fileName="app/text/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy.responses import PlainTextResponse
+
+def GET() -> PlainTextResponse:
+    return PlainTextResponse("Ceci est un message en texte brut.")
+
+def POST() -> PlainTextResponse:
+    return PlainTextResponse(
+        "Données reçues et traitées avec succès", 
+        status_code=201
+    )
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Redirection
+
+Pour rediriger les utilisateurs vers une autre URL.
+
+<CodeCard fileName="app/redirect/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy.responses import RedirectResponse
+
+def GET() -> RedirectResponse:
+    # Redirection temporaire (302)
+    return RedirectResponse(url="/dashboard", status_code=302)
+
+def POST() -> RedirectResponse:
+    # Redirection permanente (301)
+    return RedirectResponse(url="https://www.nexy.io", status_code=301)
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Téléchargement de Fichiers
+
+Pour permettre aux utilisateurs de télécharger des fichiers.
+
+<CodeCard fileName="app/download/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy.responses import FileResponse
+
+def GET() -> FileResponse:
+    # Assurez-vous que le fichier existe
+    file_path = "static/documents/rapport.pdf"
+    return FileResponse(
+        file_path, 
+        media_type='application/pdf',
+        filename="rapport_mensuel.pdf"
+    )
+`}/>
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy.responses import FileResponse
+
+def GET() -> FileResponse:
+    return FileResponse(
+        "static/images/logo.png",
+        media_type='image/png'
+    )
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Réponse en Streaming
+
+Pour envoyer de gros volumes de données ou des flux en temps réel.
+
+<CodeCard fileName="app/stream/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy.responses import StreamingResponse
+import asyncio
+import json
+
+async def generate_data():
+    """Génère des données en flux"""
+    for i in range(10):
+        data = {"item": i, "timestamp": f"2024-{i:02d}-01"}
+        yield f"data: {json.dumps(data)}\n\n"
+        await asyncio.sleep(0.5)
+
+def GET() -> StreamingResponse:
+    return StreamingResponse(generate_data(), media_type="text/plain")
+`}/>
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy.responses import StreamingResponse
+
+async def GET():
+    """Streaming d'un gros fichier CSV"""
+    def generate_csv():
+        yield "nom,email,age\n"
+        for i in range(1000):
+            yield f"User{i},user{i}@example.com,{20+i%50}\n"
+    
+    return StreamingResponse(generate_csv(), media_type="text/csv")
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Personnaliser les Codes de Statut
+
+Définir des codes de statut HTTP appropriés pour vos réponses.
+
+<CodeCard fileName="app/status/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy.responses import JSONResponse
+
+def POST() -> JSONResponse:
+    # Création réussie - 201 Created
+    return JSONResponse(
+        content={"message": "Ressource créée", "id": 123},
+        status_code=201
+    )
+
+def PUT() -> JSONResponse:
+    # Pas de contenu - 204 No Content
+    return JSONResponse(content=None, status_code=204)
+
+def GET() -> JSONResponse:
+    # Erreur client - 400 Bad Request
+    return JSONResponse(
+        content={"error": "Paramètres manquants"},
+        status_code=400
+    )
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Ajouter des En-têtes
+
+Personnaliser les en-têtes HTTP de vos réponses.
+
+<CodeCard fileName="app/headers/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy.responses import JSONResponse
+
+def GET() -> JSONResponse:
+    content = {"data": "informations sensibles"}
+    headers = {
+        "X-Custom-Header": "MaValeurPersonnalisée",
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        "X-Rate-Limit": "100",
+        "X-API-Version": "v1.2.0"
+    }
+    return JSONResponse(content=content, headers=headers)
+`}/>
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy.responses import JSONResponse
+
+def GET():
+    """Exemple avec en-têtes CORS"""
+    headers = {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization"
+    }
+
+    return JSONResponse(
+        content={"message": "CORS activé"},
+        headers=headers
+    )
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Gérer les Cookies
+
+Définir et supprimer des cookies dans vos réponses.
+
+<CodeCard fileName="app/cookies/controller.py">
+
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy.responses import JSONResponse
+
+def POST() -> JSONResponse:
+    """Connexion utilisateur - définir un cookie de session"""
+    response = JSONResponse(content={"message": "Connexion réussie"})
+    response.set_cookie(
+        key="session_id", 
+        value="abc123xyz789", 
+        httponly=True,  # Sécurité contre XSS
+        max_age=3600,   # 1 heure
+        samesite="lax", # Protection CSRF
+        secure=True     # HTTPS uniquement
+    )
+    return response
+
+def DELETE() -> JSONResponse:
+    """Déconnexion - supprimer le cookie de session"""
+    response = JSONResponse(content={"message": "Déconnexion réussie"})
+    response.delete_cookie("session_id")
+    return response
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Utiliser le Décorateur @HTTPResponse
+
+Le décorateur <Badge>@HTTPResponse</Badge> de Nexy simplifie la personnalisation des réponses et améliore la documentation automatique.
+
+<CodeCard fileName="app/decorator/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import HTTPResponse
+from nexy.responses import HTMLResponse
+
+@HTTPResponse(
+    type=HTMLResponse,
+    response_map={
+        200: {"description": "Page HTML retournée avec succès"},
+        404: {"description": "Template non trouvé"}
+    }
+)
+def GET():
+    return """
+    <html>
+        <body>
+            <h1>Page avec décorateur HTTPResponse</h1>
+            <p>Documentation automatique générée !</p>
+        </body>
+    </html>
+    """
+`}/>
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import HTTPResponse
+from pydantic import BaseModel, EmailStr
+
+class UserModel(BaseModel):
+  id: int
+  name: str
+  email: EmailStr
+  is_active: bool = True
+
+@HTTPResponse(
+    model=UserModel,
+    response_map={
+        200: {"description": "Utilisateur trouvé"},
+        404: {"description": "Utilisateur non trouvé"}
+    }
+)
+def GET(user_id: int):
+    # Simulation de récupération d'utilisateur
+    return {
+        "id": user_id, 
+        "name": "Jean Dupont", 
+        "email": "jean@example.com",
+        "is_active": True
+    }
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Gérer les Erreurs avec `HTTPException`
+
+La manière recommandée pour signaler des erreurs dans vos contrôleurs.
+
+<CodeCard fileName="app/errors/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import HTTPException
+
+def GET(item_id: int):
+    # Validation des paramètres
+    if item_id <= 0:
+        raise HTTPException(
+            status_code=400,
+            detail="L'ID de l'item doit être supérieur à zéro",
+            headers={"X-Error-Code": "INVALID_ID"}
+        )
+    
+    # Vérification d'existence
+    if item_id == 999:  # Simulation d'un item non trouvé
+        raise HTTPException(
+            status_code=404,
+            detail=f"L'item avec l'ID {item_id} n'existe pas",
+            headers={"X-Error-Code": "ITEM_NOT_FOUND"}
+        )
+    
+    # Simulation d'erreur d'autorisation
+    if item_id == 666:
+        raise HTTPException(
+            status_code=403,
+            detail="Vous n'avez pas l'autorisation d'accéder à cet item",
+            headers={"X-Error-Code": "FORBIDDEN_ACCESS"}
+        )
+    
+    # Succès
+    return {"id": item_id, "name": f"Item {item_id}"}
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Réponses Personnalisées Avancées
+
+Créer des réponses avec des comportements spécifiques.
+
+<CodeCard fileName="app/advanced/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy.responses import Response
+import json
+
+def GET():
+    """Réponse personnalisée avec type MIME spécifique"""
+    data = {"timestamp": "2024-01-01", "data": [1, 2, 3]}
+    content = json.dumps(data, indent=2)
+    
+    return Response(
+        content=content,
+        status_code=200,
+        headers={
+            "Content-Type": "application/vnd.api+json",
+            "X-Custom-Format": "API-JSON-V1"
+        }
+    )
+
+`}/>
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy.responses import Response
+
+def GET():
+    """Réponse avec contenu binaire"""
+    # Exemple : générer une image simple ou des données binaires
+    binary_data = b"\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR..." # Example
+    
+    return Response(
+        content=binary_data,
+        media_type="application/octet-stream",
+        headers={
+            "Content-Disposition": "attachment; filename=data.bin"
+        }
+    )
+`
+}
+/>
+</CodeCard>
+
+---
+
+## 👌 Parfait !
+
+Vous maîtrisez maintenant toutes les façons de créer et personnaliser des réponses dans Nexy. De la simple réponse JSON aux flux de données complexes, vous avez tous les outils pour construire des APIs robustes et flexibles !
+
+<SwitchPage
+    prev = { {
+        label: "Request",
+        href: "/docs/basics/request/"
+    }}
+    next ={ {
+        label: "Dépendances",
+        href: "/docs/basics/dependencies/"
+    }}
+/>

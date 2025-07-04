@@ -1,0 +1,604 @@
+# Request
+
+L'objet de la classe <Badge>Request</Badge> dans Nexy est votre interface principale pour accéder aux données des requêtes HTTP entrantes. Héritant directement de FastAPI, il vous offre un accès complet et simplifié aux en-têtes, paramètres, corps de requête et fichiers téléchargés.
+
+### Compatibilité FastAPI
+
+La classe <Badge>Request</Badge> dans Nexy hérite intégralement de FastAPI, garantissant une compatibilité totale avec l'écosystème FastAPI existant.
+
+<Mark>
+  💡 Astuce : Un objet de la classe <Badge>Request</Badge>  est automatiquement injecté dans vos contrôleurs. Déclarez-le simplement comme paramètre typé !
+</Mark>
+
+---
+
+## Accéder à `Request`
+
+Pour utiliser <Badge>Request</Badge> , il vous suffit de l'ajouter comme paramètre dans la définition de votre fonction de contrôleur. Voici comment faire :
+
+<CodeCard fileName="app/**/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+
+async def GET(request: Request):
+    # Vous pouvez maintenant utiliser l'objet 'request' ici
+    return {"message": "Requête reçue !"}
+`
+}
+/>
+</CodeCard>
+
+
+
+
+
+___
+
+## Accéder à l'URL de la Requête
+
+Vous pouvez obtenir l'URL complète de la requête en utilisant <Badge>request.url</Badge>.
+
+<CodeCard fileName="app/url/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+def GET(request: Request) -> Dict[str, str]:
+    return {"url_complete": str(request.url)}
+`
+}
+/>
+</CodeCard>
+
+___
+
+## Connaître la Méthode HTTP
+
+La méthode HTTP utilisée pour la requête (GET, POST, etc.) est disponible via <Badge>request.method</Badge>.
+
+<CodeCard fileName="app/method/controller.py">
+
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+def GET(request: Request) -> Dict[str, str]:
+    return {"methode_http": request.method}
+`
+}
+/>
+</CodeCard>
+
+___
+
+## Obtenir l'Adresse IP du Client
+
+L'adresse IP du client qui a envoyé la requête est accessible via <Badge>request.client.host</Badge>.
+
+<CodeCard fileName="app/client/controller.py">
+
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+def GET(request: Request) -> Dict[str, str]:
+    client_host = request.client.host if request.client else "Inconnu"
+    return {"adresse_ip_client": client_host}
+`
+}
+/>
+</CodeCard>
+
+
+
+___
+
+## Récupérer les Paramètres de Chemin
+
+Les paramètres de chemin sont des valeurs qui font partie de l'URL elle-même (par exemple, <Badge>/utilisateurs/123</Badge> où <Badge>123</Badge> est un paramètre). Nexy vous permet de les récupérer directement en les déclarant comme des paramètres de votre fonction de contrôleur.
+
+<CodeCard fileName="app/users/[userId]/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from typing import Dict
+
+def GET(userId: int) -> Dict[str, str]:
+    # userId est automatiquement extrait de l'URL
+    users = {
+        1: "Espoir Loém",
+        2: "Force Espoir",
+        3: "LOEMBA PACKA"
+    }
+    return {"user": users.get(userId, "Utilisateur non trouvé")}
+`
+}
+/>
+</CodeCard>
+
+___
+
+## Récupérer les Paramètres de Requête (Query Parameters)
+
+Les paramètres de requête sont des paires clé-valeur ajoutées à la fin de l'URL après un point d'interrogation (par exemple, <Badge>/items?name=chaise&quantity=2</Badge>). Vous pouvez y accéder via l'objet <Badge>request.query_params</Badge>.
+
+<CodeCard fileName="app/items/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+def GET(request: Request) -> Dict[str, str]:
+    name = request.query_params.get("name")
+    quantity = request.query_params.get("quantity")
+    return {"nom": name, "quantite": quantity}
+`
+}
+/>
+</CodeCard>
+
+Il est également possible de récupérer les paramètres de requête en les déclarant directement comme paramètres dans votre fonction de contrôleur.
+
+<CodeCard fileName="app/items/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from typing import Dict
+
+def GET(name: str, quantity: int) -> Dict[str, str]:
+    return {"nom": name, "quantite": quantity}
+` 
+}
+/>
+</CodeCard>
+
+
+___
+
+## Lire le Corps de la Requête (JSON)
+
+Pour les requêtes <Badge>POST</Badge>, <Badge>PUT</Badge>, <Badge>PATCH</Badge> qui envoient des données au format JSON, vous pouvez lire le corps de la requête de manière asynchrone en utilisant <Badge>await request.json()</Badge>.
+
+<CodeCard fileName="app/data/controller.py">
+
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+async def POST(request: Request) -> Dict[str, str]:
+    data = await request.json() # Lit le corps de la requête comme du JSON
+    return {"message": "Données JSON reçues !", "donnees": data}
+`}/>
+</CodeCard>
+
+___
+
+## Lire le Corps de la Requête (Données de Formulaire)
+
+Pour les requêtes qui envoient des données de formulaire (par exemple,<br/> <Badge>application/x-www-form-urlencoded</Badge> ou <Badge>multipart/form-data</Badge>), vous pouvez utiliser <Badge>await request.form()</Badge>.
+
+<CodeCard fileName="app/form/controller.py">
+
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+async def POST(request: Request) -> Dict[str, str]:
+    # Lit le corps de la requête comme des données de formulaire
+    form_data = await request.form() 
+    username = form_data.get("username")
+    password = form_data.get("password")
+    return {
+        "message": "Données de formulaire reçues !",
+        "username": username,
+        "password": password
+    }
+`
+}
+/>
+</CodeCard>
+
+___
+
+## Accéder aux En-têtes de Requête
+
+Les en-têtes HTTP sont accessibles via <Badge>request.headers</Badge>. C'est un dictionnaire insensible à la casse.
+
+<CodeCard fileName="app/headers/controller.py">
+
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+def GET(request: Request) -> Dict[str, str]:
+    user_agent = request.headers.get("user-agent")
+    content_type = request.headers.get("content-type")
+    return {"user_agent": user_agent, "content_type": content_type}
+`
+}
+/>
+</CodeCard>
+
+___
+
+## Accéder aux Cookies
+
+Les cookies envoyés avec la requête sont accessibles via <Badge>request.cookies</Badge>. C'est un dictionnaire simple.
+
+<CodeCard fileName="app/cookies/controller.py">
+
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+def GET(request: Request) -> Dict[str, str]:
+    session_id = request.cookies.get("session_id")
+    return {"session_id": session_id}
+`
+}
+/>
+</CodeCard>
+
+___
+
+## Gérer les Fichiers Téléchargés
+
+Pour gérer les fichiers téléchargés via un formulaire <Badge>multipart/form-data</Badge>, vous pouvez accéder aux fichiers via l'objet <Badge>form_data</Badge> retourné par <Badge>await request.form()</Badge>.
+<CodeCard fileName="app/upload/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+async def POST(request: Request) -> Dict[str, str]:
+    form_data = await request.form()
+    upload_file = form_data.get("upload_file")
+
+    if upload_file and upload_file.filename:
+        # Pour un fichier, vous pouvez lire son contenu
+        content = await upload_file.read()
+        filename = upload_file.filename
+        return {"nom": filename, "taille": len(content)}
+    return {"message": "Aucun fichier n'a été téléchargé"}
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Accéder au Contexte de la Requête ( request.scope )
+
+L'attribut <Badge>request.scope</Badge> est un dictionnaire qui contient le contexte de la requête ASGI (Asynchronous Server Gateway Interface). Il inclut des informations de bas niveau sur la connexion, telles que le type de protocole, l'adresse du client et du serveur, etc.
+
+<CodeCard fileName="app/scope/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+def GET(request: Request) -> Dict[str, str]:
+    # Par exemple, vous pouvez obtenir le type de scope
+    scope_type = request.scope.get("type")
+    return {"scope_type": scope_type}
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Accéder à l'Application ASGI ( request.app )
+
+L'attribut <Badge>request.app</Badge> fait référence à l'application ASGI principale qui gère la requête. Dans la plupart des cas, il s'agit de votre instance d'application Nexy.
+
+<CodeCard fileName="app/app_instance/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+def GET(request: Request) -> Dict[str, str]:
+    # Vous pouvez vérifier si l'objet app est présent
+    app_present = bool(request.app)
+    return {"app_instance_present": app_present}
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Obtenir l'URL de Base ( request.base_url )
+
+L'attribut <Badge>request.base_url</Badge> fournit l'URL de base de l'application, sans le chemin spécifique de la requête. C'est utile pour construire des URLs absolues.
+
+<CodeCard fileName="app/base_url/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+def GET(request: Request) -> Dict[str, str]:
+    base_url = str(request.base_url)
+    return {"base_url": base_url}
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Accéder aux Informations du Client (`request.client`)
+
+L'attribut <Badge>request.client</Badge> est un objet <Badge>Host</Badge> contenant l'adresse IP et le port du client. Nous avons déjà vu <Badge>request.client.host</Badge>.
+
+<CodeCard fileName="app/client_info/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+def GET(request: Request) -> Dict[str, str]:
+    client_port = request.client.port if request.client else "Inconnu"
+    return {"client_port": client_port}
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Gérer les Sessions ( request.session )
+
+Si vous utilisez une gestion de session (par exemple, via des middlewares), l'attribut <Badge>request.session</Badge> vous permet d'accéder aux données de la session en cours. Notez que cela nécessite une configuration de session.
+
+<CodeCard fileName="app/session/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+def GET(request: Request) -> Dict[str, str]:
+    # Accéder aux données de la session
+    user_id = request.session.get("user_id", "Non connecté")
+    return {"session_user_id": user_id}
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Informations d'Authentification (request.auth et request.user)
+
+Si vous utilisez un système d'authentification, <Badge>request.auth</Badge> et <Badge>request.user</Badge> contiendront les informations d'authentification et l'objet utilisateur authentifié, respectivement. Ces attributs sont généralement définis par des middlewares d'authentification.
+
+<CodeCard fileName="app/auth_user/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+def GET(request: Request) -> Dict[str, str]:
+    # Vérifier si un utilisateur est authentifié
+    username = request.user.display_name if request.user else "Invité"
+    return {"current_user": username}
+`
+}
+/>
+</CodeCard>
+
+---
+
+## État de la Requête ( request.state )
+
+L'attribut <Badge>request.state</Badge> est un dictionnaire que vous pouvez utiliser pour stocker des informations arbitraires liées à la requête, accessibles tout au long de son cycle de vie (par exemple, dans les middlewares ou les dépendances).
+
+<CodeCard fileName="app/state/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+def GET(request: Request) -> Dict[str, str]:
+    # Définir une valeur dans l'état de la requête
+    request.state.custom_data = "Ceci est une donnée personnalisée"
+    # Récupérer une valeur de l'état de la requête
+    data = request.state.get("custom_data")
+    return {"request_state_data": data}
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Recevoir des Données Brutes ( request.receive )
+
+La méthode <Badge>request.receive()</Badge> est une coroutine de bas niveau utilisée pour recevoir des événements ASGI. Elle est principalement utilisée en interne par Nexy / FastAPI / Starlette pour lire le corps de la requête, mais vous pouvez l'utiliser pour des cas d'utilisation avancés.
+
+<CodeCard fileName="app/receive/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+async def POST(request: Request) -> Dict[str, str]:
+    # Exemple très bas niveau de lecture du corps de la requête
+    # Préférer request.json() ou request.form() pour la plupart des cas
+    body_chunks = []
+    async for chunk in request.stream():
+        body_chunks.append(chunk)
+    raw_body = b"".join(body_chunks).decode("utf-8")
+    return {"raw_body_received": raw_body}
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Générer des URLs ( request.url_for )
+
+La méthode <Badge>request.url_for()</Badge> permet de générer des URLs pour des routes nommées. C'est très utile pour construire des liens dynamiques dans votre application.
+
+<CodeCard fileName="app/url_for/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+def GET(request: Request) -> Dict[str, str]:
+    # Générer une URL pour une route nommée
+    profile_url = request.url_for("user_profile", user_id=123)
+    # profile_url = "/users/123"  Exemple statique pour l'illustration
+    return {"user_profile_url": profile_url}
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Lire le Corps de la Requête en Streaming ( request.stream )
+
+La méthode <Badge>request.stream()</Badge> est une coroutine asynchrone qui renvoie un itérateur asynchrone sur les morceaux (chunks) du corps de la requête. C'est utile pour gérer de très gros fichiers ou des flux de données.
+
+<CodeCard fileName="app/stream/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+async def POST(request: Request) -> Dict[str, str]:
+    total_size = 0
+    async for chunk in request.stream():
+        total_size += len(chunk)
+    return {"bytes_received_via_stream": total_size}
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Accéder au Corps de la Requête Brute ( request.body )
+
+La méthode <Badge>request.body()</Badge> est une coroutine qui lit l'intégralité du corps de la requête et le renvoie sous forme d'octets. 
+Une fois lu, le corps ne peut pas être relu par d'autres méthodes comme <Badge>request.json()</Badge> ou <Badge>request.form()</Badge>.
+
+<CodeCard fileName="app/body/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+async def POST(request: Request) -> Dict[str, str]:
+    raw_body = await request.body()
+    reponse = {
+        "raw_body_length": len(raw_body), 
+        "raw_body_preview": raw_body.decode("utf-8")[:50]
+    }
+    return  reponse
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Vérifier la Déconnexion du Client ( request.is_disconnected )
+
+La méthode <Badge>request.is_disconnected()</Badge> permet de vérifier si le client s'est déconnecté pendant le traitement de la requête. C'est utile pour les opérations longues.
+
+<CodeCard fileName="app/disconnected/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+import asyncio
+
+async def GET(request: Request) -> Dict[str, str]:
+    await asyncio.sleep(1) # Simuler un travail long
+    if await request.is_disconnected():
+        return {"status": "Client déconnecté"}
+    return {"status": "Client toujours connecté"}
+`
+}
+/>
+</CodeCard>
+
+---
+
+## Fermer la Connexion ( request.close )
+
+La méthode <Badge>request.close()</Badge> est une coroutine qui peut être utilisée pour signaler que la connexion doit être fermée. Elle est rarement appelée directement par l'utilisateur.
+
+<CodeCard fileName="app/close/controller.py">
+<Code language="python"
+ theme="catppuccin-mocha"
+code = {
+`from nexy import Request
+from typing import Dict
+
+async def GET(request: Request) -> Dict[str, str]:
+    La méthode request.close().
+    # Il est rare de devoir l'appeler manuellement 
+    # dans votre code d'application.
+    return {"message": "La méthode close est gérée par le serveur ASGI."}
+`
+}
+/>
+</CodeCard>
+
+---
+
+## 👌 Bravo !
+
+Vous avez maintenant une compréhension très complète de l'objet <Badge>Request</Badge> et de toutes ses fonctionnalités dans Nexy, grâce à son héritage de FastAPI. Vous êtes prêt à manipuler les données entrantes de vos applications de manière avancée !
+
+Pour aller plus loin : Consultez la <MDXLink href="https://fastapi.tiangolo.com/tutorial/request/">documentation FastAPI</MDXLink> pour découvrir toutes les fonctionnalités héritées disponibles dans Nexy.
+
+<SwitchPage
+    prev = { {
+        label: "Contrôleurs",
+        href: "/basics/controllers/"
+    }}
+    next ={ {
+        label: "Réponses",
+        href: "/basics/response"
+    }}
+
+/>
+
