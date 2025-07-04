@@ -1,6 +1,5 @@
 import type { MDXComponents } from 'mdx/types'
 import { Code, CodeCard } from './components/(home)/docs/codeCard'
-import { CodeBlock } from './components/CodeBlock'
 import { SwitchPage } from './components/(home)/docs/switchPage'
 import { MDXLink } from './components/(home)/docs/mdxLink'
 import { Mark } from './components/(home)/docs/mark'
@@ -15,7 +14,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ...components,
     Code,
     CodeCard,
-    CodeBlock,
     SwitchPage,
     MDXLink,
     Mark,

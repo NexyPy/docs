@@ -22,23 +22,6 @@ const GET_STARTED = [
     }
 ];
 
-const CONCEPTS = [
-    {
-        id: 1,
-        title: "Architecture",
-        link: "/architecture"
-    },
-    {
-        id: 2,
-        title: "Dependency Injection",
-        link: "/di"
-    },
-    {
-        id: 3,
-        title: "Configuration",
-        link: "/config"
-    }
-];
 
 const BASICS = [
     // {

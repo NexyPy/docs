@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Nexy } from "../icons/nexy";
 import { Github } from "../icons/github";
 import { majorMonoDisplay } from "@/font/google";
 import { LinkedIn } from "../icons/linkedin";

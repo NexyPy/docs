@@ -3,8 +3,8 @@ import { Nexy } from "../icons/nexy";
 import { Search } from "../icons/search";
 import { Github } from "../icons/github";
 import { NavLink } from "./navLink";
-import { Menu } from "../icons/menu";
 import { MenuButton } from "./menu.button";
+import Image from "next/image";
 
 
 const Header = () => {
@@ -43,7 +43,7 @@ const Header = () => {
                     target="_blank"
                     className="hover:scale-104 transition-all duration-300"
                 >
-                    <img src="https://static.pepy.tech/badge/nexy" alt="PyPI Downloads" />
+                    <Image src="https://static.pepy.tech/badge/nexy" alt="PyPI Downloads" />
                 </Link>
             </menu>
 
