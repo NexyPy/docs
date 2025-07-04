@@ -1,0 +1,147 @@
+# Structure et organisation du projet
+
+<Mark>
+    Cette page fournit un aperçu des conventions de dossiers et de fichiers dans <Badge>Nexy</Badge> , ainsi que des conseils pour organiser votre projet de manière optimale.
+</Mark>
+
+___
+
+## Conventions de dossiers
+Les dossiers de niveau supérieur sont utilisés pour organiser le code et les ressources statiques de votre application.
+
+
+<CodeCard fileName="Structure">
+  <Structure>
+    <Folder folderName="app"/>
+    <Folder folderName="public"/>
+  </Structure>
+</CodeCard>
+
+le dossier <Badge>app</Badge> est le dossier de routage d'une application <Badge>Nexy</Badge>
+et un peu similaires à celui de <MDXLink href="https://nextjs.org/" >Next.js</MDXLink> ou <MDXLink href="https://docs.expo.dev/develop/file-based-routing/">Expo js </MDXLink>.
+
+le dossier <Badge>public</Badge> est le dossier qui contient les ressources statiques de votre application.
+
+---
+
+### Itinéraires imbriqués
+
+Les itinéraires imbriqués sont utilisés pour organiser le code et les ressources statiques de votre application.
+
+<CodeCard fileName="Structure">
+  <Structure>
+  <Folder folderName="dossier">
+      <Folder folderName="dossier "/>
+  </Folder>
+  <Folder folderName="dossier 1">
+    <Folder folderName="dossier"/>
+  </Folder>
+  </Structure>
+</CodeCard>
+
+---
+
+### Itinéraires dynamiques
+Un itinéraire dynamique est un itinéraire qui peut être généré à la demande. 
+Cela peut être utile pour générer des pages dynamiques, comme des pages de profil utilisateur ou des pages de produit.
+
+
+<CodeCard fileName="Structure">
+  <Structure>
+    <Folder folderName="[ dossier ]"/>
+    <Folder folderName="! [ dossier ]"/>
+    <Folder folderName="[ _dossier ]"/>
+    <Folder folderName="! [ _dossier ]"/>
+  </Structure>
+</CodeCard>
+
+
+### Dossiers privés
+
+Les dossiers privés sont utilisés pour organiser le code et les ressources statiques de votre application.
+
+<CodeCard fileName="Structure">
+  <Structure>
+    <Folder folderName="_ dossier"/>
+  </Structure>  
+</CodeCard>
+
+---
+## Conventions de fichiers
+Les fichiers de niveau supérieur sont utilisés pour configurer votre application, gérer les dépendances, exécuter des intergiciels, intégrer des outils de surveillance et définir des variables d'environnement.
+
+<CodeCard fileName="Structure">
+  <Structure>
+      <File fileName="nexyconfig.py"/>
+      <File fileName="middleware.py"/>
+      <File fileName="requirements.txt"/>
+      <File fileName=".env"/>
+      <File fileName=".gitignore"/>
+  </Structure>
+</CodeCard>
+
+
+### Fichiers de routage
+
+Les fichiers de routage sont utilisés pour organiser le code et les ressources statiques de votre application.
+
+<CodeCard fileName="Structure">
+  <Structure>
+    <File fileName="controller.py"/>
+  </Structure>
+</CodeCard>
+
+
+----
+
+## Organiser votre projet
+
+Outre les conventions relatives aux dossiers et aux fichiers, 
+<Badge>Nexy</Badge> n'a pas d'opinion sur la manière dont vous organisez et regroupez les fichiers de votre projet. 
+Cependant, il fournit plusieurs fonctionnalités pour vous aider à organiser votre projet.
+
+Dans le répertoire <Badge>app</Badge> , des dossiers imbriqués définissent la structure de l'itinéraire. 
+Chaque dossier représente un segment d'itinéraire mappé à un segment correspondant dans un chemin d'URL.
+
+<Mark>
+  Cependant, même si la structure de l'itinéraire est définie via des dossiers, 
+  un itinéraire n'est pas accessible publiquement tant qu'un fichier <Badge>controller.py</Badge> 
+  n'est pas ajouté à un segment d'itinéraire.
+</Mark>
+
+<CodeCard fileName="Structure">
+  <Structure>
+    <Folder folderName="app">
+      <Folder folderName="users">
+        <Folder folderName="[userId]">
+          <File fileName="controller.py"/>
+        </Folder>
+        <File fileName="controller.py"/>
+      </Folder>
+      <Folder folderName="blog"/>
+      <File fileName="controller.py"/>
+    </Folder>
+    <Folder folderName="public"/>
+  </Structure>
+
+  <Structure> 
+  dkdjkjk
+  </Structure>
+</CodeCard>
+
+
+
+## 👌 Bravo !
+Maintenant que vous avez pu créer votre projet, vous pouvez commencer à analyser sa structure !<br/> Nous allons voir comment faire cela dans la section suivante.
+
+<SwitchPage
+    prev = { {
+        label: "Créer un projet",
+        href: "/started/new_project"
+    }}
+    next ={ {
+        label: "Structure",
+        href: "/started/structure"
+    }}
+
+/>
