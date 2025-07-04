@@ -10,7 +10,8 @@ interface CopyButtonProps {
 
 
 export default function CopyButton({ code }: CopyButtonProps) {
-  const [copied, setCopied] = useState(false);
+ 
+  const [copied, setCopied ] = useState(false);
 
   const copyToClipboard = async () => {
     try {
