@@ -25,7 +25,6 @@ const TemplateEffect = ({ children }: TemplateProps) => {
     };
 
     const pageTransition: Transition = {
-
         type: "spring",
         stiffness: 150,
         damping: 15,
