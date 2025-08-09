@@ -21,12 +21,13 @@ const Header = () => {
             </div>
             <menu className=" hidden md:flex gap-6 items-center ">
                 <button
+                    hidden
                     className="hover:scale-104 transition-all duration-300 flex gap-2 justify-center items-center  pl-2 pr-4 py-1 rounded-xl text-sm text-gray-50/70 border border-[#A9FFEA]/6 bg-[#A9FFEA]/5 hover:bg-[#A9FFEA]/10 cursor-pointer "
                 >
                     <Search />
                     <code>ctr k</code>
                 </button>
-                <hr className="hidden md:block h-2 border border-dashed border-gray-50/15" />
+                <hr hidden className="hidden md:block h-2 border border-dashed border-gray-50/15" />
                 <NavLink />
                 <hr className="hidden md:block h-2 border border-dashed border-gray-50/15 " />
                 <Link
