@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
@@ -90,16 +90,6 @@ export const metadata: Metadata = {
     ],
     apple: "/nexy.svg",
   },
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#0E201B" },
-    { media: "(prefers-color-scheme: dark)", color: "#0E201B" },
-  ],
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
   },
@@ -107,6 +97,17 @@ export const metadata: Metadata = {
     "msapplication-TileColor": "#0E201B",
     "msapplication-config": "/browserconfig.xml",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#0E201B" },
+    { media: "(prefers-color-scheme: dark)", color: "#0E201B" },
+  ],
 };
 
 export default function RootLayout({
