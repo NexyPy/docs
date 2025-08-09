@@ -1,3 +1,8 @@
+import type { Metadata } from "next";
+import Script from "next/script";
+export const metadata: Metadata = {
+  alternates: { canonical: "/docs" },
+};
 import { SideBar } from "@/components/(home)/sideBar";
 import { dm_sans } from "@/font/google";
 
@@ -16,6 +21,31 @@ const DocsLayout = ({ children }: { children: React.ReactNode }) => {
                 {/* <span className="  absolute -z-20  right-2 bottom-2 rounded-full blur-2xl  size-10 bg-yellow-100 "></span> */}
 
                 {children}
+                <Script
+                  id="ld-json-breadcrumb"
+                  type="application/ld+json"
+                  strategy="afterInteractive"
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "BreadcrumbList",
+                      itemListElement: [
+                        {
+                          "@type": "ListItem",
+                          position: 1,
+                          name: "Home",
+                          item: "/"
+                        },
+                        {
+                          "@type": "ListItem",
+                          position: 2,
+                          name: "Docs",
+                          item: "/docs"
+                        }
+                      ]
+                    })
+                  }}
+                />
             </aside>
 
             <style>
