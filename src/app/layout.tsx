@@ -12,28 +12,35 @@ import { MenuModal } from "@/components/(home)/menu.modal";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 const siteName = "Nexy";
 const siteDescription =
-  "Nexy is a modern, fast, and secure framework for building web applications with Python.";
+  "Nexy is a modern, fast, and secure framework for building web applications with Python. Built on FastAPI for exceptional performance and developer experience.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  applicationName: `${siteName} Docs`,
+  applicationName: `${siteName} Documentation`,
   title: {
     default: siteName,
-    template: `%s | ${siteName}`,
+    template: `%s | ${siteName} Documentation`,
   },
   description: siteDescription,
   keywords: [
     "Nexy",
     "Nexy framework",
     "Python web framework",
-    "fast python",
-    "secure python",
-    "docs",
+    "FastAPI",
+    "Python development",
+    "Web development",
+    "API development",
+    "Python backend",
+    "Modern web framework",
+    "High performance Python",
+    "Developer tools",
+    "Documentation",
   ],
-  authors: [{ name: siteName }],
+  authors: [{ name: siteName, url: siteUrl }],
   creator: siteName,
   publisher: siteName,
   category: "technology",
+  classification: "Web Development Framework",
   robots: {
     index: true,
     follow: true,
@@ -57,7 +64,8 @@ export const metadata: Metadata = {
         url: "/nexy.jpg",
         width: 1200,
         height: 630,
-        alt: siteName,
+        alt: `${siteName} - Modern Python Web Framework`,
+        type: "image/jpeg",
       },
     ],
   },
@@ -66,20 +74,40 @@ export const metadata: Metadata = {
     title: siteName,
     description: siteDescription,
     images: ["/nexy.jpg"],
+    creator: "@nexyframework",
+    site: "@nexyframework",
   },
-  // Canonicals will be set per page where needed to avoid a site-wide root canonical
+  alternates: {
+    canonical: siteUrl,
+    languages: {
+      "en-US": siteUrl,
+    },
+  },
   icons: {
-    icon: [{ url: "/favicon.ico" }],
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/nexy.svg", type: "image/svg+xml" },
+    ],
+    apple: "/nexy.svg",
   },
-  themeColor: [{ media: "(prefers-color-scheme: dark)", color: "#0E201B" }],
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#0E201B" },
+    { media: "(prefers-color-scheme: dark)", color: "#0E201B" },
+  ],
   viewport: {
     width: "device-width",
     initialScale: 1,
     maximumScale: 5,
+    userScalable: true,
+  },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+  },
+  other: {
+    "msapplication-TileColor": "#0E201B",
+    "msapplication-config": "/browserconfig.xml",
   },
 };
-
-
 
 export default function RootLayout({
   children,
@@ -88,10 +116,43 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth light">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+      </head>
 
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} flex flex-col justify-between overflow-x-hidden min-h-dvh antialiased `}
       >
+        {/* Structured Data - Organization */}
+        <Script
+          id="ld-json-organization"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: siteName,
+              url: siteUrl,
+              description: siteDescription,
+              logo: `${siteUrl}/nexy.svg`,
+              sameAs: [
+                "https://github.com/nexyframework",
+                "https://twitter.com/nexyframework",
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "customer service",
+                availableLanguage: "English",
+              },
+            }),
+          }}
+        />
+
+        {/* Structured Data - WebSite */}
         <Script
           id="ld-json-website"
           type="application/ld+json"
@@ -104,6 +165,32 @@ export default function RootLayout({
               url: siteUrl,
               description: siteDescription,
               inLanguage: "en",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: `${siteUrl}/search?q={search_term_string}`,
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
+
+        {/* Structured Data - SoftwareApplication */}
+        <Script
+          id="ld-json-software"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              name: siteName,
+              description: siteDescription,
+              applicationCategory: "DeveloperApplication",
+              operatingSystem: "Any",
+              programmingLanguage: "Python",
+              softwareVersion: "1.0.0",
+              downloadUrl: "https://github.com/nexyframework/nexy",
+              url: siteUrl,
             }),
           }}
         />
