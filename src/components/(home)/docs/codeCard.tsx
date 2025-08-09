@@ -13,8 +13,10 @@ type CodeProps = {
 }
 const Code = async ({ code, language, canCopy = true, theme }: CodeProps) => {
     const child = await codeToHtml(code, {
-        lang: language,
-        theme: theme || "poimandres" || "ayu-dark",
+        lang: language ,
+
+        theme: language == "html" || language =="jsx"  ? "dark-plus" : theme || "poimandres" || "ayu-dark" ,
+
     });
     const lignes = code.split("\n").map((items, index) => index!=0 && index )
     return (

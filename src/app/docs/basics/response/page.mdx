@@ -177,7 +177,7 @@ async def generate_data():
     """Génère des données en flux"""
     for i in range(10):
         data = {"item": i, "timestamp": f"2024-{i:02d}-01"}
-        yield f"data: {json.dumps(data)}\n\n"
+        yield f"data: {json.dumps(data)}"
         await asyncio.sleep(0.5)
 
 def GET() -> StreamingResponse:
@@ -191,9 +191,9 @@ code = {
 async def GET():
     """Streaming d'un gros fichier CSV"""
     def generate_csv():
-        yield "nom,email,age\n"
+        yield "nom,email,age"
         for i in range(1000):
-            yield f"User{i},user{i}@example.com,{20+i%50}\n"
+            yield f"User{i},user{i}@example.com,{20+i%50}"
     
     return StreamingResponse(generate_csv(), media_type="text/csv")
 `
@@ -457,7 +457,7 @@ code = {
 def GET():
     """Réponse avec contenu binaire"""
     # Exemple : générer une image simple ou des données binaires
-    binary_data = b"\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR..." # Example
+    binary_data = b"\x89PNG\x1a\x00\x00\x00IHDR..." # Example
     
     return Response(
         content=binary_data,
@@ -480,10 +480,10 @@ Vous maîtrisez maintenant toutes les façons de créer et personnaliser des ré
 <SwitchPage
     prev = { {
         label: "Request",
-        href: "/docs/basics/request/"
+        href: "/basics/request"
     }}
     next ={ {
         label: "Dépendances",
-        href: "/docs/basics/dependencies/"
+        href: "/basics/dependencies/"
     }}
 />

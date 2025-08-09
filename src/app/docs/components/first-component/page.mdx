@@ -1,0 +1,259 @@
+# Créer votre premier composant
+
+Les composants constituent le cœur de Nexy. Ces éléments modulaires et réutilisables vous permettent de construire des interfaces utilisateur (<Badge>UI</Badge>) de manière structurée et efficace. Découvrez les bases essentielles pour créer vos premiers composants Nexy.
+
+---
+
+## Anatomie d'un composant
+
+Un composant Nexy est une fonction Python qui génère des éléments d'interface utilisateur réutilisables, comme détaillé dans la section <MDXLink href="/docs/components" target={false}>Introduction</MDXLink>.
+
+### Structure d'un composant
+
+Prenons l'exemple d'un composant <Badge>Profile</Badge> pour illustrer la structure standard :
+
+<CodeCard fileName="Structure">
+<Structure>
+    <Folder folderName="components">
+      <Folder folderName="Profile">
+          <File fileName="__init__.py"/>
+          <File fileName="Profile.html"/>
+      </Folder>
+      </Folder>
+  </Structure>
+</CodeCard>
+
+Un composant Nexy se compose de deux parties essentielles :
+
+1. La logique métier (Python) - Une fonction décorée retournant un dictionnaire de données
+
+<CodeCard fileName="components/profile/__init__.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from nexy import Component
+
+@Component(import=[])
+def Profile():
+   return {}
+`}
+/>
+</CodeCard>
+
+2. Le template (HTML) - La structure visuelle du composant
+
+<CodeCard fileName="components/profile/Profile.html">
+<Code language="html" theme="dark-plus"
+code = {
+`<img
+      src="https://i.imgur.com/MK3eW3Am.jpg"
+      alt="Katherine Johnson"
+/>
+`}
+/>
+</CodeCard>
+
+---
+
+## Composition de composants
+
+Une fois votre composant <Badge>Profile</Badge> créé, vous pouvez l'intégrer dans d'autres composants. Par exemple, créons un composant <Badge>Gallery</Badge> qui affichera plusieurs profils.
+
+Structure du composant Gallery :
+
+<CodeCard fileName="Structure">
+<Structure>
+    <Folder folderName="components">
+      <Folder folderName="Gallery">
+          <File fileName="__init__.py"/>
+          <File fileName="Gallery.html"/>
+      </Folder>
+    </Folder>
+</Structure>
+</CodeCard>
+
+Pour utiliser un composant dans un autre, il faut :
+1. L'importer dans la partie logique
+2. Le déclarer dans le décorateur <Badge>@Component</Badge>
+
+<CodeCard fileName="components/Gallery/__init__.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from nexy import Component
+from components.Profile import Profile
+
+@Component(import=[Profile])
+def Gallery():
+   return {}
+`}
+/>
+</CodeCard>
+Le composant peut ensuite être utilisé comme une balise HTML personnalisée et auto-fermante dans le template
+
+<CodeCard fileName="components/Gallery/Gallery.html">
+<Code language="jsx" theme="dark-plus"
+code = {
+`<section>
+    <h1>Amazing scientists</h1>
+    <Profile />
+    <Profile />
+    <Profile />
+</section>
+`}
+/>
+</CodeCard>
+
+---
+
+## Rendu côté serveur (SSR)
+
+Nexy utilise le rendu côté serveur (<Badge>Server-Side Rendering</Badge> ou <Badge>SSR</Badge>), ce qui signifie que le HTML est généré sur le serveur avant d'être envoyé au navigateur. Cette approche diffère des frameworks JavaScript qui effectuent le rendu côté client.
+
+Exemple de rendu du composant <Badge>Gallery</Badge> :
+
+<CodeCard fileName="Browser">
+<Code language="jsx" theme="dark-plus"
+code = {
+`<section>
+    <h1>Amazing scientists</h1>
+    <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+    <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+    <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+</section>
+`}
+/>
+</CodeCard>
+
+---
+
+## Transmission de données au template
+
+Les composants peuvent transmettre des données à leur template via un dictionnaire de retour. Reprenons l'exemple du composant <Badge>Profile</Badge> :
+
+<CodeCard fileName="components/profile/__init__.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from nexy import Component
+
+@Component(import=[])
+def Profile():
+    return {
+        "name": "Katherine Johnson",
+        "image": "https://i.imgur.com/MK3eW3Am.jpg",
+    }
+`}
+/>
+</CodeCard>
+
+Les données sont accessibles dans le template via la syntaxe <Badge>`{{clé}}`</Badge> :
+
+<CodeCard fileName="components/profile/Profile.html">
+<Code language="html" theme="dark-plus"
+code = {
+`<img
+      src={{image}}
+      alt={{name}}
+/>
+`}
+/>
+</CodeCard>
+
+---
+
+## Propriétés (Props)
+
+Les props permettent de personnaliser un composant lors de son utilisation. Ce sont des paramètres de fonction Python qui peuvent être utilisés comme attributs dans le template.
+
+Exemple de composant <Badge>Profile</Badge> avec props :
+
+<CodeCard fileName="components/profile/__init__.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from nexy import Component
+
+@Component(import=[])
+def Profile(image:str, name:str):
+    return {
+        "name": name,
+        "image": image,
+    }
+`}
+/>
+</CodeCard>
+
+Utilisation du composant avec ses props :
+
+<CodeCard fileName="components/Gallery/Gallery.html">
+<Code language="jsx" theme="dark-plus"
+code = {
+`<section>
+    <h1>Amazing scientists</h1>
+    <Profile 
+        name="Katherine Johnson" 
+        image="https://i.imgur.com/MK3eW3Am.jpg" 
+    />
+</section>
+`}
+/>
+</CodeCard>
+
+---
+
+## La propriété caller
+
+Nexy utilise <Badge>Jinja</Badge> comme moteur de template. La propriété <Badge>caller</Badge> permet à un composant de recevoir et d'afficher des éléments enfants, fonctionnant ainsi comme les balises HTML <Badge>`<div>`</Badge> ou <Badge>`<section>`</Badge>.
+
+Voici un exemple d'utilisation :
+
+<CodeCard fileName="components/Card/__init__.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from nexy import Component
+
+@Component(import=[])
+def Card(caller):
+    return {"children":caller()}
+`}
+/>
+</CodeCard>
+
+<CodeCard fileName="components/Card/Card.html"> 
+<Code language="jsx" theme="dark-plus"
+code = {
+`<div class="card">
+    {{ children }}
+</div>
+`}
+/>
+</CodeCard>
+
+Vous pouvez ensuite utiliser ce composant comme conteneur :
+
+<CodeCard fileName="Utilisation">
+<Code language="jsx" theme="dark-plus"
+code = {
+`<Card>
+    <h1>Mon titre</h1>
+    <p>Mon contenu</p>
+</Card>
+`}
+/>
+</CodeCard>
+
+---
+
+👌 Félicitations ! 
+
+Vous avez acquis les bases essentielles des composants <Badge>Nexy</Badge>. 
+Cette compréhension vous permettra de créer des interfaces utilisateur élégantes et évolutives.
+Dans la section suivante, nous explorerons la création de vues (<Badge>Views</Badge>) pour structurer vos composants en pages cohérentes.
+
+<SwitchPage
+    prev = { {
+        label: "Composants",
+        href: "/components"
+    }}
+    next = { {
+        label: "views",
+        href: "/components/views"
+    }}
+/>

@@ -1,0 +1,205 @@
+# Analyseur de Corps de Requête
+
+Nexy fournit une analyse complète du corps des requêtes grâce à <Badge>FastAPI</Badge>. Contrairement aux frameworks traditionnels qui nécessitent une configuration manuelle des analyseurs, Nexy gère intelligemment le contenu des requêtes en fonction des types MIME et de leur structure.
+
+<Mark>
+  Nexy analyse automatiquement le JSON, les données de formulaire, les fichiers et même les structures imbriquées complexes. Il suffit de définir votre schéma attendu !
+</Mark>
+
+---
+
+## Types d'Analyseurs avec Exemples
+
+### Types de Base
+
+#### Chaîne de caractères (str)
+<CodeCard fileName="examples/basic/string.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`def GET(nom: str):
+    return f"Bonjour {nom}"
+`}
+/>
+</CodeCard>
+
+#### Entier (int)
+<CodeCard fileName="examples/basic/integer.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`def GET(age: int):
+    return f"Vous avez {age} ans"
+`}
+/>
+</CodeCard>
+
+#### Nombre à virgule flottante
+<CodeCard fileName="examples/basic/float.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`def GET(prix: float):
+    return f"Le prix est de {prix:.2f}"
+`}
+/>
+</CodeCard>
+
+#### Booléen
+<CodeCard fileName="examples/basic/boolean.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`def GET(est_actif: bool):
+    return {"statut": "actif" if est_actif else "inactif"}
+`}
+/>
+</CodeCard>
+
+### Collections
+
+#### Liste
+<CodeCard fileName="examples/collections/list.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from typing import List
+
+def POST(etiquettes: List[str]):
+    return {"etiquettes": etiquettes}
+`}
+/>
+</CodeCard>
+
+#### Dictionnaire
+<CodeCard fileName="examples/collections/dict.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from typing import Dict
+
+def POST(metadonnees: Dict[str, str]):
+    return {"metadonnees": metadonnees}
+`}
+/>
+</CodeCard>
+
+### Types Spéciaux
+
+#### Email
+<CodeCard fileName="examples/special/email.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from pydantic import EmailStr
+
+def POST(email: EmailStr):
+    return {"email": email}
+`}
+/>
+</CodeCard>
+
+#### UUID
+<CodeCard fileName="examples/special/uuid.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from uuid import UUID
+
+def GET(identifiant: UUID):
+    return {"identifiant": str(identifiant)}
+`}
+/>
+</CodeCard>
+
+### Types Temporels
+
+#### DateTime
+<CodeCard fileName="examples/time/datetime.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from datetime import datetime
+
+def POST(date_evenement: datetime):
+    return {"programmé_pour": date_evenement}
+`}
+/>
+</CodeCard>
+
+### Gestion des Fichiers
+
+#### Téléchargement d'un Fichier
+<CodeCard fileName="examples/files/single.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from fastapi import UploadFile
+
+def POST(fichier: UploadFile):
+    return {"nom_fichier": fichier.filename}
+`}
+/>
+</CodeCard>
+
+#### Fichiers Multiples
+<CodeCard fileName="examples/files/multiple.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from typing import List
+from fastapi import UploadFile
+
+def POST(fichiers: List[UploadFile]):
+    return {"fichiers": [f.filename for f in fichiers]}
+`}
+/>
+</CodeCard>
+
+### Données de Formulaire
+
+#### Formulaire Simple
+<CodeCard fileName="examples/form/simple.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from fastapi import Form
+from typing import Annotated
+
+def POST(nom_utilisateur: Annotated[str, Form()]):
+    return {"nom_utilisateur": nom_utilisateur}
+`}
+/>
+</CodeCard>
+
+### Métadonnées de Requête
+
+#### En-têtes
+<CodeCard fileName="examples/metadata/headers.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from fastapi import Header
+from typing import Annotated
+
+def GET(agent_utilisateur: Annotated[str, Header()]):
+    return {"agent_utilisateur": agent_utilisateur}
+`}
+/>
+</CodeCard>
+
+#### Cookies
+<CodeCard fileName="examples/metadata/cookies.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from fastapi import Cookie
+from typing import Annotated
+
+def GET(session: Annotated[str, Cookie()]):
+    return {"session": session}
+`}
+/>
+</CodeCard>
+
+---
+
+
+Le système d'analyse de Nexy est puissant tout en restant simple à utiliser - définissez simplement votre structure de données et laissez Nexy s'occuper du reste !
+pour d'informations sur les types d'analyseurs, veuillez vous référer à la documentation de <MDXLink href="https://fastapi.tiangolo.com/tutorial/body/#create-your-data-model">FastAPI</MDXLink>
+<SwitchPage
+    prev = { {
+        label: "Réponse",
+        href: "/basics/response"
+    }}
+    next ={ {
+        label: "Validation",
+        href: "/basics/validation/"
+    }}
+/>
