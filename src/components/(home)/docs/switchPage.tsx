@@ -13,11 +13,15 @@ type SwitchPageProps = {
 }
 const SwitchPage = ({next, prev}:SwitchPageProps) => (
     <div className="flex  gap-5 justify-between mt-5 py-10 md:pb-0 border-t border-gray-50/15 border-dotted ">
-        <Link href={`/docs${prev.href}`}
+        {prev &&
+            <Link href={`/docs${prev.href}`}
             className={`flex gap-2.5 items-center  cursor-pointer py-2.5 px-5 rounded-2xl text-xs md:text-sm text-left font-normal   bg-[#A9FFEA]/2.5 border border-[#A9FFEA]/5 text-gray-50/80 `}>
             <span>←</span>
             <span>{prev.label}</span>
         </Link>
+        }
+
+        {next &&
 
         <Link
             href={`/docs${next.href}`}  
@@ -30,6 +34,8 @@ const SwitchPage = ({next, prev}:SwitchPageProps) => (
             <span>{next.label}</span>
             <span>→</span>
         </Link>
+        }
+
 
     </div>
 )

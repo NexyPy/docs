@@ -43,36 +43,36 @@ const BASICS = [
         title: "Body Parser",
         link: "/body-parser"
     },
-    {
-        id: 5,
-        title: "Validation",
-        link: "/validation"
-    },
-    {
-        id: 6,
-        title: "Exception",
-        link: "/exception"
-    },
-    {
-        id: 7,
-        title: "Middleware",
-        link: "/middleware"
-    },
-    {
-        id: 8,
-        title: "File Upload",
-        link: "/file-upload"
-    },
-    {
-        id: 9,
-        title: "Cookies",
-        link: "/cookies"
-    },
-    {
-        id: 10,
-        title: "Session",
-        link: "/session"
-    }
+    // {
+    //     id: 5,
+    //     title: "Validation",
+    //     link: "/validation"
+    // },
+    // {
+    //     id: 6,
+    //     title: "Exception",
+    //     link: "/exception"
+    // },
+    // {
+    //     id: 7,
+    //     title: "Middleware",
+    //     link: "/middleware"
+    // },
+    // {
+    //     id: 8,
+    //     title: "File Upload",
+    //     link: "/file-upload"
+    // },
+    // {
+    //     id: 9,
+    //     title: "Cookies",
+    //     link: "/cookies"
+    // },
+    // {
+    //     id: 10,
+    //     title: "Session",
+    //     link: "/session"
+    // }
 ];
 
 const DATABASES = [
@@ -134,21 +134,37 @@ const SECURITY = [
     }
 ];
 
-const VIEWS = [
+const COMPONENTS = [
     {
         id: 1,
-        title: "Templates",
-        link: "/templates"
+        title: "Introduction",
+        link: ""
     },
     {
         id: 2,
-        title: "Static Files",
-        link: "/static"
+        title: "Votre premier composant",
+        link: "/first-component"
+    },
+    {
+        id: 2,
+        title: "Views",
+        link: "/views"
     },
     {
         id: 3,
-        title: "Jinja2",
-        link: "/jinja"
+        title: "Layouts",
+        link: "/layouts"
+    },
+    {
+        id: 4,
+        title: "Fichiers statiques",
+
+        link: "/static"
+    },
+    {
+        id: 5,
+        title: "Moteur de template",
+        link: "/engine"
     }
 ];
 
@@ -251,46 +267,54 @@ const SIDE_BAR = [
     {
         label: "Database",
         link : "/docs/database",
+        state: "hidden",
         children : DATABASES
     },
     {
         label: "Authentification",
         link : "/docs/authentification",
+        state: "hidden",
         children : AUTH
     },
     {
         label: "Security",
         link : "/docs/security",
+        state: "hidden",
         children : SECURITY
     },
     {
-        label: "Views",
-        link : "/docs/views",
-        children : VIEWS
+        label: "Components",
+        link : "/docs/components",
+        children : COMPONENTS
     },
     {
         label: "WebSockets",
         link : "/docs/websockets",
+        state: "hidden",
         children : WEBSOCKETS
     },
     {
         label: "Testing",
         link : "/docs/testing",
+        state: "hidden",
         children : TESTING
     },
     {
         label: "CLI",
         link : "/docs/cli",
+        state: "hidden",
         children : CLI
     },
     {
         label: "Deploiment",
         link : "/docs/deploy",
+        state: "hidden",
         children : DEPLOYMENT
     },
     {
         label: "communauté",
         link : "/docs/community",
+        state: "hidden",
         children : COMMUNITY
     }
 ];

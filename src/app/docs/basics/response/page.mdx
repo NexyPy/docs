@@ -457,7 +457,7 @@ code = {
 def GET():
     """Réponse avec contenu binaire"""
     # Exemple : générer une image simple ou des données binaires
-    binary_data = b"\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR..." # Example
+    binary_data = b"\x89PNG\x1a\x00\x00\x00IHDR..." # Example
     
     return Response(
         content=binary_data,

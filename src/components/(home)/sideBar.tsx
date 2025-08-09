@@ -18,11 +18,12 @@ const SideBar = ({ hidden }: { hidden?: boolean }) => {
             className={`${hidden ? "hidden md:block" : ""}  overflow-y-auto sticky top-[4.5rem]  p-4  md:w-[19rem] md:max-h-[90dvh] space-y-3 transition-all duration-300`}
         >
             {
-                SIDE_BAR.map((item, itemIndex) => (
+                SIDE_BAR.filter((item) => item.state !== "hidden").map((item, itemIndex) => (
                     <Collapse
                         key={itemIndex}
                         title={item.label}
-                        defaultOpen={(pathname.startsWith(item.link) || (pathname === "/docs" && itemIndex === 0))}
+                        // defaultOpen={(pathname.startsWith(item.link) || (pathname === "/docs" && itemIndex === 0))}
+                        defaultOpen={true}
                     >
                         <ul className="space-y-2">
 

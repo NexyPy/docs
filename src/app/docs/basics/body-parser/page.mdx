@@ -1,292 +1,201 @@
-# Body Parser
+# Analyseur de Corps de Requête
 
-Nexy provides comprehensive request body parsing through FastAPI and Pydantic. Unlike traditional frameworks requiring manual parser configuration, Nexy intelligently handles request content based on MIME types and structure.
+Nexy fournit une analyse complète du corps des requêtes grâce à <Badge>FastAPI</Badge>. Contrairement aux frameworks traditionnels qui nécessitent une configuration manuelle des analyseurs, Nexy gère intelligemment le contenu des requêtes en fonction des types MIME et de leur structure.
 
 <Mark>
-  Nexy automatically parses JSON, form data, files, and even complex nested structures. Just define your expected schema!
+  Nexy analyse automatiquement le JSON, les données de formulaire, les fichiers et même les structures imbriquées complexes. Il suffit de définir votre schéma attendu !
 </Mark>
 
 ---
 
-## Available Parser Types
+## Types d'Analyseurs avec Exemples
 
-### Basic Types
-Les types de base constituent les fondements de notre système de typage. Comme les briques élémentaires d'une construction, ils nous permettent de représenter les données les plus simples mais essentielles.
+### Types de Base
 
-<CodeCard fileName="app/examples/basic_types.py">
-<Code language="python"
- theme="catppuccin-mocha"
+#### Chaîne de caractères (str)
+<CodeCard fileName="examples/basic/string.py">
+<Code language="python" theme="catppuccin-mocha"
 code = {
-`def POST(
-    name: str,           # Pour les chaînes de caractères
-    age: int,           # Pour les nombres entiers
-    height: float,      # Pour les nombres décimaux
-    is_active: bool,    # Pour les valeurs booléennes
-    raw_data: bytes     # Pour les données binaires
-):
-    return {
-        "message": f"Utilisateur {name}, {age} ans, {height}m",
-        "status": is_active,
-        "data_size": len(raw_data)
-    }
-`}/>
+`def GET(nom: str):
+    return f"Bonjour {nom}"
+`}
+/>
+</CodeCard>
+
+#### Entier (int)
+<CodeCard fileName="examples/basic/integer.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`def GET(age: int):
+    return f"Vous avez {age} ans"
+`}
+/>
+</CodeCard>
+
+#### Nombre à virgule flottante
+<CodeCard fileName="examples/basic/float.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`def GET(prix: float):
+    return f"Le prix est de {prix:.2f}"
+`}
+/>
+</CodeCard>
+
+#### Booléen
+<CodeCard fileName="examples/basic/boolean.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`def GET(est_actif: bool):
+    return {"statut": "actif" if est_actif else "inactif"}
+`}
+/>
 </CodeCard>
 
 ### Collections
-Les collections nous permettent d'organiser et de structurer nos données de manière plus complexe, comme un architecte assemblant différents éléments pour créer un tout cohérent.
 
-<CodeCard fileName="app/examples/collections.py">
-<Code language="python"
- theme="catppuccin-mocha"
+#### Liste
+<CodeCard fileName="examples/collections/list.py">
+<Code language="python" theme="catppuccin-mocha"
 code = {
-`from typing import List, Dict, Set, Tuple, Union
+`from typing import List
 
-def POST(
-    tags: List[str],                    # Liste de tags
-    metadata: Dict[str, str],           # Dictionnaire de métadonnées
-    unique_codes: Set[int],             # Ensemble de codes uniques
-    coordinates: Tuple[float, float],    # Tuple de coordonnées
-    value: Union[int, str]              # Union de types possibles
-):
-    return {
-        "tags_count": len(tags),
-        "metadata": metadata,
-        "codes": list(unique_codes),
-        "location": coordinates,
-        "dynamic_value": value
-    }
-`}/>
+def POST(etiquettes: List[str]):
+    return {"etiquettes": etiquettes}
+`}
+/>
 </CodeCard>
 
-### Special Types
-Les types spéciaux nous offrent des outils de validation sophistiqués, garantissant l'intégrité et la cohérence de nos données comme un gardien vigilant.
-
-<CodeCard fileName="app/examples/special_types.py">
-<Code language="python"
- theme="catppuccin-mocha"
+#### Dictionnaire
+<CodeCard fileName="examples/collections/dict.py">
+<Code language="python" theme="catppuccin-mocha"
 code = {
-`from pydantic import BaseModel, EmailStr, HttpUrl, UUID4
-from typing import Optional
+`from typing import Dict
 
-class UserProfile(BaseModel):
-    id: UUID4
-    email: EmailStr
-    website: Optional[HttpUrl]
-    ip_address: str
-
-def POST(profile: UserProfile):
-    return {
-        "message": "Profil validé",
-        "data": profile.model_dump()
-    }
-`}/>
+def POST(metadonnees: Dict[str, str]):
+    return {"metadonnees": metadonnees}
+`}
+/>
 </CodeCard>
 
-### Time Types
-La gestion du temps dans nos applications reflète notre rapport au temporel, permettant de capturer et manipuler les moments qui structurent nos données.
+### Types Spéciaux
 
-<CodeCard fileName="app/examples/time_types.py">
-<Code language="python"
- theme="catppuccin-mocha"
+#### Email
+<CodeCard fileName="examples/special/email.py">
+<Code language="python" theme="catppuccin-mocha"
 code = {
-`from datetime import datetime, date, time, timedelta
+`from pydantic import EmailStr
 
-def POST(
-    created_at: datetime,        # Date et heure complètes
-    birth_date: date,           # Date seule
-    meeting_time: time,         # Heure seule
-    duration: timedelta         # Durée
-):
-    return {
-        "created": created_at.isoformat(),
-        "birth": birth_date.isoformat(),
-        "meeting": meeting_time.isoformat(),
-        "duration_seconds": duration.total_seconds()
-    }
-`}/>
+def POST(email: EmailStr):
+    return {"email": email}
+`}
+/>
 </CodeCard>
 
-### File Handling
-La gestion des fichiers représente l'interface entre notre application et le monde extérieur, comme un pont permettant l'échange de données.
+#### UUID
+<CodeCard fileName="examples/special/uuid.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from uuid import UUID
 
-<CodeCard fileName="app/examples/file_handling.py">
-<Code language="python"
- theme="catppuccin-mocha"
+def GET(identifiant: UUID):
+    return {"identifiant": str(identifiant)}
+`}
+/>
+</CodeCard>
+
+### Types Temporels
+
+#### DateTime
+<CodeCard fileName="examples/time/datetime.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from datetime import datetime
+
+def POST(date_evenement: datetime):
+    return {"programmé_pour": date_evenement}
+`}
+/>
+</CodeCard>
+
+### Gestion des Fichiers
+
+#### Téléchargement d'un Fichier
+<CodeCard fileName="examples/files/single.py">
+<Code language="python" theme="catppuccin-mocha"
 code = {
 `from fastapi import UploadFile
-from typing import List
 
-async def POST(
-    document: UploadFile,           # Un fichier unique
-    attachments: List[UploadFile],  # Multiple fichiers
-    binary_data: bytes              # Données binaires en mémoire
-):
-    content = await document.read()
-    return {
-        "main_file": document.filename,
-        "attachments": [f.filename for f in attachments],
-        "binary_size": len(binary_data)
-    }
-`}/>
+def POST(fichier: UploadFile):
+    return {"nom_fichier": fichier.filename}
+`}
+/>
 </CodeCard>
 
-### Form Data
-Les formulaires constituent l'interface privilégiée entre l'utilisateur et notre système, permettant une interaction structurée et validée.
-
-<CodeCard fileName="app/examples/form_data.py">
-<Code language="python"
- theme="catppuccin-mocha"
+#### Fichiers Multiples
+<CodeCard fileName="examples/files/multiple.py">
+<Code language="python" theme="catppuccin-mocha"
 code = {
-`from fastapi import Form, File
+`from typing import List
+from fastapi import UploadFile
+
+def POST(fichiers: List[UploadFile]):
+    return {"fichiers": [f.filename for f in fichiers]}
+`}
+/>
+</CodeCard>
+
+### Données de Formulaire
+
+#### Formulaire Simple
+<CodeCard fileName="examples/form/simple.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from fastapi import Form
 from typing import Annotated
 
-def POST(
-    username: Annotated[str, Form()],
-    password: Annotated[str, Form()],
-    avatar: Annotated[bytes, File()]
-):
-    return {
-        "username": username,
-        "password_length": len(password),
-        "avatar_size": len(avatar)
-    }
-`}/>
+def POST(nom_utilisateur: Annotated[str, Form()]):
+    return {"nom_utilisateur": nom_utilisateur}
+`}
+/>
 </CodeCard>
 
-### Request Metadata
-Les métadonnées de requête nous permettent de contextualiser et d'enrichir nos interactions, comme des annotations précieuses guidant notre compréhension.
+### Métadonnées de Requête
 
-<CodeCard fileName="app/examples/metadata.py">
-<Code language="python"
- theme="catppuccin-mocha"
+#### En-têtes
+<CodeCard fileName="examples/metadata/headers.py">
+<Code language="python" theme="catppuccin-mocha"
 code = {
-`from fastapi import Header, Cookie, Query, Path
-from typing import Annotated, Optional
+`from fastapi import Header
+from typing import Annotated
 
-def GET(
-    user_id: Annotated[int, Path()],                    # Paramètre d'URL
-    token: Annotated[str, Header()],                    # En-tête HTTP
-    session: Annotated[str, Cookie()],                  # Cookie
-    filter: Annotated[str, Query()] = "all"           # Paramètre de requête
-):
-    return {
-        "user_id": user_id,
-        "auth_status": "valid" if token else "invalid",
-        "session": session,
-        "filter_applied": filter
-    }
-`}/>
+def GET(agent_utilisateur: Annotated[str, Header()]):
+    return {"agent_utilisateur": agent_utilisateur}
+`}
+/>
+</CodeCard>
+
+#### Cookies
+<CodeCard fileName="examples/metadata/cookies.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from fastapi import Cookie
+from typing import Annotated
+
+def GET(session: Annotated[str, Cookie()]):
+    return {"session": session}
+`}
+/>
 </CodeCard>
 
 ---
 
-## Advanced Features
 
-### Validation Rules
-La validation des données est comme un gardien philosophique, assurant que chaque entrée respecte les règles établies pour maintenir l'intégrité de notre système.
-
-<CodeCard fileName="app/examples/validation.py">
-<Code language="python"
- theme="catppuccin-mocha"
-code = {
-`from pydantic import BaseModel, Field, validator
-from typing import List
-
-class Article(BaseModel):
-    title: str = Field(..., min_length=3, max_length=100)
-    content: str = Field(..., min_length=10)
-    tags: List[str] = Field(default_factory=list, max_items=5)
-    
-    @validator('tags')
-    def validate_tags(cls, v):
-        if not all(len(tag) <= 20 for tag in v):
-            raise ValueError('Chaque tag doit faire moins de 20 caractères')
-        return v
-
-def POST(article: Article):
-    return {"status": "Article validé", "data": article.model_dump()}
-`}/>
-</CodeCard>
-
-### Performance Optimization
-L'optimisation est un art subtil, équilibrant efficacité et lisibilité pour créer un système performant et maintenable.
-
-<CodeCard fileName="app/examples/optimization.py">
-<Code language="python"
- theme="catppuccin-mocha"
-code = {
-`from pydantic import BaseModel, Field
-from typing import Dict, Any
-from functools import lru_cache
-
-class CachedConfig(BaseModel):
-    settings: Dict[str, Any] = Field(default_factory=dict)
-    
-    @lru_cache(maxsize=100)
-    def get_setting(self, key: str) -> Any:
-        return self.settings.get(key)
-
-async def process_data(data: bytes) -> Dict[str, Any]:
-    # Traitement asynchrone optimisé
-    return {"processed": len(data)}
-`}/>
-</CodeCard>
-
-### Error Handling
-La gestion des erreurs est comme une philosophie de la résilience, permettant à notre système de réagir gracieusement aux situations imprévues.
-
-<CodeCard fileName="app/examples/error_handling.py">
-<Code language="python"
- theme="catppuccin-mocha"
-code = {
-`from fastapi import HTTPException
-from pydantic import BaseModel, ValidationError
-from typing import Dict, Any
-
-class CustomError(BaseModel):
-    code: str
-    message: str
-    details: Dict[str, Any] = {}
-
-def handle_validation_error(e: ValidationError) -> CustomError:
-    return CustomError(
-        code="VALIDATION_ERROR",
-        message="Données invalides",
-        details={"errors": e.errors()}
-    )
-
-def POST(data: Dict[str, Any]):
-    try:
-        # Logique métier
-        if not data:
-            raise HTTPException(status_code=400, detail="Données requises")
-        return {"status": "success"}
-    except ValidationError as e:
-        return handle_validation_error(e)
-`}/>
-</CodeCard>
-
----
-
-## 🎯 Key Points
-
-<Mark>
-**Automatic Detection**: Nexy détecte intelligemment les types de contenu et applique les parseurs appropriés
-
-**Built-in Validation**: Toutes les données sont validées selon des schémas définis
-
-**Type Safety**: Un typage fort avec conversions automatiques
-
-**Flexible Parsing**: Support pour tous les formats de données courants
-
-**Error Handling**: Détection et rapport d'erreurs complets
-</Mark>
-
-Le système de parsing de Nexy incarne une philosophie de simplicité et de puissance - définissez simplement votre structure de données, et laissez Nexy s'occuper du reste !
-
+Le système d'analyse de Nexy est puissant tout en restant simple à utiliser - définissez simplement votre structure de données et laissez Nexy s'occuper du reste !
+pour d'informations sur les types d'analyseurs, veuillez vous référer à la documentation de <MDXLink href="https://fastapi.tiangolo.com/tutorial/body/#create-your-data-model">FastAPI</MDXLink>
 <SwitchPage
     prev = { {
-        label: "Response",
+        label: "Réponse",
         href: "/basics/response"
     }}
     next ={ {

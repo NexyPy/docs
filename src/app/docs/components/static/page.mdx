@@ -1,0 +1,79 @@
+# Les fichiers statiques
+
+Les fichiers statiques sont des éléments immuables essentiels à votre application. Ces ressources - qu'il s'agisse d'images, de feuilles de style, de scripts JavaScript ou de fichiers de police - restent constantes tout au long de l'exécution de votre application.
+
+## Configuration
+
+Votre application dispose d'un espace dédié dans le dossier <Badge>public</Badge>, situé à la racine, pour stocker ces fichiers statiques. Pour une configuration avancée, le fichier <Badge>nexyconfig.py</Badge> vous permet d'ajuster ces paramètres selon vos besoins.
+
+## Architecture des ressources
+
+<CodeCard fileName="Structure">
+<Structure>
+    <Folder folderName="public">
+        <Folder folderName="css">
+            <File fileName="style.css"/>
+        </Folder>
+        <Folder folderName="js">
+            <File fileName="app.js"/>
+        </Folder>
+        <Folder folderName="images">
+            <File fileName="logo.png"/>
+            <File fileName="background.jpg"/>
+            <File fileName="icon.png"/>
+        </Folder>
+        <Folder folderName="fonts">
+            <File fileName="custom.woff2"/>
+        </Folder>
+    </Folder>
+</Structure>
+</CodeCard>
+
+## Intégration
+
+Dans un fichier HTML
+
+<CodeCard fileName="app/View.html">
+<Code language="html" theme="catppuccin-mocha"
+code = {
+`<link rel="stylesheet" href="/public/css/style.css">
+<script src="/public/js/app.js"></script>
+<img src="/public/images/logo.png" alt="Logo">`}
+/>
+</CodeCard>
+
+---
+
+Dans un fichier CSS
+
+<CodeCard fileName="public/css/styles.css">
+<Code language="css" theme="catppuccin-mocha"
+code = {
+`background-image: url('/public/images/background.jpg');
+@font-face { src: url('/public/fonts/custom.woff2'); }`}
+/>
+</CodeCard>
+
+---
+
+Dans un fichier JavaScript
+
+<CodeCard fileName="public/js/app.js">
+<Code language="javascript" theme="catppuccin-mocha"
+code = {
+`fetch('/public/data/config.json')
+const img = new Image(); 
+img.src = '/public/images/icon.png';`}
+/>
+</CodeCard>
+
+<SwitchPage
+    prev = { {
+        label: "Layouts",
+        href: "/components/layouts"
+    }}
+    next = { {
+        label: "Moteur de template",
+        href: "/components/engine"
+    }}
+/>
