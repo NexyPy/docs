@@ -6,6 +6,15 @@ const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   experimental: {
     optimizePackageImports: ["@vercel/analytics"],
+    optimizeCss: true,
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
   },
   async headers() {
     return [
@@ -61,6 +70,15 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        source: "/manifest.json",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400",
+          },
+        ],
+      },
     ];
   },
   async redirects() {
@@ -75,16 +93,33 @@ const nextConfig: NextConfig = {
         destination: "/docs",
         permanent: true,
       },
+      {
+        source: "/python-framework",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/fastapi-framework",
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
   images: {
     formats: ["image/webp", "image/avif"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   compress: true,
   poweredByHeader: false,
   generateEtags: true,
+  swcMinify: true,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
 };
 
 const withMDX = createMDX({
