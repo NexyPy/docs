@@ -5,5 +5,6 @@ class NexyConfig(NexyConfigModel):
     useFF = [react()]
     # usePort = 4000
     useAliases = {"@": "src"}
-    useTitle = "Nexy Web (FBR + React)"
+    useTitle = "Nexy Docs"
     useVite = True
+
