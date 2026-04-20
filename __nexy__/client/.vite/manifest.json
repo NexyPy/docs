@@ -1,0 +1,84 @@
+{
+  "__nexy__/main.ts": {
+    "file": "assets/main-DoYemKZL.js",
+    "name": "main",
+    "src": "__nexy__/main.ts",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/components/Counter.tsx",
+      "src/components/card.tsx",
+      "src/components/theme.tsx",
+      "_react-CrVjijsn.js",
+      "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js"
+    ],
+    "css": [
+      "assets/main-Cbl7mlB6.css"
+    ],
+    "assets": [
+      "assets/Geist-VariableFont_wght-C2BNBXFg.ttf",
+      "assets/Inter-VariableFont_opsz_wght-c8O0ljhh.ttf"
+    ]
+  },
+  "_jsx-runtime-C1s63Y_c.js": {
+    "file": "assets/jsx-runtime-C1s63Y_c.js",
+    "name": "jsx-runtime",
+    "imports": [
+      "__nexy__/main.ts"
+    ]
+  },
+  "_react-CrVjijsn.js": {
+    "file": "assets/react-CrVjijsn.js",
+    "name": "react",
+    "imports": [
+      "__nexy__/main.ts"
+    ]
+  },
+  "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js": {
+    "file": "assets/client-GSzMLP_T.js",
+    "name": "client",
+    "src": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "__nexy__/main.ts",
+      "_react-CrVjijsn.js"
+    ]
+  },
+  "public/fonts/Geist/Geist-VariableFont_wght.ttf": {
+    "file": "assets/Geist-VariableFont_wght-C2BNBXFg.ttf",
+    "src": "public/fonts/Geist/Geist-VariableFont_wght.ttf"
+  },
+  "public/fonts/Inter/Inter-VariableFont_opsz,wght.ttf": {
+    "file": "assets/Inter-VariableFont_opsz_wght-c8O0ljhh.ttf",
+    "src": "public/fonts/Inter/Inter-VariableFont_opsz,wght.ttf"
+  },
+  "src/components/Counter.tsx": {
+    "file": "assets/Counter-BZBEB954.js",
+    "name": "Counter",
+    "src": "src/components/Counter.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_jsx-runtime-C1s63Y_c.js",
+      "_react-CrVjijsn.js"
+    ]
+  },
+  "src/components/card.tsx": {
+    "file": "assets/card-Co9udTXw.js",
+    "name": "card",
+    "src": "src/components/card.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_jsx-runtime-C1s63Y_c.js",
+      "_react-CrVjijsn.js"
+    ]
+  },
+  "src/components/theme.tsx": {
+    "file": "assets/theme-CwFdTfWg.js",
+    "name": "theme",
+    "src": "src/components/theme.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_jsx-runtime-C1s63Y_c.js",
+      "_react-CrVjijsn.js"
+    ]
+  }
+}
