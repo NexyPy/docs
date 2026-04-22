@@ -1,0 +1,55 @@
+# Composants
+
+Les composants sont essentiels dans Nexy. Ils constituent la base de vos interfaces utilisateurs (<Badge>UI</Badge>), ce qui en fait un excellent point de départ pour apprendre Nexy !
+
+Les composants sont les blocs de construction de l' <Badge>UI</Badge> .
+Sur le Web, HTML permet de créer des documents riches et structurés grâce à ses nombreuses balises comme <Badge>`<h1>`</Badge>, <Badge>`<li>`</Badge> et <Badge>`<div>`</Badge>. 
+
+Nexy vous permet de combiner votre <Badge>HTML</Badge> avec <Badge>CSS</Badge> , <Badge>JavaScript</Badge> et  <Badge>Python</Badge> pour créer des composants personnalisés, réutilisables dans votre application.
+
+---
+
+## Qu'est-ce qu'un composant Nexy ?
+
+Un composant Nexy est une fonction Python décorée avec le décorateur <Badge>@Component</Badge> qui génère du contenu HTML dynamique, constituant une portion de votre application.
+Un composant peut être un simple <Badge>Button</Badge>, une <Badge>Card</Badge> ou même une <Badge>Page</Badge> entière.
+
+Chaque composant est composé de deux parties principales :
+
+- <span className="text-amber-50/50 text-sm ">① </span> Une partie logique qui est une fonction <Badge>python</Badge>
+- <span className="text-amber-50/50 text-sm ">② </span> Une partie template qui est un fichier <Badge>HTML</Badge> basé sur <Badge>Jinja 2</Badge>
+<Mark>
+    Cette séparation garantit une architecture claire où la logique est séparée de la présentation. Notez que 
+    le fichier <Badge>HTML</Badge> doit avoir le même nom que la fonction composable et doit également se trouver dans le même répertoire que le module Python qui contient cette fonction.
+</Mark>
+
+<CodeCard fileName="Structure">
+    <Structure>
+    <Folder folderName="app"/>
+    <Folder folderName="components">
+      <Folder folderName="Profile">
+          <File fileName="__init__.py"/>
+          <File fileName="Profile.html"/>
+      </Folder>
+      <Folder folderName="Card">
+          <File fileName="__init__.py"/>
+          <File fileName="Card.html"/>
+      </Folder>
+    </Folder>
+  </Structure>
+</CodeCard>
+
+Il est important de noter que vous pouvez créer des composants Nexy n'importe où dans votre application.
+Cependant, pour une meilleure organisation et maintenabilité du code, nous recommandons fortement de placer vos composants dans un répertoire dédié, nommé <Badge>components</Badge> ou un nom de votre choix.
+
+
+<SwitchPage
+    prev = { {
+        label: "Body Parser",
+        href: "/basics/body-parser"
+    }}
+    next = { {
+        label: "Votre premier composant",
+        href: "/components/first-component"
+    }}
+/>

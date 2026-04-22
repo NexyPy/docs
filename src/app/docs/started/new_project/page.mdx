@@ -1,0 +1,81 @@
+# Créer un projet
+
+<Mark>
+  Avant de créer un projet, assurez-vous que <Badge>Nexy</Badge> est correctement installé.<br/>
+  Pour plus d'informations, consultez la section <MDXLink href="/docs/started" target={false}> Installation </MDXLink>. 
+  Si <Badge>Nexy</Badge> est déjà installé sur votre système, vous pouvez continuer avec les étapes suivantes.
+</Mark>
+
+pour créer un projet <Badge>Nexy</Badge> , exécutez la commande suivante :
+
+<CodeCard fileName="Terminal">
+<Code language="shell"
+ theme="catppuccin-mocha"
+code = {
+`nexy new [nom_du_projet]`
+}
+/>
+
+</CodeCard>
+
+<Mark>
+  Veillez à remplacer <Badge> [ nom_du_projet ]</Badge> par le nom que vous souhaitez donner à votre projet.
+</Mark>
+
+---
+## Exemple
+par exemple  si vous voulez créer un projet nommé <Badge> test_app </Badge>, vous pouvez exécuter la commande suivante :
+
+<CodeCard fileName="Terminal">
+<Code language="shell"
+ theme="catppuccin-mocha"
+code = {
+`nexy new test_app`
+}
+/>
+
+</CodeCard>
+
+Une fois que vous avez exécuté cette commande, veillez repondre aux questions qui vont s'en suivre selon vos besoin.
+Vos reponses permettront à <Badge>Nexy</Badge> de vous génerer un projet et de le configurer selon vos besoin .
+
+
+##  Lancement du serveur de développement
+
+Une fois le projet créé (<Badge> test_app dans cas </Badge>) , vous pouvez le lancer en exécutant la commande suivante :
+
+<CodeCard fileName="Terminal">
+<Code language="shell"
+ theme="catppuccin-mocha"
+code = {
+`cd test_app`
+}
+/>
+<Code language="shell"
+ theme="catppuccin-mocha"
+code = {
+`nexy dev`
+}
+/>
+
+</CodeCard>
+
+<Mark>
+   Une fois le serveur lancé, vous pouvez accéder à la documentation de l'API via l'URL suivante dans le cas d'un projet de type microservice : 
+   <MDXLink href="http://localhost:3000/docs">http://localhost:3000/docs</MDXLink>
+</Mark>
+---
+## 👌 Bravo !
+Maintenant que vous avez pu créer votre projet, vous pouvez commencer à analyser sa structure !<br/> Nous allons voir comment faire cela dans la section suivante.
+
+<SwitchPage
+    prev = { {
+        label: "Installation",
+        href: "/started"
+    }}
+    next ={ {
+        label: "Structure",
+        href: "/started/structure"
+    }}
+
+/>

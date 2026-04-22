@@ -1,0 +1,111 @@
+# Les Vues (Views)
+Les <Badge>Views </Badge> dans Nexy sont des composants essentiels qui simplifient la création de pages web structurées. Elles agissent comme des conteneurs intelligents, orchestrant l'organisation de vos composants avec élégance et efficacité.
+
+<Mark>
+L'une des fonctionnalités phares de Nexy est son système de routage automatique. En définissant une View dans <Badge>controller.py</Badge> et <Badge>App router</Badge>, le framework génère automatiquement les routes GET nécessaires.
+</Mark>
+### Exemple Concret
+Créez une View dans <Badge>app/about/controller.py</Badge>, et accédez-y instantanément via <Badge>/about</Badge>. Cette approche minimaliste élimine toute configuration superflue, vous permettant de vous concentrer sur l'essentiel .
+
+### Structure du Projet
+Voici l'organisation typique d'une vue dans Nexy :
+
+<CodeCard fileName="Structure du Projet">
+<Structure>
+    <Folder folderName="app">
+      <Folder folderName="about">
+          <File fileName="__init__.py"/>
+          <File fileName="controller.py"/>
+          <File fileName="View.html"/>
+      </Folder>
+    </Folder>
+</Structure>
+</CodeCard>
+
+### Contrôleur
+Le fichier controller.py gère la logique métier :
+
+<CodeCard fileName="app/about/controller.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from nexy import Component
+from components.Profile import Profile
+from components.Gallery import Gallery
+from components.Card import Card
+
+@Component(import=[Profile,Gallery,Card])
+def View():
+   return {}
+`}
+/>
+</CodeCard>
+
+### Template
+Le fichier View.html définit la structure visuelle :
+
+<CodeCard fileName="app/about/View.html">
+<Code language="jsx" theme="dark-plus"
+code = {
+`<section>
+    <h1>Amazing scientists</h1>
+    <Card>
+        <Profile 
+            name="Katherine Johnson" 
+            image="https://i.imgur.com/MK3eW3Am.jpg" 
+        />
+    </Card>
+    <Gallery/>
+</section>
+`}
+/>
+</CodeCard>
+
+---
+
+<Mark>
+La fonction <Badge>View</Badge> dans <Badge>controller.py</Badge> est une abstraction qui gère la méthode HTTP <Badge>GET</Badge>. Elle permet de générer et rendre automatiquement le HTML de votre vue avec une syntaxe simple.
+
+La fonction <Badge>View</Badge> sert de point d'entrée pour gérer les routes statiques et dynamiques. Cette approche facilite le développement en offrant une structure claire et adaptable.
+</Mark>
+
+Voici un exemple de route dynamique avec un paramètre <Badge>id</Badge> :
+
+
+<CodeCard fileName="app/user/[id]/controller.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from nexy import Component
+from components.Profile import Profile
+from components.Gallery import Gallery
+from components.Card import Card
+
+@Component(import=[Profile,Gallery,Card])
+def View(id:int):
+    return {}
+`}
+/>
+</CodeCard>
+
+pour plus d'informations sur les routes dynamique, veuillez consulter la documentation sur les <MDXLink href="/docs/basics/controllers" >Controllers</MDXLink>.
+
+---
+👌 Bravo !
+
+Vous maîtrisez maintenant les bases de la création de vues avec Nexy. Cette approche intuitive vous permet de :
+
+- Créer rapidement des pages web structurées
+- Bénéficier du routage automatique
+- Gérer facilement les composants et leur importation
+- Manipuler les routes dynamiques selon vos besoins
+
+
+<SwitchPage
+    prev = { {
+        label: "Votre premier composant",
+        href: "/components/first-component"
+    }}
+    next = { {
+        label: "Layouts",
+        href: "/components/layouts"
+    }}
+/>

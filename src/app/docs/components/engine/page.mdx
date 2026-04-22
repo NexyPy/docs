@@ -1,0 +1,308 @@
+# Le moteur de template
+
+Les composants Nexy s'appuient sur le puissant moteur de template <Badge>Jinja2</Badge> pour la génération du code HTML. Cette intégration vous permet d'exploiter les fonctionnalités de templating directement dans vos composants.
+
+## Syntaxe de base
+
+Jinja2 utilise trois types de délimiteurs essentiels :
+
+### 1. Affichage de variables <Badge> `{{ ... }}`</Badge>
+
+
+Ce délimiteur permet d'afficher le contenu d'une variable. Exemple simple :
+
+<CodeCard fileName="Template">
+<Code language="jsx" theme="catppuccin-mocha"
+code = {
+`<h1>{{ username }}</h1>
+<p>Bienvenue {{ user.firstname }} {{ user.lastname }}</p>
+`}
+/>
+</CodeCard>
+
+### 2. Instructions de contrôle <Badge> `{% ... %}`</Badge>
+
+Ces délimiteurs permettent d'exécuter des instructions comme les conditions ou les boucles. Nous les verrons en détail plus loin.
+
+### 3. Commentaires <Badge> `{# ... #}`</Badge>
+
+Pour ajouter des notes dans votre template qui ne seront pas rendues dans le HTML final :
+
+<CodeCard fileName="Template">
+<Code language="html" theme="catppuccin-mocha"
+code = {
+`{# Ceci est un commentaire qui n'apparaîtra pas dans le HTML #}
+<div>Contenu visible</div>
+`}
+/>
+</CodeCard>
+
+## Variables et expressions
+
+### 1. Variables simples
+
+L'affichage basique d'une variable :
+
+<CodeCard fileName="Template">
+<Code language="jsx" theme="catppuccin-mocha"
+code = {
+`<p>Nom: {{ name }}</p>
+<p>Age: {{ age }}</p>
+<p>Prix: {{ price }} €</p>
+`}
+/>
+</CodeCard>
+
+### 2. Accès aux attributs d'objets
+
+Vous pouvez accéder aux attributs d'objets avec le point :
+
+<CodeCard fileName="Template">
+<Code language="jsx" theme="catppuccin-mocha"
+code = {
+`<p>Email: {{ user.email }}</p>
+<p>Téléphone: {{ user.phone }}</p>
+<p>Adresse: {{ user.address.street }}</p>
+`}
+/>
+</CodeCard>
+
+### 3. Accès aux éléments de liste
+
+Accéder aux éléments par index :
+
+<CodeCard fileName="Template">
+<Code language="jsx" theme="catppuccin-mocha"
+code = {
+`<p>Premier élément: {{ items[0] }}</p>
+`}
+/>
+</CodeCard>
+
+### 4. Expressions mathématiques
+
+Les expressions peuvent inclure des calculs :
+
+<CodeCard fileName="Template">
+<Code language="jsx" theme="catppuccin-mocha"
+code = {
+`<p>Total: {{ price * quantity }} €</p>
+<p>TVA (20%): {{ price * 0.2 }} €</p>
+<p>Prix final: {{ (price * quantity) * 1.2 }} €</p>
+`}
+/>
+</CodeCard>
+
+### 5. Concaténation de chaînes
+
+Combiner plusieurs variables :
+
+<CodeCard fileName="Template">
+<Code language="jsx" theme="catppuccin-mocha"
+code = {
+`<p>Nom complet: {{ firstname + " " + lastname }}</p>
+<p>URL: {{ "https://" + domain + "/" + path }}</p>
+`}
+/>
+</CodeCard>
+
+## Structures conditionnelles
+
+### 1. Condition simple <Badge>IF</Badge>
+
+
+La structure conditionnelle de base :
+
+<CodeCard fileName="Template">
+<Code language="jsx" theme="catppuccin-mocha"
+code = {
+`{% if user.is_logged_in %}
+    <p>Bienvenue {{ user.name }}</p>
+{% else %}
+    <p>Veuillez vous connecter</p>
+{% endif %}
+`}
+/>
+</CodeCard>
+
+### 2. Conditions multiples avec <Badge>ELIF</Badge>
+
+Utilisation de elif pour des conditions plus complexes :
+
+<CodeCard fileName="Template">
+<Code language="jsx" theme="catppuccin-mocha"
+code = {
+`{% if temperature > 30 %}
+    <p class="hot">Il fait très chaud</p>
+{% elif temperature > 20 %}
+    <p class="warm">Il fait bon</p>
+{% elif temperature > 10 %}
+    <p class="cool">Il fait frais</p>
+{% else %}
+    <p class="cold">Il fait froid</p>
+{% endif %}
+`}
+/>
+</CodeCard>
+
+### 3. Opérateurs de comparaison
+
+Différents types de conditions :
+
+<CodeCard fileName="Template">
+<Code language="jsx" theme="catppuccin-mocha"
+code = {
+`{% if age >= 18 %}
+    <button>Accès autorisé</button>
+{% endif %}
+
+{% if status == "active" %}
+    <span class="badge-green">Actif</span>
+{% endif %}
+
+{% if items|length > 0 %}
+    <p>Vous avez {{ items|length }} articles</p>
+{% endif %}
+`}
+/>
+</CodeCard>
+
+### 4. Conditions logiques
+
+Combinaison de conditions avec AND, OR :
+
+<CodeCard fileName="Template">
+<Code language="jsx" theme="catppuccin-mocha"
+code = {
+`{% if user.is_admin and user.is_active %}
+    <a href="/admin">Panel Admin</a>
+{% endif %}
+
+{% if user.role == "editor" or user.role == "admin" %}
+    <button>Modifier</button>
+{% endif %}
+`}
+/>
+</CodeCard>
+
+## Structures de boucles
+
+### 1. Boucle <Badge>FOR</Badge> 
+
+Itération sur une liste :
+
+<CodeCard fileName="Template">
+<Code language="jsx" theme="catppuccin-mocha"
+code = {
+`<ul>
+    {% for fruit in fruits %}
+        <li>{{ fruit }}</li>
+    {% endfor %}
+</ul>
+`}
+/>
+</CodeCard>
+
+### 2. Boucle avec index
+
+Utilisation des variables spéciales de boucle :
+
+<CodeCard fileName="Template">
+<Code language="jsx" theme="catppuccin-mocha"
+code = {
+`<ol>
+    {% for product in products %}
+        <li class="{{ 'first' if loop.first else '' }}">
+            Article #{{ loop.index }}: {{ product.name }}
+        </li>
+    {% endfor %}
+</ol>
+`}
+/>
+</CodeCard>
+
+### 3. Boucle sur un dictionnaire
+
+Itérer sur les clés et valeurs :
+
+<CodeCard fileName="Template">
+<Code language="jsx" theme="catppuccin-mocha"
+code = {
+`<dl>
+    {% for key, value in user_info.items() %}
+        <dt>{{ key }}</dt>
+        <dd>{{ value }}</dd>
+    {% endfor %}
+</dl>
+`}
+/>
+</CodeCard>
+
+### 4. Boucle avec condition
+
+Filtrer les éléments dans une boucle :
+
+<CodeCard fileName="Template">
+<Code language="jsx" theme="catppuccin-mocha"
+code = {
+`<ul>
+    {% for user in users if user.is_active %}
+        <li>{{ user.name }} - {{ user.email }}</li>
+    {% endfor %}
+</ul>
+`}
+/>
+</CodeCard>
+
+## Filtres de base
+
+### 1. Filtres de formatage
+
+Modifier l'affichage des variables :
+
+<CodeCard fileName="Template">
+<Code language="jsx" theme="catppuccin-mocha"
+code = {
+`<p>Nom: {{ name|upper }}</p>
+<p>Description: {{ description|lower }}</p>
+<p>Titre: {{ title|title }}</p>
+<p>Date: {{ created_at|strftime('%d/%m/%Y') }}</p>
+`}
+/>
+</CodeCard>
+
+### 2. Filtres numériques
+
+Manipulation des nombres :
+
+<CodeCard fileName="Template">
+<Code language="jsx" theme="catppuccin-mocha"
+code = {
+`<p>Prix: {{ price|round(2) }} €</p>
+<p>Nombre d'articles: {{ items|length }}</p>
+<p>Moyenne: {{ total|float / count|float }}</p>
+`}
+/>
+</CodeCard>
+
+### 3. Filtres conditionnels
+
+Valeurs par défaut et vérifications :
+
+<CodeCard fileName="Template">
+<Code language="jsx" theme="catppuccin-mocha"
+code = {
+`<p>Email: {{ user.email|default('Non renseigné') }}</p>
+<p>Bio: {{ user.bio|default('Aucune biographie', true) }}</p>
+`}
+/>
+</CodeCard>
+
+---
+
+<SwitchPage
+    prev = { {
+        label: "Fichiers statiques",
+        href: "/components/static"
+    }}
+/>

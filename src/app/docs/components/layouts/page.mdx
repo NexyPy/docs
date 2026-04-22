@@ -1,0 +1,158 @@
+# Les Layouts
+
+Les <Badge>Layouts</Badge> sont des composants essentiels qui permettent de créer une structure cohérente et réutilisable pour votre application. Ils agissent comme des templates qui encapsulent les éléments communs de votre interface utilisateur.
+
+<Mark>
+Un <Badge>Layout</Badge> est un composant parent qui partage une interface commune entre plusieurs <Badge>Views</Badge>, 
+il définit la structure globale d'une section de l'application
+</Mark>
+
+---
+
+## Création d'un Layout
+
+Un <Badge>Layout</Badge> est un composant Nexy spécial défini dans <Badge>controller.py</Badge>. Contrairement aux <Badge>Views</Badge>, il sert de conteneur automatiquement pour les composants <Badge>View</Badge> et <Badge>Layout</Badge>.
+
+Voici quelques exemples de structures et d'implémentations pour vous aider à démarrer avec les Layouts.
+
+### Structure Simple
+
+La structure la plus basique consiste en un Layout principal qui englobe la <Badge>View</Badge> :
+
+
+<CodeCard fileName="Structure Basique">
+<Structure>
+    <Folder folderName="app">
+        <File fileName="controller.py"/>
+        <File fileName="Layout.html"/>
+        <File fileName="View.html"/>
+    </Folder>
+</Structure>
+</CodeCard>
+
+### Structure Imbriquée
+
+Pour des applications plus complexes, vous pouvez imbriquer les Layouts :
+
+<CodeCard fileName="Structure Imbriquée">
+<Structure>
+    <Folder folderName="app">
+        <File fileName="controller.py"/>
+        <File fileName="Layout.html"/>
+        <Folder folderName="admin">
+            <File fileName="View.html"/>
+            <Folder folderName="users">
+                <File fileName="Layout.html"/>
+                <File fileName="View.html"/>
+            </Folder>
+        </Folder>
+    </Folder>
+</Structure>
+</CodeCard>
+
+### Exemples de Code
+
+Voici un exemple simple d'un Layout de base :
+
+<CodeCard fileName="app/controller.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from nexy import Component
+from typing import Any
+
+@Component()
+def Layout(caller: Any):
+    return {
+        "children": caller(),
+        "title": "Mon Site"
+    }
+`}
+/>
+</CodeCard>
+
+<CodeCard fileName="app/Layout.html">
+<Code language="html" theme="dark-plus"
+code = {
+`<!DOCTYPE html>
+<html>
+    <head><title>{{ title }}</title></head>
+    <body>
+        <header> 
+            <a href="/">Accueil</a>  
+            <a href="/contact">Contact</a>
+        </header>
+        {{ children }}
+        <footer>© 2025</footer>
+    </body>
+</html>
+`}
+/>
+</CodeCard>
+
+Exemple d'un Layout spécifique pour une section admin :
+
+<CodeCard fileName="app/admin/controller.py">
+<Code language="python" theme="catppuccin-mocha"
+code = {
+`from nexy import Component
+from typing import Any
+
+@Component()
+def Layout(caller: Any):
+    return {
+        "children": caller(),
+        "user": get_current_user()
+    }
+`}
+/>
+</CodeCard>
+
+<CodeCard fileName="app/admin/Layout.html">
+<Code language="html" theme="dark-plus"
+code = {
+`<div class="admin-layout">
+    <nav class="sidebar">
+        <div class="user-info">
+            Connecté en tant que : {{ user.name }}
+        </div>
+        <ul>
+            <li><a href="/admin/dashboard">Dashboard</a></li>
+            <li><a href="/admin/users">Utilisateurs</a></li>
+        </ul>
+    </nav>
+    <main>
+        {{ children }}
+    </main>
+</div>
+`}
+/>
+</CodeCard>
+
+---
+
+## Layouts et Héritage
+
+Les <Badge>Views</Badge> héritent automatiquement du <Badge>Layout</Badge> parent le plus proche dans la hiérarchie des dossiers. Il n'est pas nécessaire d'avoir un Layout dans chaque répertoire. Cette approche permet une organisation flexible et modulaire de votre interface utilisateur.
+
+
+---
+
+👌 Bravo !
+
+Vous avez maintenant une bonne compréhension des <Badge>Layouts</Badge> et de leur utilisation dans Nexy.
+Nous sommes convaincus que cette approche vous sera très utile pour structurer votre application de manière efficace.
+
+
+
+<SwitchPage
+    prev = { {
+        label: "views",
+        href: "/components/views"
+
+    }}
+    next = { {
+        label: "Fichiers statiques",
+
+        href: "/components/static"
+    }}
+/>
