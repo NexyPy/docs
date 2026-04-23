@@ -14,6 +14,7 @@ items = ["Websocket","HTTP", "Jinja2","Vitejs","Mdx", "Production"]
                         <stop stop-color="#00D084"/>
                         <stop offset="1" stop-color="#61ABED"/>
                     </linearGradient>
+                    
                 </defs>
             </svg>
         {% endif %}
