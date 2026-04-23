@@ -1,0 +1,136 @@
+{
+  "__nexy__/main.ts": {
+    "file": "assets/main-BJPvk2yt.js",
+    "name": "main",
+    "src": "__nexy__/main.ts",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-jpDsebLB.js"
+    ],
+    "dynamicImports": [
+      "src/components/Counter.tsx",
+      "src/components/card.tsx",
+      "src/components/language.tsx",
+      "src/components/my-codeblock.tsx",
+      "src/components/search.tsx",
+      "src/components/theme.tsx",
+      "_react-CfVi_xnf.js",
+      "node_modules/react-dom/client.js"
+    ],
+    "css": [
+      "assets/main-DQkoQ94-.css"
+    ],
+    "assets": [
+      "assets/Geist-VariableFont_wght-C2BNBXFg.ttf",
+      "assets/Inter-VariableFont_opsz_wght-c8O0ljhh.ttf"
+    ]
+  },
+  "_createLucideIcon-DfxlzST4.js": {
+    "file": "assets/createLucideIcon-DfxlzST4.js",
+    "name": "createLucideIcon",
+    "imports": [
+      "_rolldown-runtime-jpDsebLB.js",
+      "_react-CfVi_xnf.js"
+    ]
+  },
+  "_jsx-runtime-B16DSRe1.js": {
+    "file": "assets/jsx-runtime-B16DSRe1.js",
+    "name": "jsx-runtime",
+    "imports": [
+      "_rolldown-runtime-jpDsebLB.js"
+    ]
+  },
+  "_react-CfVi_xnf.js": {
+    "file": "assets/react-CfVi_xnf.js",
+    "name": "react",
+    "imports": [
+      "_rolldown-runtime-jpDsebLB.js"
+    ]
+  },
+  "_rolldown-runtime-jpDsebLB.js": {
+    "file": "assets/rolldown-runtime-jpDsebLB.js",
+    "name": "rolldown-runtime"
+  },
+  "node_modules/react-dom/client.js": {
+    "file": "assets/client-adk0bX5b.js",
+    "name": "client",
+    "src": "node_modules/react-dom/client.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-jpDsebLB.js",
+      "_react-CfVi_xnf.js"
+    ]
+  },
+  "public/fonts/Geist/Geist-VariableFont_wght.ttf": {
+    "file": "assets/Geist-VariableFont_wght-C2BNBXFg.ttf",
+    "src": "public/fonts/Geist/Geist-VariableFont_wght.ttf"
+  },
+  "public/fonts/Inter/Inter-VariableFont_opsz,wght.ttf": {
+    "file": "assets/Inter-VariableFont_opsz_wght-c8O0ljhh.ttf",
+    "src": "public/fonts/Inter/Inter-VariableFont_opsz,wght.ttf"
+  },
+  "src/components/Counter.tsx": {
+    "file": "assets/Counter-CVe4vksK.js",
+    "name": "Counter",
+    "src": "src/components/Counter.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-jpDsebLB.js",
+      "_jsx-runtime-B16DSRe1.js",
+      "_react-CfVi_xnf.js"
+    ]
+  },
+  "src/components/card.tsx": {
+    "file": "assets/card-DebSVBf7.js",
+    "name": "card",
+    "src": "src/components/card.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-jpDsebLB.js",
+      "_jsx-runtime-B16DSRe1.js",
+      "_react-CfVi_xnf.js"
+    ]
+  },
+  "src/components/language.tsx": {
+    "file": "assets/language-CGvbKKWF.js",
+    "name": "language",
+    "src": "src/components/language.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_createLucideIcon-DfxlzST4.js",
+      "_jsx-runtime-B16DSRe1.js"
+    ]
+  },
+  "src/components/my-codeblock.tsx": {
+    "file": "assets/my-codeblock-CgX7Tdsn.js",
+    "name": "my-codeblock",
+    "src": "src/components/my-codeblock.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-jpDsebLB.js",
+      "_jsx-runtime-B16DSRe1.js",
+      "_react-CfVi_xnf.js"
+    ]
+  },
+  "src/components/search.tsx": {
+    "file": "assets/search-BtyHFCk4.js",
+    "name": "search",
+    "src": "src/components/search.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_createLucideIcon-DfxlzST4.js",
+      "_jsx-runtime-B16DSRe1.js"
+    ]
+  },
+  "src/components/theme.tsx": {
+    "file": "assets/theme-DFHQpTb8.js",
+    "name": "theme",
+    "src": "src/components/theme.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-jpDsebLB.js",
+      "_jsx-runtime-B16DSRe1.js",
+      "_react-CfVi_xnf.js"
+    ]
+  }
+}
