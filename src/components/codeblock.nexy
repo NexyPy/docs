@@ -1,0 +1,5 @@
+---
+from "./my-codeblock.tsx" import MyCodeBlock
+caller:prop[callable] = None 
+---
+<MyCodeBlock children ={{caller()}}/>

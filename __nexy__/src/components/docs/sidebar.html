@@ -1,0 +1,25 @@
+<nav class="space-y-6">
+    {% for section in items %}
+    <div>
+        {% if section.title %}
+        <h4 class="mb-3 px-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground/70">{{section.title}}</h4>
+        {% endif %}
+        
+        {% if section.items %}
+        <ul class="space-y-1">
+            {% for item in section.items %}
+            <li>
+                <a href="{{item.href}}" class="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-all hover:bg-accent/50 hover:text-foreground">
+                    <span class="flex-1">{{item.label}}</span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <a href="{{section.href}}" class="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-all hover:bg-accent/50 hover:text-foreground">
+            <span class="flex-1">{{section.label}}</span>
+        </a>
+        {% endif %}
+    </div>
+    {% endfor %}
+</nav>

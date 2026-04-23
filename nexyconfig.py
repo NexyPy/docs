@@ -7,4 +7,5 @@ class NexyConfig(NexyConfigModel):
     useAliases = {"@": "src"}
     useTitle = "Nexy Docs"
     useVite = True
+    useDocs = False
 

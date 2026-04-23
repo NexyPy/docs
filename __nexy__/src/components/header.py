@@ -6,9 +6,11 @@ from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
 def Header() -> str:
-        items = [{'label': 'showcase', 'href': '#'}, {'label': 'Docs', 'href': '#'}, {'label': 'Community', 'href': '#'}]
+        Language = __Import(path='src/components/language.tsx', framework='react', symbol='Language')
+    Search = __Import(path='src/components/search.tsx', framework='react', symbol='Search')
+    items = [{'label': 'Docs', 'href': '/docs'}, {'label': 'showcase', 'href': '/showcase'}, {'label': 'Blog', 'href': '/blog'}, {'label': 'Community', 'href': '/community'}]
     
-    context = {"items": items}
+    context = {"Language": Language, "Search": Search, "items": items}
     rendered = str(__Template().render("__nexy__//src/components/header.html", context))
     styles = """"""
     return rendered + styles

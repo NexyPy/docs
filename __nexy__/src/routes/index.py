@@ -6,11 +6,10 @@ from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
 def Index() -> str:
-        ReactCard = __Import(path='src/components/card.tsx', framework='react', symbol='Card')
-    from __nexy__.src.components.card import Card
-    from __nexy__.src.components.background import Background
+        from __nexy__.src.components.sections.home.separetor import Separetor
+    from __nexy__.src.components.sections.home.herosection import Herosection
     
-    context = {"Background": Background, "Card": Card, "ReactCard": ReactCard}
+    context = {"Herosection": Herosection, "Separetor": Separetor}
     rendered = str(__Template().render("__nexy__//src/routes/index.html", context))
     styles = """"""
     return rendered + styles

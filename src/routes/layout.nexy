@@ -5,6 +5,7 @@ from nexy import Vite
 
 children:prop[NexyElement]
 ---
+
 <!DOCTYPE html>
 <html lang="fr" class="dark">
 
@@ -17,8 +18,9 @@ children:prop[NexyElement]
 
 <body class="  antialiased min-h-dvh flex flex-col ">
     <Header />
-    <main class="lg:px-20 ">
+    <main class="">
         {{children | safe}}
+        
     </main>
     <Footer />
 </body>

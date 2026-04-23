@@ -15,8 +15,10 @@ const Theme = () => {
 
         const applyTheme = (isDark: boolean) => {
             if (isDark) {
+                root.style.colorScheme = 'dark';
                 root.classList.add('dark');
             } else {
+                root.style.colorScheme = 'light';
                 root.classList.remove('dark');
             }
         };
@@ -24,6 +26,7 @@ const Theme = () => {
         if (active === 'system') {
             const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             applyTheme(systemDark);
+
         } else {
             applyTheme(active === 'dark');
         }
