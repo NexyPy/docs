@@ -1,7 +1,7 @@
 ---
 from "./language.tsx" import Language
 from "./search.tsx" import Search
-from "./Image.nexy" import Image
+from "@/components/image.nexy" import Image
 items = [
         {"label":"Docs","href":"/docs"},
         {"label":"showcase","href":"/showcase"},
@@ -17,7 +17,7 @@ items = [
         <nav class="flex items-center gap-4">
             <a href="/">
                 <figure class="dark:hue-rotate-140 dark:invert">
-                    <Image src="/public/nexy.svg" alt="Nexy" class="w-20" />
+                    
                 </figure>
             </a>
             <div class='border-r-2 rounded-2xl border-border w-0 h-2 hidden md:block'></div>
