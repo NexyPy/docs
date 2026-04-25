@@ -1,6 +1,8 @@
 ---
 from "@/components/header.nexy" import Header
 from "@/components/footer.nexy" import Footer
+from "@/components/vercel.tsx" import VercelAnalytics
+
 from nexy import Vite
 
 children:prop[NexyElement]
@@ -17,6 +19,7 @@ children:prop[NexyElement]
 </head>
 
 <body class="  antialiased min-h-dvh flex flex-col ">
+    <VercelAnalytics/>
     <Header />
     <main class=" overflow-x-hidden">
         {{children | safe}}

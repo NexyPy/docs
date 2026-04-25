@@ -5,4 +5,5 @@ export const __NEXY_KEYS: Record<string,string> = {
   "21ea98b094a492120a576fa63a624924": "/src/components/my-codeblock.tsx",
   "2f05fb3a1d52a7263a06d854b70e30f3": "/src/components/search.tsx",
   "a105a11b82343f5501b06fb89690bad3": "/src/components/theme.tsx",
+  "fbbbf3a789843bda89ed51bb14624750": "/src/components/vercel.tsx",
 };

@@ -1,6 +1,6 @@
 {
   "__nexy__/main.ts": {
-    "file": "assets/main-ytMJ73dF.js",
+    "file": "assets/main-CLPQxYzM.js",
     "name": "main",
     "src": "__nexy__/main.ts",
     "isEntry": true,
@@ -14,6 +14,7 @@
       "src/components/my-codeblock.tsx",
       "src/components/search.tsx",
       "src/components/theme.tsx",
+      "src/components/vercel.tsx",
       "_react-CfVi_xnf.js",
       "node_modules/react-dom/client.js"
     ],
@@ -126,6 +127,17 @@
     "file": "assets/theme-DFHQpTb8.js",
     "name": "theme",
     "src": "src/components/theme.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-jpDsebLB.js",
+      "_jsx-runtime-B16DSRe1.js",
+      "_react-CfVi_xnf.js"
+    ]
+  },
+  "src/components/vercel.tsx": {
+    "file": "assets/vercel-D6YWveXd.js",
+    "name": "vercel",
+    "src": "src/components/vercel.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-jpDsebLB.js",
