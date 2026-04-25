@@ -18,9 +18,8 @@ children:prop[NexyElement]
 
 <body class="  antialiased min-h-dvh flex flex-col ">
     <Header />
-    <main class="">
+    <main class=" overflow-x-hidden">
         {{children | safe}}
-        
     </main>
     <Footer />
 </body>

@@ -5,10 +5,10 @@ from nexy import Template as __Template , Import as __Import
 from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
-def Separetor() -> str:
-        items = ['Websocket', 'HTTP', 'Jinja2', 'Vitejs', 'Mdx', 'Production']
+def WhatSection() -> str:
+        from __nexy__.src.components.background import Background
     
-    context = {"items": items}
-    rendered = str(__Template().render("__nexy__//src/components/sections/home/separetor.html", context))
+    context = {"Background": Background}
+    rendered = str(__Template().render("__nexy__//src/components/sections/home/WhatSection.html", context))
     styles = """"""
     return rendered + styles

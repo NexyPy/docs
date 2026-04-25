@@ -29,15 +29,10 @@ items = [
                 {% endfor %}
             </ul>
         </nav>
-        <div class='flex-1 h-fit flex gap-0.5 flex-col justify-center'>
-            {% for _ in range(4)%}
-            <div class="border-b-[1.5px] border-border border-dotted"></div>
-            {% endfor %}
-        </div>
         <aside class="flex gap-8">
             <Search/>
             <Language/>
-            <a href="#" class="bg-foreground text-white dark:text-gray-950 ease uppercase text-sm font-mono px-4 py-1.5 rounded-full flex items-center gap-2">
+            <a href="/learn" class="hidden md:inline-flex bg-foreground text-white dark:text-gray-950 ease uppercase text-sm font-mono px-4 py-1.5 rounded-full flex items-center gap-2">
                 Learn
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"

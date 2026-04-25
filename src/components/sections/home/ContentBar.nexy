@@ -3,7 +3,7 @@ items = ["Websocket","HTTP", "Jinja2","Vitejs","Mdx", "Production"]
 
 ---
 
-<div class="[&>div]:hidden lg:px-20  flex items-center justify-between border-y border-dashed border-gray-400 py-[24px]">
+<div class="[&>div]:hidden w-fit md:w-full bg-background  lg:px-20  flex items-center gap-8 md:justify-between border-y border-dashed border-border py-6">
     {% for item in items %}
         <p class="text-xl font-medium">{{ item }}</p>
         {% if not loop.last %}
@@ -14,9 +14,9 @@ items = ["Websocket","HTTP", "Jinja2","Vitejs","Mdx", "Production"]
                         <stop stop-color="#00D084"/>
                         <stop offset="1" stop-color="#61ABED"/>
                     </linearGradient>
-                    
+
                 </defs>
             </svg>
         {% endif %}
     {% endfor %}
-<div>
+</div>
