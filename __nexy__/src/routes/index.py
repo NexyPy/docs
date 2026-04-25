@@ -6,8 +6,8 @@ from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
 def Index() -> str:
-        from __nexy__.src.components.sections.home.ContentBar import ContentBar
-    from __nexy__.src.components.sections.home.HeroSection import HeroSection
+        from __nexy__.src.components.sections.home.Hero import Hero as HeroSection
+    from __nexy__.src.components.sections.home.ContentBar import ContentBar
     from __nexy__.src.components.sections.home.BaseSection import BaseSection
     from __nexy__.src.components.sections.home.WhatSection import WhatSection
     from __nexy__.src.components.sections.home.WhySection import WhySection
