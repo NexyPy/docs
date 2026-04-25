@@ -1,2 +1,2 @@
 import os
-is_vercel = os.environ.get('VERCEL') == '1'
+is_vercel = os.environ.get('VERCEL')
