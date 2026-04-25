@@ -1,6 +1,6 @@
 ---
 from "@/components/theme.tsx" import Theme
-from "@/components/form.nexy" import Form
+from "@/components/form.tsx" import Form
 Resources = [
     {"label":"Docs","href":"/docs"},
     {"label":"Learn","href":"/learn"},
@@ -80,7 +80,7 @@ Items = [
             <h2 class="w-fit text-2xl font-semibold">Subscribe to our newsletter</h2>
             <p>
                 Stay updated on new releases and features, guides, and case studies.
-            <p>
+            </p>
             <Form/>
         </aside>
         
