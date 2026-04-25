@@ -6,12 +6,9 @@ from "@/components/sections/home/WhatSection.nexy" import WhatSection
 from "@/components/sections/home/WhySection.nexy" import WhySection
 from "@/components/sections/home/IntegrationSection.nexy" import IntegrationSection
 
-
-
 ---
-<title>Nexy Documentation</title>
-<HeroSection/>
-<ContentBar/>
+{#<HeroSection/>
+<ContentBar/>#}
 <WhatSection/>
 <ContentBar/>
 <WhySection/>
