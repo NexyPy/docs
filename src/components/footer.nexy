@@ -1,7 +1,7 @@
 ---
 from "@/components/theme.tsx" import Theme
 from "@/components/form.tsx" import Form
-from "@/components/image.nexy" import Image
+from "@/components/Image.nexy" import Image
 Resources = [
     {"label":"Docs","href":"/docs"},
     {"label":"Learn","href":"/learn"},
