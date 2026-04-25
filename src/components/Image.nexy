@@ -1,0 +1,13 @@
+---
+src:prop[str] = None
+srcset:prop[str] = None
+className:prop[str] = None
+alt:prop[str] = None 
+
+is_vercel = os.environ.get("VERCEL") == "1"
+if is_vercel and src.startswith("/public/"):
+    # On nettoie le chemin : on remplace "/public/" par "/"
+    src = src.replace("/public/", "/")
+    srcset = srcset.replace("/public/", "/") if srcset else None
+---
+<img src="{{src}}" srcset="{{srcset}}" class="{{className}}" alt="{{alt}}"/>
