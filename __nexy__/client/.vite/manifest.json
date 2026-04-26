@@ -1,6 +1,6 @@
 {
   "__nexy__/main.ts": {
-    "file": "assets/main-CMdcYLOM.js",
+    "file": "assets/main-BThqYZ52.js",
     "name": "main",
     "src": "__nexy__/main.ts",
     "isEntry": true,
@@ -12,7 +12,6 @@
       "src/components/card.tsx",
       "src/components/form.tsx",
       "src/components/language.tsx",
-      "src/components/my-codeblock.tsx",
       "src/components/search.tsx",
       "src/components/theme.tsx",
       "src/components/vercel.tsx",
@@ -20,18 +19,17 @@
       "node_modules/react-dom/client.js"
     ],
     "css": [
-      "assets/main-TxamGykg.css"
+      "assets/main-Cl5t2LAB.css"
     ],
     "assets": [
       "assets/Geist-VariableFont_wght-C2BNBXFg.ttf",
       "assets/Inter-VariableFont_opsz_wght-c8O0ljhh.ttf"
     ]
   },
-  "_createLucideIcon-C2Wiugd4.js": {
-    "file": "assets/createLucideIcon-C2Wiugd4.js",
+  "_createLucideIcon-CIma3x7W.js": {
+    "file": "assets/createLucideIcon-CIma3x7W.js",
     "name": "createLucideIcon",
     "imports": [
-      "_rolldown-runtime-jpDsebLB.js",
       "_react-CfVi_xnf.js"
     ]
   },
@@ -72,87 +70,71 @@
     "src": "public/fonts/Inter/Inter-VariableFont_opsz,wght.ttf"
   },
   "src/components/Counter.tsx": {
-    "file": "assets/Counter-CVe4vksK.js",
+    "file": "assets/Counter-BhTgfZF-.js",
     "name": "Counter",
     "src": "src/components/Counter.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_rolldown-runtime-jpDsebLB.js",
       "_jsx-runtime-B16DSRe1.js",
       "_react-CfVi_xnf.js"
     ]
   },
   "src/components/card.tsx": {
-    "file": "assets/card-DebSVBf7.js",
+    "file": "assets/card-B6FzKkir.js",
     "name": "card",
     "src": "src/components/card.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_rolldown-runtime-jpDsebLB.js",
       "_jsx-runtime-B16DSRe1.js",
       "_react-CfVi_xnf.js"
     ]
   },
   "src/components/form.tsx": {
-    "file": "assets/form-DYT8ZLMi.js",
+    "file": "assets/form-DScOhDxp.js",
     "name": "form",
     "src": "src/components/form.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_rolldown-runtime-jpDsebLB.js",
       "_jsx-runtime-B16DSRe1.js",
       "_react-CfVi_xnf.js"
     ]
   },
   "src/components/language.tsx": {
-    "file": "assets/language-Dd8pNcu2.js",
+    "file": "assets/language-CCCwfVQ1.js",
     "name": "language",
     "src": "src/components/language.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_createLucideIcon-C2Wiugd4.js",
+      "_createLucideIcon-CIma3x7W.js",
       "_jsx-runtime-B16DSRe1.js"
     ]
   },
-  "src/components/my-codeblock.tsx": {
-    "file": "assets/my-codeblock-D0cthTsG.js",
-    "name": "my-codeblock",
-    "src": "src/components/my-codeblock.tsx",
-    "isDynamicEntry": true,
-    "imports": [
-      "_rolldown-runtime-jpDsebLB.js",
-      "_jsx-runtime-B16DSRe1.js",
-      "_react-CfVi_xnf.js"
-    ]
-  },
   "src/components/search.tsx": {
-    "file": "assets/search-DfSqLsH-.js",
+    "file": "assets/search-CP-eYKMj.js",
     "name": "search",
     "src": "src/components/search.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_createLucideIcon-C2Wiugd4.js",
+      "_createLucideIcon-CIma3x7W.js",
       "_jsx-runtime-B16DSRe1.js"
     ]
   },
   "src/components/theme.tsx": {
-    "file": "assets/theme-3BCRs1e1.js",
+    "file": "assets/theme-BiKGb-fi.js",
     "name": "theme",
     "src": "src/components/theme.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_rolldown-runtime-jpDsebLB.js",
       "_jsx-runtime-B16DSRe1.js",
       "_react-CfVi_xnf.js"
     ]
   },
   "src/components/vercel.tsx": {
-    "file": "assets/vercel-CL2M1Q41.js",
+    "file": "assets/vercel-DaFdpurF.js",
     "name": "vercel",
     "src": "src/components/vercel.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_rolldown-runtime-jpDsebLB.js",
       "_jsx-runtime-B16DSRe1.js",
       "_react-CfVi_xnf.js"
     ]

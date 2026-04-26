@@ -6,9 +6,9 @@ from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
 def Codeblock(caller: callable = None) -> str:
-        MyCodeBlock = __Import(path='src/components/my-codeblock.tsx', framework='react', symbol='MyCodeBlock')
+        code = caller()
     
-    context = {"MyCodeBlock": MyCodeBlock, "caller": caller}
+    context = {"caller": caller, "code": code}
     rendered = str(__Template().render("__nexy__//src/components/codeblock.html", context))
     styles = """"""
     return rendered + styles

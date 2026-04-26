@@ -8,7 +8,7 @@ function Form() {
             <input 
                 type="text" id="name" name="name" 
                 placeholder="you@domaine.com"
-                className="flex-1 outline-0 px-2 placeholder:text-sm bg-transparent" 
+                className="w-full outline-0 px-2 placeholder:text-sm bg-transparent" 
             />
             <button 
                 type="submit"
