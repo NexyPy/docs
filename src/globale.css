@@ -38,7 +38,7 @@
 
 
 @layer base {
-  .corder {
+  .corner,.corder {
     corner-shape: superellipse(1.5);
   }
 

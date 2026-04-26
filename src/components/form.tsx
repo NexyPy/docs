@@ -6,7 +6,7 @@ function Form() {
     return (
         <form onSubmit={(e) => e.preventDefault()} className="border border-border bg-gray-100/20 rounded-xl p-1 flex items-center ">
             <input 
-                type="text" id="name" name="name" 
+                type="email" id="name" name="name" pattern=""
                 placeholder="you@domaine.com"
                 className="w-full outline-0 px-2 placeholder:text-sm bg-transparent" 
             />
