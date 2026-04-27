@@ -1,6 +1,6 @@
 {
   "__nexy__/main.ts": {
-    "file": "assets/main-D6Wxj5S4.js",
+    "file": "assets/main-CnhnC63i.js",
     "name": "main",
     "src": "__nexy__/main.ts",
     "isEntry": true,
@@ -19,7 +19,7 @@
       "node_modules/react-dom/client.js"
     ],
     "css": [
-      "assets/main-DzDNwTJh.css"
+      "assets/main-CbEjQ2X4.css"
     ],
     "assets": [
       "assets/Geist-VariableFont_wght-C2BNBXFg.ttf",

@@ -6,7 +6,7 @@
 
 
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
   font-family: "Inter";
   --background: light-dark(white, #09160D);
   --background-second: light-dark(#09160D, lab(35.03% -8.77 -8.15 / 0.21));
