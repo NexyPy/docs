@@ -1,6 +1,6 @@
 {
   "__nexy__/main.ts": {
-    "file": "assets/main-CD1WwDyC.js",
+    "file": "assets/main-D6Wxj5S4.js",
     "name": "main",
     "src": "__nexy__/main.ts",
     "isEntry": true,
@@ -19,7 +19,7 @@
       "node_modules/react-dom/client.js"
     ],
     "css": [
-      "assets/main-Qvto02C2.css"
+      "assets/main-DzDNwTJh.css"
     ],
     "assets": [
       "assets/Geist-VariableFont_wght-C2BNBXFg.ttf",
@@ -90,7 +90,7 @@
     ]
   },
   "src/components/form.tsx": {
-    "file": "assets/form-DVSMCpb9.js",
+    "file": "assets/form-CWEN-0_2.js",
     "name": "form",
     "src": "src/components/form.tsx",
     "isDynamicEntry": true,
@@ -110,7 +110,7 @@
     ]
   },
   "src/components/search.tsx": {
-    "file": "assets/search-CP-eYKMj.js",
+    "file": "assets/search-6TwtVYQE.js",
     "name": "search",
     "src": "src/components/search.tsx",
     "isDynamicEntry": true,
