@@ -6,9 +6,12 @@ from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
 def Search(placeholder: str = 'Search documentation...', shortcut: str = 'Ctrl+K') -> str:
-    
+
+
     
     context = {"placeholder": placeholder, "shortcut": shortcut}
-    rendered = str(__Template().render("__nexy__//src/components/docs/search.html", context))
+    rendered = str(__Template().render("__nexy__/src/components/docs/search.html", context))
     styles = """"""
+    
+    # Rendu final (potentiellement enveloppé par le Layout)
     return rendered + styles

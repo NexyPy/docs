@@ -6,12 +6,15 @@ from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
 def Image(src: str = None, srcset: str = None, className: str = None, alt: str = None) -> str:
-        from src.utils import is_vercel
+    from src.utils import is_vercel
     if is_vercel and src.startswith('/public/'):
         src = src.replace('/public/', '/')
         srcset = srcset.replace('/public/', '/') if srcset else None
+
     
     context = {"alt": alt, "className": className, "is_vercel": is_vercel, "src": src, "srcset": srcset}
-    rendered = str(__Template().render("__nexy__//src/components/Image.html", context))
+    rendered = str(__Template().render("__nexy__/src/components/Image.html", context))
     styles = """"""
+    
+    # Rendu final (potentiellement enveloppé par le Layout)
     return rendered + styles

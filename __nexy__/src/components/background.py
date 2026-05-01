@@ -6,9 +6,12 @@ from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
 def Background(className: str = None) -> str:
-    
+
+
     
     context = {"className": className}
-    rendered = str(__Template().render("__nexy__//src/components/background.html", context))
+    rendered = str(__Template().render("__nexy__/src/components/background.html", context))
     styles = """"""
+    
+    # Rendu final (potentiellement enveloppé par le Layout)
     return rendered + styles

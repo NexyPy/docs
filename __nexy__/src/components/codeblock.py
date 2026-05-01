@@ -6,9 +6,12 @@ from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
 def Codeblock(caller: callable = None) -> str:
-        code = caller()
+    code = caller()
+
     
     context = {"caller": caller, "code": code}
-    rendered = str(__Template().render("__nexy__//src/components/codeblock.html", context))
+    rendered = str(__Template().render("__nexy__/src/components/codeblock.html", context))
     styles = """"""
+    
+    # Rendu final (potentiellement enveloppé par le Layout)
     return rendered + styles

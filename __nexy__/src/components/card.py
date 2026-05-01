@@ -6,9 +6,12 @@ from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
 def Card(className: str = None, caller: callable = None) -> str:
-    
+
+
     
     context = {"caller": caller, "className": className}
-    rendered = str(__Template().render("__nexy__//src/components/card.html", context))
+    rendered = str(__Template().render("__nexy__/src/components/card.html", context))
     styles = """"""
+    
+    # Rendu final (potentiellement enveloppé par le Layout)
     return rendered + styles

@@ -6,10 +6,13 @@ from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
 def BaseSection() -> str:
-        from __nexy__.src.components.background import Background
+    from __nexy__.src.components.background import Background
     from __nexy__.src.components.sections.home.viteLogo import ViteLogo
+
     
     context = {"Background": Background, "ViteLogo": ViteLogo}
-    rendered = str(__Template().render("__nexy__//src/components/sections/home/BaseSection.html", context))
+    rendered = str(__Template().render("__nexy__/src/components/sections/home/BaseSection.html", context))
     styles = """"""
+    
+    # Rendu final (potentiellement enveloppé par le Layout)
     return rendered + styles

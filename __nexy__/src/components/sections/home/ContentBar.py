@@ -6,9 +6,12 @@ from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
 def ContentBar() -> str:
-        items = ['Websocket', 'HTTP', 'Jinja2', 'Vitejs', 'Mdx', 'Production']
+    items = ['Websocket', 'HTTP', 'Jinja2', 'Vitejs', 'Mdx', 'Production']
+
     
     context = {"items": items}
-    rendered = str(__Template().render("__nexy__//src/components/sections/home/ContentBar.html", context))
+    rendered = str(__Template().render("__nexy__/src/components/sections/home/ContentBar.html", context))
     styles = """"""
+    
+    # Rendu final (potentiellement enveloppé par le Layout)
     return rendered + styles

@@ -1,5 +1,4 @@
 ---
-from "@/components/card.tsx" import Card as ReactCard
 from "@/components/card.nexy" import Card
 from "@/components/background.nexy" import Background
 

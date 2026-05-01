@@ -6,14 +6,18 @@ from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
 def Footer() -> str:
-        Theme = __Import(path='src/components/theme.tsx', framework='react', symbol='Theme')
+    Theme = __Import(path='src/components/theme.tsx', framework='react', symbol='Theme')
     Form = __Import(path='src/components/form.tsx', framework='react', symbol='Form')
     from __nexy__.src.components.Image import Image
     Resources = [{'label': 'Docs', 'href': '/docs'}, {'label': 'Learn', 'href': '/learn'}, {'label': 'Showcase', 'href': '/showcase'}, {'label': 'Blog', 'href': '/blog'}, {'label': 'Team', 'href': '/team'}]
     More = [{'label': 'Community', 'href': '/community'}, {'label': 'Governance', 'href': '/governance'}, {'label': 'GitHub', 'href': 'https://github.com/NexyPy/nexy'}]
     Items = [{'title': 'Resources', 'items': Resources}, {'title': 'More', 'items': More}]
+    es = 89
+
     
-    context = {"Form": Form, "Image": Image, "Items": Items, "More": More, "Resources": Resources, "Theme": Theme}
-    rendered = str(__Template().render("__nexy__//src/components/footer.html", context))
+    context = {"Form": Form, "Image": Image, "Items": Items, "More": More, "Resources": Resources, "Theme": Theme, "es": es}
+    rendered = str(__Template().render("__nexy__/src/components/footer.html", context))
     styles = """"""
+    
+    # Rendu final (potentiellement enveloppé par le Layout)
     return rendered + styles

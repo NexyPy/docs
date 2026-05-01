@@ -1,1 +1,7 @@
-dhdhj
+<section class="flex gap-4 w-container">
+    {{ Sidebar() }}
+    <aside class="p-12 mdx-content flex-1">
+        {{children | safe}}
+    </aside>
+    <aside class="w-50 border-l border-border border-dashed"></aside>
+</section>

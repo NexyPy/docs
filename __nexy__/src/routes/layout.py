@@ -6,12 +6,15 @@ from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
 def Layout(children: NexyElement = None) -> str:
-        from __nexy__.src.components.header import Header
+    from __nexy__.src.components.header import Header
     from __nexy__.src.components.footer import Footer
     VercelAnalytics = __Import(path='src/components/vercel.tsx', framework='react', symbol='VercelAnalytics')
     from nexy import Vite
-    
+
+    children = f"<nslot  style='display:contents;'>{children}</nslot>" 
     context = {"Footer": Footer, "Header": Header, "VercelAnalytics": VercelAnalytics, "Vite": Vite, "children": children}
-    rendered = str(__Template().render("__nexy__//src/routes/layout.html", context))
+    rendered = str(__Template().render("__nexy__/src/routes/layout.html", context))
     styles = """"""
+    
+    # Rendu final (potentiellement enveloppé par le Layout)
     return rendered + styles

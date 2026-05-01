@@ -6,9 +6,12 @@ from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
 def ViteLogo() -> str:
-    
+
+
     
     context = {}
-    rendered = str(__Template().render("__nexy__//src/components/sections/home/viteLogo.html", context))
+    rendered = str(__Template().render("__nexy__/src/components/sections/home/viteLogo.html", context))
     styles = """"""
+    
+    # Rendu final (potentiellement enveloppé par le Layout)
     return rendered + styles

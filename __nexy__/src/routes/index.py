@@ -4,16 +4,20 @@ from pathlib import Path as __Path
 from nexy import Template as __Template , Import as __Import
 from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
+from __nexy__.src.routes.layout import Layout as __Layout
 
 def Index() -> str:
-        from __nexy__.src.components.sections.home.Hero import Hero as HeroSection
+    from __nexy__.src.components.sections.home.Hero import Hero as HeroSection
     from __nexy__.src.components.sections.home.ContentBar import ContentBar
     from __nexy__.src.components.sections.home.BaseSection import BaseSection
     from __nexy__.src.components.sections.home.WhatSection import WhatSection
     from __nexy__.src.components.sections.home.WhySection import WhySection
     from __nexy__.src.components.sections.home.IntegrationSection import IntegrationSection
+
     
     context = {"BaseSection": BaseSection, "ContentBar": ContentBar, "HeroSection": HeroSection, "IntegrationSection": IntegrationSection, "WhatSection": WhatSection, "WhySection": WhySection}
-    rendered = str(__Template().render("__nexy__//src/routes/index.html", context))
+    rendered = str(__Template().render("__nexy__/src/routes/index.html", context))
     styles = """"""
-    return rendered + styles
+    
+    # Rendu final (potentiellement enveloppé par le Layout)
+    return str(__Layout(children=rendered)) + styles

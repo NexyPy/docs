@@ -4,11 +4,15 @@ from pathlib import Path as __Path
 from nexy import Template as __Template , Import as __Import
 from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
+from __nexy__.src.routes.layout import Layout as __Layout
 
 def Index() -> str:
-        from __nexy__.src.components.codeblock import Codeblock
+    from __nexy__.src.components.codeblock import Codeblock
+
     
     context = {"Codeblock": Codeblock}
-    rendered = str(__Template().render("__nexy__//src/routes/showcase/index.html", context))
+    rendered = str(__Template().render("__nexy__/src/routes/showcase/index.html", context))
     styles = """"""
-    return rendered + styles
+    
+    # Rendu final (potentiellement enveloppé par le Layout)
+    return str(__Layout(children=rendered)) + styles
