@@ -8,11 +8,13 @@ from __nexy__.src.routes.layout import Layout as __Layout
 
 def Index() -> str:
     from __nexy__.src.components.sections.otherHero import OtherHero
-    title = 'Real-world Web Applications built with Nexy'
-    description = 'Explore inspiring websites, apps, and digital experiences made by developers and companies around the world.'
+    from __nexy__.src.components.sections.blogCard import BlogCard
+    from __nexy__.src.components.sections.separator import Separator
+    title = 'The Nexy Blog'
+    description = 'Read the latest news about all Nexy solutions, from framework announcements to integration tutorials'
 
     
-    context = {"OtherHero": OtherHero, "description": description, "title": title}
+    context = {"BlogCard": BlogCard, "OtherHero": OtherHero, "Separator": Separator, "description": description, "title": title}
     rendered = str(__Template().render("__nexy__/src/routes/blog/index.html", context))
     styles = """"""
     
