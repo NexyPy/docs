@@ -13,9 +13,11 @@ def Index() -> str:
     from __nexy__.src.components.sections.home.WhatSection import WhatSection
     from __nexy__.src.components.sections.home.WhySection import WhySection
     from __nexy__.src.components.sections.home.IntegrationSection import IntegrationSection
+    from __nexy__.src.components.sections.home.sponsor import Sponsor
+    from __nexy__.src.components.sections.home.community import Community
 
     
-    context = {"BaseSection": BaseSection, "ContentBar": ContentBar, "HeroSection": HeroSection, "IntegrationSection": IntegrationSection, "WhatSection": WhatSection, "WhySection": WhySection}
+    context = {"BaseSection": BaseSection, "Community": Community, "ContentBar": ContentBar, "HeroSection": HeroSection, "IntegrationSection": IntegrationSection, "Sponsor": Sponsor, "WhatSection": WhatSection, "WhySection": WhySection}
     rendered = str(__Template().render("__nexy__/src/routes/index.html", context))
     styles = """"""
     

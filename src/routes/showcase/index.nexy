@@ -1,16 +1,97 @@
 ---
-from "@/components/codeblock.nexy" import Codeblock
+from "@/components/sections/otherHero.nexy" import OtherHero
+from "@/components/sections/showcaseCard.nexy" import ShowcaseCard
+from "@/components/sections/separator.nexy" import Separator
+
+title = "Real-world Web Applications built with Nexy"
+description = "Explore inspiring websites, apps, and digital experiences made by developers and companies around the world."
 
 ---
-Hello
-# Nexy
-## Installation
 
-```js
-function User(){}
-```
+<OtherHero title={{title}} description={{description}} />
+<section class="border-t border-border border-dashed">
+    <aside class="w-container py-16 space-y-6">
+        <div>
+            <ul class="flex gap-4 items-center">
+                <li class="bg-foreground text-foreground-second px-4 py-1 rounded-full ">All</li>
+                <li>Marketing & Media</li>
+                <li>Platform Engineering</li>
+                <li>AI </li>
+                <li>Web App</li>
+            </ul>
+            <ul>
 
-```bash
-npm install @nexyjs/core
-```
-
+            </ul>
+        </div>
+        <hr class="opacity-10">
+        <div class=" px-6 md:px-0 py-12 space-y-4 md:space-y-2 ">
+            <div class=" space-y-4 md:space-y-0 md:flex items-center gap-2 ">
+                <ShowcaseCard />
+                <Separator />
+                <ShowcaseCard />
+                <Separator />
+                <ShowcaseCard />
+            </div>
+            <div class="w-full flex justify-between px-9 ">
+                <Separator horizontal = {{True}} />
+                <Separator horizontal = {{True}} />
+                <Separator horizontal = {{True}} />
+            </div>
+            <div class=" space-y-4 md:space-y-0 md:flex items-center gap-2 ">
+                <ShowcaseCard />
+                <Separator />
+                <ShowcaseCard />
+                <Separator />
+                <ShowcaseCard />
+            </div>
+            <div class="w-full flex justify-between px-9 ">
+                <Separator horizontal = {{True}} />
+                <Separator horizontal = {{True}} />
+                <Separator horizontal = {{True}} />
+            </div>
+            <div class=" space-y-4 md:space-y-0 md:flex items-center gap-2 ">
+                <ShowcaseCard />
+                <Separator />
+                <ShowcaseCard />
+                <Separator />
+                <ShowcaseCard />
+            </div>
+            <div class="w-full flex justify-between px-9 ">
+                <Separator horizontal = {{True}} />
+                <Separator horizontal = {{True}} />
+                <Separator horizontal = {{True}} />
+            </div>
+            <div class=" space-y-4 md:space-y-0 md:flex items-center gap-2 ">
+                <ShowcaseCard />
+                <Separator />
+                <ShowcaseCard />
+                <Separator />
+                <ShowcaseCard />
+            </div>
+            <div class="w-full flex justify-between px-9 ">
+                <Separator horizontal = {{True}} />
+                <Separator horizontal = {{True}} />
+                <Separator horizontal = {{True}} />
+            </div>
+            <div class=" space-y-4 md:space-y-0 md:flex items-center gap-2 ">
+                <ShowcaseCard />
+                <Separator />
+                <ShowcaseCard />
+                <Separator />
+                <ShowcaseCard />
+            </div>
+            <div class="w-full flex justify-between px-9 ">
+                <Separator horizontal = {{True}} />
+                <Separator horizontal = {{True}} />
+                <Separator horizontal = {{True}} />
+            </div>
+            <div class=" space-y-4 md:space-y-0 md:flex items-center gap-2 ">
+                <ShowcaseCard />
+                <Separator />
+                <ShowcaseCard />
+                <Separator />
+                <ShowcaseCard />
+            </div>
+        </div>
+    </aside>
+</section>

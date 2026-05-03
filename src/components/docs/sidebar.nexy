@@ -1,4 +1,4 @@
-<aside class="flex flex-col gap-8 py-12 w-64 border-r border-dashed border-border pr-8 ">
+<aside class="sticky top-0 flex flex-col gap-8 py-12 w-64 border-r border-dashed border-border pr-8 ">
     <menu class="space-y-4">
         <div class="flex gap-3 items-center">
         <div class="border p-2 rounded-xl corner ">
@@ -29,9 +29,9 @@
     </menu>
     <menu class="space-y-2">
         <h3 class="text-xs text-gray-500 uppercase font-mono font-stretch-95%">bigin</h3>
-        <h2 class=" text-lg font-medium">Getting Started</h2>
-        <ul class="border-l  border-dashed *:px-4 space-y-1">
-            <li class=" border-l-2 border-green-600 text-green-600 ">
+        <h2 class=" text-lg ">Getting Started</h2>
+        <ul class="border-l text-[14px]  border-dashed *:px-4 space-y-1">
+            <li class=" border-l-2 border-green-600 dark:border-emerald-300 text-green-600 dark:text-yellow-300 dark:bg-yellow-100/10 py-1">
                 <a href="/docs/installation">Introduction</a>
             </li>
             <li class="">

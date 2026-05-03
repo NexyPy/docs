@@ -8,9 +8,10 @@ from __nexy__.src.routes.layout import Layout as __Layout
 
 def Layout(children: str = None) -> str:
     from __nexy__.src.components.docs.sidebar import Sidebar
+    from __nexy__.src.components.docs.table_of_contents import Table_of_contents
 
     children = f"<nslot  style='display:contents;'>{children}</nslot>" 
-    context = {"Sidebar": Sidebar, "children": children}
+    context = {"Sidebar": Sidebar, "Table_of_contents": Table_of_contents, "children": children}
     rendered = str(__Template().render("__nexy__/src/routes/docs/layout.html", context))
     styles = """"""
     

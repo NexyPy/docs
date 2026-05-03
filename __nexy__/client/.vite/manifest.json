@@ -1,6 +1,6 @@
 {
   "__nexy__/main.ts": {
-    "file": "assets/main-D1ocy1sW.js",
+    "file": "assets/main-D0-1GUVE.js",
     "name": "main",
     "src": "__nexy__/main.ts",
     "isEntry": true,
@@ -17,7 +17,7 @@
       "node_modules/react-dom/client.js"
     ],
     "css": [
-      "assets/main-JPZM5Kvg.css"
+      "assets/main-GwmVg-HB.css"
     ],
     "assets": [
       "assets/Geist-VariableFont_wght-C2BNBXFg.ttf",
@@ -68,7 +68,7 @@
     "src": "public/fonts/Inter/Inter-VariableFont_opsz,wght.ttf"
   },
   "src/components/form.tsx": {
-    "file": "assets/form-DU7Upth2.js",
+    "file": "assets/form-DCW_msS0.js",
     "name": "form",
     "src": "src/components/form.tsx",
     "isDynamicEntry": true,
