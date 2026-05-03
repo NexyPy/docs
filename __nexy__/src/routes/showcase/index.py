@@ -11,7 +11,7 @@ def Index() -> str:
     from __nexy__.src.components.sections.showcaseCard import ShowcaseCard
     from __nexy__.src.components.sections.separator import Separator
     title = 'Real-world Web Applications built with Nexy'
-    description = 'Explore inspiring websites, apps, and digital experiences made by developers and companies around the world.'
+    description = ' Explore inspiring websites, apps, and digital experiences made by developers and companies around the\nworld.'
 
     
     context = {"OtherHero": OtherHero, "Separator": Separator, "ShowcaseCard": ShowcaseCard, "description": description, "title": title}
