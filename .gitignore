@@ -2,6 +2,6 @@
 .venv/**
 pycache/**
 package-lock.json
-pnpm-lock.yaml
-bun.lock
+./pnpm-lock.yaml
+./bun.lock
 
