@@ -224,7 +224,7 @@ wheels = [
 
 [[package]]
 name = "nexy"
-version = "2.0.5"
+version = "2.0.6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "fastapi" },
@@ -236,9 +236,9 @@ dependencies = [
     { name = "uvicorn", extra = ["standard"] },
     { name = "watchdog" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f6/e9/c9924dd39ebc44843162fd043b79522b7b2b8428195a443d8917a94d0f18/nexy-2.0.5.tar.gz", hash = "sha256:e9790d2cfc53b4214266ec7a33d3fabf01810cdb5d9e300b855056078cee8b92", size = 56678, upload_time = "2026-05-01T20:28:35.621Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/2d/04/09aa76b74bada9d12d25e21967d51c63f3d78bffdad526c9412db84b6da2/nexy-2.0.6.tar.gz", hash = "sha256:36193657cbbd0a5ac2725411b80ccd17735d13f2a8721f2fa5da1049be7af77f", size = 57918, upload_time = "2026-05-04T22:16:40.23Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/58/b6/bfc75624f48521594e9d7f0fa463f0f8c28bff458f694524e75f0e590cb4/nexy-2.0.5-py3-none-any.whl", hash = "sha256:b9419175f2fc933c29c67c8726bcace40e1488faed02bed3e082a0b140aa49d6", size = 94915, upload_time = "2026-05-01T20:28:34.187Z" },
+    { url = "https://files.pythonhosted.org/packages/14/90/bffc7416cad30e7c150e0c561df85b23e6f5f1b7954f466607a0684f13c2/nexy-2.0.6-py3-none-any.whl", hash = "sha256:b6b5b5a3ee25797a44af9776d1bbe18c1ee90c55d81ab0042286329011718f68", size = 96260, upload_time = "2026-05-04T22:16:38.978Z" },
 ]
 
 [[package]]
@@ -250,7 +250,7 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "nexy", specifier = ">=2.0.5" }]
+requires-dist = [{ name = "nexy", specifier = ">=2.0.6" }]
 
 [[package]]
 name = "prompt-toolkit"

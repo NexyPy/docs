@@ -6,12 +6,12 @@ from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 from __nexy__.src.routes.community.layout import Layout as __Layout
 
-def Index() -> str:
+def Governance() -> str:
 
 
     
     context = {}
-    rendered = str(__Template().render("__nexy__/src/routes/community/index.html", context))
+    rendered = str(__Template().render("__nexy__/src/routes/community/governance.html", context))
     styles = """"""
     
     # Rendu final (potentiellement enveloppé par le Layout)
