@@ -224,7 +224,7 @@ wheels = [
 
 [[package]]
 name = "nexy"
-version = "2.0.6"
+version = "2.0.7"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "fastapi" },
@@ -236,9 +236,9 @@ dependencies = [
     { name = "uvicorn", extra = ["standard"] },
     { name = "watchdog" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/2d/04/09aa76b74bada9d12d25e21967d51c63f3d78bffdad526c9412db84b6da2/nexy-2.0.6.tar.gz", hash = "sha256:36193657cbbd0a5ac2725411b80ccd17735d13f2a8721f2fa5da1049be7af77f", size = 57918, upload_time = "2026-05-04T22:16:40.23Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/4d/5b/59141a1b6903b453dcecc9e6b6d0bf26123f64416e02f0f6c441e67f15b8/nexy-2.0.7.tar.gz", hash = "sha256:269415990a93898dfbbee812b45b8db4fd1753fd34d0579a12f11349db7ea326", size = 58201, upload_time = "2026-05-04T23:34:36.107Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/14/90/bffc7416cad30e7c150e0c561df85b23e6f5f1b7954f466607a0684f13c2/nexy-2.0.6-py3-none-any.whl", hash = "sha256:b6b5b5a3ee25797a44af9776d1bbe18c1ee90c55d81ab0042286329011718f68", size = 96260, upload_time = "2026-05-04T22:16:38.978Z" },
+    { url = "https://files.pythonhosted.org/packages/7b/fd/69b31d3eb09b54ef44dce211b0fdb818d987d0442335989929da61f4d179/nexy-2.0.7-py3-none-any.whl", hash = "sha256:5ea62b14e954b8d9e64fd2794771409f401b514a4fad69b3e83f7743792f85eb", size = 96483, upload_time = "2026-05-04T23:34:34.561Z" },
 ]
 
 [[package]]
@@ -250,7 +250,7 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "nexy", specifier = ">=2.0.6" }]
+requires-dist = [{ name = "nexy", specifier = ">=2.0.7" }]
 
 [[package]]
 name = "prompt-toolkit"
@@ -662,11 +662,11 @@ wheels = [
 
 [[package]]
 name = "wcwidth"
-version = "0.6.0"
+version = "0.7.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/35/a2/8e3becb46433538a38726c948d3399905a4c7cabd0df578ede5dc51f0ec2/wcwidth-0.6.0.tar.gz", hash = "sha256:cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159", size = 159684, upload_time = "2026-02-06T19:19:40.919Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz", hash = "sha256:90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0", size = 182132, upload_time = "2026-05-02T16:04:12.653Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/68/5a/199c59e0a824a3db2b89c5d2dade7ab5f9624dbf6448dc291b46d5ec94d3/wcwidth-0.6.0-py3-none-any.whl", hash = "sha256:1a3a1e510b553315f8e146c54764f4fb6264ffad731b3d78088cdb1478ffbdad", size = 94189, upload_time = "2026-02-06T19:19:39.646Z" },
+    { url = "https://files.pythonhosted.org/packages/41/52/e465037f5375f43533d1a80b6923955201596a99142ed524d77b571a1418/wcwidth-0.7.0-py3-none-any.whl", hash = "sha256:5d69154c429a82910e241c738cd0e2976fac8a2dd47a1a805f4afed1c0f136f2", size = 110825, upload_time = "2026-05-02T16:04:11.033Z" },
 ]
 
 [[package]]
