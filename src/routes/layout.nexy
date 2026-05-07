@@ -39,34 +39,160 @@ children:prop[NexyElement]
 <script defer>
 (() => {
 
+    /*
+    |--------------------------------------------------------------------------
+    | CACHE & STATE
+    |--------------------------------------------------------------------------
+    */
+
     const PAGES_CACHE = new Map()
+    const PREFETCHED = new Set()
+
+    /*
+    |--------------------------------------------------------------------------
+    | UTILITIES
+    |--------------------------------------------------------------------------
+    */
+
+    function getURL(link) {
+        try {
+            return new URL(link.href)
+        } catch {
+            return null
+        }
+    }
+
+    function isSameOrigin(url) {
+        return url && url.origin === location.origin
+    }
+
+    function shouldHandleLink(link) {
+
+        if (link.target === "_blank") return false
+        if (link.hasAttribute("download")) return false
+
+        const url = getURL(link)
+
+        if (!url) return false
+        if (url.protocol === "mailto:" || url.protocol === "tel:") return false
+
+        return isSameOrigin(url)
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | VIEWPORT PREFETCH OBSERVER
+    |--------------------------------------------------------------------------
+    */
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (!entry.isIntersecting) return
+
+            const link = entry.target
+            const url = getURL(link)
+
+            if (!url) return
+
+            const key = url.pathname + url.search
+
+            if (PREFETCHED.has(key)) {
+                observer.unobserve(link)
+                return
+            }
+
+            PREFETCHED.add(key)
+
+            fetchPage(url)
+
+            observer.unobserve(link)
+        })
+
+    }, {
+        rootMargin: "300px"
+    })
+
+    /*
+    |--------------------------------------------------------------------------
+    | INIT LINKS
+    |--------------------------------------------------------------------------
+    */
 
     document.addEventListener("DOMContentLoaded", () => {
 
-        const links = document.querySelectorAll("[prefetchlink]")
+        initLinks(document)
+
+    })
+
+    function initLinks(root) {
+
+        const links = root.querySelectorAll("[prefetchlink]")
 
         links.forEach(link => {
 
-            // Prefetch au hover
-            link.addEventListener("mouseenter", () => {
-                fetchPage(link.pathname)
-            })
+            if (!shouldHandleLink(link)) return
 
-            // Navigation SPA
+            const url = getURL(link)
+            if (!url) return
+
+            const key = url.pathname + url.search
+
+            /*
+            |--------------------------------------------------------------------------
+            | VIEWPORT PREFETCH
+            |--------------------------------------------------------------------------
+            */
+
+            observer.observe(link)
+
+            /*
+            |--------------------------------------------------------------------------
+            | HOVER PREFETCH
+            |--------------------------------------------------------------------------
+            */
+
+            link.addEventListener("mouseenter", () => {
+
+                if (PREFETCHED.has(key)) return
+
+                PREFETCHED.add(key)
+
+                fetchPage(url)
+            }, { passive: true })
+
+            /*
+            |--------------------------------------------------------------------------
+            | CLICK NAVIGATION
+            |--------------------------------------------------------------------------
+            */
+
             link.addEventListener("click", navigate)
         })
-    })
+    }
 
-    async function fetchPage(pathname) {
+    /*
+    |--------------------------------------------------------------------------
+    | FETCH PAGE (SSR HTML)
+    |--------------------------------------------------------------------------
+    */
 
-        // Cache
-        if (PAGES_CACHE.has(pathname)) {
-            return PAGES_CACHE.get(pathname)
+    async function fetchPage(url) {
+
+        const key = url.pathname + url.search
+
+        if (PAGES_CACHE.has(key)) {
+            return PAGES_CACHE.get(key)
         }
 
         try {
 
-            const response = await fetch(pathname)
+            const response = await fetch(url.href, {
+                headers: {
+                    "X-Prefetch": "true"
+                }
+            })
 
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}`)
@@ -74,79 +200,99 @@ children:prop[NexyElement]
 
             const html = await response.text()
 
-            PAGES_CACHE.set(pathname, html)
+            PAGES_CACHE.set(key, html)
 
             return html
 
-        } catch (error) {
+        } catch (err) {
 
-            console.error("Prefetch error:", error)
-
+            console.error("Prefetch error:", err)
             return null
         }
     }
+
+    /*
+    |--------------------------------------------------------------------------
+    | NAVIGATION (SPA SSR HYBRID)
+    |--------------------------------------------------------------------------
+    */
 
     async function navigate(event) {
 
         event.preventDefault()
 
         const link = event.currentTarget
-        const pathname = link.pathname
+        const url = getURL(link)
+
+        if (!url) return
+
+        const key = url.pathname + url.search
 
         try {
 
-            let html = PAGES_CACHE.get(pathname)
+            let html = PAGES_CACHE.get(key)
 
             if (!html) {
-                html = await fetchPage(pathname)
+                html = await fetchPage(url)
             }
 
             if (!html) {
-                window.location.href = pathname
+                window.location.href = url.href
                 return
             }
 
-            // Parse HTML
             const parser = new DOMParser()
             const doc = parser.parseFromString(html, "text/html")
 
-            // Exemple :
-            // remplacer uniquement le contenu principal
-            const newContent = doc.querySelector("main")
-            const currentContent = document.querySelector("main")
+            const newMain = doc.querySelector("main")
+            const currentMain = document.querySelector("main")
 
-            if (newContent && currentContent) {
-
-                currentContent.innerHTML = newContent.innerHTML
-
-                // Update URL
-                history.pushState({}, "", pathname)
-
-                // Scroll top
-                window.scrollTo(0, 0)
-
-                // Mettre à jour le title
-                document.title = doc.title
+            if (!newMain || !currentMain) {
+                window.location.href = url.href
+                return
             }
 
-        } catch (error) {
+            /*
+            |--------------------------------------------------------------------------
+            | DOM SWAP
+            |--------------------------------------------------------------------------
+            */
 
-            console.error("Navigation error:", error)
+            currentMain.innerHTML = newMain.innerHTML
 
-            // fallback
-            window.location.href = pathname
+            document.title = doc.title
+
+            history.pushState({}, "", url.href)
+
+            window.scrollTo({
+                top: 0,
+                behavior: "instant"
+            })
+
+            initLinks(document)
+
+        } catch (err) {
+
+            console.error("Navigation error:", err)
+            window.location.href = url.href
         }
     }
 
-    // Gestion back/forward navigateur
+    /*
+    |--------------------------------------------------------------------------
+    | POPSTATE (BACK/FORWARD)
+    |--------------------------------------------------------------------------
+    */
+
     window.addEventListener("popstate", async () => {
 
-        const pathname = location.pathname
+        const url = new URL(location.href)
+        const key = url.pathname + url.search
 
-        let html = PAGES_CACHE.get(pathname)
+        let html = PAGES_CACHE.get(key)
 
         if (!html) {
-            html = await fetchPage(pathname)
+            html = await fetchPage(url)
         }
 
         if (!html) return
@@ -154,13 +300,16 @@ children:prop[NexyElement]
         const parser = new DOMParser()
         const doc = parser.parseFromString(html, "text/html")
 
-        const newContent = doc.querySelector("main")
-        const currentContent = document.querySelector("main")
+        const newMain = doc.querySelector("main")
+        const currentMain = document.querySelector("main")
 
-        if (newContent && currentContent) {
-            currentContent.innerHTML = newContent.innerHTML
-            document.title = doc.title
-        }
+        if (!newMain || !currentMain) return
+
+        currentMain.innerHTML = newMain.innerHTML
+
+        document.title = doc.title
+
+        initLinks(document)
     })
 
 })()

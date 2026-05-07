@@ -7,10 +7,11 @@ NexyElement = Union[callable, __JinjaTemplate]
 
 def Hero() -> str:
     from __nexy__.src.components.card import Card
+    from __nexy__.src.components.link import Link
     from __nexy__.src.components.background import Background
 
     
-    context = {"Background": Background, "Card": Card}
+    context = {"Background": Background, "Card": Card, "Link": Link}
     rendered = str(__Template().render("__nexy__/src/components/sections/home/Hero.html", context))
     styles = """"""
     

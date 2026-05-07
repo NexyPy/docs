@@ -26,8 +26,6 @@ items = [
             <ul class="md:flex gap-4 hidden "> 
                 {% for item in items %}
                 <li class="uppercase text-sm  font-mono tracking-wider ">
-                    <!-- <a href="{{item.get('href')}}" target="_blank" rel="noopener noreferrer">{{item.get('label')}}</a> -->
-                    <!-- <a href="{{item.get('href')}}" rel="noopener noreferrer">{{item.get('label')}}</a> -->
                     <Link href="{{item.get('href')}}"> {{item.get('label')}} </Link>
                 </li>
                 {% endfor %}
@@ -36,7 +34,7 @@ items = [
         <aside class="flex gap-8">
             <Search/>
             <Language/>
-            <a href="/learn" class="hidden md:inline-flex bg-foreground text-white dark:text-gray-950 ease uppercase text-sm font-mono px-4 py-1.5 rounded-full flex items-center gap-2">
+            <Link href="/learn" className="hidden md:inline-flex bg-foreground text-white dark:text-gray-950 ease uppercase text-sm font-mono px-4 py-1.5 rounded-full flex items-center gap-2">
                 Learn
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
@@ -46,7 +44,7 @@ items = [
                     <path d="M22 10v6" />
                     <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
                 </svg>
-            </a>
+            </Link>
         </aside>
     </menu>
 </header>
