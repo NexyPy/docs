@@ -35,3 +35,133 @@ children:prop[NexyElement]
 </body>
 
 </html>
+
+<script defer>
+(() => {
+
+    const PAGES_CACHE = new Map()
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const links = document.querySelectorAll("[prefetchlink]")
+
+        links.forEach(link => {
+
+            // Prefetch au hover
+            link.addEventListener("mouseenter", () => {
+                fetchPage(link.pathname)
+            })
+
+            // Navigation SPA
+            link.addEventListener("click", navigate)
+        })
+    })
+
+    async function fetchPage(pathname) {
+
+        // Cache
+        if (PAGES_CACHE.has(pathname)) {
+            return PAGES_CACHE.get(pathname)
+        }
+
+        try {
+
+            const response = await fetch(pathname)
+
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`)
+            }
+
+            const html = await response.text()
+
+            PAGES_CACHE.set(pathname, html)
+
+            return html
+
+        } catch (error) {
+
+            console.error("Prefetch error:", error)
+
+            return null
+        }
+    }
+
+    async function navigate(event) {
+
+        event.preventDefault()
+
+        const link = event.currentTarget
+        const pathname = link.pathname
+
+        try {
+
+            let html = PAGES_CACHE.get(pathname)
+
+            if (!html) {
+                html = await fetchPage(pathname)
+            }
+
+            if (!html) {
+                window.location.href = pathname
+                return
+            }
+
+            // Parse HTML
+            const parser = new DOMParser()
+            const doc = parser.parseFromString(html, "text/html")
+
+            // Exemple :
+            // remplacer uniquement le contenu principal
+            const newContent = doc.querySelector("main")
+            const currentContent = document.querySelector("main")
+
+            if (newContent && currentContent) {
+
+                currentContent.innerHTML = newContent.innerHTML
+
+                // Update URL
+                history.pushState({}, "", pathname)
+
+                // Scroll top
+                window.scrollTo(0, 0)
+
+                // Mettre à jour le title
+                document.title = doc.title
+            }
+
+        } catch (error) {
+
+            console.error("Navigation error:", error)
+
+            // fallback
+            window.location.href = pathname
+        }
+    }
+
+    // Gestion back/forward navigateur
+    window.addEventListener("popstate", async () => {
+
+        const pathname = location.pathname
+
+        let html = PAGES_CACHE.get(pathname)
+
+        if (!html) {
+            html = await fetchPage(pathname)
+        }
+
+        if (!html) return
+
+        const parser = new DOMParser()
+        const doc = parser.parseFromString(html, "text/html")
+
+        const newContent = doc.querySelector("main")
+        const currentContent = document.querySelector("main")
+
+        if (newContent && currentContent) {
+            currentContent.innerHTML = newContent.innerHTML
+            document.title = doc.title
+        }
+    })
+
+})()
+</script>

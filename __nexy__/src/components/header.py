@@ -9,10 +9,11 @@ def Header() -> str:
     Language = __Import(path='src/components/language.tsx', framework='react', symbol='Language')
     Search = __Import(path='src/components/search.tsx', framework='react', symbol='Search')
     from __nexy__.src.components.Image import Image
+    from __nexy__.src.components.link import Link
     items = [{'label': 'Docs', 'href': '/docs'}, {'label': 'showcase', 'href': '/showcase'}, {'label': 'Blog', 'href': '/blog'}, {'label': 'Community', 'href': '/community'}]
 
     
-    context = {"Image": Image, "Language": Language, "Search": Search, "items": items}
+    context = {"Image": Image, "Language": Language, "Link": Link, "Search": Search, "items": items}
     rendered = str(__Template().render("__nexy__/src/components/header.html", context))
     styles = """"""
     

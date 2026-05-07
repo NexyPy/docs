@@ -1,0 +1,8 @@
+---
+href : prop[str] = ""
+caller : prop[callable] = None
+---
+<a href="{{ href }}" prefetchlink >
+    {{ caller()  }}
+</a>
+

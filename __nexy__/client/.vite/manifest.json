@@ -1,6 +1,6 @@
 {
   "__nexy__/main.ts": {
-    "file": "assets/main-BjvRYhiH.js",
+    "file": "assets/main-CG9UwYXz.js",
     "name": "main",
     "src": "__nexy__/main.ts",
     "isEntry": true,
@@ -8,6 +8,7 @@
       "_rolldown-runtime-jpDsebLB.js"
     ],
     "dynamicImports": [
+      "src/components/data.js",
       "src/components/form.tsx",
       "src/components/language.tsx",
       "src/components/search.tsx",
@@ -17,22 +18,22 @@
       "node_modules/react-dom/client.js"
     ],
     "css": [
-      "assets/main-McOl5E0V.css"
+      "assets/main-DUgZxWgk.css"
     ],
     "assets": [
       "assets/Geist-VariableFont_wght-C2BNBXFg.ttf",
       "assets/Inter-VariableFont_opsz_wght-c8O0ljhh.ttf"
     ]
   },
-  "_createLucideIcon-9zaFx0nj.js": {
-    "file": "assets/createLucideIcon-9zaFx0nj.js",
+  "_createLucideIcon-92cUH90p.js": {
+    "file": "assets/createLucideIcon-92cUH90p.js",
     "name": "createLucideIcon",
     "imports": [
       "_react-CfVi_xnf.js"
     ]
   },
-  "_jsx-runtime-B16DSRe1.js": {
-    "file": "assets/jsx-runtime-B16DSRe1.js",
+  "_jsx-runtime-DijkMW8L.js": {
+    "file": "assets/jsx-runtime-DijkMW8L.js",
     "name": "jsx-runtime",
     "imports": [
       "_rolldown-runtime-jpDsebLB.js"
@@ -67,53 +68,59 @@
     "file": "assets/Inter-VariableFont_opsz_wght-c8O0ljhh.ttf",
     "src": "public/fonts/Inter/Inter-VariableFont_opsz,wght.ttf"
   },
+  "src/components/data.js": {
+    "file": "assets/data-byyHAgHp.js",
+    "name": "data",
+    "src": "src/components/data.js",
+    "isDynamicEntry": true
+  },
   "src/components/form.tsx": {
-    "file": "assets/form-DCW_msS0.js",
+    "file": "assets/form-DEOnkVcv.js",
     "name": "form",
     "src": "src/components/form.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_jsx-runtime-B16DSRe1.js",
+      "_jsx-runtime-DijkMW8L.js",
       "_react-CfVi_xnf.js"
     ]
   },
   "src/components/language.tsx": {
-    "file": "assets/language-C5gjRr1h.js",
+    "file": "assets/language-BHNdd9DL.js",
     "name": "language",
     "src": "src/components/language.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_createLucideIcon-9zaFx0nj.js",
-      "_jsx-runtime-B16DSRe1.js"
+      "_createLucideIcon-92cUH90p.js",
+      "_jsx-runtime-DijkMW8L.js"
     ]
   },
   "src/components/search.tsx": {
-    "file": "assets/search-TzXodVo8.js",
+    "file": "assets/search-ChUVDGAp.js",
     "name": "search",
     "src": "src/components/search.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_createLucideIcon-9zaFx0nj.js",
-      "_jsx-runtime-B16DSRe1.js"
+      "_createLucideIcon-92cUH90p.js",
+      "_jsx-runtime-DijkMW8L.js"
     ]
   },
   "src/components/theme.tsx": {
-    "file": "assets/theme-VvROFc4j.js",
+    "file": "assets/theme-DHOR38oX.js",
     "name": "theme",
     "src": "src/components/theme.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_jsx-runtime-B16DSRe1.js",
+      "_jsx-runtime-DijkMW8L.js",
       "_react-CfVi_xnf.js"
     ]
   },
   "src/components/vercel.tsx": {
-    "file": "assets/vercel-Dd5b72Vq.js",
+    "file": "assets/vercel-Ce8N_s6s.js",
     "name": "vercel",
     "src": "src/components/vercel.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_jsx-runtime-B16DSRe1.js",
+      "_jsx-runtime-DijkMW8L.js",
       "_react-CfVi_xnf.js"
     ]
   }

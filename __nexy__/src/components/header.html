@@ -3,17 +3,18 @@
     
     <menu class=" flex justify-between items-center gap-6 w-full w-container ">
         <nav class="flex items-center gap-4">
-            <a href="/">
+            {% call Link(href="/") %} 
                 <figure class="dark:hue-rotate-140 dark:invert">
                     {{ Image(src="/public/nexy.svg", alt="Nexy", className="w-20") }}
                 </figure>
-            </a>
+            {% endcall %}
             <div class='border-r-2 rounded-2xl border-border w-0 h-2 hidden md:block'></div>
             <ul class="md:flex gap-4 hidden "> 
                 {% for item in items %}
                 <li class="uppercase text-sm  font-mono tracking-wider ">
                     <!-- <a href="{{item.get('href')}}" target="_blank" rel="noopener noreferrer">{{item.get('label')}}</a> -->
-                    <a href="{{item.get('href')}}" rel="noopener noreferrer">{{item.get('label')}}</a>
+                    <!-- <a href="{{item.get('href')}}" rel="noopener noreferrer">{{item.get('label')}}</a> -->
+                    {% call Link(href=(item.get('href'))) %} {{item.get('label')}} {% endcall %}
                 </li>
                 {% endfor %}
             </ul>
