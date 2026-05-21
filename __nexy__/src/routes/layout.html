@@ -1,18 +1,45 @@
-<!DOCTYPE html>
+
 <html lang="fr" class="dark">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nexy & React | App </title>
     {{ Vite() }}
-    <script>
+    <script type="module">
+        const TABS = [...document.querySelectorAll("#tabs")];
+        TABS.forEach((tabs) => {
+            if (tabs.children.length <= 1) return
+            const tabButtons = [...tabs.children]
+            tabButtons.forEach((tab) => {
+
+                tab.addEventListener("click", (e) => {
+                    e.preventDefault()
+                    const li = e.target.closest("li")
+                    const tabname = li.getAttribute("tabname")
+                    const codeblock = tabs.nextElementSibling
+                    if (!codeblock) return
+                    const blocks = [...codeblock.querySelectorAll("[tabname]")]
+
+                    blocks.forEach((block) => {
+                        block.classList.toggle("hidden", block.getAttribute("tabname") !== tabname)
+                    })
+
+                    tabButtons.forEach((t) => {
+                        t.classList.remove("border-b-2", "border-[#ACE8AE]")
+                    })
+                    li.classList.add("border-b-2", "border-[#ACE8AE]")
+                })
+            })
+        })
+
         document.documentElement.classList.toggle(
-        "dark",
-        localStorage.getItem('nexy-theme') === "dark" ||
+            "dark",
+            localStorage.getItem('nexy-theme') === "dark" ||
             (!("nexy-theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
         );
     </script>
+
 </head>
 
 <body class="  antialiased min-h-dvh flex flex-col ">
@@ -25,109 +52,51 @@
 </body>
 
 </html>
+<script__ defer hidden>
+        (() => {
 
-<script defer>
-(() => {
+            /*
+            |--------------------------------------------------------------------------
+            | CACHE & STATE
+            |--------------------------------------------------------------------------
+            */
 
-    /*
-    |--------------------------------------------------------------------------
-    | CACHE & STATE
-    |--------------------------------------------------------------------------
-    */
+            const PAGES_CACHE = new Map()
+            const PREFETCHED = new Set()
 
-    const PAGES_CACHE = new Map()
-    const PREFETCHED = new Set()
+            const supportsViewTransition =
+                typeof document.startViewTransition === "function"
 
-    /*
-    |--------------------------------------------------------------------------
-    | UTILITIES
-    |--------------------------------------------------------------------------
-    */
+            /*
+            |--------------------------------------------------------------------------
+            | UTILITIES
+            |--------------------------------------------------------------------------
+            */
 
-    function getURL(link) {
-        try {
-            return new URL(link.href)
-        } catch {
-            return null
-        }
-    }
-
-    function isSameOrigin(url) {
-        return url && url.origin === location.origin
-    }
-
-    function shouldHandleLink(link) {
-
-        if (link.target === "_blank") return false
-        if (link.hasAttribute("download")) return false
-
-        const url = getURL(link)
-
-        if (!url) return false
-        if (url.protocol === "mailto:" || url.protocol === "tel:") return false
-
-        return isSameOrigin(url)
-    }
-
-    /*
-    |--------------------------------------------------------------------------
-    | VIEWPORT PREFETCH OBSERVER
-    |--------------------------------------------------------------------------
-    */
-
-    const observer = new IntersectionObserver((entries) => {
-
-        entries.forEach(entry => {
-
-            if (!entry.isIntersecting) return
-
-            const link = entry.target
-            const url = getURL(link)
-
-            if (!url) return
-
-            const key = url.pathname + url.search
-
-            if (PREFETCHED.has(key)) {
-                observer.unobserve(link)
-                return
+            function getURL(link) {
+                try {
+                    return new URL(link.href)
+                } catch {
+                    return null
+                }
             }
 
-            PREFETCHED.add(key)
+            function isSameOrigin(url) {
+                return url && url.origin === location.origin
+            }
 
-            fetchPage(url)
+            function shouldHandleLink(link) {
 
-            observer.unobserve(link)
-        })
+                if (link.target === "_blank") return false
+                if (link.hasAttribute("download")) return false
 
-    }, {
-        rootMargin: "300px"
-    })
+                const url = getURL(link)
 
-    /*
-    |--------------------------------------------------------------------------
-    | INIT LINKS
-    |--------------------------------------------------------------------------
-    */
+                if (!url) return false
+                if (url.protocol === "mailto:" || url.protocol === "tel:") return false
 
-    document.addEventListener("DOMContentLoaded", () => {
-
-        initLinks(document)
-
-    })
-
-    function initLinks(root) {
-
-        const links = root.querySelectorAll("[prefetchlink]")
-
-        links.forEach(link => {
-
-            if (!shouldHandleLink(link)) return
-
-            const url = getURL(link)
-            if (!url) return
-
-            const key = url.pathname + url.search
+                return isSameOrigin(url)
+            }
 
             /*
             |--------------------------------------------------------------------------
@@ -135,172 +104,257 @@
             |--------------------------------------------------------------------------
             */
 
-            observer.observe(link)
+            const observer = new IntersectionObserver((entries) => {
+
+                entries.forEach(entry => {
+
+                    if (!entry.isIntersecting) return
+
+                    const link = entry.target
+                    const url = getURL(link)
+
+                    if (!url) return
+
+                    const key = url.pathname + url.search
+
+                    if (PREFETCHED.has(key)) {
+                        observer.unobserve(link)
+                        return
+                    }
+
+                    PREFETCHED.add(key)
+                    fetchPage(url)
+
+                    observer.unobserve(link)
+                })
+
+            }, {
+                rootMargin: "300px"
+            })
 
             /*
             |--------------------------------------------------------------------------
-            | HOVER PREFETCH
+            | INIT LINKS
             |--------------------------------------------------------------------------
             */
 
-            link.addEventListener("mouseenter", () => {
+            document.addEventListener("DOMContentLoaded", () => {
+                initLinks(document)
+            })
 
-                if (PREFETCHED.has(key)) return
+            function initLinks(root) {
 
-                PREFETCHED.add(key)
+                const links = root.querySelectorAll("[prefetchlink]")
 
-                fetchPage(url)
-            }, { passive: true })
+                links.forEach(link => {
+
+                    if (!shouldHandleLink(link)) return
+
+                    const url = getURL(link)
+                    if (!url) return
+
+                    const key = url.pathname + url.search
+
+                    /*
+                    |--------------------------------------------------------------
+                    | VIEWPORT PREFETCH
+                    |--------------------------------------------------------------
+                    */
+
+                    observer.observe(link)
+
+                    /*
+                    |--------------------------------------------------------------
+                    | HOVER PREFETCH
+                    |--------------------------------------------------------------
+                    */
+
+                    link.addEventListener("mouseenter", () => {
+
+                        if (PREFETCHED.has(key)) return
+
+                        PREFETCHED.add(key)
+                        fetchPage(url)
+
+                    }, { passive: true })
+
+                    /*
+                    |--------------------------------------------------------------
+                    | CLICK NAVIGATION
+                    |--------------------------------------------------------------
+                    */
+
+                    link.addEventListener("click", navigate)
+                })
+            }
 
             /*
             |--------------------------------------------------------------------------
-            | CLICK NAVIGATION
+            | FETCH PAGE
             |--------------------------------------------------------------------------
             */
 
-            link.addEventListener("click", navigate)
-        })
-    }
+            async function fetchPage(url) {
 
-    /*
-    |--------------------------------------------------------------------------
-    | FETCH PAGE (SSR HTML)
-    |--------------------------------------------------------------------------
-    */
+                const key = url.pathname + url.search
 
-    async function fetchPage(url) {
-
-        const key = url.pathname + url.search
-
-        if (PAGES_CACHE.has(key)) {
-            return PAGES_CACHE.get(key)
-        }
-
-        try {
-
-            const response = await fetch(url.href, {
-                headers: {
-                    "X-Prefetch": "true"
+                if (PAGES_CACHE.has(key)) {
+                    return PAGES_CACHE.get(key)
                 }
-            })
 
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}`)
-            }
+                try {
 
-            const html = await response.text()
+                    const response = await fetch(url.href, {
+                        headers: {
+                            "X-Prefetch": "true"
+                        }
+                    })
 
-            PAGES_CACHE.set(key, html)
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`)
+                    }
 
-            return html
+                    const html = await response.text()
 
-        } catch (err) {
+                    PAGES_CACHE.set(key, html)
 
-            console.error("Prefetch error:", err)
-            return null
-        }
-    }
+                    return html
 
-    /*
-    |--------------------------------------------------------------------------
-    | NAVIGATION (SPA SSR HYBRID)
-    |--------------------------------------------------------------------------
-    */
+                } catch (err) {
 
-    async function navigate(event) {
-
-        event.preventDefault()
-
-        const link = event.currentTarget
-        const url = getURL(link)
-
-        if (!url) return
-
-        const key = url.pathname + url.search
-
-        try {
-
-            let html = PAGES_CACHE.get(key)
-
-            if (!html) {
-                html = await fetchPage(url)
-            }
-
-            if (!html) {
-                window.location.href = url.href
-                return
-            }
-
-            const parser = new DOMParser()
-            const doc = parser.parseFromString(html, "text/html")
-
-            const newMain = doc.querySelector("main")
-            const currentMain = document.querySelector("main")
-
-            if (!newMain || !currentMain) {
-                window.location.href = url.href
-                return
+                    console.error("Prefetch error:", err)
+                    return null
+                }
             }
 
             /*
             |--------------------------------------------------------------------------
-            | DOM SWAP
+            | PAGE TRANSITION SWAP
             |--------------------------------------------------------------------------
             */
 
-            currentMain.innerHTML = newMain.innerHTML
+            function swapContent(newMain, currentMain) {
 
-            document.title = doc.title
+                const update = () => {
+                    currentMain.innerHTML = newMain.innerHTML
+                }
 
-            history.pushState({}, "", url.href)
+                if (supportsViewTransition) {
 
-            window.scrollTo({
-                top: 0,
-                behavior: "instant"
+                    document.startViewTransition(() => {
+                        update()
+                    })
+
+                } else {
+                    update()
+                }
+            }
+
+            /*
+            |--------------------------------------------------------------------------
+            | NAVIGATION
+            |--------------------------------------------------------------------------
+            */
+
+            async function navigate(event) {
+
+                event.preventDefault()
+
+                const link = event.currentTarget
+                const url = getURL(link)
+
+                if (!url) return
+
+                const key = url.pathname + url.search
+
+                try {
+
+                    let html = PAGES_CACHE.get(key)
+
+                    if (!html) {
+                        html = await fetchPage(url)
+                    }
+
+                    if (!html) {
+                        window.location.href = url.href
+                        return
+                    }
+
+                    const parser = new DOMParser()
+                    const doc = parser.parseFromString(html, "text/html")
+
+                    const newMain = doc.querySelector("main")
+                    const currentMain = document.querySelector("main")
+
+                    if (!newMain || !currentMain) {
+                        window.location.href = url.href
+                        return
+                    }
+
+                    /*
+                    |--------------------------------------------------------------------------
+                    | PAGE TRANSITION SWAP
+                    |--------------------------------------------------------------------------
+                    */
+
+                    swapContent(newMain, currentMain)
+
+                    /*
+                    |--------------------------------------------------------------------------
+                    | UPDATE STATE
+                    |--------------------------------------------------------------------------
+                    */
+
+                    document.title = doc.title
+                    history.pushState({}, "", url.href)
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "instant"
+                    })
+
+                    initLinks(document)
+
+                } catch (err) {
+
+                    console.error("Navigation error:", err)
+                    window.location.href = url.href
+                }
+            }
+
+            /*
+            |--------------------------------------------------------------------------
+            | POPSTATE
+            |--------------------------------------------------------------------------
+            */
+
+            window.addEventListener("popstate", async () => {
+
+                const url = new URL(location.href)
+                const key = url.pathname + url.search
+
+                let html = PAGES_CACHE.get(key)
+
+                if (!html) {
+                    html = await fetchPage(url)
+                }
+
+                if (!html) return
+
+                const parser = new DOMParser()
+                const doc = parser.parseFromString(html, "text/html")
+
+                const newMain = doc.querySelector("main")
+                const currentMain = document.querySelector("main")
+
+                if (!newMain || !currentMain) return
+
+                swapContent(newMain, currentMain)
+
+                document.title = doc.title
+
+                initLinks(document)
             })
 
-            initLinks(document)
-
-        } catch (err) {
-
-            console.error("Navigation error:", err)
-            window.location.href = url.href
-        }
-    }
-
-    /*
-    |--------------------------------------------------------------------------
-    | POPSTATE (BACK/FORWARD)
-    |--------------------------------------------------------------------------
-    */
-
-    window.addEventListener("popstate", async () => {
-
-        const url = new URL(location.href)
-        const key = url.pathname + url.search
-
-        let html = PAGES_CACHE.get(key)
-
-        if (!html) {
-            html = await fetchPage(url)
-        }
-
-        if (!html) return
-
-        const parser = new DOMParser()
-        const doc = parser.parseFromString(html, "text/html")
-
-        const newMain = doc.querySelector("main")
-        const currentMain = document.querySelector("main")
-
-        if (!newMain || !currentMain) return
-
-        currentMain.innerHTML = newMain.innerHTML
-
-        document.title = doc.title
-
-        initLinks(document)
-    })
-
-})()
-</script>
+        })()
+</script__>

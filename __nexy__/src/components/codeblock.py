@@ -5,11 +5,12 @@ from nexy import Template as __Template , Import as __Import
 from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
-def Codeblock(caller: callable = None) -> str:
-    code = caller()
 
+def Codeblock(tabs: Union[str, list] = '', caller: Any = None, children: str = '') -> str:
+    Slot = caller if (locals().get('caller') and callable(caller)) else (lambda: children if locals().get('children') else '')
+    is_str = isinstance(tabs, str)
     
-    context = {"caller": caller, "code": code}
+    context = {"is_str": is_str, "tabs": tabs, 'Slot': Slot}
     rendered = str(__Template().render("__nexy__/src/components/codeblock.html", context))
     styles = """"""
     

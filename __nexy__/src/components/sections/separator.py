@@ -5,11 +5,12 @@ from nexy import Template as __Template , Import as __Import
 from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
-def Separator(horizontal: bool = False, className: str = '') -> str:
 
+def Separator(horizontal: bool = False, className: str = '', caller: Any = None, children: str = '') -> str:
+    Slot = caller if (locals().get('caller') and callable(caller)) else (lambda: children if locals().get('children') else '')
 
     
-    context = {"className": className, "horizontal": horizontal}
+    context = {"className": className, "horizontal": horizontal, 'Slot': Slot}
     rendered = str(__Template().render("__nexy__/src/components/sections/separator.html", context))
     styles = """"""
     

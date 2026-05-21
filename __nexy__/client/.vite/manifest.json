@@ -1,12 +1,9 @@
 {
   "__nexy__/main.ts": {
-    "file": "assets/main-CG9UwYXz.js",
+    "file": "assets/main-gLF86tnO.js",
     "name": "main",
     "src": "__nexy__/main.ts",
     "isEntry": true,
-    "imports": [
-      "_rolldown-runtime-jpDsebLB.js"
-    ],
     "dynamicImports": [
       "src/components/data.js",
       "src/components/form.tsx",
@@ -14,50 +11,46 @@
       "src/components/search.tsx",
       "src/components/theme.tsx",
       "src/components/vercel.tsx",
-      "_react-CfVi_xnf.js",
-      "node_modules/react-dom/client.js"
+      "_react-AWc5gwvx.js",
+      "node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/client.js"
     ],
     "css": [
-      "assets/main-DUgZxWgk.css"
+      "assets/main-D81jBEGP.css"
     ],
     "assets": [
       "assets/Geist-VariableFont_wght-C2BNBXFg.ttf",
       "assets/Inter-VariableFont_opsz_wght-c8O0ljhh.ttf"
     ]
   },
-  "_createLucideIcon-92cUH90p.js": {
-    "file": "assets/createLucideIcon-92cUH90p.js",
+  "_createLucideIcon-Bk2cxfCd.js": {
+    "file": "assets/createLucideIcon-Bk2cxfCd.js",
     "name": "createLucideIcon",
     "imports": [
-      "_react-CfVi_xnf.js"
+      "_react-AWc5gwvx.js"
     ]
   },
-  "_jsx-runtime-DijkMW8L.js": {
-    "file": "assets/jsx-runtime-DijkMW8L.js",
+  "_jsx-runtime-BdPVQ6GA.js": {
+    "file": "assets/jsx-runtime-BdPVQ6GA.js",
     "name": "jsx-runtime",
     "imports": [
-      "_rolldown-runtime-jpDsebLB.js"
+      "__nexy__/main.ts"
     ]
   },
-  "_react-CfVi_xnf.js": {
-    "file": "assets/react-CfVi_xnf.js",
+  "_react-AWc5gwvx.js": {
+    "file": "assets/react-AWc5gwvx.js",
     "name": "react",
     "imports": [
-      "_rolldown-runtime-jpDsebLB.js"
+      "__nexy__/main.ts"
     ]
   },
-  "_rolldown-runtime-jpDsebLB.js": {
-    "file": "assets/rolldown-runtime-jpDsebLB.js",
-    "name": "rolldown-runtime"
-  },
-  "node_modules/react-dom/client.js": {
-    "file": "assets/client-adk0bX5b.js",
+  "node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/client.js": {
+    "file": "assets/client-TkImdqGJ.js",
     "name": "client",
-    "src": "node_modules/react-dom/client.js",
+    "src": "node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/client.js",
     "isDynamicEntry": true,
     "imports": [
-      "_rolldown-runtime-jpDsebLB.js",
-      "_react-CfVi_xnf.js"
+      "__nexy__/main.ts",
+      "_react-AWc5gwvx.js"
     ]
   },
   "public/fonts/Geist/Geist-VariableFont_wght.ttf": {
@@ -69,59 +62,59 @@
     "src": "public/fonts/Inter/Inter-VariableFont_opsz,wght.ttf"
   },
   "src/components/data.js": {
-    "file": "assets/data-byyHAgHp.js",
+    "file": "assets/data-DzpQavUa.js",
     "name": "data",
     "src": "src/components/data.js",
     "isDynamicEntry": true
   },
   "src/components/form.tsx": {
-    "file": "assets/form-DEOnkVcv.js",
+    "file": "assets/form-aO0cCxJw.js",
     "name": "form",
     "src": "src/components/form.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_jsx-runtime-DijkMW8L.js",
-      "_react-CfVi_xnf.js"
+      "_jsx-runtime-BdPVQ6GA.js",
+      "_react-AWc5gwvx.js"
     ]
   },
   "src/components/language.tsx": {
-    "file": "assets/language-BHNdd9DL.js",
+    "file": "assets/language-CnzltvbJ.js",
     "name": "language",
     "src": "src/components/language.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_createLucideIcon-92cUH90p.js",
-      "_jsx-runtime-DijkMW8L.js"
+      "_createLucideIcon-Bk2cxfCd.js",
+      "_jsx-runtime-BdPVQ6GA.js"
     ]
   },
   "src/components/search.tsx": {
-    "file": "assets/search-ChUVDGAp.js",
+    "file": "assets/search-vF_QDeo8.js",
     "name": "search",
     "src": "src/components/search.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_createLucideIcon-92cUH90p.js",
-      "_jsx-runtime-DijkMW8L.js"
+      "_createLucideIcon-Bk2cxfCd.js",
+      "_jsx-runtime-BdPVQ6GA.js"
     ]
   },
   "src/components/theme.tsx": {
-    "file": "assets/theme-DHOR38oX.js",
+    "file": "assets/theme-BO8xvnVu.js",
     "name": "theme",
     "src": "src/components/theme.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_jsx-runtime-DijkMW8L.js",
-      "_react-CfVi_xnf.js"
+      "_jsx-runtime-BdPVQ6GA.js",
+      "_react-AWc5gwvx.js"
     ]
   },
   "src/components/vercel.tsx": {
-    "file": "assets/vercel-Ce8N_s6s.js",
+    "file": "assets/vercel-s6ojxek4.js",
     "name": "vercel",
     "src": "src/components/vercel.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_jsx-runtime-DijkMW8L.js",
-      "_react-CfVi_xnf.js"
+      "_jsx-runtime-BdPVQ6GA.js",
+      "_react-AWc5gwvx.js"
     ]
   }
 }

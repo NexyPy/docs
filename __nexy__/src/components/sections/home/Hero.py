@@ -5,13 +5,15 @@ from nexy import Template as __Template , Import as __Import
 from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
-def Hero() -> str:
-    from __nexy__.src.components.card import Card
-    from __nexy__.src.components.link import Link
-    from __nexy__.src.components.background import Background
+from __nexy__.src.components.card import Card
+from __nexy__.src.components.link import Link
+from __nexy__.src.components.background import Background
+from __nexy__.src.components.sections.home.heroright import Heroright
+def Hero(caller: Any = None, children: str = '') -> str:
+    Slot = caller if (locals().get('caller') and callable(caller)) else (lambda: children if locals().get('children') else '')
 
     
-    context = {"Background": Background, "Card": Card, "Link": Link}
+    context = {"Background": Background, "Card": Card, "Heroright": Heroright, "Link": Link, 'Slot': Slot}
     rendered = str(__Template().render("__nexy__/src/components/sections/home/Hero.html", context))
     styles = """"""
     

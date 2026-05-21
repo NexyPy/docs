@@ -5,11 +5,12 @@ from nexy import Template as __Template , Import as __Import
 from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
-def Link(href: str = '', caller: callable = None, target: str = '', className: str = None) -> str:
 
+def Link(href: str = '', target: str = '', className: str = None, caller: Any = None, children: str = '') -> str:
+    Slot = caller if (locals().get('caller') and callable(caller)) else (lambda: children if locals().get('children') else '')
 
     
-    context = {"caller": caller, "className": className, "href": href, "target": target}
+    context = {"className": className, "href": href, "target": target, 'Slot': Slot}
     rendered = str(__Template().render("__nexy__/src/components/link.html", context))
     styles = """"""
     

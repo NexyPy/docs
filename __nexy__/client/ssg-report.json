@@ -1,0 +1,27 @@
+[
+  {
+    "file": "src\\components\\vercel.tsx",
+    "component": "Default",
+    "status": "success"
+  },
+  {
+    "file": "src\\components\\theme.tsx",
+    "component": "Default",
+    "status": "success"
+  },
+  {
+    "file": "src\\components\\search.tsx",
+    "component": "*",
+    "status": "not_supported"
+  },
+  {
+    "file": "src\\components\\language.tsx",
+    "component": "*",
+    "status": "not_supported"
+  },
+  {
+    "file": "src\\components\\form.tsx",
+    "component": "Default",
+    "status": "success"
+  }
+]

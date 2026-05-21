@@ -1,8 +1,3 @@
-<a 
-    href="{{ href }}" 
-    prefetchlink 
-    target="{{ target }}"
-    class="{{className}}"
- >
-    {{ caller()  }}
+<a href="{{ href }}" prefetchlink {% if target %} target="{{ target }}" {%endif %} {% if className %} class="{{className}}" {%endif %}>
+    {{ Slot() }}
 </a>

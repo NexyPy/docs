@@ -5,11 +5,12 @@ from nexy import Template as __Template , Import as __Import
 from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
-def ContentBar() -> str:
-    items = ['Websocket', 'HTTP', 'Jinja2', 'Vitejs', 'Mdx', 'Production']
 
+def ContentBar(caller: Any = None, children: str = '') -> str:
+    Slot = caller if (locals().get('caller') and callable(caller)) else (lambda: children if locals().get('children') else '')
+    items = ['Websocket', 'HTTP', 'Jinja2', 'Vitejs', 'Mdx', 'Production']
     
-    context = {"items": items}
+    context = {"items": items, 'Slot': Slot}
     rendered = str(__Template().render("__nexy__/src/components/sections/home/ContentBar.html", context))
     styles = """"""
     

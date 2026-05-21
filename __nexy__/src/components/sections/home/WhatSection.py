@@ -5,11 +5,12 @@ from nexy import Template as __Template , Import as __Import
 from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
-def WhatSection() -> str:
-    from __nexy__.src.components.background import Background
+from __nexy__.src.components.background import Background
+def WhatSection(caller: Any = None, children: str = '') -> str:
+    Slot = caller if (locals().get('caller') and callable(caller)) else (lambda: children if locals().get('children') else '')
 
     
-    context = {"Background": Background}
+    context = {"Background": Background, 'Slot': Slot}
     rendered = str(__Template().render("__nexy__/src/components/sections/home/WhatSection.html", context))
     styles = """"""
     

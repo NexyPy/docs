@@ -5,11 +5,13 @@ from nexy import Template as __Template , Import as __Import
 from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
-def IntegrationSection() -> str:
-
+from __nexy__.src.components.sections.home.frontcode import Frontcode
+from __nexy__.src.components.sections.separator import Separator
+def IntegrationSection(caller: Any = None, children: str = '') -> str:
+    Slot = caller if (locals().get('caller') and callable(caller)) else (lambda: children if locals().get('children') else '')
 
     
-    context = {}
+    context = {"Frontcode": Frontcode, "Separator": Separator, 'Slot': Slot}
     rendered = str(__Template().render("__nexy__/src/components/sections/home/IntegrationSection.html", context))
     styles = """"""
     

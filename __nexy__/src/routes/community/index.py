@@ -6,11 +6,12 @@ from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 from __nexy__.src.routes.community.layout import Layout as __Layout
 
-def Index() -> str:
 
+def Index(caller: Any = None, children: str = '') -> str:
+    Slot = caller if (locals().get('caller') and callable(caller)) else (lambda: children if locals().get('children') else '')
 
     
-    context = {}
+    context = {'Slot': Slot}
     rendered = str(__Template().render("__nexy__/src/routes/community/index.html", context))
     styles = """"""
     

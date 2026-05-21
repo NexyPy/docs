@@ -8,7 +8,6 @@ children:prop[str]
 
 
 ---
-
 <OtherHero title={{title}} description={{description}} />
 <main class="border-t border-border border-dashed">
     <section class="w-container mx-auto flex">
