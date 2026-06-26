@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: Nexy-App
+Version: 0.1.0
+Summary: A Nexy Web App
+Requires-Python: >=3.12
+Requires-Dist: markdown>=3.10.2
+Requires-Dist: nexy>=2.0.9
+Requires-Dist: pygments>=2.20.0
+Requires-Dist: pymdown-extensions>=10.21.2
