@@ -1,0 +1,125 @@
+{
+  "ComponentsI18n": {
+    "fr": {
+      "title": "Composants",
+      "audio": "Audio",
+      "video": "Video",
+      "form": "Formulaire",
+      "image": "Image",
+      "link": "Lien",
+      "script": "Script",
+      "vite": "Vite",
+      "badge_soon": "bientôt"
+    },
+    "en": {
+      "title": "Components",
+      "audio": "Audio",
+      "video": "Video",
+      "form": "Form",
+      "image": "Picture",
+      "link": "Link",
+      "script": "Script",
+      "vite": "Quickly",
+      "badge_soon": "Soon"
+    },
+    "ar": {
+      "title": "عناصر",
+      "audio": "صوتي",
+      "video": "فيديو",
+      "form": "استمارة",
+      "image": "صورة",
+      "link": "وصلة",
+      "script": "البرنامج النصي",
+      "vite": "بسرعة",
+      "badge_soon": "قريباً"
+    },
+    "hi": {
+      "title": "अवयव",
+      "audio": "ऑडियो",
+      "video": "वीडियो",
+      "form": "रूप",
+      "image": "चित्र",
+      "link": "जोड़ना",
+      "script": "लिखी हुई कहानी",
+      "vite": "जल्दी से",
+      "badge_soon": "जल्द ही"
+    },
+    "zh": {
+      "title": "成分",
+      "audio": "声音的",
+      "video": "视频",
+      "form": "形式",
+      "image": "图片",
+      "link": "关联",
+      "script": "脚本",
+      "vite": "迅速地",
+      "badge_soon": "很快"
+    },
+    "es": {
+      "title": "Componentes",
+      "audio": "Audio",
+      "video": "Video",
+      "form": "Forma",
+      "image": "Imagen",
+      "link": "Enlace",
+      "script": "Guion",
+      "vite": "Rápidamente",
+      "badge_soon": "Pronto"
+    },
+    "pt": {
+      "title": "Componentes",
+      "audio": "Áudio",
+      "video": "Vídeo",
+      "form": "Forma",
+      "image": "Foto",
+      "link": "Link",
+      "script": "Roteiro",
+      "vite": "Rapidamente",
+      "badge_soon": "Breve"
+    },
+    "ja": {
+      "title": "コンポーネント",
+      "audio": "オーディオ",
+      "video": "ビデオ",
+      "form": "形状",
+      "image": "写真",
+      "link": "リンク",
+      "script": "スクリプト",
+      "vite": "素早く",
+      "badge_soon": "すぐ"
+    },
+    "ko": {
+      "title": "구성요소",
+      "audio": "오디오",
+      "video": "동영상",
+      "form": "형태",
+      "image": "그림",
+      "link": "링크",
+      "script": "스크립트",
+      "vite": "빠르게",
+      "badge_soon": "곧"
+    },
+    "de": {
+      "title": "Komponenten",
+      "audio": "Audio",
+      "video": "Video",
+      "form": "Bilden",
+      "image": "Bild",
+      "link": "Link",
+      "script": "Skript",
+      "vite": "Schnell",
+      "badge_soon": "Bald"
+    },
+    "ru": {
+      "title": "Компоненты",
+      "audio": "Аудио",
+      "video": "Видео",
+      "form": "Форма",
+      "image": "Картина",
+      "link": "Связь",
+      "script": "Скрипт",
+      "vite": "Быстро",
+      "badge_soon": "Скоро"
+    }
+  }
+}

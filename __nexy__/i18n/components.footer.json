@@ -1,0 +1,136 @@
+{
+  "FooterI18n": {
+    "fr": {
+      "resources": "Ressources",
+      "community": "Communauté",
+      "team": "Équipe",
+      "governance": "Gouvernance",
+      "contributors": "Contributeurs",
+      "github": "GitHub",
+      "description": "Construisez des expériences web modernes avec Nexy — le framework Python pour l'ère full-stack.",
+      "newsletter_title": "Abonnez-vous à notre newsletter",
+      "newsletter_desc": "Restez informé des nouvelles versions, fonctionnalités, guides et études de cas.",
+      "copyright": "© 2026 Luilka, Tous droits réservés."
+    },
+    "ar": {
+      "resources": "موارد",
+      "community": "مجتمع",
+      "team": "فريق",
+      "governance": "الحكم",
+      "contributors": "المساهمين",
+      "github": "جيثب",
+      "description": "أنشئ تجارب ويب حديثة باستخدام Nexy — إطار عمل Python لعصر المكدس الكامل.",
+      "newsletter_title": "اشترك في النشرة الإخبارية لدينا",
+      "newsletter_desc": "ابق على اطلاع بالإصدارات والميزات والأدلة ودراسات الحالة الجديدة.",
+      "copyright": "© 2026 لويلكا، جميع الحقوق محفوظة."
+    },
+    "en": {
+      "resources": "Resources",
+      "community": "Community",
+      "team": "Team",
+      "governance": "Governance",
+      "contributors": "Contributors",
+      "github": "GitHub",
+      "description": "Build modern web experiences with Nexy — the Python framework for the full-stack era.",
+      "newsletter_title": "Subscribe to our newsletter",
+      "newsletter_desc": "Stay informed about new releases, features, guides and case studies.",
+      "copyright": "© 2026 Luilka, All rights reserved."
+    },
+    "hi": {
+      "resources": "संसाधन",
+      "community": "समुदाय",
+      "team": "टीम",
+      "governance": "शासन",
+      "contributors": "योगदानकर्ताओं",
+      "github": "GitHub",
+      "description": "फुल-स्टैक युग के लिए पायथन फ्रेमवर्क - नेक्सी के साथ आधुनिक वेब अनुभव बनाएं।",
+      "newsletter_title": "हमारे न्युजलेटर की सदस्यता प्राप्त करें",
+      "newsletter_desc": "नई रिलीज़, फीचर्स, गाइड और केस स्टडीज के बारे में सूचित रहें।",
+      "copyright": "© 2026 लुइल्का, सर्वाधिकार सुरक्षित।"
+    },
+    "zh": {
+      "resources": "资源",
+      "community": "社区",
+      "team": "团队",
+      "governance": "治理",
+      "contributors": "贡献者",
+      "github": "GitHub",
+      "description": "使用 Nexy（全栈时代的 Python 框架）构建现代 Web 体验。",
+      "newsletter_title": "订阅我们的时事通讯",
+      "newsletter_desc": "随时了解新版本、功能、指南和案例研究。",
+      "copyright": "© 2026 卢伊尔卡，保留所有权利。"
+    },
+    "es": {
+      "resources": "Recursos",
+      "community": "Comunidad",
+      "team": "Equipo",
+      "governance": "Gobernancia",
+      "contributors": "Colaboradores",
+      "github": "GitHub",
+      "description": "Cree experiencias web modernas con Nexy, el marco de Python para la era full-stack.",
+      "newsletter_title": "Suscríbete a nuestro boletín",
+      "newsletter_desc": "Manténgase informado sobre nuevos lanzamientos, funciones, guías y estudios de casos.",
+      "copyright": "© 2026 Luilka, Todos los derechos reservados."
+    },
+    "pt": {
+      "resources": "Recursos",
+      "community": "Comunidade",
+      "team": "Equipe",
+      "governance": "Governança",
+      "contributors": "Colaboradores",
+      "github": "GitHub",
+      "description": "Crie experiências web modernas com Nexy — a estrutura Python para a era full-stack.",
+      "newsletter_title": "Assine nossa newsletter",
+      "newsletter_desc": "Mantenha-se informado sobre novos lançamentos, recursos, guias e estudos de caso.",
+      "copyright": "© 2026 Luilka, Todos os direitos reservados."
+    },
+    "ja": {
+      "resources": "リソース",
+      "community": "コミュニティ",
+      "team": "チーム",
+      "governance": "ガバナンス",
+      "contributors": "貢献者",
+      "github": "GitHub",
+      "description": "フルスタック時代の Python フレームワークである Nexy を使用して、最新の Web エクスペリエンスを構築します。",
+      "newsletter_title": "ニュースレターを購読する",
+      "newsletter_desc": "新しいリリース、機能、ガイド、ケーススタディに関する最新情報を入手してください。",
+      "copyright": "© 2026 ルイルカ、全著作権所有。"
+    },
+    "ko": {
+      "resources": "자원",
+      "community": "지역 사회",
+      "team": "팀",
+      "governance": "통치",
+      "contributors": "기여자",
+      "github": "GitHub",
+      "description": "풀 스택 시대를 위한 Python 프레임워크인 Nexy로 현대적인 웹 경험을 구축하세요.",
+      "newsletter_title": "뉴스레터를 구독하세요",
+      "newsletter_desc": "새로운 릴리스, 기능, 가이드 및 사례 연구에 대한 최신 정보를 받아보세요.",
+      "copyright": "© 2026 루일카, 판권 소유."
+    },
+    "de": {
+      "resources": "Ressourcen",
+      "community": "Gemeinschaft",
+      "team": "Team",
+      "governance": "Regierungsführung",
+      "contributors": "Mitwirkende",
+      "github": "GitHub",
+      "description": "Erstellen Sie moderne Web-Erlebnisse mit Nexy – dem Python-Framework für die Full-Stack-Ära.",
+      "newsletter_title": "Abonnieren Sie unseren Newsletter",
+      "newsletter_desc": "Bleiben Sie über Neuerscheinungen, Funktionen, Leitfäden und Fallstudien auf dem Laufenden.",
+      "copyright": "© 2026 Luilka, Alle Rechte vorbehalten."
+    },
+    "ru": {
+      "resources": "Ресурсы",
+      "community": "Сообщество",
+      "team": "Команда",
+      "governance": "Управление",
+      "contributors": "Авторы",
+      "github": "GitHub",
+      "description": "Создавайте современные веб-интерфейсы с помощью Nexy — платформы Python для эпохи полного стека.",
+      "newsletter_title": "Подпишитесь на нашу рассылку",
+      "newsletter_desc": "Будьте в курсе новых выпусков, функций, руководств и тематических исследований.",
+      "copyright": "© 2026 Луилка, Все права защищены."
+    }
+  }
+}

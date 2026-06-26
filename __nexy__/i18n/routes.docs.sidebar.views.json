@@ -1,0 +1,125 @@
+{
+  "ViewsI18n": {
+    "de": {
+      "title": "Ansichten",
+      "introduction": "Einführung",
+      "usage": "Verwenden",
+      "markup": "Markup",
+      "python": "Python",
+      "properties": "Eigenschaften",
+      "conditional": "Bedingt",
+      "modules": "Module",
+      "styles": "Stile"
+    },
+    "ru": {
+      "title": "Просмотры",
+      "introduction": "Введение",
+      "usage": "Использовать",
+      "markup": "Разметка",
+      "python": "Питон",
+      "properties": "Характеристики",
+      "conditional": "Условный",
+      "modules": "Модули",
+      "styles": "Стили"
+    },
+    "fr": {
+      "title": "Vues",
+      "introduction": "Introduction",
+      "usage": "Utilisation",
+      "markup": "Markup",
+      "python": "Python",
+      "properties": "Propriétés",
+      "conditional": "Conditionnel",
+      "modules": "Modules",
+      "styles": "Styles"
+    },
+    "en": {
+      "title": "Views",
+      "introduction": "Introduction",
+      "usage": "Use",
+      "markup": "Markup",
+      "python": "Python",
+      "properties": "Properties",
+      "conditional": "Conditional",
+      "modules": "Modules",
+      "styles": "Styles"
+    },
+    "ar": {
+      "title": "وجهات النظر",
+      "introduction": "مقدمة",
+      "usage": "يستخدم",
+      "markup": "العلامات",
+      "python": "بايثون",
+      "properties": "ملكيات",
+      "conditional": "شرطي",
+      "modules": "وحدات",
+      "styles": "الأنماط"
+    },
+    "hi": {
+      "title": "दृश्य",
+      "introduction": "परिचय",
+      "usage": "उपयोग",
+      "markup": "मार्कअप",
+      "python": "अजगर",
+      "properties": "गुण",
+      "conditional": "सशर्त",
+      "modules": "मॉड्यूल",
+      "styles": "शैलियों"
+    },
+    "zh": {
+      "title": "意见",
+      "introduction": "介绍",
+      "usage": "使用",
+      "markup": "标记",
+      "python": "Python",
+      "properties": "特性",
+      "conditional": "有条件的",
+      "modules": "模块",
+      "styles": "风格"
+    },
+    "es": {
+      "title": "Vistas",
+      "introduction": "Introducción",
+      "usage": "Usar",
+      "markup": "Margen",
+      "python": "Pitón",
+      "properties": "Propiedades",
+      "conditional": "Condicional",
+      "modules": "Módulos",
+      "styles": "Estilos"
+    },
+    "pt": {
+      "title": "Visualizações",
+      "introduction": "Introdução",
+      "usage": "Usar",
+      "markup": "Marcação",
+      "python": "Pitão",
+      "properties": "Propriedades",
+      "conditional": "Condicional",
+      "modules": "Módulos",
+      "styles": "Estilos"
+    },
+    "ja": {
+      "title": "ビュー",
+      "introduction": "導入",
+      "usage": "使用",
+      "markup": "マークアップ",
+      "python": "パイソン",
+      "properties": "プロパティ",
+      "conditional": "条件付き",
+      "modules": "モジュール",
+      "styles": "スタイル"
+    },
+    "ko": {
+      "title": "조회수",
+      "introduction": "소개",
+      "usage": "사용",
+      "markup": "마크업",
+      "python": "파이썬",
+      "properties": "속성",
+      "conditional": "가정 어구",
+      "modules": "모듈",
+      "styles": "스타일"
+    }
+  }
+}

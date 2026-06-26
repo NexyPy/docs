@@ -1,0 +1,48 @@
+{
+  "Learn": {
+    "fr": {
+      "title": "Apprendre",
+      "description": "Maîtrisez Nexy grâce à nos guides interactifs et notre documentation complète."
+    },
+    "en": {
+      "title": "Learn",
+      "description": "Master Nexy with our interactive guides and comprehensive documentation."
+    },
+    "ja": {
+      "title": "学ぶ",
+      "description": "インタラクティブなガイドと包括的なドキュメントで Nexy をマスターしましょう。"
+    },
+    "ko": {
+      "title": "배우다",
+      "description": "대화형 가이드와 포괄적인 문서를 통해 Nexy를 마스터하세요."
+    },
+    "ar": {
+      "title": "يتعلم",
+      "description": "Master Nexy مع أدلتنا التفاعلية والوثائق الشاملة."
+    },
+    "de": {
+      "title": "Lernen",
+      "description": "Meistern Sie Nexy mit unseren interaktiven Anleitungen und der umfassenden Dokumentation."
+    },
+    "hi": {
+      "title": "सीखना",
+      "description": "हमारे इंटरैक्टिव गाइड और व्यापक दस्तावेज़ीकरण के साथ मास्टर नेक्सी।"
+    },
+    "ru": {
+      "title": "Учиться",
+      "description": "Освойте Nexy с помощью наших интерактивных руководств и подробной документации."
+    },
+    "zh": {
+      "title": "学习",
+      "description": "通过我们的交互式指南和全面的文档掌握 Nexy。"
+    },
+    "es": {
+      "title": "Aprender",
+      "description": "Domina Nexy con nuestras guías interactivas y documentación completa."
+    },
+    "pt": {
+      "title": "Aprender",
+      "description": "Domine Nexy com nossos guias interativos e documentação abrangente."
+    }
+  }
+}

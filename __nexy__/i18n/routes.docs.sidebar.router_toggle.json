@@ -1,0 +1,70 @@
+{
+  "RouterToggleI18n": {
+    "fr": {
+      "fbr_label": "FBR",
+      "fbr_desc": "File based routing",
+      "modular_label": "Modulaire",
+      "modular_desc": "Routage modulaire"
+    },
+    "en": {
+      "fbr_label": "FBR",
+      "fbr_desc": "File-based routing",
+      "modular_label": "Modular",
+      "modular_desc": "Modular routing"
+    },
+    "ar": {
+      "fbr_label": "FBR",
+      "fbr_desc": "التوجيه القائم على الملف",
+      "modular_label": "وحدات",
+      "modular_desc": "التوجيه المعياري"
+    },
+    "hi": {
+      "fbr_label": "एफबीआर",
+      "fbr_desc": "फ़ाइल-आधारित रूटिंग",
+      "modular_label": "मॉड्यूलर",
+      "modular_desc": "मॉड्यूलर रूटिंग"
+    },
+    "zh": {
+      "fbr_label": "流化床反应器",
+      "fbr_desc": "基于文件的路由",
+      "modular_label": "模块化的",
+      "modular_desc": "模块化路由"
+    },
+    "es": {
+      "fbr_label": "FBR",
+      "fbr_desc": "Enrutamiento basado en archivos",
+      "modular_label": "Modular",
+      "modular_desc": "Enrutamiento modular"
+    },
+    "pt": {
+      "fbr_label": "FBR",
+      "fbr_desc": "Roteamento baseado em arquivo",
+      "modular_label": "Modular",
+      "modular_desc": "Roteamento modular"
+    },
+    "ja": {
+      "fbr_label": "FBR",
+      "fbr_desc": "ファイルベースのルーティング",
+      "modular_label": "モジュラー",
+      "modular_desc": "モジュラールーティング"
+    },
+    "ko": {
+      "fbr_label": "FBR",
+      "fbr_desc": "파일 기반 라우팅",
+      "modular_label": "모듈식",
+      "modular_desc": "모듈식 라우팅"
+    },
+    "de": {
+      "fbr_label": "FBR",
+      "fbr_desc": "Dateibasiertes Routing",
+      "modular_label": "Modular",
+      "modular_desc": "Modulares Routing"
+    },
+    "ru": {
+      "fbr_label": "ФБР",
+      "fbr_desc": "Маршрутизация на основе файлов",
+      "modular_label": "Модульный",
+      "modular_desc": "Модульная маршрутизация"
+    }
+  }
+}

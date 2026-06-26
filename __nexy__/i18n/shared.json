@@ -1,0 +1,48 @@
+{
+  "BreadcrumbI18n": {
+    "fr": {
+      "home": "Home",
+      "docs": "Blog"
+    },
+    "ar": {
+      "home": "بيت",
+      "docs": "مدونة"
+    },
+    "hi": {
+      "home": "घर",
+      "docs": "ब्लॉग"
+    },
+    "es": {
+      "home": "Hogar",
+      "docs": "Blog"
+    },
+    "ja": {
+      "home": "家",
+      "docs": "ブログ"
+    },
+    "ko": {
+      "home": "집",
+      "docs": "블로그"
+    },
+    "pt": {
+      "home": "Lar",
+      "docs": "Blogue"
+    },
+    "de": {
+      "home": "Heim",
+      "docs": "Blog"
+    },
+    "zh": {
+      "home": "家",
+      "docs": "博客"
+    },
+    "en": {
+      "home": "Home",
+      "docs": "Blog"
+    },
+    "ru": {
+      "home": "Дом",
+      "docs": "Блог"
+    }
+  }
+}

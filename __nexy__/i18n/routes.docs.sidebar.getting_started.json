@@ -1,0 +1,92 @@
+{
+  "GettingStartedI18n": {
+    "fr": {
+      "title": "Pour commencer",
+      "introduction": "Introduction",
+      "quick_start": "Démarrage rapide",
+      "fbr_or_modular": "FBR ou Modulaire",
+      "project_structure": "Structure du projet",
+      "build_deploy": "Build & Déploiement"
+    },
+    "en": {
+      "title": "To start",
+      "introduction": "Introduction",
+      "quick_start": "Quick start",
+      "fbr_or_modular": "FBR or Modular",
+      "project_structure": "Project structure",
+      "build_deploy": "Build & Deploy"
+    },
+    "ar": {
+      "title": "للبدء",
+      "introduction": "مقدمة",
+      "quick_start": "بداية سريعة",
+      "fbr_or_modular": "FBR أو وحدات",
+      "project_structure": "هيكل المشروع",
+      "build_deploy": "بناء ونشر"
+    },
+    "hi": {
+      "title": "आरंभ करना",
+      "introduction": "परिचय",
+      "quick_start": "त्वरित शुरुआत",
+      "fbr_or_modular": "एफबीआर या मॉड्यूलर",
+      "project_structure": "परियोजना संरचना",
+      "build_deploy": "निर्माण एवं तैनाती"
+    },
+    "zh": {
+      "title": "开始",
+      "introduction": "介绍",
+      "quick_start": "快速启动",
+      "fbr_or_modular": "FBR 或模块化",
+      "project_structure": "项目结构",
+      "build_deploy": "构建和部署"
+    },
+    "es": {
+      "title": "para empezar",
+      "introduction": "Introducción",
+      "quick_start": "Inicio rápido",
+      "fbr_or_modular": "FBR o modulares",
+      "project_structure": "Estructura del proyecto",
+      "build_deploy": "Construir e implementar"
+    },
+    "pt": {
+      "title": "Para começar",
+      "introduction": "Introdução",
+      "quick_start": "Início rápido",
+      "fbr_or_modular": "FBR ou Modular",
+      "project_structure": "Estrutura do projeto",
+      "build_deploy": "Construir e implantar"
+    },
+    "ja": {
+      "title": "始めるには",
+      "introduction": "導入",
+      "quick_start": "クイックスタート",
+      "fbr_or_modular": "FBRまたはモジュラー",
+      "project_structure": "プロジェクトの構造",
+      "build_deploy": "構築と展開"
+    },
+    "ko": {
+      "title": "시작하려면",
+      "introduction": "소개",
+      "quick_start": "빠른 시작",
+      "fbr_or_modular": "FBR 또는 모듈식",
+      "project_structure": "프로젝트 구조",
+      "build_deploy": "구축 및 배포"
+    },
+    "de": {
+      "title": "Um zu beginnen",
+      "introduction": "Einführung",
+      "quick_start": "Schnellstart",
+      "fbr_or_modular": "FBR oder Modular",
+      "project_structure": "Projektstruktur",
+      "build_deploy": "Erstellen und bereitstellen"
+    },
+    "ru": {
+      "title": "Для начала",
+      "introduction": "Введение",
+      "quick_start": "Быстрый старт",
+      "fbr_or_modular": "FBR или модульный",
+      "project_structure": "Структура проекта",
+      "build_deploy": "Сборка и развертывание"
+    }
+  }
+}

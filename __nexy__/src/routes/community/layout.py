@@ -1,20 +1,29 @@
 from typing import *
 from fastapi import *
 from pathlib import Path as __Path
-from nexy import Template as __Template , Import as __Import
+from nexy import Template as __Template
+from nexy.i18n.core import current_locale as __current_locale
+from nexy.i18n.core import trans as __trans
+from nexy.utils.imports.component_import import _Import as __Import
 from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
-from __nexy__.src.routes.layout import Layout as __Layout
+try:
+    from __nexy__.src.routes.layout import Layout as __Layout
+except ImportError:
+    def __Layout(children: str = '', **kwargs) -> str:
+        return '<div data-nexy-error="Layout not available"></div>'
 
+from src.locales.routes.community.layout import HeroI18n, SidebarI18n
 from __nexy__.src.components.sections.otherHero import OtherHero
 def Layout(children: str = None, caller: Any = None) -> str:
     Slot = caller if (locals().get('caller') and callable(caller)) else (lambda: children if locals().get('children') else '')
-    title = 'Real-world Web Applications built with Nexy'
-    description = 'Explore inspiring websites, apps, and digital experiences made by developers and companies around the\nworld.'
+    trans = __trans
+    t = __trans
+    h = HeroI18n()
+    s = SidebarI18n()
+    title = h.title
+    description = h.description
     children = f"<nslot  style='display:contents;'>{children}</nslot>" 
-    context = {"OtherHero": OtherHero, "children": children, "description": description, "title": title, 'Slot': Slot}
+    context = {"HeroI18n": HeroI18n, "OtherHero": OtherHero, "description": description, "children": children, "SidebarI18n": SidebarI18n, "s": s, "h": h, "title": title, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/routes/community/layout.html", context))
-    styles = """"""
-    
-    # Rendu final (potentiellement enveloppé par le Layout)
-    return str(__Layout(children=rendered)) + styles
+    return str(__Layout(children=rendered))

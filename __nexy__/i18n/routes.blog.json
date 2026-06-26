@@ -1,0 +1,48 @@
+{
+  "Blog": {
+    "ar": {
+      "title": "مدونة",
+      "description": "ابحث عن آخر الأخبار والبرامج التعليمية والنصائح حول Nexy."
+    },
+    "zh": {
+      "title": "博客",
+      "description": "查找有关 Nexy 的最新新闻、教程和建议。"
+    },
+    "es": {
+      "title": "Blog",
+      "description": "Encuentre las últimas noticias, tutoriales y consejos sobre Nexy."
+    },
+    "fr": {
+      "title": "Blog",
+      "description": "Retrouvez les dernières actualités, tutoriels et conseils autour de Nexy."
+    },
+    "pt": {
+      "title": "Blogue",
+      "description": "Encontre as últimas notícias, tutoriais e conselhos sobre Nexy."
+    },
+    "ja": {
+      "title": "ブログ",
+      "description": "Nexy に関する最新ニュース、チュートリアル、アドバイスを見つけてください。"
+    },
+    "ko": {
+      "title": "블로그",
+      "description": "Nexy에 관한 최신 뉴스, 튜토리얼, 조언을 찾아보세요."
+    },
+    "hi": {
+      "title": "ब्लॉग",
+      "description": "नेक्सी के बारे में नवीनतम समाचार, ट्यूटोरियल और सलाह प्राप्त करें।"
+    },
+    "de": {
+      "title": "Blog",
+      "description": "Hier finden Sie die neuesten Nachrichten, Tutorials und Ratschläge rund um Nexy."
+    },
+    "en": {
+      "title": "Blog",
+      "description": "Find the latest news, tutorials and advice around Nexy."
+    },
+    "ru": {
+      "title": "Блог",
+      "description": "Найдите последние новости, руководства и советы по Nexy."
+    }
+  }
+}

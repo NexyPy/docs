@@ -1,0 +1,204 @@
+{
+  "HeroI18n": {
+    "fr": {
+      "title": "Communauté",
+      "description": "Rejoignez la communauté Nexy et contribuez à l'avenir du framework."
+    },
+    "en": {
+      "title": "Community",
+      "description": "Join the Nexy community and contribute to the future of the framework."
+    },
+    "ar": {
+      "title": "مجتمع",
+      "description": "انضم إلى مجتمع Nexy وساهم في مستقبل الإطار."
+    },
+    "hi": {
+      "title": "समुदाय",
+      "description": "नेक्सी समुदाय में शामिल हों और फ्रेमवर्क के भविष्य में योगदान दें।"
+    },
+    "zh": {
+      "title": "社区",
+      "description": "加入 Nexy 社区并为该框架的未来做出贡献。"
+    },
+    "es": {
+      "title": "Comunidad",
+      "description": "Únase a la comunidad Nexy y contribuya al futuro del marco."
+    },
+    "pt": {
+      "title": "Comunidade",
+      "description": "Junte-se à comunidade Nexy e contribua para o futuro do framework."
+    },
+    "ja": {
+      "title": "コミュニティ",
+      "description": "Nexy コミュニティに参加して、フレームワークの将来に貢献してください。"
+    },
+    "ko": {
+      "title": "지역 사회",
+      "description": "Nexy 커뮤니티에 참여하여 프레임워크의 미래에 기여하세요."
+    },
+    "de": {
+      "title": "Gemeinschaft",
+      "description": "Treten Sie der Nexy-Community bei und tragen Sie zur Zukunft des Frameworks bei."
+    },
+    "ru": {
+      "title": "Сообщество",
+      "description": "Присоединяйтесь к сообществу Nexy и внесите свой вклад в будущее фреймворка."
+    }
+  },
+  "SidebarI18n": {
+    "fr": {
+      "get_started": "Pour commencer",
+      "get_help": "Obtenir de l'aide",
+      "support": "Support",
+      "faq": "FAQ",
+      "contribute": "Contribuer",
+      "guide": "Guide du contributeur",
+      "report_bug": "Signaler un bug",
+      "feature_request": "Suggérer une fonctionnalité",
+      "governance": "Gouvernance",
+      "team": "Équipe",
+      "roadmap": "Feuille de route",
+      "manifesto": "Manifeste"
+    },
+    "en": {
+      "get_started": "To start",
+      "get_help": "Get help",
+      "support": "Support",
+      "faq": "FAQs",
+      "contribute": "Contribute",
+      "guide": "Contributor Guide",
+      "report_bug": "Report a bug",
+      "feature_request": "Suggest a feature",
+      "governance": "Governance",
+      "team": "Team",
+      "roadmap": "Roadmap",
+      "manifesto": "Manifest"
+    },
+    "ar": {
+      "get_started": "للبدء",
+      "get_help": "احصل على المساعدة",
+      "support": "يدعم",
+      "faq": "الأسئلة الشائعة",
+      "contribute": "يساهم",
+      "guide": "دليل المساهمين",
+      "report_bug": "الإبلاغ عن خطأ",
+      "feature_request": "اقتراح ميزة",
+      "governance": "الحكم",
+      "team": "فريق",
+      "roadmap": "خريطة الطريق",
+      "manifesto": "يظهر"
+    },
+    "hi": {
+      "get_started": "आरंभ करना",
+      "get_help": "मदद लें",
+      "support": "सहायता",
+      "faq": "पूछे जाने वाले प्रश्न",
+      "contribute": "योगदान देना",
+      "guide": "योगदानकर्ता मार्गदर्शिका",
+      "report_bug": "एक बग रिपोर्ट करो",
+      "feature_request": "एक विशेषता सुझाएँ",
+      "governance": "शासन",
+      "team": "टीम",
+      "roadmap": "रोडमैप",
+      "manifesto": "घोषणापत्र"
+    },
+    "zh": {
+      "get_started": "开始",
+      "get_help": "获得帮助",
+      "support": "支持",
+      "faq": "常见问题解答",
+      "contribute": "贡献",
+      "guide": "贡献者指南",
+      "report_bug": "报告错误",
+      "feature_request": "推荐一个功能",
+      "governance": "治理",
+      "team": "团队",
+      "roadmap": "路线图",
+      "manifesto": "显现"
+    },
+    "es": {
+      "get_started": "para empezar",
+      "get_help": "obtener ayuda",
+      "support": "Apoyo",
+      "faq": "Preguntas frecuentes",
+      "contribute": "Contribuir",
+      "guide": "Guía para contribuyentes",
+      "report_bug": "Informar un error",
+      "feature_request": "Sugerir una característica",
+      "governance": "Gobernancia",
+      "team": "Equipo",
+      "roadmap": "Hoja de ruta",
+      "manifesto": "Manifiesto"
+    },
+    "pt": {
+      "get_started": "Para começar",
+      "get_help": "Obtenha ajuda",
+      "support": "Apoiar",
+      "faq": "Perguntas frequentes",
+      "contribute": "Contribuir",
+      "guide": "Guia do Colaborador",
+      "report_bug": "Reportar um bug",
+      "feature_request": "Sugira um recurso",
+      "governance": "Governança",
+      "team": "Equipe",
+      "roadmap": "Roteiro",
+      "manifesto": "Manifesto"
+    },
+    "ja": {
+      "get_started": "始めるには",
+      "get_help": "助けを求める",
+      "support": "サポート",
+      "faq": "よくある質問",
+      "contribute": "貢献する",
+      "guide": "寄稿者ガイド",
+      "report_bug": "バグを報告する",
+      "feature_request": "機能を提案する",
+      "governance": "ガバナンス",
+      "team": "チーム",
+      "roadmap": "ロードマップ",
+      "manifesto": "マニフェスト"
+    },
+    "ko": {
+      "get_started": "시작하려면",
+      "get_help": "도움 받기",
+      "support": "지원하다",
+      "faq": "자주 묻는 질문",
+      "contribute": "기여하다",
+      "guide": "기여자 가이드",
+      "report_bug": "버그 신고",
+      "feature_request": "기능 제안",
+      "governance": "통치",
+      "team": "팀",
+      "roadmap": "로드맵",
+      "manifesto": "명백한"
+    },
+    "de": {
+      "get_started": "Um zu beginnen",
+      "get_help": "Holen Sie sich Hilfe",
+      "support": "Unterstützung",
+      "faq": "FAQs",
+      "contribute": "Beitragen",
+      "guide": "Leitfaden für Mitwirkende",
+      "report_bug": "Melden Sie einen Fehler",
+      "feature_request": "Schlagen Sie eine Funktion vor",
+      "governance": "Regierungsführung",
+      "team": "Team",
+      "roadmap": "Roadmap",
+      "manifesto": "Manifest"
+    },
+    "ru": {
+      "get_started": "Для начала",
+      "get_help": "Получить помощь",
+      "support": "Поддерживать",
+      "faq": "Часто задаваемые вопросы",
+      "contribute": "Способствовать",
+      "guide": "Руководство для участников",
+      "report_bug": "Сообщить об ошибке",
+      "feature_request": "Предложить функцию",
+      "governance": "Управление",
+      "team": "Команда",
+      "roadmap": "Дорожная карта",
+      "manifesto": "Манифест"
+    }
+  }
+}

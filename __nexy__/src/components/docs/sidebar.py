@@ -1,19 +1,26 @@
 from typing import *
 from fastapi import *
 from pathlib import Path as __Path
-from nexy import Template as __Template , Import as __Import
+from nexy import Template as __Template
+from nexy.i18n.core import current_locale as __current_locale
+from nexy.i18n.core import trans as __trans
+from nexy.utils.imports.component_import import _Import as __Import
 from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
-from src.mocks.docs.sidebar import SIDE_BAR
-from __nexy__.src.components.link import Link
+from __nexy__.src.components.docs.sidebarItems import SidebarItems
+from __nexy__.src.components.docs.routerToggle import RouterToggle
+from src.mocks.docs.sidebar import build_sections
+from src.locales.routes.docs.sidebar import SidebarI18n
+from nexy import usePathname
 def Sidebar(caller: Any = None, children: str = '') -> str:
     Slot = caller if (locals().get('caller') and callable(caller)) else (lambda: children if locals().get('children') else '')
-
+    trans = __trans
+    t = __trans
+    pathname = usePathname()
+    is_modular = pathname.startswith('/docs/modular')
+    s = SidebarI18n()
     
-    context = {"Link": Link, "SIDE_BAR": SIDE_BAR, 'Slot': Slot}
+    context = {"pathname": pathname, "build_sections": build_sections, "usePathname": usePathname, "SidebarI18n": SidebarI18n, "SidebarItems": SidebarItems, "s": s, "RouterToggle": RouterToggle, "is_modular": is_modular, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/components/docs/sidebar.html", context))
-    styles = """"""
-    
-    # Rendu final (potentiellement enveloppé par le Layout)
-    return rendered + styles
+    return rendered

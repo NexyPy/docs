@@ -1,0 +1,70 @@
+{
+  "DocsLayoutI18n": {
+    "fr": {
+      "breadcrumb_home": "Accueil",
+      "prev_page": "Page précédente",
+      "next_page": "Page suivante",
+      "on_this_page": "Sur cette page"
+    },
+    "en": {
+      "breadcrumb_home": "Welcome",
+      "prev_page": "Previous page",
+      "next_page": "Next page",
+      "on_this_page": "On this page"
+    },
+    "ar": {
+      "breadcrumb_home": "مرحباً",
+      "prev_page": "الصفحة السابقة",
+      "next_page": "الصفحة التالية",
+      "on_this_page": "في هذه الصفحة"
+    },
+    "hi": {
+      "breadcrumb_home": "स्वागत",
+      "prev_page": "पिछला पृष्ठ",
+      "next_page": "अगला पृष्ठ",
+      "on_this_page": "इस पेज पर"
+    },
+    "zh": {
+      "breadcrumb_home": "欢迎",
+      "prev_page": "上一页",
+      "next_page": "下一页",
+      "on_this_page": "在此页面上"
+    },
+    "es": {
+      "breadcrumb_home": "Bienvenido",
+      "prev_page": "Pagina anterior",
+      "next_page": "Página siguiente",
+      "on_this_page": "En esta página"
+    },
+    "pt": {
+      "breadcrumb_home": "Bem-vindo",
+      "prev_page": "Página anterior",
+      "next_page": "Próxima página",
+      "on_this_page": "Nesta página"
+    },
+    "ja": {
+      "breadcrumb_home": "いらっしゃいませ",
+      "prev_page": "前のページへ",
+      "next_page": "次のページ",
+      "on_this_page": "このページでは"
+    },
+    "ko": {
+      "breadcrumb_home": "환영",
+      "prev_page": "이전 페이지",
+      "next_page": "다음 페이지",
+      "on_this_page": "이 페이지에서"
+    },
+    "de": {
+      "breadcrumb_home": "Willkommen",
+      "prev_page": "Vorherige Seite",
+      "next_page": "Nächste Seite",
+      "on_this_page": "Auf dieser Seite"
+    },
+    "ru": {
+      "breadcrumb_home": "Добро пожаловать",
+      "prev_page": "Предыдущая страница",
+      "next_page": "Следующая страница",
+      "on_this_page": "На этой странице"
+    }
+  }
+}

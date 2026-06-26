@@ -1,6 +1,6 @@
 {
   "__nexy__/main.ts": {
-    "file": "assets/main-gLF86tnO.js",
+    "file": "assets/main-DmC95LM1.js",
     "name": "main",
     "src": "__nexy__/main.ts",
     "isEntry": true,
@@ -11,55 +11,43 @@
       "src/components/search.tsx",
       "src/components/theme.tsx",
       "src/components/vercel.tsx",
-      "_react-AWc5gwvx.js",
+      "_react-ouRM3BXX.js",
       "node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/client.js"
     ],
     "css": [
-      "assets/main-D81jBEGP.css"
-    ],
-    "assets": [
-      "assets/Geist-VariableFont_wght-C2BNBXFg.ttf",
-      "assets/Inter-VariableFont_opsz_wght-c8O0ljhh.ttf"
+      "assets/main-DA19HajX.css"
     ]
   },
-  "_createLucideIcon-Bk2cxfCd.js": {
-    "file": "assets/createLucideIcon-Bk2cxfCd.js",
+  "_createLucideIcon-DP2V4Odh.js": {
+    "file": "assets/createLucideIcon-DP2V4Odh.js",
     "name": "createLucideIcon",
     "imports": [
-      "_react-AWc5gwvx.js"
+      "_react-ouRM3BXX.js"
     ]
   },
-  "_jsx-runtime-BdPVQ6GA.js": {
-    "file": "assets/jsx-runtime-BdPVQ6GA.js",
+  "_jsx-runtime-BCDAvTex.js": {
+    "file": "assets/jsx-runtime-BCDAvTex.js",
     "name": "jsx-runtime",
     "imports": [
       "__nexy__/main.ts"
     ]
   },
-  "_react-AWc5gwvx.js": {
-    "file": "assets/react-AWc5gwvx.js",
+  "_react-ouRM3BXX.js": {
+    "file": "assets/react-ouRM3BXX.js",
     "name": "react",
     "imports": [
       "__nexy__/main.ts"
     ]
   },
   "node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/client.js": {
-    "file": "assets/client-TkImdqGJ.js",
+    "file": "assets/client-DV4I8Yje.js",
     "name": "client",
     "src": "node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/client.js",
     "isDynamicEntry": true,
     "imports": [
       "__nexy__/main.ts",
-      "_react-AWc5gwvx.js"
+      "_react-ouRM3BXX.js"
     ]
-  },
-  "public/fonts/Geist/Geist-VariableFont_wght.ttf": {
-    "file": "assets/Geist-VariableFont_wght-C2BNBXFg.ttf",
-    "src": "public/fonts/Geist/Geist-VariableFont_wght.ttf"
-  },
-  "public/fonts/Inter/Inter-VariableFont_opsz,wght.ttf": {
-    "file": "assets/Inter-VariableFont_opsz_wght-c8O0ljhh.ttf",
-    "src": "public/fonts/Inter/Inter-VariableFont_opsz,wght.ttf"
   },
   "src/components/data.js": {
     "file": "assets/data-DzpQavUa.js",
@@ -68,53 +56,54 @@
     "isDynamicEntry": true
   },
   "src/components/form.tsx": {
-    "file": "assets/form-aO0cCxJw.js",
+    "file": "assets/form-CbgCxnXK.js",
     "name": "form",
     "src": "src/components/form.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_jsx-runtime-BdPVQ6GA.js",
-      "_react-AWc5gwvx.js"
+      "_jsx-runtime-BCDAvTex.js",
+      "_react-ouRM3BXX.js"
     ]
   },
   "src/components/language.tsx": {
-    "file": "assets/language-CnzltvbJ.js",
+    "file": "assets/language-d88pC2sk.js",
     "name": "language",
     "src": "src/components/language.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_createLucideIcon-Bk2cxfCd.js",
-      "_jsx-runtime-BdPVQ6GA.js"
+      "_createLucideIcon-DP2V4Odh.js",
+      "_jsx-runtime-BCDAvTex.js",
+      "_react-ouRM3BXX.js"
     ]
   },
   "src/components/search.tsx": {
-    "file": "assets/search-vF_QDeo8.js",
+    "file": "assets/search-CMMHFIOy.js",
     "name": "search",
     "src": "src/components/search.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_createLucideIcon-Bk2cxfCd.js",
-      "_jsx-runtime-BdPVQ6GA.js"
+      "_createLucideIcon-DP2V4Odh.js",
+      "_jsx-runtime-BCDAvTex.js"
     ]
   },
   "src/components/theme.tsx": {
-    "file": "assets/theme-BO8xvnVu.js",
+    "file": "assets/theme-Ds84nsT5.js",
     "name": "theme",
     "src": "src/components/theme.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_jsx-runtime-BdPVQ6GA.js",
-      "_react-AWc5gwvx.js"
+      "_jsx-runtime-BCDAvTex.js",
+      "_react-ouRM3BXX.js"
     ]
   },
   "src/components/vercel.tsx": {
-    "file": "assets/vercel-s6ojxek4.js",
+    "file": "assets/vercel-Dgy7ZxvV.js",
     "name": "vercel",
     "src": "src/components/vercel.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_jsx-runtime-BdPVQ6GA.js",
-      "_react-AWc5gwvx.js"
+      "_jsx-runtime-BCDAvTex.js",
+      "_react-ouRM3BXX.js"
     ]
   }
 }

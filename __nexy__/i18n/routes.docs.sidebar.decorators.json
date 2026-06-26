@@ -1,0 +1,136 @@
+{
+  "DecoratorsI18n": {
+    "fr": {
+      "title": "Décorateurs",
+      "introduction": "Introduction",
+      "action": "@Action",
+      "useguard": "@UseGuard",
+      "middleware": "@Middleware",
+      "controller": "@Controller",
+      "module": "@Module",
+      "injectable": "@Injectable",
+      "useroute": "@UseRoute",
+      "useresponse": "@UseResponse"
+    },
+    "en": {
+      "title": "Decorators",
+      "introduction": "Introduction",
+      "action": "@Action",
+      "useguard": "@UseGuard",
+      "middleware": "@Middleware",
+      "controller": "@Controller",
+      "module": "@Module",
+      "injectable": "@Injectable",
+      "useroute": "@UseRoute",
+      "useresponse": "@UseResponse"
+    },
+    "ar": {
+      "title": "مصممو الديكور",
+      "introduction": "مقدمة",
+      "action": "@فعل",
+      "useguard": "@UseGuard",
+      "middleware": "@البرامج الوسيطة",
+      "controller": "@التحكم",
+      "module": "@الوحدة النمطية",
+      "injectable": "@الحقن",
+      "useroute": "@UseRoute",
+      "useresponse": "@UseResponse"
+    },
+    "hi": {
+      "title": "सज्जाकार",
+      "introduction": "परिचय",
+      "action": "@कार्रवाई",
+      "useguard": "@यूज़गार्ड",
+      "middleware": "@मिडलवेयर",
+      "controller": "@नियंत्रक",
+      "module": "@मॉड्यूल",
+      "injectable": "@इंजेक्शन योग्य",
+      "useroute": "@UseRoute",
+      "useresponse": "@UseResponse"
+    },
+    "zh": {
+      "title": "装饰器",
+      "introduction": "介绍",
+      "action": "@行动",
+      "useguard": "@UseGuard",
+      "middleware": "@中间件",
+      "controller": "@控制器",
+      "module": "@模块",
+      "injectable": "@Injectable",
+      "useroute": "@UseRoute",
+      "useresponse": "@UseResponse"
+    },
+    "es": {
+      "title": "Decoradores",
+      "introduction": "Introducción",
+      "action": "@Acción",
+      "useguard": "@UseGuard",
+      "middleware": "@Middleware",
+      "controller": "@Controlador",
+      "module": "@Módulo",
+      "injectable": "@Inyectable",
+      "useroute": "@UseRoute",
+      "useresponse": "@UseResponse"
+    },
+    "pt": {
+      "title": "Decoradores",
+      "introduction": "Introdução",
+      "action": "@Ação",
+      "useguard": "@UseGuard",
+      "middleware": "@Middleware",
+      "controller": "@Controlador",
+      "module": "@Módulo",
+      "injectable": "@Injetável",
+      "useroute": "@UseRoute",
+      "useresponse": "@UseResponse"
+    },
+    "ja": {
+      "title": "デコレーター",
+      "introduction": "導入",
+      "action": "@アクション",
+      "useguard": "@UseGuard",
+      "middleware": "@ミドルウェア",
+      "controller": "@コントローラ",
+      "module": "@モジュール",
+      "injectable": "@Injectable",
+      "useroute": "@UseRoute",
+      "useresponse": "@UseResponse"
+    },
+    "ko": {
+      "title": "데코레이터",
+      "introduction": "소개",
+      "action": "@행동",
+      "useguard": "@UseGuard",
+      "middleware": "@미들웨어",
+      "controller": "@제어 장치",
+      "module": "@기준 치수",
+      "injectable": "@주사 가능",
+      "useroute": "@UseRoute",
+      "useresponse": "@UseResponse"
+    },
+    "de": {
+      "title": "Dekorateure",
+      "introduction": "Einführung",
+      "action": "@Aktion",
+      "useguard": "@UseGuard",
+      "middleware": "@Middleware",
+      "controller": "@Regler",
+      "module": "@Modul",
+      "injectable": "@Injectable",
+      "useroute": "@UseRoute",
+      "useresponse": "@UseResponse"
+    },
+    "ru": {
+      "title": "Декораторы",
+      "introduction": "Введение",
+      "action": "@Действие",
+      "useguard": "@UseGuard",
+      "middleware": "@Промежуточное ПО",
+      "controller": "@Контроллер",
+      "module": "@Модуль",
+      "injectable": "@Инъекционный",
+      "useroute": "@UseRoute",
+      "useresponse": "@UseResponse"
+    }
+  }
+}

@@ -1,0 +1,79 @@
+# Python en la plantilla Nexy
+
+El frontmatter (`---`) ejecuta Python en tiempo de compilación y en cada solicitud.
+
+---
+
+## Qué puedes hacer
+
+### Importar módulos
+{% raw %}```python
+---
+import json
+from datetime import datetime
+from nexy import usePathname
+from "@components/card.nexy" import Card
+---
+```{% endraw %}
+### Ejecutar expresiones
+{% raw %}```python
+---
+items = [1, 2, 3]
+now = datetime.now()
+is_admin = user.role == "admin"
+---
+```{% endraw %}
+### Usa ganchos
+{% raw %}```python
+---
+from nexy import usePathname, useSearchParams, useCookies
+pathname = usePathname()
+params = useSearchParams()
+cookies = useCookies()
+---
+```{% endraw %}
+### Acceder a los datos de la solicitud
+{% raw %}```python
+---
+from fastapi import Request
+# request is injected automatically
+---
+```{% endraw %}
+---
+
+## Tiempo de compilación versus tiempo de ejecución
+
+| Operación | Cuando | Ejemplo |
+|---|---|---|
+| `import` | Compilar | Importación de componentes |
+| `prop[type]` | Compilar | Accesorios homologados |
+| Ganchos | Solicitar | `usePathname()` |
+| Variables | Solicitar | `user = request.user` |
+
+Las variables definidas en frontmatter están disponibles en la plantilla:
+{% raw %}```python
+---
+from datetime import datetime
+year = datetime.now().year
+---
+<footer>&copy; {{ year }} Nexy</footer>
+```{% endraw %}
+---
+
+## Lógica compartida
+
+Para una lógica Python reutilizable, cree un archivo `.py` normal:
+{% raw %}```python
+# src/utils/helpers.py
+def format_date(dt):
+    return dt.strftime("%B %d, %Y")
+```{% endraw %}
+Importar desde cualquier componente:
+{% raw %}```python
+---
+from src.utils.helpers import format_date
+from datetime import datetime
+---
+{{ format_date(datetime.now()) }}
+```{% endraw %}
+{% call Link(href="/docs/components/properties") %}Next: Properties →{% endcall %}

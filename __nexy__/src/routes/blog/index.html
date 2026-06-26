@@ -1,3 +1,4 @@
+<main class=" overflow-x-hidden">
 {{ OtherHero(title=(title), description=(description)) }}
 <section class="border-t border-border border-dashed py-16 space-y-6">
     <aside class="w-container px-6 pb-6 space-y-4 md:space-y-2 ">
@@ -76,7 +77,7 @@
             <li class="font-mono opacity-50">/</li>
             <li class="py-1 px-3 rounded-2xl corner border">
                 24 
-                <span class="opacity-60">Pages</span>
+                <span class="opacity-60">{{b.pages}}</span>
             </li>
         </ul>
          <ul class="flex items-center gap-2 *:border-border">
@@ -90,3 +91,4 @@
         </ul>
     </aside>
 </section>
+</main>

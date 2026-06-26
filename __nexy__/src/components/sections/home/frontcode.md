@@ -1,7 +1,6 @@
-{% call Codeblock(tabs=(["React", "Vue","Svelte","Solid","mdx"])) %}
-```tsx
+{% raw %}```tsx
 ---
-from "@components/card.tsx" import Card
+from ""@components/card.tsx" import Card
 ---
 <section class="w-full w-container py-24">
     <card>
@@ -12,5 +11,4 @@ from "@components/card.tsx" import Card
          </p>
     </card>
 </section>
-```
-{% endcall %}
+```{% endraw %}

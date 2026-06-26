@@ -1,0 +1,48 @@
+{
+  "Team": {
+    "en": {
+      "title": "Team",
+      "description": "Meet the passionate people who build Nexy."
+    },
+    "ar": {
+      "title": "فريق",
+      "description": "تعرف على الأشخاص المتحمسين الذين قاموا ببناء Nexy."
+    },
+    "de": {
+      "title": "Team",
+      "description": "Lernen Sie die leidenschaftlichen Menschen kennen, die Nexy bauen."
+    },
+    "ru": {
+      "title": "Команда",
+      "description": "Познакомьтесь с увлеченными людьми, которые создают Nexy."
+    },
+    "hi": {
+      "title": "टीम",
+      "description": "नेक्सी का निर्माण करने वाले जुनूनी लोगों से मिलें।"
+    },
+    "zh": {
+      "title": "团队",
+      "description": "认识一下构建 Nexy 的充满热情的人们。"
+    },
+    "es": {
+      "title": "Equipo",
+      "description": "Conozca a las personas apasionadas que construyen Nexy."
+    },
+    "pt": {
+      "title": "Equipe",
+      "description": "Conheça as pessoas apaixonadas que constroem Nexy."
+    },
+    "fr": {
+      "title": "Équipe",
+      "description": "Découvrez les personnes passionnées qui construisent Nexy."
+    },
+    "ja": {
+      "title": "チーム",
+      "description": "Nexy を構築する情熱的な人々を紹介します。"
+    },
+    "ko": {
+      "title": "팀",
+      "description": "넥시를 만드는 열정적인 사람들을 만나보세요."
+    }
+  }
+}

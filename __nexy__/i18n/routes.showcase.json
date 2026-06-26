@@ -1,0 +1,103 @@
+{
+  "Showcase": {
+    "fr": {
+      "title": "Projets",
+      "description": "Découvrez des projets inspirants construits avec Nexy par la communauté.",
+      "filter_all": "Tous",
+      "filter_marketing": "Marketing & Media",
+      "filter_platform_engineering": "Platform & Engineering",
+      "filter_ai": "AI",
+      "filter_web_app": "Web App"
+    },
+    "hi": {
+      "title": "परियोजनाओं",
+      "description": "समुदाय द्वारा नेक्सी के साथ निर्मित प्रेरक परियोजनाओं की खोज करें।",
+      "filter_all": "सभी",
+      "filter_marketing": "मार्केटिंग एवं मीडिया",
+      "filter_platform_engineering": "प्लेटफार्म और इंजीनियरिंग",
+      "filter_ai": "ए.आई.",
+      "filter_web_app": "वेब अप्प"
+    },
+    "zh": {
+      "title": "项目",
+      "description": "发现社区使用 Nexy 构建的鼓舞人心的项目。",
+      "filter_all": "全部",
+      "filter_marketing": "营销与媒体",
+      "filter_platform_engineering": "平台与工程",
+      "filter_ai": "人工智能。",
+      "filter_web_app": "网络应用程序"
+    },
+    "es": {
+      "title": "Proyectos",
+      "description": "Descubra proyectos inspiradores creados con Nexy por la comunidad.",
+      "filter_all": "Todo",
+      "filter_marketing": "Marketing y Medios",
+      "filter_platform_engineering": "Plataforma e ingeniería",
+      "filter_ai": "AI.",
+      "filter_web_app": "Aplicación web"
+    },
+    "ja": {
+      "title": "プロジェクト",
+      "description": "コミュニティによって Nexy を使用して構築された刺激的なプロジェクトを発見してください。",
+      "filter_all": "全て",
+      "filter_marketing": "マーケティングとメディア",
+      "filter_platform_engineering": "プラットフォームとエンジニアリング",
+      "filter_ai": "A.I.",
+      "filter_web_app": "ウェブアプリ"
+    },
+    "pt": {
+      "title": "Projetos",
+      "description": "Descubra projetos inspiradores construídos com Nexy pela comunidade.",
+      "filter_all": "Todos",
+      "filter_marketing": "Marketing e Mídia",
+      "filter_platform_engineering": "Plataforma e Engenharia",
+      "filter_ai": "IA",
+      "filter_web_app": "WebApp"
+    },
+    "en": {
+      "title": "Projects",
+      "description": "Discover inspiring projects built with Nexy by the community.",
+      "filter_all": "All",
+      "filter_marketing": "Marketing & Media",
+      "filter_platform_engineering": "Platform & Engineering",
+      "filter_ai": "A.I.",
+      "filter_web_app": "WebApp"
+    },
+    "ar": {
+      "title": "المشاريع",
+      "description": "اكتشف المشاريع الملهمة التي أنشأها المجتمع باستخدام Nexy.",
+      "filter_all": "الجميع",
+      "filter_marketing": "التسويق والإعلام",
+      "filter_platform_engineering": "المنصة والهندسة",
+      "filter_ai": "منظمة العفو الدولية.",
+      "filter_web_app": "تطبيق ويب"
+    },
+    "ko": {
+      "title": "프로젝트",
+      "description": "커뮤니티에서 Nexy로 구축한 영감을 주는 프로젝트를 찾아보세요.",
+      "filter_all": "모두",
+      "filter_marketing": "마케팅 및 미디어",
+      "filter_platform_engineering": "플랫폼 및 엔지니어링",
+      "filter_ai": "일체 포함.",
+      "filter_web_app": "웹앱"
+    },
+    "de": {
+      "title": "Projekte",
+      "description": "Entdecken Sie inspirierende Projekte, die die Community mit Nexy erstellt hat.",
+      "filter_all": "Alle",
+      "filter_marketing": "Marketing & Medien",
+      "filter_platform_engineering": "Plattform & Technik",
+      "filter_ai": "K.I.",
+      "filter_web_app": "WebApp"
+    },
+    "ru": {
+      "title": "Проекты",
+      "description": "Откройте для себя вдохновляющие проекты, созданные сообществом с помощью Nexy.",
+      "filter_all": "Все",
+      "filter_marketing": "Маркетинг и СМИ",
+      "filter_platform_engineering": "Платформа и проектирование",
+      "filter_ai": "А.И.",
+      "filter_web_app": "Веб-приложение"
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "CliI18n": {
+    "pt": {
+      "title": "CLI",
+      "introduction": "Introdução",
+      "dev": "desenvolvedor",
+      "start": "começar",
+      "build": "construir",
+      "new": "novo",
+      "init": "iniciar",
+      "migrate_cmd": "migrar"
+    },
+    "ja": {
+      "title": "CLI",
+      "introduction": "導入",
+      "dev": "開発者",
+      "start": "始める",
+      "build": "建てる",
+      "new": "新しい",
+      "init": "初期化",
+      "migrate_cmd": "移行する"
+    },
+    "ko": {
+      "title": "CLI",
+      "introduction": "소개",
+      "dev": "개발자",
+      "start": "시작",
+      "build": "짓다",
+      "new": "새로운",
+      "init": "초기화",
+      "migrate_cmd": "이주하다"
+    },
+    "de": {
+      "title": "CLI",
+      "introduction": "Einführung",
+      "dev": "Entwickler",
+      "start": "Start",
+      "build": "bauen",
+      "new": "neu",
+      "init": "init",
+      "migrate_cmd": "wandern"
+    },
+    "ru": {
+      "title": "интерфейс командной строки",
+      "introduction": "Введение",
+      "dev": "разработчик",
+      "start": "начинать",
+      "build": "строить",
+      "new": "новый",
+      "init": "инициализировать",
+      "migrate_cmd": "мигрировать"
+    },
+    "fr": {
+      "title": "CLI",
+      "introduction": "Introduction",
+      "dev": "dev",
+      "start": "start",
+      "build": "build",
+      "new": "new",
+      "init": "init",
+      "migrate_cmd": "migrate"
+    },
+    "en": {
+      "title": "CLI",
+      "introduction": "Introduction",
+      "dev": "dev",
+      "start": "start",
+      "build": "build",
+      "new": "new",
+      "init": "init",
+      "migrate_cmd": "migrate"
+    },
+    "ar": {
+      "title": "سطر الأوامر",
+      "introduction": "مقدمة",
+      "dev": "ديف",
+      "start": "يبدأ",
+      "build": "يبني",
+      "new": "جديد",
+      "init": "الحرف الأول",
+      "migrate_cmd": "يهاجر"
+    },
+    "hi": {
+      "title": "सीएलआई",
+      "introduction": "परिचय",
+      "dev": "देव",
+      "start": "शुरू",
+      "build": "निर्माण",
+      "new": "नया",
+      "init": "इस में",
+      "migrate_cmd": "माइग्रेट"
+    },
+    "zh": {
+      "title": "命令行界面",
+      "introduction": "介绍",
+      "dev": "开发者",
+      "start": "开始",
+      "build": "建造",
+      "new": "新的",
+      "init": "初始化",
+      "migrate_cmd": "迁移"
+    },
+    "es": {
+      "title": "CLI",
+      "introduction": "Introducción",
+      "dev": "desarrollador",
+      "start": "comenzar",
+      "build": "construir",
+      "new": "nuevo",
+      "init": "inicio",
+      "migrate_cmd": "emigrar"
+    }
+  }
+}

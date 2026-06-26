@@ -1,0 +1,103 @@
+{
+  "MigrateI18n": {
+    "fr": {
+      "title": "Migrer vers Nexy",
+      "introduction": "Introduction",
+      "fastapi": "FastAPI",
+      "django": "Django",
+      "nestjs": "NestJS",
+      "flask": "Flask",
+      "nextjs": "Next.js"
+    },
+    "en": {
+      "title": "Migrate to Nexy",
+      "introduction": "Introduction",
+      "fastapi": "FastAPI",
+      "django": "Django",
+      "nestjs": "NestJS",
+      "flask": "Flask",
+      "nextjs": "Next.js"
+    },
+    "ar": {
+      "title": "الهجرة إلى نيكسي",
+      "introduction": "مقدمة",
+      "fastapi": "FastAPI",
+      "django": "جانغو",
+      "nestjs": "NestJS",
+      "flask": "قارورة",
+      "nextjs": "Next.js"
+    },
+    "hi": {
+      "title": "नेक्सी की ओर पलायन करें",
+      "introduction": "परिचय",
+      "fastapi": "फास्टएपीआई",
+      "django": "Django",
+      "nestjs": "नेस्टजेएस",
+      "flask": "फ्लास्क",
+      "nextjs": "अगला.जे.एस"
+    },
+    "zh": {
+      "title": "迁移到内克西",
+      "introduction": "介绍",
+      "fastapi": "快速API",
+      "django": "姜戈",
+      "nestjs": "NestJS",
+      "flask": "烧瓶",
+      "nextjs": "Next.js"
+    },
+    "es": {
+      "title": "Migrar a Nexy",
+      "introduction": "Introducción",
+      "fastapi": "API rápida",
+      "django": "Django",
+      "nestjs": "NestJS",
+      "flask": "Matraz",
+      "nextjs": "Siguiente.js"
+    },
+    "pt": {
+      "title": "Migrar para Nexy",
+      "introduction": "Introdução",
+      "fastapi": "API rápida",
+      "django": "Django",
+      "nestjs": "NestJS",
+      "flask": "Frasco",
+      "nextjs": "Próximo.js"
+    },
+    "ja": {
+      "title": "ネクシーに移行する",
+      "introduction": "導入",
+      "fastapi": "ファストAPI",
+      "django": "ジャンゴ",
+      "nestjs": "ネストJS",
+      "flask": "フラスコ",
+      "nextjs": "Next.js"
+    },
+    "ko": {
+      "title": "넥시로 마이그레이션",
+      "introduction": "소개",
+      "fastapi": "FastAPI",
+      "django": "장고",
+      "nestjs": "NestJS",
+      "flask": "플라스크",
+      "nextjs": "Next.js"
+    },
+    "de": {
+      "title": "Migrieren Sie zu Nexy",
+      "introduction": "Einführung",
+      "fastapi": "FastAPI",
+      "django": "Django",
+      "nestjs": "NestJS",
+      "flask": "Flasche",
+      "nextjs": "Next.js"
+    },
+    "ru": {
+      "title": "Мигрировать на Nexy",
+      "introduction": "Введение",
+      "fastapi": "ФастAPI",
+      "django": "Джанго",
+      "nestjs": "NestJS",
+      "flask": "Колба",
+      "nextjs": "Next.js"
+    }
+  }
+}

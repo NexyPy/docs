@@ -7,7 +7,7 @@
                 </figure>
             {% endcall %}
             <p>
-                Nous aidons les responsables marketing et produits à créer des marques percutantes, à engager les utilisateurs et 
+                {{f.description}}
             <p>
             <ul class="flex gap-3 text-foreground">
                 <li class="size-9 border  border-border grid place-content-center rounded-xl">
@@ -48,18 +48,18 @@
         {% endfor %}
 
         <aside class="space-y-4 w-fit md:w-80">
-            <h2 class="w-fit text-2xl font-semibold">Subscribe to our newsletter</h2>
+            <h2 class="w-fit text-2xl font-semibold">{{f.newsletter_title}}</h2>
             <p>
-                Stay updated on new releases and features, guides, and case studies.
+                {{f.newsletter_desc}}
             </p>
-            {{ Form(use="use " ~ (es)) }}
+            {{ Form() }}
         </aside>
         
     </section>
     <div class="border-b border-border separator w-full w-container"></div>
     <div class="w-full flex justify-between items-center gap-4   w-container">
         
-        <p class="text-sm">© 2026 Luilka , Tous droits reservés.</p>
+        <p class="text-sm">{{f.copyright}}</p>
         {{ Theme() }}
     </div>
 </footer>

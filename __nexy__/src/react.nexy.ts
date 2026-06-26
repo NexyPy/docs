@@ -20,7 +20,7 @@ const run = () => {
 
         async function m(el) {
             if (!el || el.dataset.nexyMounted === "1") return;
-            
+
             const key = el.getAttribute("data-nexy-key") || "";
             const path = el.dataset.nexyPath || "";
             const symbol = el.getAttribute("data-nexy-symbol") || "";
@@ -28,8 +28,8 @@ const run = () => {
             const serverHTML = el.innerHTML;
 
             let props = {};
-            try { 
-                props = JSON.parse(propsStr); 
+            try {
+                props = JSON.parse(propsStr);
             } catch(e) {
                 console.error("[Nexy] Failed to parse props:", e);
             }
@@ -48,7 +48,7 @@ const run = () => {
 
             try {
                 const mod = await gi(ref);
-                
+
                 // Robust Export Resolution
                 let Comp = null;
                 if (symbol && mod[symbol]) {
@@ -65,8 +65,8 @@ const run = () => {
                 }
 
                 const element = React.createElement(
-                    React.StrictMode, 
-                    null, 
+                    React.StrictMode,
+                    null,
                     React.createElement(Comp, props)
                 );
 

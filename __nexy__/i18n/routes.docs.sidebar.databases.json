@@ -1,0 +1,114 @@
+{
+  "DatabasesI18n": {
+    "zh": {
+      "title": "数据库和 ORM",
+      "introduction": "介绍",
+      "postgresql": "PostgreSQL",
+      "mysql": "MySQL 和 MariaDB",
+      "sqlite": "SQLite",
+      "sqlmodel": "SQL模型",
+      "sqlalchemy": "SQL炼金术",
+      "tortoise": "乌龟-ORM"
+    },
+    "es": {
+      "title": "Bases de datos y ORM",
+      "introduction": "Introducción",
+      "postgresql": "PostgreSQL",
+      "mysql": "MySQL y MariaDB",
+      "sqlite": "SQLite",
+      "sqlmodel": "Modelo SQL",
+      "sqlalchemy": "SQLAlquimia",
+      "tortoise": "Tortuga-ORM"
+    },
+    "pt": {
+      "title": "Bancos de dados e ORMs",
+      "introduction": "Introdução",
+      "postgresql": "PostgreSQL",
+      "mysql": "MySQL e MariaDB",
+      "sqlite": "SQLite",
+      "sqlmodel": "Modelo SQL",
+      "sqlalchemy": "SQLAlquimia",
+      "tortoise": "Tartaruga-ORM"
+    },
+    "ja": {
+      "title": "データベースとORM",
+      "introduction": "導入",
+      "postgresql": "PostgreSQL",
+      "mysql": "MySQL と MariaDB",
+      "sqlite": "SQLite",
+      "sqlmodel": "SQLモデル",
+      "sqlalchemy": "SQLアルケミー",
+      "tortoise": "Tortoise-ORM"
+    },
+    "ko": {
+      "title": "데이터베이스 및 ORM",
+      "introduction": "소개",
+      "postgresql": "포스트그레SQL",
+      "mysql": "MySQL 및 마리아DB",
+      "sqlite": "SQLite",
+      "sqlmodel": "SQL모델",
+      "sqlalchemy": "SQLAlchemy",
+      "tortoise": "거북이-ORM"
+    },
+    "de": {
+      "title": "Datenbanken und ORMs",
+      "introduction": "Einführung",
+      "postgresql": "PostgreSQL",
+      "mysql": "MySQL und MariaDB",
+      "sqlite": "SQLite",
+      "sqlmodel": "SQLModel",
+      "sqlalchemy": "SQLAlchemy",
+      "tortoise": "Schildkröte-ORM"
+    },
+    "ru": {
+      "title": "Базы данных и ORM",
+      "introduction": "Введение",
+      "postgresql": "PostgreSQL",
+      "mysql": "MySQL и МарияДБ",
+      "sqlite": "SQLite",
+      "sqlmodel": "SQLМодель",
+      "sqlalchemy": "SQLАлхимия",
+      "tortoise": "Черепаха-ОРМ"
+    },
+    "fr": {
+      "title": "Bases de données & ORMs",
+      "introduction": "Introduction",
+      "postgresql": "PostgreSQL",
+      "mysql": "MySQL & MariaDB",
+      "sqlite": "SQLite",
+      "sqlmodel": "SQLModel",
+      "sqlalchemy": "SQLAlchemy",
+      "tortoise": "Tortoise-ORM"
+    },
+    "en": {
+      "title": "Databases & ORMs",
+      "introduction": "Introduction",
+      "postgresql": "PostgreSQL",
+      "mysql": "MySQL & MariaDB",
+      "sqlite": "SQLite",
+      "sqlmodel": "SQLModel",
+      "sqlalchemy": "SQLAlchemy",
+      "tortoise": "Tortoise-ORM"
+    },
+    "ar": {
+      "title": "قواعد البيانات وORMs",
+      "introduction": "مقدمة",
+      "postgresql": "PostgreSQL",
+      "mysql": "ماي إس كيو إل و ماريا دي بي",
+      "sqlite": "سكليتي",
+      "sqlmodel": "SQLModel",
+      "sqlalchemy": "SQLAlchemy",
+      "tortoise": "السلحفاة-ORM"
+    },
+    "hi": {
+      "title": "डेटाबेस और ओआरएम",
+      "introduction": "परिचय",
+      "postgresql": "पोस्टग्रेएसक्यूएल",
+      "mysql": "MySQL और मारियाडीबी",
+      "sqlite": "SQLite",
+      "sqlmodel": "SQLमॉडल",
+      "sqlalchemy": "SQLAlchemy",
+      "tortoise": "कछुआ-ओआरएम"
+    }
+  }
+}

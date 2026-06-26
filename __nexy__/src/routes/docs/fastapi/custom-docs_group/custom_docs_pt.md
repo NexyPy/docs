@@ -1,0 +1,51 @@
+# IU de documentos personalizados
+
+Nexy usa Swagger UI e ReDoc por padrão. Personalize ou hospede-os automaticamente.
+
+## Configurar a IU do Swagger
+
+{% raw %}```python
+from nexy import app
+
+app.swagger_ui_parameters = {
+    "docExpansion": "none",        # collapse all sections
+    "defaultModelsExpandDepth": -1, # hide schemas section
+    "tryItOutEnabled": True,
+}
+```{% endraw %}
+
+## UI Swagger auto-hospedada
+
+{% raw %}```python
+from nexy import app
+from fastapi.openapi.docs import (
+    get_swagger_ui_html,
+    get_swagger_ui_oauth2_redirect_html,
+)
+
+"@app.get("/docs", include_in_schema=False)
+async def custom_swagger_ui():
+    return get_swagger_ui_html(
+        openapi_url=app.openapi_url,
+        title="My API",
+        swagger_js_url="/static/swagger-ui-bundle.js",
+        swagger_css_url="/static/swagger-ui.css",
+    )
+```{% endraw %}
+
+## OpenAPI condicional
+
+Desative o OpenAPI em produção:
+
+{% raw %}```python
+import os
+
+"@app.get("/openapi.json", include_in_schema=False)
+async def openapi():
+    if os.getenv("ENV") == "production":
+        return {"openapi": "3.1.0", "info": {"title": "My API", "version": "1.0.0"}}
+```{% endraw %}
+
+## Controlar URLs de documentos
+
+Configure endpoints de documentos em [nexyconfig.py](/docs/config/nexy) — consulte os campos `useDocs`, `useDocsUrl`, `useRedocsUrl`.

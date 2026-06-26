@@ -1,0 +1,103 @@
+{
+  "SecurityI18n": {
+    "fr": {
+      "title": "Sécurité",
+      "introduction": "Introduction",
+      "authentication": "Authentification",
+      "authorization": "Autorisation",
+      "encryption": "Cryptage & Hachage",
+      "jwt": "JWT",
+      "uid": "UID"
+    },
+    "en": {
+      "title": "Security",
+      "introduction": "Introduction",
+      "authentication": "Authentication",
+      "authorization": "Authorisation",
+      "encryption": "Encryption & Hashing",
+      "jwt": "J.W.T.",
+      "uid": "UID"
+    },
+    "ar": {
+      "title": "حماية",
+      "introduction": "مقدمة",
+      "authentication": "المصادقة",
+      "authorization": "إذن",
+      "encryption": "التشفير والتجزئة",
+      "jwt": "جي دبليو تي.",
+      "uid": "معرف فريد"
+    },
+    "hi": {
+      "title": "सुरक्षा",
+      "introduction": "परिचय",
+      "authentication": "प्रमाणीकरण",
+      "authorization": "प्राधिकार",
+      "encryption": "एन्क्रिप्शन और हैशिंग",
+      "jwt": "जे.डब्ल्यू.टी.",
+      "uid": "यूआईडी"
+    },
+    "zh": {
+      "title": "安全",
+      "introduction": "介绍",
+      "authentication": "验证",
+      "authorization": "授权",
+      "encryption": "加密和散列",
+      "jwt": "J.W.T.",
+      "uid": "用户识别码"
+    },
+    "es": {
+      "title": "Seguridad",
+      "introduction": "Introducción",
+      "authentication": "Autenticación",
+      "authorization": "Autorización",
+      "encryption": "Cifrado y hash",
+      "jwt": "J.W.T.",
+      "uid": "UID"
+    },
+    "pt": {
+      "title": "Segurança",
+      "introduction": "Introdução",
+      "authentication": "Autenticação",
+      "authorization": "Autorização",
+      "encryption": "Criptografia e hash",
+      "jwt": "JWT",
+      "uid": "UID"
+    },
+    "ja": {
+      "title": "安全",
+      "introduction": "導入",
+      "authentication": "認証",
+      "authorization": "認可",
+      "encryption": "暗号化とハッシュ",
+      "jwt": "J.W.T.",
+      "uid": "UID"
+    },
+    "ko": {
+      "title": "보안",
+      "introduction": "소개",
+      "authentication": "입증",
+      "authorization": "권한 부여",
+      "encryption": "암호화 및 해싱",
+      "jwt": "J.W.T.",
+      "uid": "UID"
+    },
+    "de": {
+      "title": "Sicherheit",
+      "introduction": "Einführung",
+      "authentication": "Authentifizierung",
+      "authorization": "Genehmigung",
+      "encryption": "Verschlüsselung und Hashing",
+      "jwt": "J.W.T.",
+      "uid": "UID"
+    },
+    "ru": {
+      "title": "Безопасность",
+      "introduction": "Введение",
+      "authentication": "Аутентификация",
+      "authorization": "Авторизация",
+      "encryption": "Шифрование и хеширование",
+      "jwt": "ДЖ.В.Т.",
+      "uid": "UID"
+    }
+  }
+}

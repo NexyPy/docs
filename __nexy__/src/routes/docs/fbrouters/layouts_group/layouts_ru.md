@@ -1,0 +1,64 @@
+# Макеты
+
+Макет — это файл `layout.nexy`, в который помещаются все страницы в своем каталоге. Это предотвращает повторение одного и того же верхнего, бокового или нижнего колонтитула на каждой странице.
+
+---
+
+## Как это работает
+
+Поместите `layout.nexy` в каталог `routes/`. Nexy автоматически применяет его ко всем одноуровневым страницам (без создания самого маршрута):
+{% raw %}```bash
+routes/
+├── layout.nexy           ← Applied to / and /about
+├── index.nexy
+├── about.nexy
+└── blog/
+    ├── layout.nexy       ← Applied to /blog/...
+    ├── index.nexy
+    └── [slug].nexy
+```{% endraw %}
+---
+
+## Синтаксис
+
+Макет получает дочерний контент через `children:prop[str]`:
+{% raw %}```
+---
+children: prop[str]
+---
+<header class="site-header">
+    <nav>...</nav>
+</header>
+{{ children | safe }}
+<footer>...</footer>
+```{% endraw %}
+---
+
+## Вложенные макеты
+
+Макеты вложены иерархически. Страница по адресу `blog/[slug].nexy` сначала получает `blog/layout.nexy`, затем корневой `layout.nexy`:
+{% raw %}```bash
+routes/
+├── layout.nexy           ← Global layout (header, footer)
+└── blog/
+    ├── layout.nexy       ← Blog layout (category sidebar)
+    └── [slug].nexy       ← Page → blog/layout → root/layout
+```{% endraw %}
+---
+
+## Реальный пример
+
+В макете этих документов (`src/routes/docs/layout.nexy`) используются `usePathname`, `Sidebar` и `Table_of_contents`:
+{% raw %}```python
+from nexy import usePathname
+from "@components/docs/sidebar.nexy" import Sidebar
+from "@components/docs/table_of_contents.nexy" import Table_of_contents
+```{% endraw %}
+{% raw %}```html
+<main>
+    <Sidebar />
+    {{ children | safe }}
+    <Table_of_contents />
+</main>
+```{% endraw %}
+{% call Link(href="/docs/fbrouters/dependencies") %}Next: Dependencies →{% endcall %}

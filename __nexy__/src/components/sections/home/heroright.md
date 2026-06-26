@@ -1,5 +1,4 @@
-{% call Codeblock(tabs=(["index.nexy", "users.py","dependencies.py"])) %}
-```python
+{% raw %}```PYTHON
 from src.services.users import UserService
 from src.models.users import User
 
@@ -13,11 +12,8 @@ def POST(user: User):
     response = user_service.create(user)
     return response
     
-```
-{% endcall %}
+```{% endraw %}
 
-{% call Codeblock(tabs=(["uv", "poetry","pip"])) %}
-```bash
-uv init && uvx nexy init
-```
-{% endcall %}
+{% raw %}```UV
+uvx nexy new
+```{% endraw %}

@@ -1,0 +1,81 @@
+{
+  "HeaderI18n": {
+    "ja": {
+      "docs": "ドキュメント",
+      "showcase": "ショーケース",
+      "blog": "ブログ",
+      "community": "コミュニティ",
+      "learn": "学ぶ"
+    },
+    "ko": {
+      "docs": "문서",
+      "showcase": "쇼케이스",
+      "blog": "블로그",
+      "community": "지역 사회",
+      "learn": "배우다"
+    },
+    "de": {
+      "docs": "Dokumente",
+      "showcase": "Vitrinen",
+      "blog": "Blog",
+      "community": "Gemeinschaft",
+      "learn": "Lernen"
+    },
+    "ru": {
+      "docs": "Документы",
+      "showcase": "Витрины",
+      "blog": "Блог",
+      "community": "Сообщество",
+      "learn": "Учиться"
+    },
+    "fr": {
+      "docs": "Docs",
+      "showcase": "Showcases",
+      "blog": "Blog",
+      "community": "Communauté",
+      "learn": "Apprendre"
+    },
+    "en": {
+      "docs": "Docs",
+      "showcase": "Showcases",
+      "blog": "Blog",
+      "community": "Community",
+      "learn": "Learn"
+    },
+    "ar": {
+      "docs": "المستندات",
+      "showcase": "يعرض",
+      "blog": "مدونة",
+      "community": "مجتمع",
+      "learn": "يتعلم"
+    },
+    "hi": {
+      "docs": "डॉक्स",
+      "showcase": "शोकेस",
+      "blog": "ब्लॉग",
+      "community": "समुदाय",
+      "learn": "सीखना"
+    },
+    "zh": {
+      "docs": "文档",
+      "showcase": "展示柜",
+      "blog": "博客",
+      "community": "社区",
+      "learn": "学习"
+    },
+    "es": {
+      "docs": "Documentos",
+      "showcase": "Vitrinas",
+      "blog": "Blog",
+      "community": "Comunidad",
+      "learn": "Aprender"
+    },
+    "pt": {
+      "docs": "Documentos",
+      "showcase": "Vitrines",
+      "blog": "Blogue",
+      "community": "Comunidade",
+      "learn": "Aprender"
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "HooksI18n": {
+    "en": {
+      "title": "Hooks",
+      "introduction": "Introduction",
+      "pathname": "usePathname",
+      "searchparams": "useSearchParams",
+      "router": "useRouter",
+      "query": "useQuery",
+      "session": "useSession",
+      "cookies": "useCookies",
+      "toc": "useToc",
+      "views": "useViews"
+    },
+    "ar": {
+      "title": "خطافات",
+      "introduction": "مقدمة",
+      "pathname": "usePathname",
+      "searchparams": "useSearchParams",
+      "router": "com.useRouter",
+      "query": "useQuery",
+      "session": "useSession",
+      "cookies": "useCookies",
+      "toc": "useToc",
+      "views": "useViews"
+    },
+    "hi": {
+      "title": "हुक्स",
+      "introduction": "परिचय",
+      "pathname": "उपयोगपथनाम",
+      "searchparams": "SearchParams का उपयोग करें",
+      "router": "राउटर का उपयोग करें",
+      "query": "उपयोग प्रश्न",
+      "session": "उपयोग सत्र",
+      "cookies": "कुकीज़ का उपयोग करें",
+      "toc": "उपयोगटोक",
+      "views": "दृश्य का उपयोग करें"
+    },
+    "zh": {
+      "title": "挂钩",
+      "introduction": "介绍",
+      "pathname": "使用路径名",
+      "searchparams": "使用搜索参数",
+      "router": "使用路由器",
+      "query": "使用查询",
+      "session": "使用会话",
+      "cookies": "使用Cookies",
+      "toc": "使用目录",
+      "views": "使用视图"
+    },
+    "es": {
+      "title": "Manos",
+      "introduction": "Introducción",
+      "pathname": "utilizar nombre de ruta",
+      "searchparams": "utilizarSearchParams",
+      "router": "utilizar enrutador",
+      "query": "utilizarConsulta",
+      "session": "utilizar sesión",
+      "cookies": "utilizar cookies",
+      "toc": "usarToc",
+      "views": "utilizarVistas"
+    },
+    "pt": {
+      "title": "Ganchos",
+      "introduction": "Introdução",
+      "pathname": "usePathname",
+      "searchparams": "useSearchParams",
+      "router": "useRouter",
+      "query": "useQuery",
+      "session": "useSession",
+      "cookies": "usarCookies",
+      "toc": "useToc",
+      "views": "useViews"
+    },
+    "ja": {
+      "title": "フック",
+      "introduction": "導入",
+      "pathname": "usePathname",
+      "searchparams": "useSearchParams",
+      "router": "useRouter",
+      "query": "useQuery",
+      "session": "useSession",
+      "cookies": "Cookieを使用する",
+      "toc": "useToc",
+      "views": "useViews"
+    },
+    "ko": {
+      "title": "후크",
+      "introduction": "소개",
+      "pathname": "usePathname",
+      "searchparams": "useSearchParams",
+      "router": "사용라우터",
+      "query": "사용쿼리",
+      "session": "useSession",
+      "cookies": "사용쿠키",
+      "toc": "useToc",
+      "views": "useViews"
+    },
+    "de": {
+      "title": "Haken",
+      "introduction": "Einführung",
+      "pathname": "usePathname",
+      "searchparams": "useSearchParams",
+      "router": "useRouter",
+      "query": "useQuery",
+      "session": "useSession",
+      "cookies": "Cookies verwenden",
+      "toc": "useToc",
+      "views": "useViews"
+    },
+    "ru": {
+      "title": "Крючки",
+      "introduction": "Введение",
+      "pathname": "использоватьпутьимя",
+      "searchparams": "использоватьSearchParams",
+      "router": "использоватьRouter",
+      "query": "использовать запрос",
+      "session": "использоватьSession",
+      "cookies": "использовать файлы cookie",
+      "toc": "использоватьToc",
+      "views": "использоватьViews"
+    },
+    "fr": {
+      "title": "Hooks",
+      "introduction": "Introduction",
+      "pathname": "usePathname",
+      "searchparams": "useSearchParams",
+      "router": "useRouter",
+      "query": "useQuery",
+      "session": "useSession",
+      "cookies": "useCookies",
+      "toc": "useToc",
+      "views": "useViews"
+    }
+  }
+}

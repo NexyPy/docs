@@ -1,0 +1,125 @@
+{
+  "ConfigI18n": {
+    "fr": {
+      "title": "Configuration",
+      "introduction": "Introduction",
+      "nexy": "Nexy",
+      "vite": "Vite",
+      "cors": "CORS",
+      "aliases": "Alias",
+      "session": "Session",
+      "i18n": "i18n",
+      "toc": "TOC"
+    },
+    "en": {
+      "title": "Configuration",
+      "introduction": "Introduction",
+      "nexy": "Nexy",
+      "vite": "Quickly",
+      "cors": "CORS",
+      "aliases": "Alias",
+      "session": "Session",
+      "i18n": "i18n",
+      "toc": "OCD"
+    },
+    "ar": {
+      "title": "إعدادات",
+      "introduction": "مقدمة",
+      "nexy": "نكسي",
+      "vite": "بسرعة",
+      "cors": "كورس",
+      "aliases": "الاسم المستعار",
+      "session": "حصة",
+      "i18n": "i18n",
+      "toc": "الوسواس القهري"
+    },
+    "hi": {
+      "title": "विन्यास",
+      "introduction": "परिचय",
+      "nexy": "नेक्सी",
+      "vite": "जल्दी से",
+      "cors": "CORS",
+      "aliases": "उपनाम",
+      "session": "सत्र",
+      "i18n": "i18n",
+      "toc": "ओसीडी"
+    },
+    "zh": {
+      "title": "配置",
+      "introduction": "介绍",
+      "nexy": "内克西",
+      "vite": "迅速地",
+      "cors": "跨域资源共享",
+      "aliases": "别名",
+      "session": "会议",
+      "i18n": "国际化",
+      "toc": "强迫症"
+    },
+    "es": {
+      "title": "Configuración",
+      "introduction": "Introducción",
+      "nexy": "nexy",
+      "vite": "Rápidamente",
+      "cors": "CORS",
+      "aliases": "Alias",
+      "session": "Sesión",
+      "i18n": "i18n",
+      "toc": "TOC"
+    },
+    "pt": {
+      "title": "Configuração",
+      "introduction": "Introdução",
+      "nexy": "Nexy",
+      "vite": "Rapidamente",
+      "cors": "CORS",
+      "aliases": "Alias",
+      "session": "Sessão",
+      "i18n": "i18n",
+      "toc": "TOC"
+    },
+    "ja": {
+      "title": "構成",
+      "introduction": "導入",
+      "nexy": "ネクシー",
+      "vite": "素早く",
+      "cors": "コルス",
+      "aliases": "エイリアス",
+      "session": "セッション",
+      "i18n": "i18n",
+      "toc": "OCD"
+    },
+    "ko": {
+      "title": "구성",
+      "introduction": "소개",
+      "nexy": "넥시",
+      "vite": "빠르게",
+      "cors": "코르스",
+      "aliases": "별명",
+      "session": "세션",
+      "i18n": "i18n",
+      "toc": "강박증"
+    },
+    "de": {
+      "title": "Konfiguration",
+      "introduction": "Einführung",
+      "nexy": "Nexy",
+      "vite": "Schnell",
+      "cors": "CORS",
+      "aliases": "Alias",
+      "session": "Sitzung",
+      "i18n": "i18n",
+      "toc": "Zwangsstörung"
+    },
+    "ru": {
+      "title": "Конфигурация",
+      "introduction": "Введение",
+      "nexy": "Некси",
+      "vite": "Быстро",
+      "cors": "КОРС",
+      "aliases": "Псевдоним",
+      "session": "Сессия",
+      "i18n": "i18n",
+      "toc": "ОКР"
+    }
+  }
+}

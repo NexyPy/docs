@@ -1,22 +1,30 @@
 from typing import *
 from fastapi import *
 from pathlib import Path as __Path
-from nexy import Template as __Template , Import as __Import
+from nexy import Template as __Template
+from nexy.i18n.core import current_locale as __current_locale
+from nexy.i18n.core import trans as __trans
+from nexy.utils.imports.component_import import _Import as __Import
 from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
-from __nexy__.src.routes.layout import Layout as __Layout
+try:
+    from __nexy__.src.routes.layout import Layout as __Layout
+except ImportError:
+    def __Layout(children: str = '', **kwargs) -> str:
+        return '<div data-nexy-error="Layout not available"></div>'
 
+from src.locales.routes.blog import Blog
 from __nexy__.src.components.sections.otherHero import OtherHero
 from __nexy__.src.components.sections.blogCard import BlogCard
 from __nexy__.src.components.sections.separator import Separator
 def Index(caller: Any = None, children: str = '') -> str:
     Slot = caller if (locals().get('caller') and callable(caller)) else (lambda: children if locals().get('children') else '')
-    title = 'The Nexy Blog'
-    description = 'Read the latest news about all Nexy solutions, from framework announcements to integration tutorials'
+    trans = __trans
+    t = __trans
+    b = Blog()
+    title = b.title
+    description = b.description
     
-    context = {"BlogCard": BlogCard, "OtherHero": OtherHero, "Separator": Separator, "description": description, "title": title, 'Slot': Slot}
+    context = {"Blog": Blog, "OtherHero": OtherHero, "description": description, "BlogCard": BlogCard, "b": b, "title": title, "Separator": Separator, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/routes/blog/index.html", context))
-    styles = """"""
-    
-    # Rendu final (potentiellement enveloppé par le Layout)
-    return str(__Layout(children=rendered)) + styles
+    return str(__Layout(children=rendered))

@@ -1,0 +1,190 @@
+# コンポーネントの使用
+
+コンポーネントは、ページや他のコンポーネントにインポートする `src/components/` 内の `.nexy` ファイルです。
+
+## コンポーネントの作成
+
+コンポーネントは任意の `.nexy` ファイルです。可能な限り最も単純なコンポーネントにはフロントマターはなく、HTML のみです。
+
+{% raw %}```nexy
+<!-- src/components/Hello.nexy -->
+---
+---
+<h1>Hello Nexy!</h1>
+```{% endraw %}
+
+ただし、ほとんどのコンポーネントにはプロパティ、ロジック、テンプレートがあります。
+
+## コンポーネントのインポート
+
+相対パスと設定されたエイリアスをサポートする Nexy のコンポーネント インポート構文を使用します。
+
+{% raw %}```nexy
+---
+from "./Card.nexy" import Card
+from "./Header.nexy" import Header
+from "@components/Button.nexy" import Button
+---
+```{% endraw %}
+
+インポート パスは現在のファイルからの相対パスです。 `"@/` は、デフォルトで `src/` (または `useAliases` で構成したもの) にマップされます。
+
+**なぜ特別な構文を使用するのですか?** コンパイラはビルド時に、どの PascalCase タグがコンポーネントであるか、未知の HTML 要素であるかを認識する必要があるためです。サニタイザーは、Python の AST パーサーがこれらのインポートを認識する前にこれらのインポートを変換するため、構文エラーが発生することはありません。
+
+## コンポーネントのレンダリング
+
+テンプレートでは、インポートされた名前を HTML タグとして使用します。
+
+{% raw %}```nexy
+---
+from "./Card.nexy" import Card
+---
+<Card title="Hello" count={5} />
+```{% endraw %}
+
+コンパイラは PascalCase タグを Jinja2 関数呼び出しに変換します。
+
+|テンプレート |コンパイルされた出力 |
+|----------|----------------|
+| `<Card />` | `{{ '{{' }}Card() {{ '}}' }}` |
+| `<Card title="Hi" />` | `{{ '{{' }} Card(title="Hi") {{ '}}' }}` |
+| `<Card count={5} />` | `{{ '{{' }} Card(count=5) {{ '}}' }}` |
+| `<Card>content</Card>` | `{{ '{%' }} call Card() {{ '%}' }}content{{ '{%' }} endcall {{ '%}' }}` |
+
+**命名要件**: コンポーネント名は**大文字で始める必要があります**。小文字を使用すると、コンパイラはそれを通常の HTML 要素として扱い、コンポーネント関数を呼び出しません。これは、Web プラットフォームの規則と一致しています (カスタム要素にはハイフンが必要です。PascalCase はフレームワーク コンポーネント用に予約されています)。
+
+## 小道具を渡す
+
+{% raw %}```nexy
+---
+from "./Card.nexy" import Card
+---
+<!-- Static string -->
+<Card title="Hello" />
+
+<!-- Dynamic Jinja2 expression -->
+<Card title="{{ page_title }}" />
+
+<!-- Unquoted value (expression, not string) -->
+<Card count={5} active={true} items={["a", "b"]} />
+
+<!-- Mixed -->
+<Card title="{{ page_title }}" count={items|length} />
+```{% endraw %}
+
+**属性受け渡しルール**:
+
+|構文 |値のタイプ |テンプレート出力 |
+|------|-----------|----------------|
+| `title="Hello"` |文字列 | `Card(title="Hello")` |
+| `title="{{ '{{' }} var {{ '}}' }}"` | Jinja2 式 | `Card(title=var)` |
+| `count={5}` | Python 式 | `Card(count=5)` |
+| `active=true` |キーワード (Python ブール値) | `Card(active=True)` |
+| `items={["a"]}` | Python 式 | `Card(items=["a"])` |
+
+Python リテラル (`true`、`false`、`none`、数値) に一致する引用符なしの値は、そのまま渡されます。それ以外はすべて文字列です。
+
+**注意事項**: `count={0}` は整数 0 を渡します。`count="0"` は文字列 `"0"` を渡します。 Jinja2 テンプレートでは、`{{ '{%' }} if count {{ '%}' }}` は、`0` (偽) と `"0"` (真実) で異なる評価を行います。数値のゼロが必要な場合は、`{0}` を使用します。
+
+## スロット / 子
+
+コンテンツをラップするコンポーネントは、`<slot />` を使用して子の移動先を定義します。
+
+{% raw %}```nexy
+<!-- Card.nexy -->
+---
+title:prop[str] = ""
+---
+<div class="card">
+  {{ title }}
+  <div class="card-body">
+    <slot />
+  </div>
+</div>
+```{% endraw %}
+
+{% raw %}```nexy
+<!-- Usage -->
+---
+from "./Card.nexy" import Card
+---
+<Card title="My Card">
+  <p>This appears inside the slot.</p>
+</Card>
+```{% endraw %}
+
+**スロットの仕組み**: コンパイラは子を `{{ '{%' }} call {{ '%}' }}` ブロックでラップします。コンポーネントはそれらを `caller` 関数として受け取ります。 `<slot />` は `caller()` を呼び出し、結果を出力します。
+
+**制限事項**:
+- コンポーネントごとに名前のないスロットは 1 つだけ
+- スコープ付きスロットなし (代わりに関数を小道具として渡します)
+- スロットは `.nexy` ファイルでのみ機能し、生の Jinja2 テンプレートでは機能しません
+
+## セルフクロージングとラッピング
+
+自己終了コンポーネント (子なし):
+
+{% raw %}```nexy
+<Header title="Blog" />
+<Separator />
+<Spacer size={16} />
+```{% endraw %}
+
+コンポーネントのラッピング (子を含む):
+
+{% raw %}```nexy
+<Card title="Post">
+  <p>Content here</p>
+</Card>
+
+<Layout>
+  <Header />
+  <main>Page content</main>
+  <Footer />
+</Layout>
+```{% endraw %}
+
+コンパイラは、自己終了タグ (`<Card />`) と子を持つタグ (`<Card>...</Card>`) を検出し、適切な Jinja2 構文を生成します。
+
+## 早期返品 / 条件付きレンダリング
+
+コンポーネントは Python 関数であるため、前の問題の早い段階で戻ることができます。
+
+{% raw %}```nexy
+---
+title:prop[str] = ""
+if not title:
+    print("Warning: Card rendered without title")
+    # Return early — the template still runs but title is empty
+---
+<div class="card">
+  {{ title }}
+  <slot />
+</div>
+```{% endraw %}
+
+テンプレートでの条件付きレンダリングには、Jinja2 `{{ '{%' }} if {{ '%}' }}` を使用します。
+
+{% raw %}```nexy
+---
+show_header:prop[bool] = true
+---
+{% if show_header %}
+  <header>
+    <slot />
+  </header>
+{% endif %}
+```{% endraw %}
+
+## ベストプラクティス
+
+- **ファイルごとに 1 つのコンポーネント** — 明確な名前、見つけやすい
+- **テンプレートは 50 行以内に留めてください** — 長くなる場合はサブコンポーネントを抽出します
+- **ハードコーディングの代わりにプロパティを使用** — コンポーネントを再利用可能にします
+- **PascalCase でファイルに名前を付ける** — `blog_card.nexy` ではなく `BlogCard.nexy`
+- **オプションの値のデフォルトの小道具** — `title:prop[str]` ではなく `title:prop[str] = ""`
+
+## 次へ
+
+- [Markup](/docs/components/markup): テンプレート構文、動的属性、HTML 規則
+- [Properties](/docs/components/properties): 型指定されたプロパティ、デフォルト、検証パターン
