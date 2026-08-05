@@ -1,5 +1,15 @@
 {
   "CliI18n": {
+    "es": {
+      "title": "CLI",
+      "introduction": "Introducción",
+      "dev": "desarrollador",
+      "start": "comenzar",
+      "build": "construir",
+      "new": "nuevo",
+      "init": "inicio",
+      "migrate_cmd": "emigrar"
+    },
     "pt": {
       "title": "CLI",
       "introduction": "Introdução",
@@ -99,16 +109,6 @@
       "new": "新的",
       "init": "初始化",
       "migrate_cmd": "迁移"
-    },
-    "es": {
-      "title": "CLI",
-      "introduction": "Introducción",
-      "dev": "desarrollador",
-      "start": "comenzar",
-      "build": "construir",
-      "new": "nuevo",
-      "init": "inicio",
-      "migrate_cmd": "emigrar"
     }
   }
 }

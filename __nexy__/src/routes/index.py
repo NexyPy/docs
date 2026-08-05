@@ -27,6 +27,6 @@ def Index(caller: Any = None, children: str = '') -> str:
     t = __trans
 
     
-    context = {"ContentBar": ContentBar, "BaseSection": BaseSection, "WhySection": WhySection, "Sponsor": Sponsor, "Community": Community, "IntegrationSection": IntegrationSection, "WhatSection": WhatSection, "HeroSection": HeroSection, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
+    context = {"Sponsor": Sponsor, "BaseSection": BaseSection, "WhatSection": WhatSection, "IntegrationSection": IntegrationSection, "Community": Community, "WhySection": WhySection, "HeroSection": HeroSection, "ContentBar": ContentBar, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/routes/index.html", context))
     return str(__Layout(children=rendered))

@@ -10,12 +10,13 @@ NexyElement = Union[callable, __JinjaTemplate]
 
 from __nexy__.src.components.sections.home.frontcode import Frontcode
 from __nexy__.src.components.sections.separator import Separator
+from src.locales.components.home import HomeI18n
 def IntegrationSection(caller: Any = None, children: str = '') -> str:
     Slot = caller if (locals().get('caller') and callable(caller)) else (lambda: children if locals().get('children') else '')
     trans = __trans
     t = __trans
-
+    h = HomeI18n()
     
-    context = {"Frontcode": Frontcode, "Separator": Separator, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
+    context = {"Frontcode": Frontcode, "h": h, "HomeI18n": HomeI18n, "Separator": Separator, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/components/sections/home/IntegrationSection.html", context))
     return rendered

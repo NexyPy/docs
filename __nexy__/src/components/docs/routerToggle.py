@@ -19,6 +19,6 @@ def RouterToggle(caller: Any = None, children: str = '') -> str:
     s = SidebarI18n()
     routers = {'fbr': {'label': s.router_toggle.fbr_label, 'desc': s.router_toggle.fbr_desc, 'active': not is_modular}, 'modular': {'label': s.router_toggle.modular_label, 'desc': s.router_toggle.modular_desc, 'active': is_modular}}
     
-    context = {"pathname": pathname, "usePathname": usePathname, "SidebarI18n": SidebarI18n, "s": s, "routers": routers, "is_modular": is_modular, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
+    context = {"pathname": pathname, "SidebarI18n": SidebarI18n, "usePathname": usePathname, "is_modular": is_modular, "s": s, "routers": routers, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/components/docs/routerToggle.html", context))
     return rendered

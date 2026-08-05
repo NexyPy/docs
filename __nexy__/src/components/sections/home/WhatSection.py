@@ -9,12 +9,13 @@ from jinja2 import Template as __JinjaTemplate
 NexyElement = Union[callable, __JinjaTemplate]
 
 from __nexy__.src.components.background import Background
+from src.locales.components.home import HomeI18n
 def WhatSection(caller: Any = None, children: str = '') -> str:
     Slot = caller if (locals().get('caller') and callable(caller)) else (lambda: children if locals().get('children') else '')
     trans = __trans
     t = __trans
-
+    h = HomeI18n()
     
-    context = {"Background": Background, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
+    context = {"HomeI18n": HomeI18n, "Background": Background, "h": h, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/components/sections/home/WhatSection.html", context))
     return rendered

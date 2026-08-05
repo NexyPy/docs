@@ -21,6 +21,6 @@ def Sidebar(caller: Any = None, children: str = '') -> str:
     is_modular = pathname.startswith('/docs/modular')
     s = SidebarI18n()
     
-    context = {"pathname": pathname, "build_sections": build_sections, "usePathname": usePathname, "SidebarI18n": SidebarI18n, "SidebarItems": SidebarItems, "s": s, "RouterToggle": RouterToggle, "is_modular": is_modular, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
+    context = {"build_sections": build_sections, "pathname": pathname, "SidebarItems": SidebarItems, "usePathname": usePathname, "SidebarI18n": SidebarI18n, "is_modular": is_modular, "RouterToggle": RouterToggle, "s": s, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/components/docs/sidebar.html", context))
     return rendered

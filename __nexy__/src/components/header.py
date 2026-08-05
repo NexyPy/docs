@@ -22,6 +22,6 @@ def Header(caller: Any = None, children: str = '') -> str:
     h = HeaderLocale()
     items = [{'label': h.docs, 'href': '/docs'}, {'label': h.showcase, 'href': '/showcase'}, {'label': h.blog, 'href': '/blog'}, {'label': h.community, 'href': '/community'}]
     
-    context = {"Search": Search, "pathname": pathname, "Link": Link, "Image": Image, "usePathname": usePathname, "h": h, "Language": Language, "HeaderLocale": HeaderLocale, "items": items, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
+    context = {"HeaderLocale": HeaderLocale, "Language": Language, "pathname": pathname, "usePathname": usePathname, "Link": Link, "h": h, "items": items, "Search": Search, "Image": Image, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/components/header.html", context))
     return rendered

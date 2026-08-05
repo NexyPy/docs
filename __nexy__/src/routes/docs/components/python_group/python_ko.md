@@ -41,7 +41,7 @@ from fastapi import Request
 ```{% endraw %}
 ---
 
-## 컴파일 시간과 런타임 비교
+## 컴파일 시간과 런타임
 
 | 운영 | 언제 | 예 |
 |---|---|---|
@@ -60,7 +60,7 @@ year = datetime.now().year
 ```{% endraw %}
 ---
 
-## 공유 로직
+## 공유 논리
 
 재사용 가능한 Python 논리를 위해 일반 `.py` 파일을 만듭니다.
 {% raw %}```python

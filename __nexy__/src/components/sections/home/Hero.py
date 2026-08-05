@@ -12,12 +12,13 @@ from __nexy__.src.components.card import Card
 from __nexy__.src.components.link import Link
 from __nexy__.src.components.background import Background
 from __nexy__.src.components.sections.home.heroright import Heroright
+from src.locales.components.home import HomeI18n
 def Hero(caller: Any = None, children: str = '') -> str:
     Slot = caller if (locals().get('caller') and callable(caller)) else (lambda: children if locals().get('children') else '')
     trans = __trans
     t = __trans
-
+    h = HomeI18n()
     
-    context = {"Heroright": Heroright, "Link": Link, "Card": Card, "Background": Background, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
+    context = {"Background": Background, "HomeI18n": HomeI18n, "Link": Link, "h": h, "Heroright": Heroright, "Card": Card, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/components/sections/home/Hero.html", context))
     return rendered

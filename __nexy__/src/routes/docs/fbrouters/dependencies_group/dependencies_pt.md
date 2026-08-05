@@ -20,7 +20,7 @@ def require_auth(request: Request):
 
 dependencies = [get_db, require_auth]
 ```{% endraw %}
-Somente os itens listados em `dependencies` são aplicados — funções básicas são ignoradas.
+Somente os itens listados em `dependencies` são aplicados — funções simples são ignoradas.
 
 ---
 

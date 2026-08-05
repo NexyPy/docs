@@ -22,6 +22,6 @@ def Query_parameters_zh(caller: Any = None, children: str = '') -> str:
     pathname = usePathname()
     params = useSearchParams()
     
-    context = {"pathname": pathname, "Link": Link, "usePathname": usePathname, "useSearchParams": useSearchParams, "params": params, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
+    context = {"pathname": pathname, "Link": Link, "usePathname": usePathname, "params": params, "useSearchParams": useSearchParams, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/routes/docs/fbrouters/query_parameters_group/query_parameters_zh.md", context))
     return str(__Layout(children=rendered))

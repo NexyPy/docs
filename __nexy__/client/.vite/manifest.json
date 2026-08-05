@@ -1,6 +1,6 @@
 {
   "__nexy__/main.ts": {
-    "file": "assets/main-DmC95LM1.js",
+    "file": "assets/main-Ddhd7ogg.js",
     "name": "main",
     "src": "__nexy__/main.ts",
     "isEntry": true,
@@ -11,99 +11,110 @@
       "src/components/search.tsx",
       "src/components/theme.tsx",
       "src/components/vercel.tsx",
-      "_react-ouRM3BXX.js",
-      "node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/client.js"
+      "src/utils/search.ts",
+      "_react-C6miMeR0.js",
+      "node_modules/.pnpm/react-dom@19.2.7_react@19.2.7/node_modules/react-dom/client.js"
     ],
     "css": [
-      "assets/main-DA19HajX.css"
+      "assets/main-C4EJASi8.css"
     ]
   },
-  "_createLucideIcon-DP2V4Odh.js": {
-    "file": "assets/createLucideIcon-DP2V4Odh.js",
-    "name": "createLucideIcon",
-    "imports": [
-      "_react-ouRM3BXX.js"
-    ]
-  },
-  "_jsx-runtime-BCDAvTex.js": {
-    "file": "assets/jsx-runtime-BCDAvTex.js",
+  "_jsx-runtime-CM10mCp3.js": {
+    "file": "assets/jsx-runtime-CM10mCp3.js",
     "name": "jsx-runtime",
     "imports": [
       "__nexy__/main.ts"
     ]
   },
-  "_react-ouRM3BXX.js": {
-    "file": "assets/react-ouRM3BXX.js",
+  "_react-C6miMeR0.js": {
+    "file": "assets/react-C6miMeR0.js",
     "name": "react",
     "imports": [
       "__nexy__/main.ts"
     ]
   },
-  "node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/client.js": {
-    "file": "assets/client-DV4I8Yje.js",
+  "_x-DGt_lelO.js": {
+    "file": "assets/x-DGt_lelO.js",
+    "name": "x",
+    "imports": [
+      "_react-C6miMeR0.js"
+    ]
+  },
+  "node_modules/.pnpm/react-dom@19.2.7_react@19.2.7/node_modules/react-dom/client.js": {
+    "file": "assets/client-CVpggVyp.js",
     "name": "client",
-    "src": "node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/client.js",
+    "src": "node_modules/.pnpm/react-dom@19.2.7_react@19.2.7/node_modules/react-dom/client.js",
     "isDynamicEntry": true,
     "imports": [
       "__nexy__/main.ts",
-      "_react-ouRM3BXX.js"
+      "_react-C6miMeR0.js"
     ]
   },
   "src/components/data.js": {
-    "file": "assets/data-DzpQavUa.js",
+    "file": "assets/data-DWkuqUmK.js",
     "name": "data",
     "src": "src/components/data.js",
     "isDynamicEntry": true
   },
   "src/components/form.tsx": {
-    "file": "assets/form-CbgCxnXK.js",
+    "file": "assets/form-DX7KRtzP.js",
     "name": "form",
     "src": "src/components/form.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_jsx-runtime-BCDAvTex.js",
-      "_react-ouRM3BXX.js"
+      "_react-C6miMeR0.js",
+      "_jsx-runtime-CM10mCp3.js"
     ]
   },
   "src/components/language.tsx": {
-    "file": "assets/language-d88pC2sk.js",
+    "file": "assets/language-Dwg3GPBS.js",
     "name": "language",
     "src": "src/components/language.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_createLucideIcon-DP2V4Odh.js",
-      "_jsx-runtime-BCDAvTex.js",
-      "_react-ouRM3BXX.js"
+      "_react-C6miMeR0.js",
+      "_jsx-runtime-CM10mCp3.js",
+      "_x-DGt_lelO.js"
     ]
   },
   "src/components/search.tsx": {
-    "file": "assets/search-CMMHFIOy.js",
+    "file": "assets/search-GzaukZvj.js",
     "name": "search",
     "src": "src/components/search.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_createLucideIcon-DP2V4Odh.js",
-      "_jsx-runtime-BCDAvTex.js"
+      "_react-C6miMeR0.js",
+      "_jsx-runtime-CM10mCp3.js",
+      "_x-DGt_lelO.js"
     ]
   },
   "src/components/theme.tsx": {
-    "file": "assets/theme-Ds84nsT5.js",
+    "file": "assets/theme-pkBMGTcv.js",
     "name": "theme",
     "src": "src/components/theme.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_jsx-runtime-BCDAvTex.js",
-      "_react-ouRM3BXX.js"
+      "_react-C6miMeR0.js",
+      "_jsx-runtime-CM10mCp3.js"
     ]
   },
   "src/components/vercel.tsx": {
-    "file": "assets/vercel-Dgy7ZxvV.js",
+    "file": "assets/vercel-C6DFID1j.js",
     "name": "vercel",
     "src": "src/components/vercel.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_jsx-runtime-BCDAvTex.js",
-      "_react-ouRM3BXX.js"
+      "_react-C6miMeR0.js",
+      "_jsx-runtime-CM10mCp3.js"
+    ]
+  },
+  "src/utils/search.ts": {
+    "file": "assets/search-CVWtqs45.js",
+    "name": "search",
+    "src": "src/utils/search.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "__nexy__/main.ts"
     ]
   }
 }

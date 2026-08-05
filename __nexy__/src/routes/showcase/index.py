@@ -25,6 +25,6 @@ def Index(caller: Any = None, children: str = '') -> str:
     title = s.title
     description = s.description
     
-    context = {"OtherHero": OtherHero, "description": description, "s": s, "ShowcaseCard": ShowcaseCard, "Showcase": Showcase, "title": title, "Separator": Separator, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
+    context = {"ShowcaseCard": ShowcaseCard, "OtherHero": OtherHero, "Showcase": Showcase, "Separator": Separator, "title": title, "s": s, "description": description, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/routes/showcase/index.html", context))
     return str(__Layout(children=rendered))

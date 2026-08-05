@@ -17,6 +17,6 @@ def Table_of_contents(caller: Any = None, children: str = '') -> str:
     toc_html = useToc()
     dl = DocsLayoutI18n()
     
-    context = {"dl": dl, "toc_html": toc_html, "DocsLayoutI18n": DocsLayoutI18n, "useToc": useToc, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
+    context = {"dl": dl, "useToc": useToc, "DocsLayoutI18n": DocsLayoutI18n, "toc_html": toc_html, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/components/docs/table_of_contents.html", context))
     return rendered

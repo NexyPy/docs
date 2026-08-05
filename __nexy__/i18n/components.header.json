@@ -1,11 +1,11 @@
 {
   "HeaderI18n": {
-    "ja": {
-      "docs": "ドキュメント",
-      "showcase": "ショーケース",
-      "blog": "ブログ",
-      "community": "コミュニティ",
-      "learn": "学ぶ"
+    "de": {
+      "docs": "Dokumente",
+      "showcase": "Vitrinen",
+      "blog": "Blog",
+      "community": "Gemeinschaft",
+      "learn": "Lernen"
     },
     "ko": {
       "docs": "문서",
@@ -13,13 +13,6 @@
       "blog": "블로그",
       "community": "지역 사회",
       "learn": "배우다"
-    },
-    "de": {
-      "docs": "Dokumente",
-      "showcase": "Vitrinen",
-      "blog": "Blog",
-      "community": "Gemeinschaft",
-      "learn": "Lernen"
     },
     "ru": {
       "docs": "Документы",
@@ -76,6 +69,13 @@
       "blog": "Blogue",
       "community": "Comunidade",
       "learn": "Aprender"
+    },
+    "ja": {
+      "docs": "ドキュメント",
+      "showcase": "ショーケース",
+      "blog": "ブログ",
+      "community": "コミュニティ",
+      "learn": "学ぶ"
     }
   }
 }

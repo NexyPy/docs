@@ -9,6 +9,24 @@
       "filter_ai": "AI",
       "filter_web_app": "Web App"
     },
+    "en": {
+      "title": "Projects",
+      "description": "Discover inspiring projects built with Nexy by the community.",
+      "filter_all": "All",
+      "filter_marketing": "Marketing & Media",
+      "filter_platform_engineering": "Platform & Engineering",
+      "filter_ai": "A.I.",
+      "filter_web_app": "WebApp"
+    },
+    "ar": {
+      "title": "المشاريع",
+      "description": "اكتشف المشاريع الملهمة التي أنشأها المجتمع باستخدام Nexy.",
+      "filter_all": "الجميع",
+      "filter_marketing": "التسويق والإعلام",
+      "filter_platform_engineering": "المنصة والهندسة",
+      "filter_ai": "منظمة العفو الدولية.",
+      "filter_web_app": "تطبيق ويب"
+    },
     "hi": {
       "title": "परियोजनाओं",
       "description": "समुदाय द्वारा नेक्सी के साथ निर्मित प्रेरक परियोजनाओं की खोज करें।",
@@ -36,15 +54,6 @@
       "filter_ai": "AI.",
       "filter_web_app": "Aplicación web"
     },
-    "ja": {
-      "title": "プロジェクト",
-      "description": "コミュニティによって Nexy を使用して構築された刺激的なプロジェクトを発見してください。",
-      "filter_all": "全て",
-      "filter_marketing": "マーケティングとメディア",
-      "filter_platform_engineering": "プラットフォームとエンジニアリング",
-      "filter_ai": "A.I.",
-      "filter_web_app": "ウェブアプリ"
-    },
     "pt": {
       "title": "Projetos",
       "description": "Descubra projetos inspiradores construídos com Nexy pela comunidade.",
@@ -54,23 +63,14 @@
       "filter_ai": "IA",
       "filter_web_app": "WebApp"
     },
-    "en": {
-      "title": "Projects",
-      "description": "Discover inspiring projects built with Nexy by the community.",
-      "filter_all": "All",
-      "filter_marketing": "Marketing & Media",
-      "filter_platform_engineering": "Platform & Engineering",
+    "ja": {
+      "title": "プロジェクト",
+      "description": "コミュニティによって Nexy を使用して構築された刺激的なプロジェクトを発見してください。",
+      "filter_all": "全て",
+      "filter_marketing": "マーケティングとメディア",
+      "filter_platform_engineering": "プラットフォームとエンジニアリング",
       "filter_ai": "A.I.",
-      "filter_web_app": "WebApp"
-    },
-    "ar": {
-      "title": "المشاريع",
-      "description": "اكتشف المشاريع الملهمة التي أنشأها المجتمع باستخدام Nexy.",
-      "filter_all": "الجميع",
-      "filter_marketing": "التسويق والإعلام",
-      "filter_platform_engineering": "المنصة والهندسة",
-      "filter_ai": "منظمة العفو الدولية.",
-      "filter_web_app": "تطبيق ويب"
+      "filter_web_app": "ウェブアプリ"
     },
     "ko": {
       "title": "프로젝트",

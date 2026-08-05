@@ -4,6 +4,10 @@
       "home": "Home",
       "docs": "Blog"
     },
+    "en": {
+      "home": "Home",
+      "docs": "Blog"
+    },
     "ar": {
       "home": "بيت",
       "docs": "مدونة"
@@ -12,9 +16,17 @@
       "home": "घर",
       "docs": "ब्लॉग"
     },
+    "zh": {
+      "home": "家",
+      "docs": "博客"
+    },
     "es": {
       "home": "Hogar",
       "docs": "Blog"
+    },
+    "pt": {
+      "home": "Lar",
+      "docs": "Blogue"
     },
     "ja": {
       "home": "家",
@@ -24,20 +36,8 @@
       "home": "집",
       "docs": "블로그"
     },
-    "pt": {
-      "home": "Lar",
-      "docs": "Blogue"
-    },
     "de": {
       "home": "Heim",
-      "docs": "Blog"
-    },
-    "zh": {
-      "home": "家",
-      "docs": "博客"
-    },
-    "en": {
-      "home": "Home",
       "docs": "Blog"
     },
     "ru": {

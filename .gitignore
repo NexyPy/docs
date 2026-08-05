@@ -1,6 +1,7 @@
 # Logs
 logs
 *.log
+nexy_build_err.txt
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

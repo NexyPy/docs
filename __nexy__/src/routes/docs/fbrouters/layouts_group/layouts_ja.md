@@ -19,7 +19,7 @@ routes/
 ```{% endraw %}
 ---
 
-## 構文
+## Syntax
 
 レイアウトは、`children:prop[str]` を介して子コンテンツを受け取ります。
 {% raw %}```

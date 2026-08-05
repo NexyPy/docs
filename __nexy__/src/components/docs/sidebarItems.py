@@ -15,6 +15,6 @@ def SidebarItems(SIDE_BAR_Items: list = None, className: str = None, caller: Any
     t = __trans
     pathname = usePathname()
     
-    context = {"className": className, "pathname": pathname, "SIDE_BAR_Items": SIDE_BAR_Items, "usePathname": usePathname, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
+    context = {"pathname": pathname, "className": className, "usePathname": usePathname, "SIDE_BAR_Items": SIDE_BAR_Items, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/components/docs/sidebarItems.html", context))
     return rendered

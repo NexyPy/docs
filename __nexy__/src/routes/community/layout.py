@@ -24,6 +24,6 @@ def Layout(children: str = None, caller: Any = None) -> str:
     title = h.title
     description = h.description
     children = f"<nslot  style='display:contents;'>{children}</nslot>" 
-    context = {"HeroI18n": HeroI18n, "OtherHero": OtherHero, "description": description, "children": children, "SidebarI18n": SidebarI18n, "s": s, "h": h, "title": title, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
+    context = {"children": children, "OtherHero": OtherHero, "SidebarI18n": SidebarI18n, "h": h, "HeroI18n": HeroI18n, "title": title, "s": s, "description": description, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/routes/community/layout.html", context))
     return str(__Layout(children=rendered))

@@ -1,6 +1,6 @@
 #Layouts
 
-Um layout é um arquivo `layout.nexy` que agrupa todas as páginas em seu diretório. Evita repetir o mesmo cabeçalho, barra lateral ou rodapé em todas as páginas.
+Um layout é um arquivo `layout.nexy` que agrupa todas as páginas em seu diretório. Impede a repetição do mesmo cabeçalho, barra lateral ou rodapé em todas as páginas.
 
 ---
 

@@ -1,5 +1,25 @@
 {
   "ModularRouterI18n": {
+    "ru": {
+      "title": "Маршрутизатор",
+      "introduction": "Введение",
+      "controllers": "Контроллеры",
+      "providers_di": "Провайдеры и DI",
+      "modules": "Модули",
+      "guards": "Охранники",
+      "middleware": "Промежуточное ПО",
+      "request_body": "Тело запроса",
+      "cookies_headers": "Файлы cookie и заголовки",
+      "response": "Отвечать",
+      "background_tasks": "Фоновые задачи",
+      "async_": "Асинхронность/параллелизм",
+      "sse": "ЭСС",
+      "websocket": "Вебсокет",
+      "redirects": "Перенаправления",
+      "authorization": "Авторизация",
+      "error_handling": "Обработка ошибок",
+      "static_files": "Статические файлы"
+    },
     "fr": {
       "title": "Routeur",
       "introduction": "Introduction",
@@ -199,26 +219,6 @@
       "authorization": "Genehmigung",
       "error_handling": "Fehlerbehandlung",
       "static_files": "Statische Dateien"
-    },
-    "ru": {
-      "title": "Маршрутизатор",
-      "introduction": "Введение",
-      "controllers": "Контроллеры",
-      "providers_di": "Провайдеры и DI",
-      "modules": "Модули",
-      "guards": "Охранники",
-      "middleware": "Промежуточное ПО",
-      "request_body": "Тело запроса",
-      "cookies_headers": "Файлы cookie и заголовки",
-      "response": "Отвечать",
-      "background_tasks": "Фоновые задачи",
-      "async_": "Асинхронность/параллелизм",
-      "sse": "ЭСС",
-      "websocket": "Вебсокет",
-      "redirects": "Перенаправления",
-      "authorization": "Авторизация",
-      "error_handling": "Обработка ошибок",
-      "static_files": "Статические файлы"
     }
   }
 }

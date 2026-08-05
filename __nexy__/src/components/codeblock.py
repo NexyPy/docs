@@ -16,6 +16,6 @@ def Codeblock(tabs: Union[str, list] = '', language: str = '', title: str = '', 
     is_str = isinstance(tabs, str)
     tab_label = tabs or title or filename or language
     
-    context = {"filename": filename, "is_str": is_str, "language": language, "tabs": tabs, "tab_label": tab_label, "title": title, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
+    context = {"tabs": tabs, "tab_label": tab_label, "filename": filename, "language": language, "title": title, "is_str": is_str, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/components/codeblock.html", context))
     return rendered

@@ -4,5 +4,6 @@ export const __NEXY_KEYS: Record<string,string> = {
   "2f05fb3a1d52a7263a06d854b70e30f3": "/src/components/search.tsx",
   "a105a11b82343f5501b06fb89690bad3": "/src/components/theme.tsx",
   "fbbbf3a789843bda89ed51bb14624750": "/src/components/vercel.tsx",
+  "77c752115b37e2408f258060382a0301": "/src/utils/search.ts",
   "400cd00c9592535e79d55dda2647c383": "/src/components/data.js",
 };

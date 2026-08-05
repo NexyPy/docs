@@ -119,7 +119,7 @@ class RoleGuard:
             raise HTTPException(403, f"Requires {self.required_role} role")
 ```{% endraw %}
 
-Aplicar com argumentos:
+Aplique com argumentos:
 
 {% raw %}```python
 "@Controller("/admin")

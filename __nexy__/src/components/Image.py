@@ -17,6 +17,6 @@ def Image(src: str = None, srcset: str = None, className: str = None, alt: str =
         src = src.replace('/public/', '/')
         srcset = srcset.replace('/public/', '/') if srcset else None
     
-    context = {"className": className, "srcset": srcset, "src": src, "alt": alt, "is_vercel": is_vercel, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
+    context = {"srcset": srcset, "alt": alt, "className": className, "is_vercel": is_vercel, "src": src, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/components/Image.html", context))
     return rendered

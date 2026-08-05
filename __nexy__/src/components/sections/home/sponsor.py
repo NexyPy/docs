@@ -10,12 +10,13 @@ NexyElement = Union[callable, __JinjaTemplate]
 
 from __nexy__.src.components.link import Link
 from __nexy__.src.components.background import Background
+from src.locales.components.home import HomeI18n
 def Sponsor(caller: Any = None, children: str = '') -> str:
     Slot = caller if (locals().get('caller') and callable(caller)) else (lambda: children if locals().get('children') else '')
     trans = __trans
     t = __trans
-
+    h = HomeI18n()
     
-    context = {"Link": Link, "Background": Background, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
+    context = {"HomeI18n": HomeI18n, "Background": Background, "Link": Link, "h": h, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/components/sections/home/sponsor.html", context))
     return rendered

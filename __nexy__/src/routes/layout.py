@@ -17,6 +17,6 @@ def Layout(children: NexyElement = None, caller: Any = None) -> str:
     t = __trans
     VercelAnalytics = __Import(path='src/components/vercel.tsx', framework='react', symbol='VercelAnalytics')
     children = f"<nslot  style='display:contents;'>{children}</nslot>" 
-    context = {"Footer": Footer, "VercelAnalytics": VercelAnalytics, "children": children, "Vite": Vite, "Header": Header, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
+    context = {"children": children, "Header": Header, "Vite": Vite, "VercelAnalytics": VercelAnalytics, "Footer": Footer, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/routes/layout.html", context))
     return rendered

@@ -23,6 +23,6 @@ def Index(caller: Any = None, children: str = '') -> str:
     title = l.title
     description = l.description
     
-    context = {"OtherHero": OtherHero, "description": description, "Learn": Learn, "l": l, "title": title, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
+    context = {"OtherHero": OtherHero, "Learn": Learn, "l": l, "title": title, "description": description, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/routes/learn/index.html", context))
     return str(__Layout(children=rendered))

@@ -16,6 +16,6 @@ def OtherHero(title: str = None, description: str = None, caller: Any = None, ch
     t = __trans
     bc = BreadcrumbI18n()
     
-    context = {"description": description, "BreadcrumbI18n": BreadcrumbI18n, "bc": bc, "title": title, "Background": Background, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
+    context = {"bc": bc, "Background": Background, "BreadcrumbI18n": BreadcrumbI18n, "title": title, "description": description, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/components/sections/otherHero.html", context))
     return rendered

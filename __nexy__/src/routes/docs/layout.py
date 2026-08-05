@@ -44,6 +44,6 @@ def Layout(children: str = None, caller: Any = None) -> str:
     prev_item = flat_items[current_idx - 1] if current_idx > 0 else None
     next_item = flat_items[current_idx + 1] if 0 <= current_idx < len(flat_items) - 1 else None
     children = f"<nslot  style='display:contents;'>{children}</nslot>" 
-    context = {"dl": dl, "Link": Link, "build_sections": build_sections, "SidebarI18n": SidebarI18n, "s": s, "all_sections": all_sections, "flat_items": flat_items, "rel_path": rel_path, "current_idx": current_idx, "pathname": pathname, "usePathname": usePathname, "mode": mode, "Sidebar": Sidebar, "next_item": next_item, "is_modular": is_modular, "Table_of_contents": Table_of_contents, "DocsLayoutI18n": DocsLayoutI18n, "children": children, "prev_item": prev_item, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
+    context = {"build_sections": build_sections, "Sidebar": Sidebar, "rel_path": rel_path, "is_modular": is_modular, "all_sections": all_sections, "flat_items": flat_items, "s": s, "Table_of_contents": Table_of_contents, "SidebarI18n": SidebarI18n, "usePathname": usePathname, "dl": dl, "pathname": pathname, "prev_item": prev_item, "Link": Link, "mode": mode, "current_idx": current_idx, "children": children, "next_item": next_item, "DocsLayoutI18n": DocsLayoutI18n, 'Slot': Slot, 'trans': __trans, '__locale': __current_locale.get()}
     rendered = str(__Template().render("__nexy__/src/routes/docs/layout.html", context))
     return str(__Layout(children=rendered))

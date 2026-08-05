@@ -12,17 +12,17 @@
       "newsletter_desc": "Restez informé des nouvelles versions, fonctionnalités, guides et études de cas.",
       "copyright": "© 2026 Luilka, Tous droits réservés."
     },
-    "ar": {
-      "resources": "موارد",
-      "community": "مجتمع",
-      "team": "فريق",
-      "governance": "الحكم",
-      "contributors": "المساهمين",
-      "github": "جيثب",
-      "description": "أنشئ تجارب ويب حديثة باستخدام Nexy — إطار عمل Python لعصر المكدس الكامل.",
-      "newsletter_title": "اشترك في النشرة الإخبارية لدينا",
-      "newsletter_desc": "ابق على اطلاع بالإصدارات والميزات والأدلة ودراسات الحالة الجديدة.",
-      "copyright": "© 2026 لويلكا، جميع الحقوق محفوظة."
+    "hi": {
+      "resources": "संसाधन",
+      "community": "समुदाय",
+      "team": "टीम",
+      "governance": "शासन",
+      "contributors": "योगदानकर्ताओं",
+      "github": "GitHub",
+      "description": "फुल-स्टैक युग के लिए पायथन फ्रेमवर्क - नेक्सी के साथ आधुनिक वेब अनुभव बनाएं।",
+      "newsletter_title": "हमारे न्युजलेटर की सदस्यता प्राप्त करें",
+      "newsletter_desc": "नई रिलीज़, फीचर्स, गाइड और केस स्टडीज के बारे में सूचित रहें।",
+      "copyright": "© 2026 लुइल्का, सर्वाधिकार सुरक्षित।"
     },
     "en": {
       "resources": "Resources",
@@ -36,17 +36,17 @@
       "newsletter_desc": "Stay informed about new releases, features, guides and case studies.",
       "copyright": "© 2026 Luilka, All rights reserved."
     },
-    "hi": {
-      "resources": "संसाधन",
-      "community": "समुदाय",
-      "team": "टीम",
-      "governance": "शासन",
-      "contributors": "योगदानकर्ताओं",
-      "github": "GitHub",
-      "description": "फुल-स्टैक युग के लिए पायथन फ्रेमवर्क - नेक्सी के साथ आधुनिक वेब अनुभव बनाएं।",
-      "newsletter_title": "हमारे न्युजलेटर की सदस्यता प्राप्त करें",
-      "newsletter_desc": "नई रिलीज़, फीचर्स, गाइड और केस स्टडीज के बारे में सूचित रहें।",
-      "copyright": "© 2026 लुइल्का, सर्वाधिकार सुरक्षित।"
+    "ar": {
+      "resources": "موارد",
+      "community": "مجتمع",
+      "team": "فريق",
+      "governance": "الحكم",
+      "contributors": "المساهمين",
+      "github": "جيثب",
+      "description": "أنشئ تجارب ويب حديثة باستخدام Nexy — إطار عمل Python لعصر المكدس الكامل.",
+      "newsletter_title": "اشترك في النشرة الإخبارية لدينا",
+      "newsletter_desc": "ابق على اطلاع بالإصدارات والميزات والأدلة ودراسات الحالة الجديدة.",
+      "copyright": "© 2026 لويلكا، جميع الحقوق محفوظة."
     },
     "zh": {
       "resources": "资源",

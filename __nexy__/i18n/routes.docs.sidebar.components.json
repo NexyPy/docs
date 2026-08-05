@@ -9,6 +9,8 @@
       "link": "Lien",
       "script": "Script",
       "vite": "Vite",
+      "import_": "Import",
+      "template": "Template",
       "badge_soon": "bientôt"
     },
     "en": {
@@ -20,6 +22,8 @@
       "link": "Link",
       "script": "Script",
       "vite": "Quickly",
+      "import_": "Import",
+      "template": "Template",
       "badge_soon": "Soon"
     },
     "ar": {
@@ -31,6 +35,8 @@
       "link": "وصلة",
       "script": "البرنامج النصي",
       "vite": "بسرعة",
+      "import_": "يستورد",
+      "template": "نموذج",
       "badge_soon": "قريباً"
     },
     "hi": {
@@ -42,6 +48,8 @@
       "link": "जोड़ना",
       "script": "लिखी हुई कहानी",
       "vite": "जल्दी से",
+      "import_": "आयात",
+      "template": "खाका",
       "badge_soon": "जल्द ही"
     },
     "zh": {
@@ -53,6 +61,8 @@
       "link": "关联",
       "script": "脚本",
       "vite": "迅速地",
+      "import_": "进口",
+      "template": "模板",
       "badge_soon": "很快"
     },
     "es": {
@@ -64,6 +74,8 @@
       "link": "Enlace",
       "script": "Guion",
       "vite": "Rápidamente",
+      "import_": "Importar",
+      "template": "Plantilla",
       "badge_soon": "Pronto"
     },
     "pt": {
@@ -75,6 +87,8 @@
       "link": "Link",
       "script": "Roteiro",
       "vite": "Rapidamente",
+      "import_": "Importar",
+      "template": "Modelo",
       "badge_soon": "Breve"
     },
     "ja": {
@@ -86,6 +100,8 @@
       "link": "リンク",
       "script": "スクリプト",
       "vite": "素早く",
+      "import_": "輸入",
+      "template": "テンプレート",
       "badge_soon": "すぐ"
     },
     "ko": {
@@ -97,6 +113,8 @@
       "link": "링크",
       "script": "스크립트",
       "vite": "빠르게",
+      "import_": "수입",
+      "template": "주형",
       "badge_soon": "곧"
     },
     "de": {
@@ -108,6 +126,8 @@
       "link": "Link",
       "script": "Skript",
       "vite": "Schnell",
+      "import_": "Import",
+      "template": "Vorlage",
       "badge_soon": "Bald"
     },
     "ru": {
@@ -119,6 +139,8 @@
       "link": "Связь",
       "script": "Скрипт",
       "vite": "Быстро",
+      "import_": "Импорт",
+      "template": "Шаблон",
       "badge_soon": "Скоро"
     }
   }
